@@ -183,8 +183,8 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
             if (action != null)
             {
             	EntityID a1 = new EntityID(248);
-            	Building building = new Building(a1); 
-				this.sendActionMessage(messageManager, agent, action, agentInfo, worldInfo, score, building);
+            	Building building1 = (Building) worldInfo.getEntity(a1); 
+				this.sendActionMessage(messageManager, agent, action, agentInfo, worldInfo, score, building1);
                 return action;
             }
         }
@@ -194,8 +194,8 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
         if (action != null)
         {
         	EntityID a1 = new EntityID(248);
-        	Building building = new Building(a1); 
-            this.sendActionMessage(messageManager, agent, action, agentInfo, worldInfo, score, building);
+        	Building building1 = (Building) worldInfo.getEntity(a1);
+            this.sendActionMessage(messageManager, agent, action, agentInfo, worldInfo, score, building1);
             return action;
         }
         target = this.search.calc().getTarget();
@@ -203,8 +203,8 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
         if (action != null)
         {
         	EntityID a1 = new EntityID(248);
-        	Building building = new Building(a1); 
-        	this.sendActionMessage(messageManager, agent, action, agentInfo, worldInfo, score, building);
+        	Building building1 = (Building) worldInfo.getEntity(a1);
+        	this.sendActionMessage(messageManager, agent, action, agentInfo, worldInfo, score, building1);
             return action;
         }
 
@@ -233,9 +233,17 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 //                System.out.println("AgentInfo" + agentInfo.getPositionArea());
 //                System.out.println("Building Ids" + worldInfo.getAllEntities());
 //                System.out.println("Building Temp" + building.getFullDescription());
+//                System.out.println(agentID.getValue());
+                
+//                Building building1 = (Building) worldInfo.getEntity(buildingid);
+                
+                System.out.println("---------------------------Action Info---------------------------------");
+                System.out.println("Fieryness: " + worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING));
+                System.out.println("---------------------------State Info---------------------------------");
+                EntityID buildingid = new EntityID(959);
+                System.out.println("Building X: " + worldInfo.getEntity(buildingid).getFullDescription());
                 FireBrigade agent1 = (FireBrigade) agentInfo.me();
                 EntityID agentID = agentInfo.getID();
-//                System.out.println(agentID.getValue());
                 int buriedness = agent1.getBuriedness();
                 int water = agent1.getWater();
                 int damage = agent1.getDamage();
