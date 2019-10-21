@@ -1,0 +1,27 @@
+# Ignore .o files
+*.o
+
+# Ignore .class files
+*.class
+
+# Ignore temporary files
+*~
+
+# Ignore log files
+boot/logs
+*.log
+
+# Ignore the build and jars directories
+build
+jars
+bin
+lib/rescuecore.jar
+lib/resq-fire.jar
+
+# Eclipse project
+.settings
+.project
+.classpath
+
+# Gradle
+.gradle
