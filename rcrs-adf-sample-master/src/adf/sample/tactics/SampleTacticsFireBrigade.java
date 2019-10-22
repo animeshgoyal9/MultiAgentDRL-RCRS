@@ -18,8 +18,11 @@ import adf.component.extaction.ExtAction;
 import adf.component.module.complex.Search;
 import adf.sample.tactics.utils.MessageTool;
 import rescuecore2.standard.entities.*;
+import rescuecore2.standard.entities.Building; 
 import rescuecore2.worldmodel.EntityID;
+import rescuecore2.worldmodel.Entity; 
 import rescuecore2.score.*;
+import rescuecore2.components.AbstractComponent;
 
 import java.util.List;
 import java.util.Objects;
@@ -30,6 +33,14 @@ import adf.agent.communication.standard.bundle.centralized.CommandFire;
 import adf.agent.communication.standard.bundle.information.MessageFireBrigade;
 import adf.component.module.complex.BuildingDetector;
 import adf.component.tactics.TacticsFireBrigade;
+
+
+import rescuecore2.worldmodel.ChangeSet;
+import rescuecore2.messages.Command;
+import rescuecore2.messages.control.KSUpdate;
+import rescuecore2.messages.control.KSCommands;
+import rescuecore2.log.Logger;
+import firesimulator.FireSimulatorWrapper;
 
 public class SampleTacticsFireBrigade extends TacticsFireBrigade
 {
@@ -48,7 +59,10 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 
 	private Boolean isVisualDebug;
 	private ScoreFunction score;
-//	private Building building = null; 
+	private Building building; 
+	private AbstractComponent abstractcomponentworld; 
+	private ChangeSet changes; 
+	private FireSimulatorWrapper firewrapper; 
 
     @Override
     public void initialize(AgentInfo agentInfo, WorldInfo worldInfo, ScenarioInfo scenarioInfo, ModuleManager moduleManager, MessageManager messageManager, DevelopData developData)
@@ -73,6 +87,9 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
                             && moduleManager.getModuleConfig().getBooleanValue("VisualDebug", false));
 
         this.recentCommand = null;
+//        this.firewrapper = (FireSimulatorWrapper)fire;
+//        FireSimulatorWrapper firewrapper = (FireSimulator) ;
+        
         // init Algorithm Module & ExtAction
         switch  (scenarioInfo.getMode())
         {
@@ -241,17 +258,42 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
                 System.out.println("---------------------------Action Info---------------------------------");
                 System.out.println("Building IDs: " + worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING));
                 System.out.println("---------------------------State Info---------------------------------");
-                EntityID buildingid = new EntityID(959);
+//                EntityID buildingid = new EntityID(959);
 //                System.out.println("Building Full desc: " + worldInfo.getEntity(buildingid).getFullDescription());
                 
 //                System.out.println("Building fieryness: " + StandardPropertyURN.FIERYNESS.toString());
-                EntityID a1 = new EntityID(248);
+                EntityID a1 = new EntityID(959);
             	Building building1 = (Building) worldInfo.getEntity(a1);
             	System.out.println("Building Fieryness: " + building1.getProperty(StandardPropertyURN.FIERYNESS.toString()));
             	System.out.println("Building Area: " + building1.getProperty(StandardPropertyURN.BUILDING_AREA_TOTAL.toString()));
             	System.out.println("Building Temperature: " + building1.getProperty(StandardPropertyURN.TEMPERATURE.toString()));
-            	System.out.println("Building code: " + building1.getProperty(StandardPropertyURN.BUILDING_CODE.toString()));
-            	System.out.println("Building Floors: " + building1.getProperty(StandardPropertyURN.FLOORS.toString()));
+            	System.out.println("Building X: " + building1.getX());
+            	System.out.println("Building Y: " + building1.getY());
+            	System.out.println("Building Fire: " + building1.isFierynessDefined());
+            	
+            	if (building1.isFierynessDefined()){
+            		System.out.println("Building Fire-------------------: " + building1.getFieryness());
+            	}
+            	if (building1.isTemperatureDefined()){
+            		System.out.println("Building Temp-------------------: " + building1.getTemperature());
+            	}
+            	
+//            	for (Entity next : model) {
+//            		for (Object next1 : worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING)) {
+//	                    Building b = (Building)next1;
+//	                    Building oldB = (Building)model.getEntity(next1);
+//	                    if ((!oldB.isFierynessDefined()) || (oldB.getFieryness() != b.getFieryness())) {
+//	                        oldB.setFieryness(b.getFieryness());
+//	                        changes.addChange(oldB, oldB.getFierynessProperty());
+//	                    }
+//	                    if ((!oldB.isTemperatureDefined()) || (oldB.getTemperature() != (int)b.getTemperature())) {
+//	                        oldB.setTemperature((int)b.getTemperature());
+//	                        changes.addChange(oldB, oldB.getTemperatureProperty());
+//	                    }
+//	                }
+//            	}
+            	
+	            System.out.println("Fire----------------------------------------------------------- " + firewrapper); 	
             	
                 FireBrigade agent1 = (FireBrigade) agentInfo.me();
                 EntityID agentID = agentInfo.getID();
