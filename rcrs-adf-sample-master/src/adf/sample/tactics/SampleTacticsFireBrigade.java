@@ -247,26 +247,12 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 //                System.out.println("Building fieryness: " + StandardPropertyURN.FIERYNESS.toString());
                 EntityID a1 = new EntityID(248);
             	Building building1 = (Building) worldInfo.getEntity(a1);
-                if (building1.getProperty(StandardPropertyURN.FIERYNESS.toString()) != null) {
-                	System.out.println("Building Fieryness: " + building1.getProperty(StandardPropertyURN.FIERYNESS.toString()));
-                }
-                if (building1.getProperty(StandardPropertyURN.BUILDING_AREA_TOTAL.toString()) != null) {
-                	System.out.println("Building Area: " + building1.getProperty(StandardPropertyURN.BUILDING_AREA_TOTAL.toString()));
-                }
-                if (building1.getProperty(StandardPropertyURN.TEMPERATURE.toString()) != null) {
-                	System.out.println("Building Temperature: " + building1.getProperty(StandardPropertyURN.TEMPERATURE.toString()));
-                }
-                if (building1.getProperty(StandardPropertyURN.BUILDING_CODE.toString()) != null) {
-                	System.out.println("Building code: " + building1.getProperty(StandardPropertyURN.BUILDING_CODE.toString()));
-                }
-                if (building1.getProperty(StandardPropertyURN.BUILDING_ATTRIBUTES.toString()) != null) {
-                	System.out.println("Building Attributes: " + building1.getProperty(StandardPropertyURN.BUILDING_ATTRIBUTES.toString()));
-                }
-                if (building1.getProperty(StandardPropertyURN.FLOORS.toString()) != null) {
-                	System.out.println("Building Floors: " + building1.getProperty(StandardPropertyURN.FLOORS.toString()));
-                }
-                
-                
+            	System.out.println("Building Fieryness: " + building1.getProperty(StandardPropertyURN.FIERYNESS.toString()));
+            	System.out.println("Building Area: " + building1.getProperty(StandardPropertyURN.BUILDING_AREA_TOTAL.toString()));
+            	System.out.println("Building Temperature: " + building1.getProperty(StandardPropertyURN.TEMPERATURE.toString()));
+            	System.out.println("Building code: " + building1.getProperty(StandardPropertyURN.BUILDING_CODE.toString()));
+            	System.out.println("Building Floors: " + building1.getProperty(StandardPropertyURN.FLOORS.toString()));
+            	
                 FireBrigade agent1 = (FireBrigade) agentInfo.me();
                 EntityID agentID = agentInfo.getID();
                 int buriedness = agent1.getBuriedness();
