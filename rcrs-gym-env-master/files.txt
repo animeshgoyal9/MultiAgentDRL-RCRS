@@ -1,0 +1,4 @@
+/home/thekcrs/anaconda2/lib/python2.7/site-packages/rcrs_gym_env-0.0.1-py2.7.egg
+/home/thekcrs/anaconda2/bin/pasteurize
+/home/thekcrs/anaconda2/bin/futurize
+/home/thekcrs/anaconda2/bin/chardetect
