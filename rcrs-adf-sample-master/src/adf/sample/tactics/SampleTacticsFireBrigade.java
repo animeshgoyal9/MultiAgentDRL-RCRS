@@ -18,14 +18,20 @@ import adf.component.extaction.ExtAction;
 import adf.component.module.complex.Search;
 import adf.sample.tactics.utils.MessageTool;
 import rescuecore2.standard.entities.*;
-import rescuecore2.standard.entities.Building; 
-import rescuecore2.worldmodel.EntityID;
-import rescuecore2.worldmodel.Entity; 
+import rescuecore2.worldmodel.EntityID; 
 import rescuecore2.score.*;
-import rescuecore2.components.AbstractComponent;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import adf.agent.action.fire.ActionExtinguish;
 import adf.agent.action.fire.ActionRefill;
@@ -33,13 +39,6 @@ import adf.agent.communication.standard.bundle.centralized.CommandFire;
 import adf.agent.communication.standard.bundle.information.MessageFireBrigade;
 import adf.component.module.complex.BuildingDetector;
 import adf.component.tactics.TacticsFireBrigade;
-
-
-import rescuecore2.worldmodel.ChangeSet;
-import rescuecore2.messages.Command;
-import rescuecore2.messages.control.KSUpdate;
-import rescuecore2.messages.control.KSCommands;
-import rescuecore2.log.Logger;
 import firesimulator.FireSimulatorWrapper;
 
 public class SampleTacticsFireBrigade extends TacticsFireBrigade
@@ -59,9 +58,6 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 
 	private Boolean isVisualDebug;
 	private ScoreFunction score;
-	private Building building; 
-	private AbstractComponent abstractcomponentworld; 
-	private ChangeSet changes; 
 	private FireSimulatorWrapper firewrapper; 
 
     @Override
@@ -87,8 +83,6 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
                             && moduleManager.getModuleConfig().getBooleanValue("VisualDebug", false));
 
         this.recentCommand = null;
-//        this.firewrapper = (FireSimulatorWrapper)fire;
-//        FireSimulatorWrapper firewrapper = (FireSimulator) ;
         
         // init Algorithm Module & ExtAction
         switch  (scenarioInfo.getMode())
@@ -246,87 +240,178 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
             	target = path.get(path.size() - 1);
                 System.out.println("***********Start Moving**************");
                 
-//    			--------------------------------------------------------------------DO NOT EDIT------------------------------------------			
+                try {
+                	//  		 Create a new list that is sent to python
+                				 int X_value = (int) agentInfo.getX();
+                				 int Y_value = (int) agentInfo.getY();
+                				 ArrayList<Object> newList = new ArrayList<>();
+                				 FireBrigade agent1 = (FireBrigade) agentInfo.me();
+                				 EntityID agentID = agentInfo.getID();
+                				 int buriedness = agent1.getBuriedness();
+                				 int water = agent1.getWater();
+                				 int damage = agent1.getDamage();
+                	         	 int stamina = agent1.getStamina();
+                	         	 int hp = agent1.getHP();
+                				 int agent_id = (int) agentInfo.getID().getValue(); 
+                				 
+                				 if (agentID.getValue() == 210552869) {
+                					 EntityID c1 = new EntityID(agent_id);   
+                					 EntityID c2 = new EntityID(X_value);
+                					 EntityID c3 = new EntityID(Y_value);
+                					 EntityID c4 = new EntityID(hp);
+                					 EntityID c5 = new EntityID(damage);
+                					 EntityID c6 = new EntityID(stamina);
+                					 EntityID c7 = new EntityID(buriedness);
+                					 EntityID c8 = new EntityID(water);
+                					 
+                					 newList.add(c1);
+                					 newList.add(c2);
+                					 newList.add(c3);
+                					 newList.add(c4);
+                					 newList.add(c5);
+                					 newList.add(c6);
+                					 newList.add(c7);
+                					 newList.add(c8);
+                					 newList.add(worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING));
+                				 } else {
+                					 EntityID c9 = new EntityID(agent_id);   
+                					 EntityID c10 = new EntityID(X_value);
+                					 EntityID c11 = new EntityID(Y_value);
+                					 EntityID c12 = new EntityID(hp);
+                					 EntityID c13 = new EntityID(damage);
+                					 EntityID c14 = new EntityID(stamina);
+                					 EntityID c15 = new EntityID(buriedness);
+                					 EntityID c16 = new EntityID(water);
+                					 newList.add(c9);
+                					 newList.add(c10);
+                					 newList.add(c11);
+                					 newList.add(c12);
+                					 newList.add(c13);
+                					 newList.add(c14);
+                					 newList.add(c15);
+                					 newList.add(c16);
+                				 }
+                				 
+                	//  			 Open the socket
+                				 Socket ss = new Socket("localhost", 2025);
+                				 PrintWriter out = new PrintWriter(ss.getOutputStream(), true);
+                	//  			 Send information to python
+                				 out.println(newList);
+                				 
+                	//			--------------------------------------------------------------------DO NOT EDIT------------------------------------------			
+                	           
+                	//         System.out.println("AgentInfo" + agentInfo.getPositionArea());
+                	//         System.out.println("Building Ids" + worldInfo.getAllEntities());
+                	//         System.out.println("Building Temp" + building.getFullDescription());
+                	//         System.out.println(agentID.getValue());
+                	         
+                	//         Building building1 = (Building) worldInfo.getEntity(buildingid);
+                	         
+                	         System.out.println("---------------------------Action Info---------------------------------");
+                	         System.out.println("Building IDs: " + worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING));
+                	        
+                	         System.out.println("---------------------------State Info---------------------------------");
+                	//         EntityID buildingid = new EntityID(959);
+                	//         System.out.println("Building Full desc: " + worldInfo.getEntity(buildingid).getFullDescription());
+                	         
+                	//         System.out.println("Building fieryness: " + StandardPropertyURN.FIERYNESS.toString());
+                	//         EntityID a1 = new EntityID(959);
+                	//     	Building building1 = (Building) worldInfo.getEntity(a1);
+                	//     	System.out.println("Building Fieryness: " + building1.getProperty(StandardPropertyURN.FIERYNESS.toString()));
+                	//     	System.out.println("Building Area: " + building1.getProperty(StandardPropertyURN.BUILDING_AREA_TOTAL.toString()));
+                	//     	System.out.println("Building Temperature: " + building1.getProperty(StandardPropertyURN.TEMPERATURE.toString()));
+                	//     	System.out.println("Building X: " + building1.getX());
+                	//     	System.out.println("Building Y: " + building1.getY());
+                	//     	System.out.println("Building Fire: " + building1.isFierynessDefined());
+                	     	
+                	//     	if (building1.isFierynessDefined()){
+                	//     		System.out.println("Building Fire-------------------: " + firewrapper);
+                	//     	}
+                	//     	if (building1.isTemperatureDefined()){
+                	//     		System.out.println("Building Temp-------------------: " + building1.getTemperature());
+                	//     	}
+                	     	
+                	//     	for (Entity next : model) {
+                	//     		for (Object next1 : worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING)) {
+                	//                 Building b = (Building)next1;
+                	//                 Building oldB = (Building)model.getEntity(next1);
+                	//                 if ((!oldB.isFierynessDefined()) || (oldB.getFieryness() != b.getFieryness())) {
+                	//                     oldB.setFieryness(b.getFieryness());
+                	//                     changes.addChange(oldB, oldB.getFierynessProperty());
+                	//                 }
+                	//                 if ((!oldB.isTemperatureDefined()) || (oldB.getTemperature() != (int)b.getTemperature())) {
+                	//                     oldB.setTemperature((int)b.getTemperature());
+                	//                     changes.addChange(oldB, oldB.getTemperatureProperty());
+                	//                 }
+                	//             }
+                	//     	}
+                	     	
+                	//         System.out.println("Fire----------------------------------------------------------- " + firewrapper); 	
+                	     	
+                	         
+                	         if (agentID.getValue() == 210552869) {
+                	         	System.out.println("-----------------------------------------");
+                	             System.out.println("THIS THE X: " + agentInfo.getX());
+                	             System.out.println("THIS THE Y: " + agentInfo.getY());
+                	             System.out.println("THIS THE ID: " + agentInfo.getID());
+                	             System.out.println("THIS THE HP: " + hp);
+                	             System.out.println("THIS THE Damage: " + damage);
+                	             System.out.println("THIS THE Stamina: " + stamina);
+                	             System.out.println("THIS THE Buriedness: " + buriedness);
+                	             System.out.println("THIS THE Water level: " + water);
+                	             System.out.println("------------------------------------------");
+                	         } else {
+                	         	System.out.println("-----------------------------------------");
+                	             System.out.println("THIS THE X: " + agentInfo.getX());
+                	             System.out.println("THIS THE Y: " + agentInfo.getY());
+                	             System.out.println("THIS THE ID: " + agentInfo.getID());
+                	             System.out.println("THIS THE HP: " + hp);
+                	             System.out.println("THIS THE Damage: " + damage);
+                	             System.out.println("THIS THE Stamina: " + stamina);
+                	             System.out.println("THIS THE Buriedness: " + buriedness);
+                	             System.out.println("THIS THE Water level: " + water);
+                	             System.out.println("------------------------------------------");
+                	         }
+                	         
+                	//			--------------------------------------------------------------------DO NOT EDIT------------------------------------------    
+                				 
+                	//  			 Take the data in from socket
+                				 BufferedReader in = new BufferedReader(new InputStreamReader(ss.getInputStream()));
+                	//  			 Create a string variable that stores the input
+                				 String str;
+                				 while((str = in.readLine()) != null) 
+                				 {
+                					 String replace = str.replace("[","");
+                					 String replace1 = replace.replace("]","");
+                	//  				 Split the list
+                					 List<String> myList = new ArrayList<String>(Arrays.asList(replace1.split(", ")));
+                	//  				 Convert string of list to list
+                					 List<Integer> listOfInteger = myList.stream().map(s -> Integer.parseInt(s)).collect(Collectors.toList());
+                	//  				 Print and check if everything is correct
+                					 System.out.println("THIS IS THE PARSE INT STRING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% "+ listOfInteger);
+                					 
+                	//  				 Add the integers to Array - targets1
+                					 ArrayList<EntityID> targets1 = new ArrayList<EntityID>();
+                					 EntityID a1= new EntityID(listOfInteger.get(0));
+                					 targets1.add(a1);
+//                					 this.targets = targets1;  
+                	//  				 Flushing is important
+                					 out.flush();
+                				 }
+                	//  			 Close the connection
+                				 out.close();
+                				 in.close();
+                				 ss.close();
+                			 	} catch (FileNotFoundException e) {
+                	  			// TODO Auto-generated catch block
+                	  			System.out.println(e);
+                	  			e.printStackTrace();
+                	  		} catch (IOException e) {
+                	  			// TODO Auto-generated catch block
+                	  			System.out.println(e);
+                	  			e.printStackTrace();
+                	  		} 
                 
-//                System.out.println("AgentInfo" + agentInfo.getPositionArea());
-//                System.out.println("Building Ids" + worldInfo.getAllEntities());
-//                System.out.println("Building Temp" + building.getFullDescription());
-//                System.out.println(agentID.getValue());
-                
-//                Building building1 = (Building) worldInfo.getEntity(buildingid);
-                
-                System.out.println("---------------------------Action Info---------------------------------");
-                System.out.println("Building IDs: " + worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING));
-                System.out.println("---------------------------State Info---------------------------------");
-//                EntityID buildingid = new EntityID(959);
-//                System.out.println("Building Full desc: " + worldInfo.getEntity(buildingid).getFullDescription());
-                
-//                System.out.println("Building fieryness: " + StandardPropertyURN.FIERYNESS.toString());
-                EntityID a1 = new EntityID(959);
-            	Building building1 = (Building) worldInfo.getEntity(a1);
-            	System.out.println("Building Fieryness: " + building1.getProperty(StandardPropertyURN.FIERYNESS.toString()));
-            	System.out.println("Building Area: " + building1.getProperty(StandardPropertyURN.BUILDING_AREA_TOTAL.toString()));
-            	System.out.println("Building Temperature: " + building1.getProperty(StandardPropertyURN.TEMPERATURE.toString()));
-            	System.out.println("Building X: " + building1.getX());
-            	System.out.println("Building Y: " + building1.getY());
-            	System.out.println("Building Fire: " + building1.isFierynessDefined());
-            	
-            	if (building1.isFierynessDefined()){
-            		System.out.println("Building Fire-------------------: " + building1.getFieryness());
-            	}
-            	if (building1.isTemperatureDefined()){
-            		System.out.println("Building Temp-------------------: " + building1.getTemperature());
-            	}
-            	
-//            	for (Entity next : model) {
-//            		for (Object next1 : worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING)) {
-//	                    Building b = (Building)next1;
-//	                    Building oldB = (Building)model.getEntity(next1);
-//	                    if ((!oldB.isFierynessDefined()) || (oldB.getFieryness() != b.getFieryness())) {
-//	                        oldB.setFieryness(b.getFieryness());
-//	                        changes.addChange(oldB, oldB.getFierynessProperty());
-//	                    }
-//	                    if ((!oldB.isTemperatureDefined()) || (oldB.getTemperature() != (int)b.getTemperature())) {
-//	                        oldB.setTemperature((int)b.getTemperature());
-//	                        changes.addChange(oldB, oldB.getTemperatureProperty());
-//	                    }
-//	                }
-//            	}
-            	
-	            System.out.println("Fire----------------------------------------------------------- " + firewrapper); 	
-            	
-                FireBrigade agent1 = (FireBrigade) agentInfo.me();
-                EntityID agentID = agentInfo.getID();
-                int buriedness = agent1.getBuriedness();
-                int water = agent1.getWater();
-                int damage = agent1.getDamage();
-                int stamina = agent1.getStamina();
-                int hp1 = agent1.getWater();
-                if (agentID.getValue() == 210552869) {
-                	System.out.println("-----------------------------------------");
-                    System.out.println("THIS THE X: " + agentInfo.getX());
-                    System.out.println("THIS THE Y: " + agentInfo.getY());
-                    System.out.println("THIS THE ID: " + agentInfo.getID());
-                    System.out.println("THIS THE HP: " + hp1);
-                    System.out.println("THIS THE Damage: " + damage);
-                    System.out.println("THIS THE Stamina: " + stamina);
-                    System.out.println("THIS THE Buriedness: " + buriedness);
-                    System.out.println("THIS THE Water level: " + water);
-                    System.out.println("------------------------------------------");
-                } else {
-                	System.out.println("-----------------------------------------");
-                    System.out.println("THIS THE X: " + agentInfo.getX());
-                    System.out.println("THIS THE Y: " + agentInfo.getY());
-                    System.out.println("THIS THE ID: " + agentInfo.getID());
-                    System.out.println("THIS THE HP: " + hp1);
-                    System.out.println("THIS THE Damage: " + damage);
-                    System.out.println("THIS THE Stamina: " + stamina);
-                    System.out.println("THIS THE Buriedness: " + buriedness);
-                    System.out.println("THIS THE Water level: " + water);
-                    System.out.println("------------------------------------------");
-                }
-                
-//    			--------------------------------------------------------------------DO NOT EDIT------------------------------------------                
                 
             }
         }
