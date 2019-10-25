@@ -12,8 +12,6 @@ class RCRSenv(gym.Env, utils.EzPickle):
 
 	def __init__(self):
 		
-		************Written by Animesh***************
-
 		self.observation_space = spaces.MultiDiscrete((40))
 		# Reference: https://github.com/openai/gym/blob/master/gym/spaces/multi_discrete.py
 		self.action_space = spaces.MultiDiscrete((20))
@@ -36,9 +34,6 @@ class RCRSenv(gym.Env, utils.EzPickle):
 
     def demo_rcrs_gym(env, seed=None, render= False):
     	env.seed(seed)
-
-
-		***********Written by Animesh***************
 
     def render(self):
      	pass
