@@ -7,7 +7,7 @@ import logging
 
 logger = logging.getlogger(__name__)
 
-class RCRSenv(gym.Env, utils.EzPickle):
+class RCRSenv(gym.Env):
 	metadata = {'render.modes' : ['human']}
 
 	def __init__(self):
