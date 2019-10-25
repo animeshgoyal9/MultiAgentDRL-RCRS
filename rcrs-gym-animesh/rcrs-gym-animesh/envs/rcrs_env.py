@@ -31,14 +31,14 @@ class RCRSenv(gym.Env):
 		self.observation_space = spaces.Discrete(8)
 		# Reference: https://github.com/openai/gym/blob/master/gym/spaces/multi_discrete.py
 		self.action_space = spaces.Discrete(36)
-		
-        self._action_set = action_function
-        # General variables
-        self._take_action = _action_set[0]
 
-        # Store what the agent tried
-        self.curr_episode = -1
-        self.action_episode_memory = []
+		self._action_set = action_function
+		# General variables
+		self._take_action = _action_set[0]
+
+		# Store what the agent tried
+		self.curr_episode = -1
+		self.action_episode_memory = []
 
     def step(self, action):
     	
