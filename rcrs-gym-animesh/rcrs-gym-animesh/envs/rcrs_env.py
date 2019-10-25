@@ -28,9 +28,9 @@ class RCRSenv(gym.Env):
 
 	def __init__(self):
 		# Reference: https://github.com/MartinThoma/banana-gym/blob/master/gym_banana/envs/banana_env.py
-		self.observation_space = spaces.Discrete((8))
+		self.observation_space = spaces.Discrete(8)
 		# Reference: https://github.com/openai/gym/blob/master/gym/spaces/multi_discrete.py
-		self.action_space = spaces.Discrete((36))
+		self.action_space = spaces.Discrete(36)
 		
         self._action_set = action_function
         # General variables
