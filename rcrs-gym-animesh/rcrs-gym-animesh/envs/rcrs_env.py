@@ -32,7 +32,9 @@ class RCRSenv(gym.Env):
 		# Reference: https://github.com/openai/gym/blob/master/gym/spaces/multi_discrete.py
 		self.action_space = spaces.Discrete(36)
 
-		self._action_set = action_function
+# 		self._action_set = action_function # Actual 
+		self._action_set = [255, 960, 905, 934, 935, 936, 937, 298, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 
+				    950, 951, 247, 952, 248, 953, 249, 954, 250, 955, 251, 956, 957, 253, 958, 254, 959] 
 		# General variables
 		self._take_action = _action_set[0]
 
@@ -108,6 +110,7 @@ class RCRSenv(gym.Env):
     def _get_state(self):
         """Get the observation."""
         self.ob = state_list # This is from the rcrs simulator
+	self.ob = [210552869, 53695, 107356, 10000, 0, 10000, 0, 15000]
         return ob
 
     def seed(self, seed):
