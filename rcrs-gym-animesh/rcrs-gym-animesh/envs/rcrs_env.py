@@ -27,10 +27,18 @@ class RCRSenv(gym.Env):
     	return [seed]
 
     def reset(self):
-    	pass
+    	self.initial_pos_FB = [255]
+
 
     def step(self, action):
-    	pass
+    	self.previous_state = self.state # keep a record of the previous state
+    	state, self.untransformed_state = self.__generate_state()  # Generate state
+    	self.state = state # keep a record of the new state
+
+    	# Rewards for RL
+    	reward = self.__compute_rewards()
+
+    	return state, reward, done, {} 
 
     def demo_rcrs_gym(env, seed=None, render= False):
     	env.seed(seed)
