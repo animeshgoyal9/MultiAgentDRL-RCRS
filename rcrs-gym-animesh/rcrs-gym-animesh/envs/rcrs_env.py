@@ -18,10 +18,10 @@ import cfg_load
 import gym
 import numpy as np
 
-path = 'config.yaml'  # always use slash in packages
-filepath = pkg_resources.resource_filename('rcrs_gym_animesh', path)
-config = cfg_load.load(filepath)
-logging.config.dictConfig(config['LOGGING'])
+# path = 'config.yaml'  # always use slash in packages
+# filepath = pkg_resources.resource_filename('rcrs_gym_animesh', path)
+# config = cfg_load.load(filepath)
+# logging.config.dictConfig(config['LOGGING'])
 
 class RCRSenv(gym.Env):
 	metadata = {'render.modes' : ['human']}
