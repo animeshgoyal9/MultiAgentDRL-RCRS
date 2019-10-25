@@ -87,7 +87,8 @@ class RCRSenv(gym.Env):
 
     def _get_reward(self):
         """Reward is given for a sold banana."""
-        self.reward = reward_function # This is from the rcrs simulator
+#         self.reward = reward_function # This is from the rcrs simulator
+	self.reward = 0.95
         return reward
 
     def reset(self):
