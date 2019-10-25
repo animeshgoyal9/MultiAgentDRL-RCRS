@@ -109,7 +109,7 @@ class RCRSenv(gym.Env):
 
     def _get_state(self):
         """Get the observation."""
-        self.ob = state_list # This is from the rcrs simulator
+#         self.ob = state_list # This is from the rcrs simulator
 	self.ob = [210552869, 53695, 107356, 10000, 0, 10000, 0, 15000]
         return ob
 
