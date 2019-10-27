@@ -165,7 +165,6 @@ public class CommandExecutorFire extends CommandExecutor<CommandFire> {
             case ACTION_MOVE:
                 if(this.target != null) {
                     this.result = this.actionExtMove.setTarget(this.target).calc().getAction();
-                    System.out.println("This is the Action move------------------");
                 }
                 return this;
             case ACTION_EXTINGUISH:

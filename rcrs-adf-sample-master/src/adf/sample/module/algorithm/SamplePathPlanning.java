@@ -14,15 +14,10 @@ import rescuecore2.worldmodel.Entity;
 import rescuecore2.worldmodel.EntityID;
 
 import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.io.*;
-import java.net.*;
 
 public class SamplePathPlanning extends PathPlanning {
 
     private Map<EntityID, Set<EntityID>> graph;
-
     private EntityID from;
     private Collection<EntityID> targets;
     private List<EntityID> result;
@@ -84,57 +79,10 @@ public class SamplePathPlanning extends PathPlanning {
     public PathPlanning setDestination(Collection<EntityID> targets) {
 //        this.targets = targets;
 //        System.out.println("AgentInfo" + this.agentInfo.getX());
-//    	System.out.println("Building Ids" + this.worldInfo.getAllEntities());
-		 
-		 try {
-//    		 Create a new list that is sent to python
-			 ArrayList<EntityID> newList = new ArrayList<>();
-			 EntityID c1 = new EntityID(959);
-			 newList.add(c1);
-//    			 Open the socket
-			 Socket ss = new Socket("localhost", 2025);
-			 PrintWriter out = new PrintWriter(ss.getOutputStream(), true);
-//    			 Send information to python
-			 out.println(newList);
-//    			 Take the data in from socket
-			 BufferedReader in = new BufferedReader(new InputStreamReader(ss.getInputStream()));
-//    			 Create a string variable that stores the input
-			 String str;
-			 while((str = in.readLine()) != null) 
-			 {
-				 String replace = str.replace("[","");
-				 String replace1 = replace.replace("]","");
-//    				 Split the list
-				 List<String> myList = new ArrayList<String>(Arrays.asList(replace1.split(", ")));
-//    				 Convert string of list to list
-				 List<Integer> listOfInteger = myList.stream().map(s -> Integer.parseInt(s)).collect(Collectors.toList());
-//    				 Print and check if everything is correct
-				 System.out.println("THIS IS THE PARSE INT STRING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% "+ listOfInteger);
-				 
-//    				 Add the integers to Array - targets1
-				 ArrayList<EntityID> targets1 = new ArrayList<EntityID>();
-				 EntityID a1= new EntityID(listOfInteger.get(0));
-				 targets1.add(a1);
-//				 this.targets = targets1;	 
-//    				 Flushing is important
-				 out.flush();
-			 }
-//    			 Close the connection
-			 out.close();
-			 in.close();
-			 ss.close();
-		 	} catch (FileNotFoundException e) {
-    			// TODO Auto-generated catch block
-    			System.out.println(e);
-    			e.printStackTrace();
-    		} catch (IOException e) {
-    			// TODO Auto-generated catch block
-    			System.out.println(e);
-    			e.printStackTrace();
-    		} 
-		 this.targets = targets;		
-		 return this;
-	 }
+//    	System.out.println("Building Ids" + this.worldInfo.getAllEntities());	 
+			 this.targets = targets;		
+			 return this;
+		 }
 
 //    	--------------------------------------------------------------------DO NOT EDIT------------------------------------------	
 	
