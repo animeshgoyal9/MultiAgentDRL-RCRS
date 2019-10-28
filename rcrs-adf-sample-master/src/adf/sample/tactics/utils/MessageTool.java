@@ -336,32 +336,4 @@ public class MessageTool {
 		double dy = toY - fromY;
 		return (int) Math.hypot(dx, dy);
 	}
-
-	public Socket getConnection() {
-		try {
-			socket = new Socket("localhost", PORT);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return socket;
-	}
-
-	/*
-	 * public void sendMessageOverSocket(Object message) { if (socket == null) {
-	 * System.out.println("sendMessageOverSocket: getConnection"); getConnection();
-	 * } try { PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-	 * out.println(message); out.flush(); // out.close(); } catch (IOException e) {
-	 * // TODO Auto-generated catch block e.printStackTrace(); } }
-	 * 
-	 * public BufferedReader getBufferedReaderOverSocket() { if (socket == null) {
-	 * System.out.println("getMessageOverSocket: getConnection"); getConnection(); }
-	 * try { System.out.println("getMessageOverSocket :"+socket); BufferedReader in
-	 * = new BufferedReader(new InputStreamReader(socket.getInputStream())); //
-	 * Create a string variable that stores the input return in;
-	 * 
-	 * } catch (IOException e) { e.printStackTrace(); } return null; }
-	 * 
-	 * public void socketClose() { try { socket.close(); } catch (IOException e) {
-	 * e.printStackTrace(); } }
-	 */
 }

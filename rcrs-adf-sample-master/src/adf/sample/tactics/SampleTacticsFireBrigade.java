@@ -13,6 +13,7 @@ import adf.agent.module.ModuleManager;
 import adf.agent.precompute.PrecomputeData;
 import adf.debug.WorldViewLauncher;
 import adf.sample.tactics.utils.MessageTool;
+import adf.sample.tactics.utils.PyServer;
 import adf.component.centralized.CommandExecutor;
 import adf.component.communication.CommunicationMessage;
 import adf.component.extaction.ExtAction;
@@ -276,93 +277,103 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 				 * System.out.println("------------------------------------------");
 				 * 
 				 */
+//				try {
+//					Socket s = messageTool.getConnection();
+//					PrintWriter out = new PrintWriter(s.getOutputStream(), true);
+//					out.println(newList);
+//
+//					System.out.println("---------------------------Action Info---------------------------------");
+//					
+//					Iterator<EntityID> iterator = worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING).iterator();
+//
+//					// while loop
+//					/*
+//					 * while (iterator.hasNext()) { System.out.println("#######################");
+//					 * System.out.println(worldInfo.getEntity(iterator.next()).getFullDescription())
+//					 * ; }
+//					 */
+//
+//					System.out.println("---------------------------State Info---------------------------------");
+//					//         EntityID buildingid = new EntityID(959);
+//					//         System.out.println("Building Full desc: " + worldInfo.getEntity(buildingid).getFullDescription());
+//
+//					//         System.out.println("Building fieryness: " + StandardPropertyURN.FIERYNESS.toString());
+//					//         EntityID a1 = new EntityID(959);
+//					//     	Building building1 = (Building) worldInfo.getEntity(a1);
+//					//     	System.out.println("Building Fieryness: " + building1.getProperty(StandardPropertyURN.FIERYNESS.toString()));
+//					//     	System.out.println("Building Area: " + building1.getProperty(StandardPropertyURN.BUILDING_AREA_TOTAL.toString()));
+//					//     	System.out.println("Building Temperature: " + building1.getProperty(StandardPropertyURN.TEMPERATURE.toString()));
+//					//     	System.out.println("Building X: " + building1.getX());
+//					//     	System.out.println("Building Y: " + building1.getY());
+//					//     	System.out.println("Building Fire: " + building1.isFierynessDefined());
+//
+//					//     	if (building1.isFierynessDefined()){
+//					//     		System.out.println("Building Fire-------------------: " + firewrapper);
+//					//     	}
+//					//     	if (building1.isTemperatureDefined()){
+//					//     		System.out.println("Building Temp-------------------: " + building1.getTemperature());
+//					//     	}
+//
+//					//     	for (Entity next : model) {
+//					//     		for (Object next1 : worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING)) {
+//					//                 Building b = (Building)next1;
+//					//                 Building oldB = (Building)model.getEntity(next1);
+//					//                 if ((!oldB.isFierynessDefined()) || (oldB.getFieryness() != b.getFieryness())) {
+//					//                     oldB.setFieryness(b.getFieryness());
+//					//                     changes.addChange(oldB, oldB.getFierynessProperty());
+//					//                 }
+//					//                 if ((!oldB.isTemperatureDefined()) || (oldB.getTemperature() != (int)b.getTemperature())) {
+//					//                     oldB.setTemperature((int)b.getTemperature());
+//					//                     changes.addChange(oldB, oldB.getTemperatureProperty());
+//					//                 }
+//					//             }
+//					//     	}
+//
+//					//         System.out.println("Fire----------------------------------------------------------- " + firewrapper); 	
+//					//			--------------------------------------------------------------------DO NOT EDIT------------------------------------------    
+//
+//
+//
+//					//  			 Create a string variable that stores the input
+//					BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
+//					String str;
+//					while((str = in.readLine()) != null) 
+//					{
+//						String replace = str.replace("[","");
+//						String replace1 = replace.replace("]","");
+//						//  				 Split the list
+//						List<String> myList = new ArrayList<String>(Arrays.asList(replace1.split(", ")));
+//						//  				 Convert string of list to list
+//						List<Integer> listOfInteger = myList.stream().map(st -> Integer.parseInt(st)).collect(Collectors.toList());
+//						//  				 Print and check if everything is correct
+//						System.out.println("THIS IS THE PARSE INT STRING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% "+ listOfInteger);
+//
+//						//  				 Add the integers to Array - targets1
+//						ArrayList<EntityID> targets1 = new ArrayList<EntityID>();
+//						EntityID a1= new EntityID(listOfInteger.get(0));
+//						targets1.add(a1);
+//						//					 this.targets = targets1;  
+//						//  				 Flushing is important
+//						out.flush();
+//					}
+//					//Close the connection
+//
+//					out.close();
+//					in.close();
+//					s.close();
+//				} catch (IOException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+				
 				try {
-					Socket s = messageTool.getConnection();
-					PrintWriter out = new PrintWriter(s.getOutputStream(), true);
-					out.println(newList);
-
-					System.out.println("---------------------------Action Info---------------------------------");
-					
-					Iterator<EntityID> iterator = worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING).iterator();
-
-					// while loop
-					/*
-					 * while (iterator.hasNext()) { System.out.println("#######################");
-					 * System.out.println(worldInfo.getEntity(iterator.next()).getFullDescription())
-					 * ; }
-					 */
-
-					System.out.println("---------------------------State Info---------------------------------");
-					//         EntityID buildingid = new EntityID(959);
-					//         System.out.println("Building Full desc: " + worldInfo.getEntity(buildingid).getFullDescription());
-
-					//         System.out.println("Building fieryness: " + StandardPropertyURN.FIERYNESS.toString());
-					//         EntityID a1 = new EntityID(959);
-					//     	Building building1 = (Building) worldInfo.getEntity(a1);
-					//     	System.out.println("Building Fieryness: " + building1.getProperty(StandardPropertyURN.FIERYNESS.toString()));
-					//     	System.out.println("Building Area: " + building1.getProperty(StandardPropertyURN.BUILDING_AREA_TOTAL.toString()));
-					//     	System.out.println("Building Temperature: " + building1.getProperty(StandardPropertyURN.TEMPERATURE.toString()));
-					//     	System.out.println("Building X: " + building1.getX());
-					//     	System.out.println("Building Y: " + building1.getY());
-					//     	System.out.println("Building Fire: " + building1.isFierynessDefined());
-
-					//     	if (building1.isFierynessDefined()){
-					//     		System.out.println("Building Fire-------------------: " + firewrapper);
-					//     	}
-					//     	if (building1.isTemperatureDefined()){
-					//     		System.out.println("Building Temp-------------------: " + building1.getTemperature());
-					//     	}
-
-					//     	for (Entity next : model) {
-					//     		for (Object next1 : worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING)) {
-					//                 Building b = (Building)next1;
-					//                 Building oldB = (Building)model.getEntity(next1);
-					//                 if ((!oldB.isFierynessDefined()) || (oldB.getFieryness() != b.getFieryness())) {
-					//                     oldB.setFieryness(b.getFieryness());
-					//                     changes.addChange(oldB, oldB.getFierynessProperty());
-					//                 }
-					//                 if ((!oldB.isTemperatureDefined()) || (oldB.getTemperature() != (int)b.getTemperature())) {
-					//                     oldB.setTemperature((int)b.getTemperature());
-					//                     changes.addChange(oldB, oldB.getTemperatureProperty());
-					//                 }
-					//             }
-					//     	}
-
-					//         System.out.println("Fire----------------------------------------------------------- " + firewrapper); 	
-					//			--------------------------------------------------------------------DO NOT EDIT------------------------------------------    
-
-
-
-					//  			 Create a string variable that stores the input
-					BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
-					String str;
-					while((str = in.readLine()) != null) 
-					{
-						String replace = str.replace("[","");
-						String replace1 = replace.replace("]","");
-						//  				 Split the list
-						List<String> myList = new ArrayList<String>(Arrays.asList(replace1.split(", ")));
-						//  				 Convert string of list to list
-						List<Integer> listOfInteger = myList.stream().map(st -> Integer.parseInt(st)).collect(Collectors.toList());
-						//  				 Print and check if everything is correct
-						System.out.println("THIS IS THE PARSE INT STRING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% "+ listOfInteger);
-
-						//  				 Add the integers to Array - targets1
-						ArrayList<EntityID> targets1 = new ArrayList<EntityID>();
-						EntityID a1= new EntityID(listOfInteger.get(0));
-						targets1.add(a1);
-						//					 this.targets = targets1;  
-						//  				 Flushing is important
-						out.flush();
-					}
-					//Close the connection
-
-					out.close();
-					in.close();
-					s.close();
+					PyServer pyServer = new PyServer(2025);
+					pyServer.sendMessage(newList);
+//					String ack = pyServer.receiveMessage();
+//					System.out.println("Response from PyServer :"+ack);
+					pyServer.closeConnection();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+                	System.out.println(e.getMessage());
 				}
 			}
 		}
