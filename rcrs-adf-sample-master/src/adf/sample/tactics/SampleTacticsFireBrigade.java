@@ -22,18 +22,10 @@ import rescuecore2.standard.entities.*;
 import rescuecore2.worldmodel.EntityID; 
 import rescuecore2.score.*;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 import adf.agent.action.fire.ActionExtinguish;
 import adf.agent.action.fire.ActionRefill;
@@ -41,7 +33,6 @@ import adf.agent.communication.standard.bundle.centralized.CommandFire;
 import adf.agent.communication.standard.bundle.information.MessageFireBrigade;
 import adf.component.module.complex.BuildingDetector;
 import adf.component.tactics.TacticsFireBrigade;
-import firesimulator.FireSimulatorWrapper;
 
 public class SampleTacticsFireBrigade extends TacticsFireBrigade
 {
@@ -60,7 +51,6 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 
 	private Boolean isVisualDebug;
 	private ScoreFunction score;
-	private FireSimulatorWrapper firewrapper; 
 
 	@Override
 	public void initialize(AgentInfo agentInfo, WorldInfo worldInfo, ScenarioInfo scenarioInfo, ModuleManager moduleManager, MessageManager messageManager, DevelopData developData)
@@ -212,8 +202,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 		action = this.actionExtMove.setTarget(target).calc().getAction();
 		if (action != null)
 		{
-			EntityID a1 = new EntityID(248);
-			Building building1 = (Building) worldInfo.getEntity(a1);
+			//EntityID a1 = new EntityID(248);
 			this.sendActionMessage(messageManager, agent, action, agentInfo, worldInfo, score);
 			return action;
 		}
@@ -243,7 +232,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 				int Y_value = (int) agentInfo.getY();
 				ArrayList<Object> newList = new ArrayList<>();
 				FireBrigade agent1 = (FireBrigade) agentInfo.me();
-				EntityID agentID = agentInfo.getID();
+				//EntityID agentID = agentInfo.getID();
 				int buriedness = agent1.getBuriedness();
 				int water = agent1.getWater();
 				int damage = agent1.getDamage();
@@ -263,20 +252,6 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 				newList.add("255");
 				newList.add(worldInfo.getEntityIDsOfType(StandardEntityURN.BUILDING));
 
-				
-				/*
-				 * System.out.println("-----------------------------------------");
-				 * System.out.println("THIS THE X: " + agentInfo.getX());
-				 * System.out.println("THIS THE Y: " + agentInfo.getY());
-				 * System.out.println("THIS THE ID: " + agentInfo.getID());
-				 * System.out.println("THIS THE HP: " + hp);
-				 * System.out.println("THIS THE Damage: " + damage);
-				 * System.out.println("THIS THE Stamina: " + stamina);
-				 * System.out.println("THIS THE Buriedness: " + buriedness);
-				 * System.out.println("THIS THE Water level: " + water);
-				 * System.out.println("------------------------------------------");
-				 * 
-				 */
 //				try {
 //					Socket s = messageTool.getConnection();
 //					PrintWriter out = new PrintWriter(s.getOutputStream(), true);
@@ -362,7 +337,6 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 //					in.close();
 //					s.close();
 //				} catch (IOException e) {
-//					// TODO Auto-generated catch block
 //					e.printStackTrace();
 //				}
 				
@@ -401,9 +375,4 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 			messageManager.addMessage(new MessageFireBrigade(true, agent, actionIndex, target));
 		}
 	}
-
-	//	private Building Building(EntityID buildingid) {
-	//		// TODO Auto-generated method stub
-	//		return null;
-	//	}
 }

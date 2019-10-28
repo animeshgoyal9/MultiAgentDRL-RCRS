@@ -45,9 +45,7 @@ public class MessageTool {
 	private Set<EntityID> receivedPassableRoads;
 
 	private EntityID dominanceAgentID;
-	private Socket socket;
-	private final int PORT = 2025;
-
+	
 	public MessageTool(ScenarioInfo scenarioInfo, DevelopData developData) {
 		this.developData = developData;
 
