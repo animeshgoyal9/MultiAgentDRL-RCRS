@@ -3,89 +3,60 @@ import gym, numpy as np
 from gym import error, spaces
 from gym import utils
 from gym.utils import seeding
-import logging
+import logging, random
 
 
-# core modules
-import logging.config
-import math
-import pkg_resources
-import random
+MAX_TIMESTEP = 300
 
-# 3rd party modules
-from gym import spaces
-import cfg_load
-import gym
-import numpy as np
+action_set_list = np.array([255, 960, 905, 934, 935, 936, 937, 298, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 
+                    950, 951, 247, 952, 248, 953, 249, 954, 250, 955, 251, 956, 957, 253, 958, 254, 959], dtype = object)
 
-# path = 'config.yaml'  # always use slash in packages
-# filepath = pkg_resources.resource_filename('rcrs_gym_animesh', path)
-# config = cfg_load.load(filepath)
-# logging.config.dictConfig(config['LOGGING'])
+
+action_set = { i : action_set_list[i] for i in range(0, len(action_set_list) ) }
 
 class RCRSenv(gym.Env):
-	metadata = {'render.modes' : ['human']}
+    metadata = {'render.modes' : ['human']}
+    def __init__(self):
+        # Reference: https://github.com/MartinThoma/banana-gym/blob/master/gym_banana/envs/banana_env.py
+        self.observation_space = spaces.Discrete(8)
+        # Reference: https://github.com/openai/gym/blob/master/gym/spaces/multi_discrete.py
+        self.action_space = spaces.Discrete(36)
 
-	def __init__(self):
-		# Reference: https://github.com/MartinThoma/banana-gym/blob/master/gym_banana/envs/banana_env.py
-		self.observation_space = spaces.MultiDiscrete((8))
-		# Reference: https://github.com/openai/gym/blob/master/gym/spaces/multi_discrete.py
-		self.action_space = spaces.MultiDiscrete((36))
-		
-        self._action_set = action_function
+        # self.actionCounts = { i : 0 for i in range(0, len(action_set_list) ) }
+    
+#       self._action_set = action_function # Actual 
+        
         # General variables
-        self._take_action = _action_set[0]
+        # self._take_action = self._action_set[0]
 
         # Store what the agent tried
-        self.curr_episode = -1
+        self.curr_episode = 0
         self.action_episode_memory = []
 
     def step(self, action):
-    	
-    	"""
-        The agent takes a step in the environment.
-        Parameters
-        ----------
-        action : int
-        Returns
-        -------
-        ob, reward, episode_over, info : tuple
-            ob (object) :
-                an environment-specific object representing your observation of
-                the environment.
-            reward (float) :
-                amount of reward achieved by the previous action. The scale
-                varies between environments, but the goal is always to increase
-                your total reward.
-            episode_over (bool) :
-                whether it's time to reset the environment again. Most (but not
-                all) tasks are divided up into well-defined episodes, and done
-                being True indicates the episode has terminated. (For example,
-                perhaps the pole tipped too far, or you lost your last life.)
-            info (dict) :
-                 diagnostic information useful for debugging. It can sometimes
-                 be useful for learning (for example, it might contain the raw
-                 probabilities behind the environment's last state change).
-                 However, official evaluations of your agent are not allowed to
-                 use this for learning.
-        """
-        if self.curr_episode == 300 or self._get_reward == 0:
-            raise RuntimeError("Episode is done")
-        self.curr_step += 1
+        
+        # self.actionCounts[action] += 1
         self._take_action(action)
+        self.curr_episode += 1
+
         reward = self._get_reward()
+
+        if self.curr_episode == MAX_TIMESTEP:
+          print("Episode completed")
+          self.action_episode_memory += 1
+          print("Action Count")
         ob = self._get_state()
-        return ob, reward, self.curr_step, {}
+        return ob, reward, self.curr_episode , {}
 
-    def _take_action(self, a):
+    def _take_action(self, action):
 
-        action = _action_set[a] # This is from the rcrs simulator
+        action_tobe_taken = action_set_list[action] # This is from the rcrs simulator
 
-        return action
+        return action_tobe_taken
 
     def _get_reward(self):
-        """Reward is given for a sold banana."""
-        self.reward = reward_function # This is from the rcrs simulator
+#         self.reward = reward_function # This is from the rcrs simulator
+        reward = 0.95
         return reward
 
     def reset(self):
@@ -95,10 +66,10 @@ class RCRSenv(gym.Env):
         -------
         observation (object): the initial observation of the space.
         """
-        self.curr_step = -1
-        self.curr_episode += 1
+        # self.t = 0
+        self.curr_episode = 0
         self.action_episode_memory.append([])
-        self._take_action([0])
+        # self._take_action(a)
 
         return self._get_state()
 
@@ -107,11 +78,15 @@ class RCRSenv(gym.Env):
 
     def _get_state(self):
         """Get the observation."""
-        self.ob = state_list # This is from the rcrs simulator
-        return ob
+#         self.ob = state_list # This is from the rcrs simulator
+        self.ob = np.array([210552869, 53695, 107356, 10000, 0, 10000, 0, 15000], dtype=object)
+        
+        return self.ob
 
     def seed(self, seed):
         random.seed(seed)
         np.random.seed
+
+
 
 
