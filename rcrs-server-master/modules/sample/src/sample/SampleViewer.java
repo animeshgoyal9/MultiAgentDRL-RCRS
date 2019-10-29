@@ -130,14 +130,14 @@ public class SampleViewer extends StandardViewer {
         super.handleTimestep(t);
         SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                	String score = "Score: " + format.format(scoreFunction.score(model, new Timestep(t.getTime())));
+                	String score = format.format(scoreFunction.score(model, new Timestep(t.getTime())));
                     timeLabel.setText("Time: " + t.getTime());
-                    scoreLabel.setText(score);
+                    scoreLabel.setText("Score: " + score);
                     viewer.view(model, t.getCommands());
                     viewer.repaint();
                     try {
 						PyServer pyServer = new PyServer(2211);
-						pyServer.sendMessage("Score :"+score);
+						pyServer.sendMessage(score);
 						pyServer.closeConnection();
 					} catch (IOException e) {
                     	System.out.println(e.getMessage());

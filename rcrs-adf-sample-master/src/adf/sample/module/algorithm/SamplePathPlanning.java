@@ -54,27 +54,6 @@ public class SamplePathPlanning extends PathPlanning {
         return this;
     }
 
-  //********Written by Animesh**********//
-	public static int isParseInt(String str){
-	        
-	        int num = -1;
-	        try{
-	             num = Integer.parseInt(str);
-	        } catch (NumberFormatException e) {
-	        }
-	        
-	        return num;
-	    }
-	
-//	public static <T, U> List<U> 
-//    convertStringListToIntList(List<T> listOfString, 
-//                               Function<T, U> function) 
-//    { 
-//        return listOfString.stream() 
-//            .map(function) 
-//            .collect(Collectors.toList()); 
-//    } 
-//	--------------------------------------------------------------------DO NOT EDIT------------------------------------------	
     @Override
     public PathPlanning setDestination(Collection<EntityID> targets) {
 //        this.targets = targets;
@@ -83,35 +62,6 @@ public class SamplePathPlanning extends PathPlanning {
 			 this.targets = targets;		
 			 return this;
 		 }
-
-//    	--------------------------------------------------------------------DO NOT EDIT------------------------------------------	
-	
-//    		   System.out.println("+++++++++++++++++++++++++++++++++++" + this.worldInfo.getFireBuildingIDs());
-//    		   FireBrigade agent = (FireBrigade) agentInfo.me();
-//    		   EntityID agentID = agentInfo.getID();
-//    		   System.out.println(agentID.getValue() == 1127015061);
-//    		   if (agentID.getValue() == 1127015061) {
-//    			   targets11 = this.worldInfo.getFireBuildingIDs(); 
-//    		   } else {
-//    			   targets22 = this.worldInfo.getFireBuildingIDs();
-//    		   }
-////    		   System.out.println("THIS IS TARGET 11--------------------------------" + targets11);
-////    		   System.out.println("IS TARGET11 null or empty------------------------" + (targets11 == null || targets11.isEmpty()));
-////    		   System.out.println("THIS IS TARGET 22--------------------------------" + targets22);
-////    		   System.out.println("IS TARGET22 null or empty------------------------" + (targets22 == null || targets22.isEmpty()));
-//    		   
-//    		   this.targets = targets;
-//    		   
-//    		   return this;
-//    			--------------------------------------------------------------------DO NOT EDIT------------------------------------------				   
-
-////    		//********Written by Animesh**********//
-//        	ArrayList<EntityID> target_points = new ArrayList<EntityID>();
-//        	EntityID a1 = new EntityID(298);
-//        	target_points.add(a1);
-//            this.targets = target_points;
-//            return this;
-//        	--------------------------------------------------------------------DO NOT EDIT------------------------------------------
 
     @Override
     public PathPlanning updateInfo(MessageManager messageManager) {

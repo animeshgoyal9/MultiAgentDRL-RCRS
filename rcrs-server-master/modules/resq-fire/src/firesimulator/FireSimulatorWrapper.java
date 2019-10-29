@@ -32,10 +32,15 @@ import firesimulator.simulator.Simulator;
 import firesimulator.simulator.ExtinguishRequest;
 import firesimulator.util.Configuration;
 
+import java.awt.List;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import firesimulator.gui.*;
 import javax.swing.JComponent;
 import rescuecore2.GUIComponent;
+import rescuecore2.standard.misc.PyServer;
+
 
 /**
    A rescuecore2 Simulator that wraps the ResQ Freiburg fire simulator.
@@ -62,7 +67,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
 	
     @Override
     protected void postConnect() {
-        super.postConnect();
+    	super.postConnect();
         Configuration c = new Configuration();
         c.initialize();
         for (String next : c.getPropertyNames()) {
@@ -93,7 +98,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
 
     @Override
     protected void handleUpdate(KSUpdate u) {
-        super.handleUpdate(u);
+    	super.handleUpdate(u);
         // Merge objects
         for (EntityID id : u.getChangeSet().getChangedEntities()) {
             Entity e = model.getEntity(id);
@@ -131,7 +136,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
 
     @Override
     protected void processCommands(KSCommands c, ChangeSet changes) {
-        long start = System.currentTimeMillis();
+    	long start = System.currentTimeMillis();
         for (Command next : c.getCommands()) {
             if (next instanceof AKExtinguish) {
                 AKExtinguish ex = (AKExtinguish)next;
@@ -146,6 +151,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
         }
         sim.step(c.getTime());
         // Get changes
+        ArrayList<Object> BuildingInfo = new ArrayList<Object>(); 
         for (Object next : world.getBuildings()) {
             Building b = (Building)next;
             rescuecore2.standard.entities.Building oldB = (rescuecore2.standard.entities.Building)model.getEntity(new EntityID(b.getID()));
@@ -157,7 +163,19 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
                 oldB.setTemperature((int)b.getTemperature());
                 changes.addChange(oldB, oldB.getTemperatureProperty());
             }
+            BuildingInfo.add(b.getID() + ":" + b.getFieryness() + ":" + b.getTemperature());
         }
+        
+//        System.out.println("Building Info:");
+//        try {
+//			PyServer pyServer = new PyServer(4011);
+//			System.out.println(BuildingInfo);
+//			pyServer.sendMessage(BuildingInfo);
+//			pyServer.closeConnection();
+//		} catch (IOException e) {
+//        	System.out.println(e.getMessage());
+//		}
+        
         for (Object next : world.getFirebrigades()) {
             FireBrigade fb = (FireBrigade)next;
             //            Logger.debug("Updating water for " + fb);
@@ -186,11 +204,10 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
 		if(fireSimulatorGUI != null) {
 			fireSimulatorGUI.refresh();
 		}
-
     }
 
     private RescueObject mapEntity(Entity e) {
-        int id = e.getID().getValue();
+    	int id = e.getID().getValue();
         if (e instanceof rescuecore2.standard.entities.World) {
             return new WorldInfo(id);
         }
@@ -254,7 +271,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
     }
 
     private void mapBuildingProperties(rescuecore2.standard.entities.Building oldB, Building newB) {
-        if (oldB.isFloorsDefined()) {
+    	if (oldB.isFloorsDefined()) {
             newB.setFloors(oldB.getFloors());
         }
         if (oldB.isBuildingAttributesDefined()) {

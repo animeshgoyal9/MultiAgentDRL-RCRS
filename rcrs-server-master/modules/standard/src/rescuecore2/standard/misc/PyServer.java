@@ -13,7 +13,7 @@ public class PyServer {
 		socket = new Socket("localhost", port);
 	}
 	
-	public void sendMessage(String message) throws IOException {
+	public void sendMessage(Object message) throws IOException {
 		PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 		out.println(message);
 		out.flush();
