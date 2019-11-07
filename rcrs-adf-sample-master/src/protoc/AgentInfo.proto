@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "AnimFireChalAgent";
+option java_outer_classname = "AnimFireChalProto";
+
+package AnimFireChalAgent;
+
+service AnimFireChalAgent {
+  rpc getAgentInfo (AgentInfo) returns (Action) {}
+}
+
+message AgentInfo {
+	repeated Agent agents = 1; 
+}
+
+message Agent {
+  int32 hp = 1;
+  int32 x = 2;
+  int32 y = 3; 
+  int32 water = 4;
+}
+
+message Action {
+  int32 building_id = 1;
+}
