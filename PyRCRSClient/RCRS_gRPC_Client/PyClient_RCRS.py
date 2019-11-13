@@ -1,0 +1,41 @@
+from __future__ import print_function
+import logging
+
+import grpc
+
+import AgentInfo_pb2
+import AgentInfo_pb2_grpc
+import BuildingInfo_pb2
+import BuildingInfo_pb2_grpc
+
+
+def run_adf():
+    # NOTE(gRPC Python Team): .close() is possible on a channel and should be
+    # used in circumstances in which the with statement does not fit the needs
+    # of the code.
+    with grpc.insecure_channel('localhost:9090') as channel:
+        stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
+        response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
+        	AgentInfo_pb2.Action(agent_id = 1, building_id=1), AgentInfo_pb2.Action(agent_id = 2, building_id=2)]))
+    print(response.agents)
+
+def run_server():
+    # NOTE(gRPC Python Team): .close() is possible on a channel and should be
+    # used in circumstances in which the with statement does not fit the needs
+    # of the code.
+    with grpc.insecure_channel('localhost:2212') as channel:
+        stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
+        # response = stub.getBuildingInfo(BuildingInfo_pb2.BuildingInfo(buildings = [
+        	# BuildingInfo_pb2.Building(fieryness = 1, temperature=1, building_id = 1), BuildingInfo_pb2.Building(fieryness = 2, temperature=2, building_id = 2)]))
+        response = stub.getBuildingInfo(BuildingInfo_pb2.Empty())
+        response_reward = stub.getRewards(BuildingInfo_pb2.Empty())
+    print(response.buildings)
+    print(response_reward.reward)
+    print("*******************************************")
+
+if __name__ == '__main__':
+    logging.basicConfig()
+    run_adf()
+    run_server()
+
+
