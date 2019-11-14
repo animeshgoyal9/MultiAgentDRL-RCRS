@@ -18,6 +18,7 @@ import java.util.*;
 public class SamplePathPlanning extends PathPlanning {
 
     private Map<EntityID, Set<EntityID>> graph;
+
     private EntityID from;
     private Collection<EntityID> targets;
     private List<EntityID> result;
@@ -56,12 +57,9 @@ public class SamplePathPlanning extends PathPlanning {
 
     @Override
     public PathPlanning setDestination(Collection<EntityID> targets) {
-//        this.targets = targets;
-//        System.out.println("AgentInfo" + this.agentInfo.getX());
-//    	System.out.println("Building Ids" + this.worldInfo.getAllEntities());	 
-			 this.targets = targets;		
-			 return this;
-		 }
+        this.targets = targets;
+        return this;
+    }
 
     @Override
     public PathPlanning updateInfo(MessageManager messageManager) {

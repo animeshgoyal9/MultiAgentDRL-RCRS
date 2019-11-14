@@ -1,5 +1,10 @@
 package adf.sample;
 
+import java.io.IOException;
+
+import AnimFireChalAgent.AgentBean;
+import AnimFireChalAgent.AgentResources;
+import AnimFireChalAgent.AnimFireChalAgent;
 import adf.component.AbstractLoader;
 import adf.component.tactics.TacticsAmbulanceTeam;
 import adf.component.tactics.TacticsFireBrigade;
@@ -10,12 +15,18 @@ import adf.component.tactics.TacticsPoliceOffice;
 import adf.sample.tactics.SampleTacticsAmbulanceCentre;
 import adf.sample.tactics.SampleTacticsFireStation;
 import adf.sample.tactics.SampleTacticsPoliceOffice;
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import rescuecore2.standard.entities.FireBrigade;
 import adf.sample.tactics.SampleTacticsAmbulanceTeam;
 import adf.sample.tactics.SampleTacticsFireBrigade;
 import adf.sample.tactics.SampleTacticsPoliceForce;
 
+import adf.agent.info.AgentInfo;
+
 public class SampleLoader extends AbstractLoader {
-    @Override
+	
+	@Override
     public String getTeamName() {
         return "Sample";
     }
@@ -27,6 +38,15 @@ public class SampleLoader extends AbstractLoader {
 
     @Override
     public TacticsFireBrigade getTacticsFireBrigade() {
+    	
+    	
+//    	FireBrigade agent1 = (FireBrigade) agentInfo.me();
+//		
+//		AgentBean[] agentDetails = { new AgentBean((int) agentInfo.getID().getValue(), agentInfo.getX(), agentInfo.getY(), agent1.getWater(), agent1.getHP())};
+//		
+//		AgentResources.setAgents(agentDetails);
+    	
+    	
         return new SampleTacticsFireBrigade();
     }
 

@@ -27,29 +27,29 @@ public final class AnimFireChalAgentGrpc {
   public static final String SERVICE_NAME = "AnimFireChalAgent.AnimFireChalAgent";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo,
-      AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo> getGetAgentInfoMethod;
+  private static volatile io.grpc.MethodDescriptor<AnimFireChalProto.ActionInfo,
+      AnimFireChalProto.AgentInfo> getGetAgentInfoMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getAgentInfo",
-      requestType = AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo.class,
-      responseType = AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo.class,
+      requestType = AnimFireChalProto.ActionInfo.class,
+      responseType = AnimFireChalProto.AgentInfo.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo,
-      AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo> getGetAgentInfoMethod() {
-    io.grpc.MethodDescriptor<AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo, AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo> getGetAgentInfoMethod;
+  public static io.grpc.MethodDescriptor<AnimFireChalProto.ActionInfo,
+      AnimFireChalProto.AgentInfo> getGetAgentInfoMethod() {
+    io.grpc.MethodDescriptor<AnimFireChalProto.ActionInfo, AnimFireChalProto.AgentInfo> getGetAgentInfoMethod;
     if ((getGetAgentInfoMethod = AnimFireChalAgentGrpc.getGetAgentInfoMethod) == null) {
       synchronized (AnimFireChalAgentGrpc.class) {
         if ((getGetAgentInfoMethod = AnimFireChalAgentGrpc.getGetAgentInfoMethod) == null) {
           AnimFireChalAgentGrpc.getGetAgentInfoMethod = getGetAgentInfoMethod =
-              io.grpc.MethodDescriptor.<AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo, AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo>newBuilder()
+              io.grpc.MethodDescriptor.<AnimFireChalProto.ActionInfo, AnimFireChalProto.AgentInfo>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getAgentInfo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo.getDefaultInstance()))
+                  AnimFireChalProto.ActionInfo.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo.getDefaultInstance()))
+                  AnimFireChalProto.AgentInfo.getDefaultInstance()))
               .setSchemaDescriptor(new AnimFireChalAgentMethodDescriptorSupplier("getAgentInfo"))
               .build();
         }
@@ -87,8 +87,8 @@ public final class AnimFireChalAgentGrpc {
 
     /**
      */
-    public void getAgentInfo(AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo request,
-        io.grpc.stub.StreamObserver<AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo> responseObserver) {
+    public void getAgentInfo(AnimFireChalProto.ActionInfo request,
+        io.grpc.stub.StreamObserver<AnimFireChalProto.AgentInfo> responseObserver) {
       asyncUnimplementedUnaryCall(getGetAgentInfoMethod(), responseObserver);
     }
 
@@ -98,8 +98,8 @@ public final class AnimFireChalAgentGrpc {
             getGetAgentInfoMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo,
-                AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo>(
+                AnimFireChalProto.ActionInfo,
+                AnimFireChalProto.AgentInfo>(
                   this, METHODID_GET_AGENT_INFO)))
           .build();
     }
@@ -125,8 +125,8 @@ public final class AnimFireChalAgentGrpc {
 
     /**
      */
-    public void getAgentInfo(AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo request,
-        io.grpc.stub.StreamObserver<AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo> responseObserver) {
+    public void getAgentInfo(AnimFireChalProto.ActionInfo request,
+        io.grpc.stub.StreamObserver<AnimFireChalProto.AgentInfo> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetAgentInfoMethod(), getCallOptions()), request, responseObserver);
     }
@@ -152,7 +152,7 @@ public final class AnimFireChalAgentGrpc {
 
     /**
      */
-    public AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo getAgentInfo(AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo request) {
+    public AnimFireChalProto.AgentInfo getAgentInfo(AnimFireChalProto.ActionInfo request) {
       return blockingUnaryCall(
           getChannel(), getGetAgentInfoMethod(), getCallOptions(), request);
     }
@@ -178,8 +178,8 @@ public final class AnimFireChalAgentGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo> getAgentInfo(
-        AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo request) {
+    public com.google.common.util.concurrent.ListenableFuture<AnimFireChalProto.AgentInfo> getAgentInfo(
+        AnimFireChalProto.ActionInfo request) {
       return futureUnaryCall(
           getChannel().newCall(getGetAgentInfoMethod(), getCallOptions()), request);
     }
@@ -205,8 +205,8 @@ public final class AnimFireChalAgentGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_AGENT_INFO:
-          serviceImpl.getAgentInfo((AnimFireChalAgent.AnimFireChalAgentProto.AgentInfo) request,
-              (io.grpc.stub.StreamObserver<AnimFireChalAgent.AnimFireChalAgentProto.ActionInfo>) responseObserver);
+          serviceImpl.getAgentInfo((AnimFireChalProto.ActionInfo) request,
+              (io.grpc.stub.StreamObserver<AnimFireChalProto.AgentInfo>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -230,7 +230,7 @@ public final class AnimFireChalAgentGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return AnimFireChalAgent.AnimFireChalAgentProto.getDescriptor();
+      return AnimFireChalProto.getDescriptor();
     }
 
     @java.lang.Override
