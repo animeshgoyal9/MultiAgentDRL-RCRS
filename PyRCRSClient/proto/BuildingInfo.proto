@@ -16,7 +16,7 @@ message BuildingInfo {
 
 message Building {
   int32 fieryness = 1;
-  int32 temperature = 2;
+  double temperature = 2;
   int32 building_id = 3;
 }
 
@@ -26,4 +26,3 @@ message Empty {
 message Reward {
 	double reward = 1;
 }
-

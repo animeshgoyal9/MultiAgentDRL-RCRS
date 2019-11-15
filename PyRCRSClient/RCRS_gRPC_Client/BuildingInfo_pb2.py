@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='AnimFireChalBuilding',
   syntax='proto3',
   serialized_options=_b('\n\024AnimFireChalBuildingB\021AnimFireChalProto'),
-  serialized_pb=_b('\n\x12\x42uildingInfo.proto\x12\x14\x41nimFireChalBuilding\"A\n\x0c\x42uildingInfo\x12\x31\n\tbuildings\x18\x01 \x03(\x0b\x32\x1e.AnimFireChalBuilding.Building\"G\n\x08\x42uilding\x12\x11\n\tfieryness\x18\x01 \x01(\x05\x12\x13\n\x0btemperature\x18\x02 \x01(\x05\x12\x13\n\x0b\x62uilding_id\x18\x03 \x01(\x05\"\x07\n\x05\x45mpty\"\x18\n\x06Reward\x12\x0e\n\x06reward\x18\x01 \x01(\x01\x32\xb7\x01\n\x14\x41nimFireChalBuilding\x12T\n\x0fgetBuildingInfo\x12\x1b.AnimFireChalBuilding.Empty\x1a\".AnimFireChalBuilding.BuildingInfo\"\x00\x12I\n\ngetRewards\x12\x1b.AnimFireChalBuilding.Empty\x1a\x1c.AnimFireChalBuilding.Reward\"\x00\x42)\n\x14\x41nimFireChalBuildingB\x11\x41nimFireChalProtob\x06proto3')
+  serialized_pb=_b('\n\x12\x42uildingInfo.proto\x12\x14\x41nimFireChalBuilding\"A\n\x0c\x42uildingInfo\x12\x31\n\tbuildings\x18\x01 \x03(\x0b\x32\x1e.AnimFireChalBuilding.Building\"G\n\x08\x42uilding\x12\x11\n\tfieryness\x18\x01 \x01(\x05\x12\x13\n\x0btemperature\x18\x02 \x01(\x01\x12\x13\n\x0b\x62uilding_id\x18\x03 \x01(\x05\"\x07\n\x05\x45mpty\"\x18\n\x06Reward\x12\x0e\n\x06reward\x18\x01 \x01(\x01\x32\xb7\x01\n\x14\x41nimFireChalBuilding\x12T\n\x0fgetBuildingInfo\x12\x1b.AnimFireChalBuilding.Empty\x1a\".AnimFireChalBuilding.BuildingInfo\"\x00\x12I\n\ngetRewards\x12\x1b.AnimFireChalBuilding.Empty\x1a\x1c.AnimFireChalBuilding.Reward\"\x00\x42)\n\x14\x41nimFireChalBuildingB\x11\x41nimFireChalProtob\x06proto3')
 )
 
 
@@ -73,8 +73,8 @@ _BUILDING = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='temperature', full_name='AnimFireChalBuilding.Building.temperature', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
