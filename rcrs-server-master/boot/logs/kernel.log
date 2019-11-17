@@ -1,0 +1,86 @@
+INFO kernel : Could not instantiate class human.ControlledAgentGUI$ControlViewer
+DEBUG kernel : Command filter found: 'kernel.WrongTimeCommandFilter'
+DEBUG kernel : Command filter found: 'kernel.FrozenAgentsCommandFilter'
+DEBUG kernel : Command filter found: 'rescuecore2.standard.kernel.DeadAgentsCommandFilter'
+DEBUG kernel : Command filter found: 'rescuecore2.standard.kernel.BuriedAgentsCommandFilter'
+DEBUG kernel : Command filter found: 'rescuecore2.standard.kernel.SingleCommandFilter'
+DEBUG kernel : Guessing format
+DEBUG kernel : Reading Robocup rescue format
+DEBUG kernel : Parsing GML
+DEBUG kernel : Building map
+DEBUG kernel : Reading nodes
+DEBUG kernel : Read 315 nodes
+DEBUG kernel : Reading edges
+DEBUG kernel : Read 413 edges
+DEBUG kernel : Reading buildings
+DEBUG kernel : Read 37 buildings
+DEBUG kernel : Reading roads
+DEBUG kernel : Read 58 roads
+DEBUG kernel : Reading spaces
+DEBUG kernel : Read 0 spaces
+DEBUG kernel : Instantiating random number generator: org.uncommons.maths.random.MersenneTwisterRNG
+DEBUG kernel : Using seed 1023
+DEBUG kernel : Re-indexing world model
+DEBUG kernel : Finished re-index. Took 2ms
+INFO kernel : Logging to /u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/logs/rescue.log
+INFO kernel : Created log file: /u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/logs/rescue.log
+INFO kernel : Created channel: Voice channel 0 (range = 30000, max 1 messages of size 256)
+INFO kernel : Created channel: Radio channel 1 (bandwidth = 1024)
+INFO kernel : Created channel: Radio channel 2 (bandwidth = 1024)
+INFO kernel : Created channel: Radio channel 3 (bandwidth = 1024)
+INFO kernel : Kernel initialised
+INFO kernel : Perception module: Line of sight perception
+INFO kernel : Communication module: Channel communication model
+INFO kernel : Command filter: kernel.ChainedCommandFilter@6bea52d4
+INFO kernel : Score function: Score graph
+INFO kernel : Termination condition: Timestep >= 300
+INFO kernel : Command collector: CompositeCommandCollector [Timed command collector]
+DEBUG kernel : GUI component found: 'rescuecore2.standard.kernel.StandardWorldModelViewerComponent'
+DEBUG kernel : Removing all except [kernel\.startup\.connect-time, perception\.los\.precision\.damage, scenario\.agents\.ac, perception\.los\.precision\.hp, fire\.extinguish\.max-distance, comms\.channels\.\d+\.messages\.size, fire\.tank\.refill_rate, comms\.channels\.count, perception\.los\.max-distance, comms\.channels\.\d+\.bandwidth, scenario\.agents\.at, clear\.repair\.distance, scenario\.agents\.fb, comms\.channels\.max\.centre, scenario\.agents\.pf, comms\.channels\.\d+\.messages\.max, scenario\.agents\.po, scenario\.agents\.fs, clear\.repair\.rad, comms\.channels\.max\.platoon, fire\.extinguish\.max-sum, clear\.repair\.rate, kernel\.agents\.think-time, kernel\.perception, comms\.channels\.\d+\.range, fire\.tank\.refill_hydrant_rate, fire\.tank\.maximum, kernel\.agents\.ignoreuntil, kernel\.communication-model, comms\.channels\.\d+\.type]
+DEBUG kernel : kernel.startup.connect-time matches kernel\.startup\.connect-time
+DEBUG kernel : perception.los.precision.damage matches perception\.los\.precision\.damage
+DEBUG kernel : perception.los.precision.hp matches perception\.los\.precision\.hp
+DEBUG kernel : fire.extinguish.max-distance matches fire\.extinguish\.max-distance
+DEBUG kernel : comms.channels.0.messages.size matches comms\.channels\.\d+\.messages\.size
+DEBUG kernel : fire.tank.refill_rate matches fire\.tank\.refill_rate
+DEBUG kernel : comms.channels.count matches comms\.channels\.count
+DEBUG kernel : perception.los.max-distance matches perception\.los\.max-distance
+DEBUG kernel : comms.channels.1.bandwidth matches comms\.channels\.\d+\.bandwidth
+DEBUG kernel : comms.channels.3.bandwidth matches comms\.channels\.\d+\.bandwidth
+DEBUG kernel : comms.channels.2.bandwidth matches comms\.channels\.\d+\.bandwidth
+DEBUG kernel : clear.repair.distance matches clear\.repair\.distance
+DEBUG kernel : comms.channels.max.centre matches comms\.channels\.max\.centre
+DEBUG kernel : comms.channels.0.messages.max matches comms\.channels\.\d+\.messages\.max
+DEBUG kernel : clear.repair.rad matches clear\.repair\.rad
+DEBUG kernel : comms.channels.max.platoon matches comms\.channels\.max\.platoon
+DEBUG kernel : fire.extinguish.max-sum matches fire\.extinguish\.max-sum
+DEBUG kernel : clear.repair.rate matches clear\.repair\.rate
+DEBUG kernel : kernel.agents.think-time matches kernel\.agents\.think-time
+DEBUG kernel : kernel.perception matches kernel\.perception
+DEBUG kernel : comms.channels.0.range matches comms\.channels\.\d+\.range
+DEBUG kernel : fire.tank.refill_hydrant_rate matches fire\.tank\.refill_hydrant_rate
+DEBUG kernel : fire.tank.maximum matches fire\.tank\.maximum
+DEBUG kernel : kernel.agents.ignoreuntil matches kernel\.agents\.ignoreuntil
+DEBUG kernel : kernel.communication-model matches kernel\.communication-model
+DEBUG kernel : comms.channels.2.type matches comms\.channels\.\d+\.type
+DEBUG kernel : comms.channels.3.type matches comms\.channels\.\d+\.type
+DEBUG kernel : comms.channels.0.type matches comms\.channels\.\d+\.type
+DEBUG kernel : comms.channels.1.type matches comms\.channels\.\d+\.type
+DEBUG kernel : Removing [misc.buriedness.steel.half.rate, resq-fire.cell_size, resq-fire.burn-rate-variance, loadabletypes.inspect.dir, collapse.slight.sd, misc.injury.bury.steel.partial.slight, misc.injury.bury.wood.none.slight, collapse.wood.p-moderate, kernel.simulators, collapse.wood.p-slight, collapse.wall-extent.min, misc.injury.bury.wood.all.slight, senario.human.random-id, misc.injury.bury.concrete.none.slight, misc.injury.bury.concrete.partial.slight, misc.buriedness.steel.all.value, resq-fire.wind_random, misc.buriedness.wood.half.value, misc.injury.collapse.wood.none.slight, misc.injury.collapse.wood.half.critical, misc.injury.fire.steel.all.serious, misc.injury.collapse.wood.none.serious, misc.injury.fire.multiplier.police, resq-fire.gamma, resq-fire.steel_energy, misc.injury.bury.multiplier.ambulance, misc.injury.collapse.steel.all.critical, resq-fire.concrete_capacity, misc.buriedness.concrete.half.rate, misc.injury.fire.concrete.none.serious, misc.injury.fire.l, misc.injury.fire.k, collapse.concrete.p-severe, misc.injury.fire.multiplier.fire, misc.injury.fire.concrete.partial.critical, misc.injury.collapse.wood.all.slight, misc.buriedness.concrete.all.value, comms.channels.1.noise.input.failure.p, collapse.concrete.p-slight, misc.injury.bury.steel.all.slight, misc.injury.collapse.k, comms.channels.3.noise.input.failure.use, comms.channels.2.noise.output.dropout.p, misc.injury.bury.steel.all.critical, kernel.port, misc.buriedness.steel.half.value, resq-fire.max_ray_distance, collapse.steel.p-slight, misc.injury.bury.wood.half.critical, misc.buriedness.wood.partial.value, misc.injury.fire.wood.half.critical, resq-fire.randomseed, kernel.termination, misc.injury.collapse.serious, misc.injury.collapse.noise.mean, collapse.slight.mean, misc.buriedness.concrete.half.value, misc.buriedness.wood.all.rate, misc.injury.fire.steel.none.critical, misc.injury.collapse.l, misc.buriedness.wood.all.value, gis.map.floor-placement.random.floor-rate.1, gis.map.floor-placement.random.floor-rate.2, misc.injury.collapse.multiplier.ambulance, misc.injury.collapse.concrete.none.serious, misc.injury.fire.noise.mean, resq-fire.air_cell_heat_capacity, misc.injury.collapse.steel.all.slight, resq-fire.policeoffice_inflammable, misc.injury.bury.steel.all.serious, resq-fire.steel_burning, misc.injury.bury.wood.none.critical, kernel.gis.auto, gis.map.floor-placement.random.floor-rate.3, comms.channels.1.noise.output.dropout.use, kernel.commandcollectors, misc.injury.collapse.concrete.all.serious, view.standard.human.icons.use, kernel.logname, score.standard.building-fire.burning, misc.injury.fire.steel.partial.serious, misc.injury.fire.wood.partial.slight, collapse.concrete.p-destroyed, misc.injury.collapse.noise.sd, misc.injury.collapse.critical, comms.channels.2.noise.output.dropout.use, civilian.help.probability, kernel.agents.registrar, kernel.communication.auto, collapse.steel.p-none, gis.map.scenario, misc.injury.fire.wood.none.serious, misc.injury.bury.noise.sd, misc.injury.bury.concrete.partial.serious, misc.buriedness.steel.partial.rate, misc.injury.bury.wood.partial.slight, misc.injury.bury.wood.all.critical, misc.injury.fire.steel.partial.critical, resq-fire.refuge_inflammable, resq-fire.ambulancecenter_inflammable, misc.injury.collapse.steel.all.serious, misc.injury.bury.wood.partial.serious, resq-fire.water_hydrant_refill_rate, resq-fire.steel_ignition, misc.buriedness.wood.partial.rate, misc.injury.fire.wood.none.critical, misc.injury.collapse.steel.half.serious, civilian.ouch.probability, gis.map.floor-placement.random, misc.injury.collapse.steel.partial.serious, collapse.steel.p-severe, misc.injury.fire.concrete.half.slight, kernel.timesteps, gis.map.building-code-placement.random.code-rate.1, gis.map.building-code-placement.random.code-rate.0, collapse.destroyed.mean, misc.injury.bury.concrete.all.serious, misc.injury.fire.steel.none.serious, resq-fire.air_to_building_flow, resq-fire.water_capacity, misc.injury.bury.wood.half.slight, misc.injury.bury.concrete.all.critical, resq-fire.concrete_ignition, misc.injury.fire.steel.half.slight, misc.injury.bury.steel.none.serious, gis.map.building-code-placement.random.code-rate.2, resq-fire.water_distance, misc.injury.fire.wood.none.slight, score.standard.building-fire.minor-damage, resq-fire.wind_direction, misc.injury.collapse.steel.none.critical, misc.injury.bury.concrete.half.serious, misc.injury.fire.slight, collapse.moderate.sd, misc.injury.bury.steel.partial.serious, perception.los.ray-count, resq-fire.concrete_energy, comms.channels.3.noise.input.failure.p, misc.injury.bury.multiplier.police, misc.injury.fire.wood.partial.critical, resq-fire.water_refill_rate, misc.injury.collapse.steel.none.slight, misc.injury.collapse.multiplier.police, misc.injury.bury.critical, collapse.severe.mean, misc.injury.bury.wood.half.serious, perception.standard.hp-precision, collapse.floor-height, misc.injury.fire.concrete.none.critical, misc.injury.collapse.wood.all.critical, resq-fire.wooden_capacity, resq-fire.energy_loss, comms.channels.2.noise.input.failure.use, misc.injury.collapse.wood.partial.slight, misc.buriedness.steel.none.rate, resq-fire.wooden_speed, resq-fire.wind_speed, misc.injury.fire.concrete.partial.serious, misc.injury.fire.serious, misc.injury.collapse.steel.partial.critical, collapse.wood.p-destroyed, gis.map.dir, score.standard.building-fire.severe-damage, misc.injury.collapse.concrete.partial.serious, misc.injury.bury.concrete.half.critical, misc.injury.fire.concrete.all.slight, score.standard.building-fire.heating, resq-fire.concrete_speed, collapse.steel.p-destroyed, misc.buriedness.concrete.partial.value, misc.injury.bury.multiplier.fire, misc.injury.collapse.wood.partial.critical, score.standard.health.absolute, score.standard.building-fire.moderate-damage, misc.injury.collapse.concrete.none.critical, misc.injury.fire.concrete.none.slight, kernel.commandfilters, misc.injury.fire.wood.all.serious, misc.injury.collapse.steel.half.critical, misc.injury.bury.concrete.all.slight, comms.channels.3.noise.output.dropout.p, misc.injury.bury.steel.none.slight, misc.buriedness.steel.none.value, kernel.host, score.standard.building-fire.absolute, resq-fire.burn-rate-average, misc.injury.collapse.wood.half.serious, resq-fire.radiation_coefficient, comms.channels.2.noise.input.failure.p, misc.injury.collapse.steel.half.slight, resq-fire.steel_capacity, kernel.agents, misc.injury.bury.steel.half.critical, misc.injury.fire.steel.partial.slight, random.seed, ignition.gas_station.explosion.range, misc.injury.bury.concrete.partial.critical, misc.injury.bury.steel.none.critical, misc.injury.fire.wood.all.slight, gis.map.building-code-placement.random, collapse.wood.p-none, misc.injury.collapse.concrete.half.slight, misc.injury.fire.concrete.half.serious, misc.buriedness.concrete.partial.rate, comms.channels.0.noise.input.dropout.p, collapse.concrete.p-none, resq-fire.wooden_energy, collapse.moderate.mean, resq-fire.air_to_air_flow, ignition.random.lambda, kernel.ui.components, collapse.severe.sd, misc.injury.collapse.wood.all.serious, misc.buriedness.steel.all.rate, resq-fire.wooden_burning, comms.channels.1.noise.output.dropout.p, misc.injury.collapse.concrete.all.critical, collapse.concrete.p-moderate, resq-fire.ray_rate, collapse.steel.p-moderate, misc.injury.collapse.concrete.half.serious, misc.buriedness.concrete.all.rate, misc.injury.collapse.concrete.all.slight, view.standard.human.icons.size, misc.injury.collapse.wood.half.slight, misc.injury.collapse.wood.partial.serious, misc.injury.collapse.concrete.partial.critical, comms.channels.0.noise.input.dropout.use, perception.standard.use-far-fires, misc.injury.bury.wood.partial.critical, score.function, comms.channels.3.noise.output.dropout.use, resq-fire.steel_speed, collapse.wall-extent.max, misc.buriedness.wood.none.value, resq-fire.firestation_inflammable, misc.buriedness.steel.partial.value, resq-fire.water_thermal_capacity, perception.standard.far-fire-distance, resq-fire.rays.dir, misc.injury.collapse.slight, misc.injury.fire.steel.half.critical, misc.injury.fire.concrete.all.critical, misc.injury.fire.wood.half.slight, score.standard.building-fire.burnt-out, misc.buriedness.wood.none.rate, misc.injury.fire.wood.half.serious, misc.injury.fire.concrete.half.critical, comms.channels.1.noise.input.failure.use, misc.injury.bury.serious, collapse.destroyed.sd, resq-fire.concrete_burning, misc.injury.fire.noise.sd, misc.injury.bury.slight, misc.injury.fire.steel.half.serious, resq-fire.max_extinguish_power_sum, perception.standard.damage-precision, misc.injury.bury.steel.partial.critical, misc.injury.fire.steel.all.critical, resq-fire.wooden_ignition, misc.injury.collapse.steel.none.serious, misc.injury.bury.l, misc.injury.bury.k, misc.injury.collapse.concrete.half.critical, misc.injury.bury.steel.half.slight, misc.injury.collapse.wood.none.critical, misc.injury.bury.steel.half.serious, misc.injury.fire.steel.all.slight, misc.injury.fire.critical, misc.injury.fire.concrete.partial.slight, loadabletypes.inspect.deep, score.standard.building-fire.water-damage, misc.injury.bury.concrete.none.serious, misc.injury.fire.concrete.all.serious, perception.standard.view-distance, misc.injury.collapse.steel.partial.slight, misc.injury.bury.concrete.half.slight, gis.map.file, kernel.perception.auto, misc.injury.fire.wood.all.critical, kernel.viewers, score.standard.building-fire.inferno, misc.injury.fire.steel.none.slight, misc.injury.bury.wood.all.serious, misc.injury.collapse.concrete.partial.slight, misc.injury.bury.concrete.none.critical, misc.injury.bury.noise.mean, collapse.wood.p-severe, misc.injury.bury.wood.none.serious, misc.injury.collapse.concrete.none.slight, misc.injury.collapse.multiplier.fire, kernel.gis, collapse.create-road-blockages, misc.buriedness.concrete.none.value, misc.buriedness.wood.half.rate, misc.injury.fire.wood.partial.serious, kernel.communication, misc.buriedness.concrete.none.rate, misc.injury.fire.multiplier.ambulance, civilian.conscious.threshold]
+INFO kernel : Agent controlled entity registered: Civilian (482151809)
+INFO kernel : Agent controlled entity registered: Fire brigade (210552869)
+INFO kernel : Agent controlled entity registered: Fire brigade (1962675462)
+INFO kernel : Listening for connections on port 7000
+FATAL kernel : Couldn't start kernel
+kernel.KernelException: Couldn't open kernel port
+	at kernel.StartKernel.initialiseKernel(StartKernel.java:312)
+	at kernel.StartKernel.main(StartKernel.java:213)
+Caused by: java.net.BindException: Address already in use (Bind failed)
+	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:381)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:243)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:135)
+	at rescuecore2.connection.ConnectionManager.listen(ConnectionManager.java:45)
+	at kernel.StartKernel.initialiseKernel(StartKernel.java:308)
+	... 1 more

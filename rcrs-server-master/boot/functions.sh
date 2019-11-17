@@ -210,3 +210,14 @@ function startSims {
     echo "waiting for viewer to connect..."
     waitFor $LOGDIR/viewer-out.log "success"
 }
+
+function resetFire {
+    makeClasspath $BASEDIR/lib
+    # Viewer
+    TEAM_NAME_ARG=""
+    if [ ! -z "$TEAM" ]; then
+        TEAM_NAME_ARG="\"--viewer.team-name=$TEAM\"";
+    fi
+
+    execute fire "java -Xmx1024m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/resq-fire.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents firesimulator.FireSimulatorWrapper -c $CONFIGDIR/resq-fire.cfg $*"
+}

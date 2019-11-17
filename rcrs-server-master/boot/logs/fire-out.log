@@ -1,0 +1,100 @@
+TRACE launcher : Reading included config 'common.cfg'
+TRACE launcher : Reading included config 'types.cfg'
+TRACE launcher : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE launcher : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE launcher : Setting 'random.seed' to '1023'
+TRACE launcher : Setting 'kernel.host' to 'localhost'
+TRACE launcher : Setting 'kernel.port' to '7000'
+TRACE launcher : Setting 'senario.human.random-id' to 'true'
+TRACE launcher : Setting 'resq-fire.water_capacity' to '15000'
+TRACE launcher : Setting 'fire.tank.maximum' to '15000'
+TRACE launcher : Setting 'resq-fire.water_refill_rate' to '1500'
+TRACE launcher : Setting 'fire.tank.refill_rate' to '1500'
+TRACE launcher : Setting 'resq-fire.water_hydrant_refill_rate' to '400'
+TRACE launcher : Setting 'fire.tank.refill_hydrant_rate' to '400'
+TRACE launcher : Setting 'resq-fire.water_distance' to '50000'
+TRACE launcher : Setting 'fire.extinguish.max-distance' to '50000'
+TRACE launcher : Setting 'fire.extinguish.max-sum' to '3000'
+TRACE launcher : Setting 'resq-fire.max_extinguish_power_sum' to '3000'
+TRACE launcher : Setting 'resq-fire.rays.dir' to 'rays'
+TRACE launcher : Setting 'resq-fire.wind_speed' to '0'
+TRACE launcher : Setting 'resq-fire.steel_capacity' to '1.0'
+TRACE launcher : Setting 'resq-fire.wooden_energy' to '2400.0'
+TRACE launcher : Setting 'resq-fire.cell_size' to '5000'
+TRACE launcher : Setting 'resq-fire.air_cell_heat_capacity' to '0.004'
+TRACE launcher : Setting 'resq-fire.wooden_ignition' to '47.0'
+TRACE launcher : Setting 'resq-fire.water_thermal_capacity' to '20'
+TRACE launcher : Setting 'resq-fire.steel_burning' to '850.0'
+TRACE launcher : Setting 'resq-fire.concrete_energy' to '350.0'
+TRACE launcher : Setting 'resq-fire.air_to_air_flow' to '1.0'
+TRACE launcher : Setting 'resq-fire.gamma' to '0.2'
+TRACE launcher : Setting 'resq-fire.ambulancecenter_inflammable' to 'false'
+TRACE launcher : Setting 'resq-fire.steel_ignition' to '47.0'
+TRACE launcher : Setting 'resq-fire.wind_random' to '1'
+TRACE launcher : Setting 'resq-fire.radiation_coefficient' to '0.011'
+TRACE launcher : Setting 'resq-fire.steel_energy' to '800.0'
+TRACE launcher : Setting 'resq-fire.wooden_burning' to '800.0'
+TRACE launcher : Setting 'resq-fire.refuge_inflammable' to 'false'
+TRACE launcher : Setting 'resq-fire.policeoffice_inflammable' to 'false'
+TRACE launcher : Setting 'resq-fire.air_to_building_flow' to '0.0015'
+TRACE launcher : Setting 'resq-fire.concrete_burning' to '800.0'
+TRACE launcher : Setting 'resq-fire.wooden_capacity' to '1.1'
+TRACE launcher : Setting 'resq-fire.concrete_ignition' to '47.0'
+TRACE launcher : Setting 'resq-fire.wind_direction' to '100.0'
+TRACE launcher : Setting 'resq-fire.concrete_speed' to '0.05'
+TRACE launcher : Setting 'resq-fire.firestation_inflammable' to 'false'
+TRACE launcher : Setting 'resq-fire.steel_speed' to '0.05'
+TRACE launcher : Setting 'resq-fire.randomseed' to '23'
+TRACE launcher : Setting 'resq-fire.concrete_capacity' to '1.5'
+TRACE launcher : Setting 'resq-fire.wooden_speed' to '0.05'
+TRACE launcher : Setting 'resq-fire.energy_loss' to '0.86'
+TRACE launcher : Setting 'resq-fire.ray_rate' to '0.0025'
+TRACE launcher : Setting 'resq-fire.max_ray_distance' to '200000'
+TRACE launcher : Setting 'resq-fire.burn-rate-average' to '0.15'
+TRACE launcher : Setting 'resq-fire.burn-rate-variance' to '0.02'
+INFO launcher : Processing jar directory: /u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/../jars
+INFO launcher : Processing ../jars/clear.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Processing ../jars/collapse.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Processing ../jars/gis2.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Processing ../jars/handy.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Processing ../jars/human.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Processing ../jars/ignition.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Processing ../jars/kernel.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Processing ../jars/maps.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Processing ../jars/misc.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Processing ../jars/resq-fire.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Processing ../jars/sample.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+WARN launcher : Class sample.CustomRegistryTestAgent$CustomEntityFactory not found
+INFO launcher : Processing ../jars/standard.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO launcher : Processing ../jars/traffic3.jar
+DEBUG launcher : Inspecting manifest...
+DEBUG launcher : Looking for likely class names...
+INFO launcher : Launching 1 instances of component 'firesimulator.FireSimulatorWrapper'...
+INFO launcher : Launching instance 1...

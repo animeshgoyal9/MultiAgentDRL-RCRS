@@ -1,0 +1,20 @@
+DEBUG gis2.GMLWorldModelCreator : Creating entities
+DEBUG gis2.GMLWorldModelCreator : 37 buildings
+DEBUG gis2.GMLWorldModelCreator : 58 roads
+DEBUG gis2.GMLWorldModelCreator : Reading scenario
+DEBUG gis2.GMLWorldModelCreator : Applying scenario
+DEBUG gis2.GisScenario : Creating 1 refuges
+DEBUG gis2.GisScenario : Converting building 255 to a refuge
+DEBUG gis2.GisScenario : Converted Building (255) into Refuge (255)
+DEBUG gis2.GisScenario : Igniting 1 fires
+DEBUG gis2.GisScenario : Igniting 248
+DEBUG gis2.GisScenario : Creating 2 fire brigades
+DEBUG gis2.GisScenario : Created Fire brigade (210552869)
+DEBUG gis2.GisScenario : Created Fire brigade (1962675462)
+DEBUG gis2.GisScenario : Creating 0 police forces
+DEBUG gis2.GisScenario : Creating 0 ambulance teams
+DEBUG gis2.GisScenario : Creating 0 fire stations
+DEBUG gis2.GisScenario : Creating 0 police offices
+DEBUG gis2.GisScenario : Creating 0 ambulance centres
+DEBUG gis2.GisScenario : Creating 1 civilians
+DEBUG gis2.GisScenario : Created Civilian (482151809)
