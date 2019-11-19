@@ -1,6 +1,6 @@
 package AnimFireChalAgent;
 
-import java.util.List;
+import java.util.Arrays;
 
 import AnimFireChalAgent.AnimFireChalAgentGrpc.AnimFireChalAgentImplBase;
 import AnimFireChalAgent.AnimFireChalProto.Action;
@@ -16,12 +16,11 @@ public class AnimFireChalAgent extends AnimFireChalAgentImplBase {
 		Action[] actions = request.getActionsList().toArray(new Action[0]);
 		ActionBean[] actionDetails = new ActionBean[actions.length];
 		for (int i =0; i<actions.length; i++) {
-			
 			actionDetails[i] = new ActionBean(actions[i].getAgentId(),actions[i].getBuildingId());
 		}
-		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+//		System.out.println("Action details-------------------");
+//		System.out.println(actionDetails.toString());
 		AgentResources.setActions(actionDetails);
-		System.out.println(AgentResources.getActions().toString());
 		
 		AgentInfo.Builder resp = AgentInfo.newBuilder();
 		

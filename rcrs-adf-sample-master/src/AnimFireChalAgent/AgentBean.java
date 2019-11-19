@@ -50,6 +50,8 @@ public class AgentBean {
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
-	
-	
+	@Override
+	public String toString() {
+		return "AgentBean [agent_id=" + agent_id + ", x=" + x + ", y=" + y + ", water=" + water + ", hp=" + hp + "]";
+	}
 }

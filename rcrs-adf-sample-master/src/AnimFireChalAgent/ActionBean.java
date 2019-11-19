@@ -3,12 +3,11 @@ package AnimFireChalAgent;
 public class ActionBean {
 	int agent_id;
 	int building_id;
-	
-	
+
 	public ActionBean() {
 		
 	}
-	
+
 	public ActionBean(int agent_id, int building_id) {
 		this.agent_id = agent_id;
 		this.building_id = building_id;
@@ -26,6 +25,9 @@ public class ActionBean {
 	public void setBuilding_id(int building_id) {
 		this.building_id = building_id;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "ActionBean [agent_id=" + agent_id + ", building_id=" + building_id + "]";
+	}
 }
