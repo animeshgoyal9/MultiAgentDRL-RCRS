@@ -1,7 +1,0 @@
-README.md
-setup.py
-rcrs_gym_env.egg-info/PKG-INFO
-rcrs_gym_env.egg-info/SOURCES.txt
-rcrs_gym_env.egg-info/dependency_links.txt
-rcrs_gym_env.egg-info/requires.txt
-rcrs_gym_env.egg-info/top_level.txt
