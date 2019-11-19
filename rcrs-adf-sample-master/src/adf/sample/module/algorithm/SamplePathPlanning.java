@@ -58,6 +58,8 @@ public class SamplePathPlanning extends PathPlanning {
     @Override
     public PathPlanning setDestination(Collection<EntityID> targets) {
         this.targets = targets;
+        System.out.println("THIS IS THE PATH TARGET");
+        System.out.println(this.targets);
         return this;
     }
 

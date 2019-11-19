@@ -15,6 +15,9 @@ import rescuecore2.worldmodel.EntityID;
 
 import java.util.*;
 
+import AnimFireChalAgent.ActionBean;
+import AnimFireChalAgent.AgentResources;
+
 import static rescuecore2.standard.entities.StandardEntityURN.*;
 
 public class SampleSearch extends Search
@@ -116,6 +119,21 @@ public class SampleSearch extends Search
     {
         this.result = null;
         this.pathPlanning.setFrom(this.agentInfo.getPosition());
+        
+      EntityID target = null;
+      for (ActionBean a: AgentResources.getActions()) {
+      	try {
+      		if (a.getAgent_id() == this.agentInfo.getID().getValue()) {
+          		target = new EntityID(a.getBuilding_id());
+          	}
+      	} catch (Exception e) {
+      	}
+      }
+        this.unsearchedBuildingIDs.clear();
+        this.unsearchedBuildingIDs.add(target);
+        
+        System.out.println(this.unsearchedBuildingIDs);
+        
         this.pathPlanning.setDestination(this.unsearchedBuildingIDs);
         List<EntityID> path = this.pathPlanning.calc().getResult();
         if (path != null && path.size() > 0)
@@ -161,6 +179,8 @@ public class SampleSearch extends Search
     @Override
     public EntityID getTarget()
     {
+    	System.out.println("In Sample Search");
+    	System.out.println(this.result);
         return this.result;
     }
 
