@@ -24,11 +24,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import AnimFireChalBuilding.AnimFireChal;
+import AnimFireChalBuilding.Resources;
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+
 import java.util.List;
 import java.text.NumberFormat;
 
 import rescuecore2.standard.components.StandardViewer;
-import rescuecore2.standard.misc.PyServer;
 
 /**
    A simple viewer.
@@ -123,6 +127,18 @@ public class SampleViewer extends StandardViewer {
                 public void objectsRollover(ViewComponent view, List<RenderedObject> objects) {
                 }
             });
+        
+        try {
+        	Server server = ServerBuilder.forPort(2212).addService(new AnimFireChal()).build();
+        	System.out.println("##############################################################");
+            
+			server.start();
+			System.out.println("Server started at " + server.getPort());	
+//			server.awaitTermination();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
     }
 
     @Override
@@ -130,18 +146,11 @@ public class SampleViewer extends StandardViewer {
         super.handleTimestep(t);
         SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                	String score = "Score: " + format.format(scoreFunction.score(model, new Timestep(t.getTime())));
                     timeLabel.setText("Time: " + t.getTime());
-                    scoreLabel.setText(score);
+                    scoreLabel.setText("Score: " + format.format(scoreFunction.score(model, new Timestep(t.getTime()))));
+                    Resources.setReward(Double.parseDouble(format.format(scoreFunction.score(model, new Timestep(t.getTime())))));
                     viewer.view(model, t.getCommands());
                     viewer.repaint();
-                    try {
-						PyServer pyServer = new PyServer(2211);
-						pyServer.sendMessage("Score :"+score);
-						pyServer.closeConnection();
-					} catch (IOException e) {
-                    	System.out.println(e.getMessage());
-					}
                 }
             });
     }

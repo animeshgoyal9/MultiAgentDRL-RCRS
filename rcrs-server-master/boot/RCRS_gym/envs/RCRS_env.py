@@ -24,13 +24,13 @@ from numpy import inf
 import time, os 
 import signal, sys
 import threading
-# import psutil
 
 
-MAX_TIMESTEP = 100
+MAX_TIMESTEP = 300
 
 action_set_list = np.array([255, 960, 905, 934, 935, 936, 937, 298, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 
                     950, 951, 247, 952, 248, 953, 249, 954, 250, 955, 251, 956, 957, 253, 958, 254, 959], dtype = object)
+flag = 0
 
 class RCRSenv(gym.Env):
     metadata = {'render.modes' : None}  
@@ -38,8 +38,8 @@ class RCRSenv(gym.Env):
     def __init__(self):
         self.action_space = spaces.Discrete(37)
         
-        low = np.array([0]*116)
-        high = np.array([inf]*116)
+        low = np.array([0]*79)
+        high = np.array([inf]*79)
 
         self.observation_space = spaces.Box(low, high, dtype=np.float32, shape=None)
 
@@ -52,7 +52,10 @@ class RCRSenv(gym.Env):
         logging.basicConfig()
         
         self.curr_episode += 1
-        self.reward = run_reward()
+        if (self.curr_episode <= 299):
+            self.reward = 0
+        else:
+            self.reward = run_reward()
         state_info = []
 
         state_info.append(run_server())
@@ -68,16 +71,18 @@ class RCRSenv(gym.Env):
         # print("Current State: ", self.state)
         print("Current Episode: ", self.curr_episode)
         
-        done = bool(self.reward == 0 or self.curr_episode == MAX_TIMESTEP)
+        done = bool(self.curr_episode == MAX_TIMESTEP)
         if done == True:
             os.system("for pid in $(ps -ef | grep 'start-comprun'); do kill -2 $pid; done")
 
+        # time.sleep(0.137)
         time.sleep(1)
         return np.array(self.state), self.reward, done , {}
 
     def reset(self):
+        # time.sleep(0.5)
         subprocess.call(['gnome-terminal', '-e', "python3 /u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/delete_master.py"])
-        time.sleep(15)
+        time.sleep(12)
         self.curr_episode = 0
         reset_action = 0
         reset = []
@@ -95,14 +100,25 @@ class RCRSenv(gym.Env):
         return [seed]
 
 def run_adf(bid):
+    global flag
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
     # used in circumstances in which the with statement does not fit the needs
     # of the code.
     with grpc.insecure_channel('localhost:9090') as channel:
         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
         print("Current action: ", action_set_list[bid])
+
+        flag = 1-flag
+        
+        if (flag==1):
+            aid = 210552869
+        else:
+            aid = 1962675462
+
+        print("Current Agent id: ", aid)
         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
             AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[len(action_set_list) - bid -1])]))
+            # AgentInfo_pb2.Action(agent_id = aid, building_id=action_set_list[bid])]))
     # print(response.agents)
     agent_state_info = []
 
@@ -140,7 +156,7 @@ def run_server():
     for i in response.buildings:
         building_state_info.append(i.fieryness)
         building_state_info.append(i.temperature)
-        building_state_info.append(i.building_id)
+        # building_state_info.append(i.building_id)
     # print(fieryness_values
     return building_state_info
     print("*******************************************")

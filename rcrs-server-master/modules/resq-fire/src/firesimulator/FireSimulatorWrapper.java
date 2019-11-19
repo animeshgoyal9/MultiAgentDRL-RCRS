@@ -32,10 +32,17 @@ import firesimulator.simulator.Simulator;
 import firesimulator.simulator.ExtinguishRequest;
 import firesimulator.util.Configuration;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import firesimulator.gui.*;
 import javax.swing.JComponent;
+
+import AnimFireChalBuilding.AnimFireChal;
+import AnimFireChalBuilding.BuildingInfoBean;
+import AnimFireChalBuilding.Resources;
 import rescuecore2.GUIComponent;
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
 
 /**
    A rescuecore2 Simulator that wraps the ResQ Freiburg fire simulator.
@@ -62,6 +69,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
 	
     @Override
     protected void postConnect() {
+    	
         super.postConnect();
         Configuration c = new Configuration();
         c.initialize();
@@ -85,10 +93,17 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
                 world.putObject(r);
             }
         }
-        sim.initialize();
-	
-		
-	
+        sim.initialize();	
+        
+        try {
+        	System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        	Server server = ServerBuilder.forPort(4007).addService(new AnimFireChal()).build();            
+			server.start();
+			System.out.println("Server started at " + server.getPort());	
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
     }
 
     @Override
@@ -131,7 +146,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
 
     @Override
     protected void processCommands(KSCommands c, ChangeSet changes) {
-        long start = System.currentTimeMillis();
+    	long start = System.currentTimeMillis();
         for (Command next : c.getCommands()) {
             if (next instanceof AKExtinguish) {
                 AKExtinguish ex = (AKExtinguish)next;
@@ -142,11 +157,16 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
                 Building target = (Building)world.getObject(targetID.getValue());
                 ExtinguishRequest req = new ExtinguishRequest(source, target, water);
                 world.addExtinguishRequest(req);
+                
             }
         }
         sim.step(c.getTime());
         // Get changes
+        
+        String buildings = "";
         for (Object next : world.getBuildings()) {
+        	if(!buildings.equals(""))
+        		buildings += "|";
             Building b = (Building)next;
             rescuecore2.standard.entities.Building oldB = (rescuecore2.standard.entities.Building)model.getEntity(new EntityID(b.getID()));
             if ((!oldB.isFierynessDefined()) || (oldB.getFieryness() != b.getFieryness())) {
@@ -157,8 +177,12 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
                 oldB.setTemperature((int)b.getTemperature());
                 changes.addChange(oldB, oldB.getTemperatureProperty());
             }
+            buildings += b.getFieryness()+","+b.getTemperature()+","+b.getID();
+//            System.out.println(buildings[i]);
         }
-        for (Object next : world.getFirebrigades()) {
+		Resources.setB(buildings);
+		
+		for (Object next : world.getFirebrigades()) {
             FireBrigade fb = (FireBrigade)next;
             //            Logger.debug("Updating water for " + fb);
             //            Logger.debug(fb.hasChanged() ? "Changed" : "Unchanged");
@@ -178,6 +202,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
                 rescuecore2.standard.entities.FireBrigade fb = (rescuecore2.standard.entities.FireBrigade)next;
                 fb.setWater(config.getIntValue(MAX_WATER_KEY));
                 changes.addChange(fb, fb.getWaterProperty());
+                
             }
         }
         long end = System.currentTimeMillis();
@@ -190,7 +215,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
     }
 
     private RescueObject mapEntity(Entity e) {
-        int id = e.getID().getValue();
+    	int id = e.getID().getValue();
         if (e instanceof rescuecore2.standard.entities.World) {
             return new WorldInfo(id);
         }
@@ -254,7 +279,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
     }
 
     private void mapBuildingProperties(rescuecore2.standard.entities.Building oldB, Building newB) {
-        if (oldB.isFloorsDefined()) {
+    	if (oldB.isFloorsDefined()) {
             newB.setFloors(oldB.getFloors());
         }
         if (oldB.isBuildingAttributesDefined()) {

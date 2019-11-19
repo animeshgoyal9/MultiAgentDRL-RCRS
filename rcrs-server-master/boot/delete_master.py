@@ -18,7 +18,7 @@ import signal, sys
 subprocess.Popen("bash 'start-comprun.sh'", shell=True)
 time.sleep(10)
 subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-adf-sample/launch.sh '-all'", shell=True)
-time.sleep(300)	
+time.sleep(400)	
 # subprocess.call(['python3', '/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/delete.py'])
 
 # time.sleep(20)

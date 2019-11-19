@@ -5,8 +5,8 @@
   <!-- <rcr:civilian rcr:location="254"/>
   <rcr:civilian rcr:location="254"/>
   <rcr:civilian rcr:location="254"/>
-  <rcr:civilian rcr:location="254"/>
-  <r -->cr:civilian rcr:location="254"/>
+  <rcr:civilian rcr:location="254"/> -->
+  <rcr:civilian rcr:location="255"/>
   <rcr:aftershock rcr:time="10" rcr:intensity="0.5"/>
   
 <!--
@@ -22,7 +22,8 @@
   <rcr:firebrigade rcr:location="257"/>
 -->
   <!-- <rcr:policeforce rcr:location="279"/> -->
+  <rcr:firebrigade rcr:location="256"/>
   <rcr:firebrigade rcr:location="255"/>
-  <rcr:firebrigade rcr:location="278"/>
+  <!-- <rcr:ambulanceteam rcr:location="976"/> -->
   <rcr:fire rcr:location="248"/>
 </rcr:scenario>
