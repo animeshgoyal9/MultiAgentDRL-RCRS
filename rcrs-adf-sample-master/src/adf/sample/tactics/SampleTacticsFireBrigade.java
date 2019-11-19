@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import AnimFireChalAgent.ActionBean;
 import AnimFireChalAgent.AgentBean;
 import AnimFireChalAgent.AgentResources;
 import AnimFireChalAgent.AnimFireChalAgent;
@@ -113,13 +114,8 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 			System.out.println("Server started at " + server.getPort());	
 //			server.awaitTermination();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-//		catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}	
+		}	
 	}
 
     @Override
@@ -208,13 +204,17 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
         }
         // autonomous
         EntityID target = this.buildingDetector.calc().getTarget();
+        
         Action action = this.actionFireFighting.setTarget(target).calc().getAction();
         if (action != null)
         {
             this.sendActionMessage(messageManager, agent, action, agentInfo);
             return action;
         }
+        
+        System.out.println("Searching new Target --------------------");
         target = this.search.calc().getTarget();
+        
         action = this.actionExtMove.setTarget(target).calc().getAction();
         if (action != null)
         {
@@ -241,8 +241,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
             {	
                 target = path.get(path.size() - 1);
                 System.out.println("***************Start Moving***********************");
-                System.out.println("THIS IS THE TARGETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-                System.out.println(target);
+                
                 FireBrigade agent1 = (FireBrigade) agentInfo.me();
 				
 				AgentBean[] agentDetails = { new AgentBean((int) agentInfo.getID().getValue(), agentInfo.getX(), agentInfo.getY(), agent1.getWater(), agent1.getHP())};
