@@ -297,10 +297,10 @@ TRACE startup : Setting 'random.seed' to '1023'
 TRACE startup : Setting 'kernel.host' to 'localhost'
 TRACE startup : Setting 'kernel.port' to '7000'
 TRACE startup : Setting 'senario.human.random-id' to 'true'
-TRACE startup : Setting 'resq-fire.water_capacity' to '15000'
-TRACE startup : Setting 'fire.tank.maximum' to '15000'
-TRACE startup : Setting 'resq-fire.water_refill_rate' to '1500'
-TRACE startup : Setting 'fire.tank.refill_rate' to '1500'
+TRACE startup : Setting 'resq-fire.water_capacity' to '25000'
+TRACE startup : Setting 'fire.tank.maximum' to '25000'
+TRACE startup : Setting 'resq-fire.water_refill_rate' to '2500'
+TRACE startup : Setting 'fire.tank.refill_rate' to '2500'
 TRACE startup : Setting 'resq-fire.water_hydrant_refill_rate' to '400'
 TRACE startup : Setting 'fire.tank.refill_hydrant_rate' to '400'
 TRACE startup : Setting 'resq-fire.water_distance' to '50000'
@@ -410,7 +410,7 @@ TRACE startup : Setting 'view.standard.human.icons.use' to 'no'
 TRACE startup : Setting 'kernel.logname' to 'logs/rescue.log'
 TRACE startup : Setting 'kernel.timesteps' to '300'
 TRACE startup : Setting 'kernel.termination' to 'kernel.TimestepTerminationCondition'
-TRACE startup : Setting 'kernel.agents.think-time' to '1000'
+TRACE startup : Setting 'kernel.agents.think-time' to '100'
 TRACE startup : Setting 'kernel.agents.ignoreuntil' to '3'
 TRACE startup : Setting 'kernel.commandcollectors' to 'kernel.TimedCommandCollector'
 TRACE startup : Setting 'kernel.commandfilters' to 'kernel.WrongTimeCommandFilter'
@@ -500,16 +500,3 @@ WARNING: Illegal reflective access by org.dom4j.io.SAXContentHandler (file:/u/an
 WARNING: Please consider reporting this to the maintainers of org.dom4j.io.SAXContentHandler
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-FATAL kernel : Couldn't start kernel
-kernel.KernelException: Couldn't open kernel port
-	at kernel.StartKernel.initialiseKernel(StartKernel.java:312)
-	at kernel.StartKernel.main(StartKernel.java:213)
-Caused by: java.net.BindException: Address already in use (Bind failed)
-	at java.base/java.net.PlainSocketImpl.socketBind(Native Method)
-	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:436)
-	at java.base/java.net.ServerSocket.bind(ServerSocket.java:381)
-	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:243)
-	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:135)
-	at rescuecore2.connection.ConnectionManager.listen(ConnectionManager.java:45)
-	at kernel.StartKernel.initialiseKernel(StartKernel.java:308)
-	... 1 more

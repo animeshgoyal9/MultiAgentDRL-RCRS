@@ -1,1 +1,646 @@
 DEBUG collapse.CollapseSimulator : Starting Connection from Collapse Simulator v1.1. Registry: System
+DEBUG collapse.CollapseSimulator : Instantiating random number generator: org.uncommons.maths.random.MersenneTwisterRNG
+DEBUG collapse.CollapseSimulator : Using seed 1023
+INFO collapse.CollapseSimulator : collapse.CollapseSimulator@29b33d16 connected
+DEBUG collapse.CollapseSimulator : Re-indexing world model
+DEBUG collapse.CollapseSimulator : Finished re-index. Took 26ms
+INFO collapse.CollapseSimulator : Timestep 1
+DEBUG collapse.CollapseSimulator : Collapsing buildings
+INFO collapse.CollapseSimulator : Finished collapsing buildings: 
+INFO collapse.CollapseSimulator : Building code WOOD: 28 buildings
+INFO collapse.CollapseSimulator :   15 none
+INFO collapse.CollapseSimulator :   0 slight
+INFO collapse.CollapseSimulator :   5 moderate
+INFO collapse.CollapseSimulator :   3 severe
+INFO collapse.CollapseSimulator :   5 destroyed
+INFO collapse.CollapseSimulator : Building code STEEL: 8 buildings
+INFO collapse.CollapseSimulator :   1 none
+INFO collapse.CollapseSimulator :   1 slight
+INFO collapse.CollapseSimulator :   1 moderate
+INFO collapse.CollapseSimulator :   1 severe
+INFO collapse.CollapseSimulator :   4 destroyed
+INFO collapse.CollapseSimulator : Building code CONCRETE: 1 buildings
+INFO collapse.CollapseSimulator :   1 none
+INFO collapse.CollapseSimulator :   0 slight
+INFO collapse.CollapseSimulator :   0 moderate
+INFO collapse.CollapseSimulator :   0 severe
+INFO collapse.CollapseSimulator :   0 destroyed
+INFO collapse.CollapseSimulator : Timestep 1 took 5 ms
+INFO collapse.CollapseSimulator : Timestep 2
+INFO collapse.CollapseSimulator : Timestep 2 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 3
+INFO collapse.CollapseSimulator : Timestep 3 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 4
+INFO collapse.CollapseSimulator : Timestep 4 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 5
+INFO collapse.CollapseSimulator : Timestep 5 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 6
+INFO collapse.CollapseSimulator : Timestep 6 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 7
+INFO collapse.CollapseSimulator : Timestep 7 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 8
+INFO collapse.CollapseSimulator : Timestep 8 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 9
+INFO collapse.CollapseSimulator : Timestep 9 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 10
+DEBUG collapse.CollapseSimulator : Collapsing buildings
+INFO collapse.CollapseSimulator : Finished collapsing buildings: 
+INFO collapse.CollapseSimulator : Building code WOOD: 28 buildings
+INFO collapse.CollapseSimulator :   5 none
+INFO collapse.CollapseSimulator :   2 slight
+INFO collapse.CollapseSimulator :   3 moderate
+INFO collapse.CollapseSimulator :   6 severe
+INFO collapse.CollapseSimulator :   12 destroyed
+INFO collapse.CollapseSimulator : Building code STEEL: 8 buildings
+INFO collapse.CollapseSimulator :   0 none
+INFO collapse.CollapseSimulator :   0 slight
+INFO collapse.CollapseSimulator :   0 moderate
+INFO collapse.CollapseSimulator :   2 severe
+INFO collapse.CollapseSimulator :   6 destroyed
+INFO collapse.CollapseSimulator : Building code CONCRETE: 1 buildings
+INFO collapse.CollapseSimulator :   0 none
+INFO collapse.CollapseSimulator :   1 slight
+INFO collapse.CollapseSimulator :   0 moderate
+INFO collapse.CollapseSimulator :   0 severe
+INFO collapse.CollapseSimulator :   0 destroyed
+INFO collapse.CollapseSimulator : Timestep 10 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 11
+INFO collapse.CollapseSimulator : Timestep 11 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 12
+INFO collapse.CollapseSimulator : Timestep 12 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 13
+INFO collapse.CollapseSimulator : Timestep 13 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 14
+INFO collapse.CollapseSimulator : Timestep 14 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 15
+INFO collapse.CollapseSimulator : Timestep 15 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 16
+INFO collapse.CollapseSimulator : Timestep 16 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 17
+INFO collapse.CollapseSimulator : Timestep 17 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 18
+INFO collapse.CollapseSimulator : Timestep 18 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 19
+INFO collapse.CollapseSimulator : Timestep 19 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 20
+INFO collapse.CollapseSimulator : Timestep 20 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 21
+INFO collapse.CollapseSimulator : Timestep 21 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 22
+INFO collapse.CollapseSimulator : Timestep 22 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 23
+INFO collapse.CollapseSimulator : Timestep 23 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 24
+INFO collapse.CollapseSimulator : Timestep 24 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 25
+INFO collapse.CollapseSimulator : Timestep 25 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 26
+INFO collapse.CollapseSimulator : Timestep 26 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 27
+INFO collapse.CollapseSimulator : Timestep 27 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 28
+INFO collapse.CollapseSimulator : Timestep 28 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 29
+INFO collapse.CollapseSimulator : Timestep 29 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 30
+INFO collapse.CollapseSimulator : Timestep 30 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 31
+INFO collapse.CollapseSimulator : Timestep 31 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 32
+INFO collapse.CollapseSimulator : Timestep 32 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 33
+INFO collapse.CollapseSimulator : Timestep 33 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 34
+INFO collapse.CollapseSimulator : Timestep 34 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 35
+INFO collapse.CollapseSimulator : Timestep 35 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 36
+INFO collapse.CollapseSimulator : Timestep 36 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 37
+INFO collapse.CollapseSimulator : Timestep 37 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 38
+INFO collapse.CollapseSimulator : Timestep 38 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 39
+INFO collapse.CollapseSimulator : Timestep 39 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 40
+INFO collapse.CollapseSimulator : Timestep 40 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 41
+INFO collapse.CollapseSimulator : Timestep 41 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 42
+INFO collapse.CollapseSimulator : Timestep 42 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 43
+INFO collapse.CollapseSimulator : Timestep 43 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 44
+INFO collapse.CollapseSimulator : Timestep 44 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 45
+INFO collapse.CollapseSimulator : Timestep 45 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 46
+INFO collapse.CollapseSimulator : Timestep 46 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 47
+INFO collapse.CollapseSimulator : Timestep 47 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 48
+INFO collapse.CollapseSimulator : Timestep 48 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 49
+INFO collapse.CollapseSimulator : Timestep 49 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 50
+INFO collapse.CollapseSimulator : Timestep 50 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 51
+INFO collapse.CollapseSimulator : Timestep 51 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 52
+INFO collapse.CollapseSimulator : Timestep 52 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 53
+INFO collapse.CollapseSimulator : Timestep 53 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 54
+INFO collapse.CollapseSimulator : Timestep 54 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 55
+INFO collapse.CollapseSimulator : Timestep 55 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 56
+INFO collapse.CollapseSimulator : Timestep 56 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 57
+INFO collapse.CollapseSimulator : Timestep 57 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 58
+INFO collapse.CollapseSimulator : Timestep 58 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 59
+INFO collapse.CollapseSimulator : Timestep 59 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 60
+INFO collapse.CollapseSimulator : Timestep 60 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 61
+INFO collapse.CollapseSimulator : Timestep 61 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 62
+INFO collapse.CollapseSimulator : Timestep 62 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 63
+INFO collapse.CollapseSimulator : Timestep 63 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 64
+INFO collapse.CollapseSimulator : Timestep 64 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 65
+INFO collapse.CollapseSimulator : Timestep 65 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 66
+INFO collapse.CollapseSimulator : Timestep 66 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 67
+INFO collapse.CollapseSimulator : Timestep 67 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 68
+INFO collapse.CollapseSimulator : Timestep 68 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 69
+INFO collapse.CollapseSimulator : Timestep 69 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 70
+INFO collapse.CollapseSimulator : Timestep 70 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 71
+INFO collapse.CollapseSimulator : Timestep 71 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 72
+INFO collapse.CollapseSimulator : Timestep 72 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 73
+INFO collapse.CollapseSimulator : Timestep 73 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 74
+INFO collapse.CollapseSimulator : Timestep 74 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 75
+INFO collapse.CollapseSimulator : Timestep 75 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 76
+INFO collapse.CollapseSimulator : Timestep 76 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 77
+INFO collapse.CollapseSimulator : Timestep 77 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 78
+INFO collapse.CollapseSimulator : Timestep 78 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 79
+INFO collapse.CollapseSimulator : Timestep 79 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 80
+INFO collapse.CollapseSimulator : Timestep 80 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 81
+INFO collapse.CollapseSimulator : Timestep 81 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 82
+INFO collapse.CollapseSimulator : Timestep 82 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 83
+INFO collapse.CollapseSimulator : Timestep 83 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 84
+INFO collapse.CollapseSimulator : Timestep 84 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 85
+INFO collapse.CollapseSimulator : Timestep 85 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 86
+INFO collapse.CollapseSimulator : Timestep 86 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 87
+INFO collapse.CollapseSimulator : Timestep 87 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 88
+INFO collapse.CollapseSimulator : Timestep 88 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 89
+INFO collapse.CollapseSimulator : Timestep 89 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 90
+INFO collapse.CollapseSimulator : Timestep 90 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 91
+INFO collapse.CollapseSimulator : Timestep 91 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 92
+INFO collapse.CollapseSimulator : Timestep 92 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 93
+INFO collapse.CollapseSimulator : Timestep 93 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 94
+INFO collapse.CollapseSimulator : Timestep 94 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 95
+INFO collapse.CollapseSimulator : Timestep 95 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 96
+INFO collapse.CollapseSimulator : Timestep 96 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 97
+INFO collapse.CollapseSimulator : Timestep 97 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 98
+INFO collapse.CollapseSimulator : Timestep 98 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 99
+INFO collapse.CollapseSimulator : Timestep 99 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 100
+INFO collapse.CollapseSimulator : Timestep 100 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 101
+INFO collapse.CollapseSimulator : Timestep 101 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 102
+INFO collapse.CollapseSimulator : Timestep 102 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 103
+INFO collapse.CollapseSimulator : Timestep 103 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 104
+INFO collapse.CollapseSimulator : Timestep 104 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 105
+INFO collapse.CollapseSimulator : Timestep 105 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 106
+INFO collapse.CollapseSimulator : Timestep 106 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 107
+INFO collapse.CollapseSimulator : Timestep 107 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 108
+INFO collapse.CollapseSimulator : Timestep 108 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 109
+INFO collapse.CollapseSimulator : Timestep 109 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 110
+INFO collapse.CollapseSimulator : Timestep 110 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 111
+INFO collapse.CollapseSimulator : Timestep 111 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 112
+INFO collapse.CollapseSimulator : Timestep 112 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 113
+INFO collapse.CollapseSimulator : Timestep 113 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 114
+INFO collapse.CollapseSimulator : Timestep 114 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 115
+INFO collapse.CollapseSimulator : Timestep 115 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 116
+INFO collapse.CollapseSimulator : Timestep 116 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 117
+INFO collapse.CollapseSimulator : Timestep 117 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 118
+INFO collapse.CollapseSimulator : Timestep 118 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 119
+INFO collapse.CollapseSimulator : Timestep 119 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 120
+INFO collapse.CollapseSimulator : Timestep 120 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 121
+INFO collapse.CollapseSimulator : Timestep 121 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 122
+INFO collapse.CollapseSimulator : Timestep 122 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 123
+INFO collapse.CollapseSimulator : Timestep 123 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 124
+INFO collapse.CollapseSimulator : Timestep 124 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 125
+INFO collapse.CollapseSimulator : Timestep 125 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 126
+INFO collapse.CollapseSimulator : Timestep 126 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 127
+INFO collapse.CollapseSimulator : Timestep 127 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 128
+INFO collapse.CollapseSimulator : Timestep 128 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 129
+INFO collapse.CollapseSimulator : Timestep 129 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 130
+INFO collapse.CollapseSimulator : Timestep 130 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 131
+INFO collapse.CollapseSimulator : Timestep 131 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 132
+INFO collapse.CollapseSimulator : Timestep 132 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 133
+INFO collapse.CollapseSimulator : Timestep 133 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 134
+INFO collapse.CollapseSimulator : Timestep 134 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 135
+INFO collapse.CollapseSimulator : Timestep 135 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 136
+INFO collapse.CollapseSimulator : Timestep 136 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 137
+INFO collapse.CollapseSimulator : Timestep 137 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 138
+INFO collapse.CollapseSimulator : Timestep 138 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 139
+INFO collapse.CollapseSimulator : Timestep 139 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 140
+INFO collapse.CollapseSimulator : Timestep 140 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 141
+INFO collapse.CollapseSimulator : Timestep 141 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 142
+INFO collapse.CollapseSimulator : Timestep 142 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 143
+INFO collapse.CollapseSimulator : Timestep 143 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 144
+INFO collapse.CollapseSimulator : Timestep 144 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 145
+INFO collapse.CollapseSimulator : Timestep 145 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 146
+INFO collapse.CollapseSimulator : Timestep 146 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 147
+INFO collapse.CollapseSimulator : Timestep 147 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 148
+INFO collapse.CollapseSimulator : Timestep 148 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 149
+INFO collapse.CollapseSimulator : Timestep 149 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 150
+INFO collapse.CollapseSimulator : Timestep 150 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 151
+INFO collapse.CollapseSimulator : Timestep 151 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 152
+INFO collapse.CollapseSimulator : Timestep 152 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 153
+INFO collapse.CollapseSimulator : Timestep 153 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 154
+INFO collapse.CollapseSimulator : Timestep 154 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 155
+INFO collapse.CollapseSimulator : Timestep 155 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 156
+INFO collapse.CollapseSimulator : Timestep 156 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 157
+INFO collapse.CollapseSimulator : Timestep 157 took 9 ms
+INFO collapse.CollapseSimulator : Timestep 158
+INFO collapse.CollapseSimulator : Timestep 158 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 159
+INFO collapse.CollapseSimulator : Timestep 159 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 160
+INFO collapse.CollapseSimulator : Timestep 160 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 161
+INFO collapse.CollapseSimulator : Timestep 161 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 162
+INFO collapse.CollapseSimulator : Timestep 162 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 163
+INFO collapse.CollapseSimulator : Timestep 163 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 164
+INFO collapse.CollapseSimulator : Timestep 164 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 165
+INFO collapse.CollapseSimulator : Timestep 165 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 166
+INFO collapse.CollapseSimulator : Timestep 166 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 167
+INFO collapse.CollapseSimulator : Timestep 167 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 168
+INFO collapse.CollapseSimulator : Timestep 168 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 169
+INFO collapse.CollapseSimulator : Timestep 169 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 170
+INFO collapse.CollapseSimulator : Timestep 170 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 171
+INFO collapse.CollapseSimulator : Timestep 171 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 172
+INFO collapse.CollapseSimulator : Timestep 172 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 173
+INFO collapse.CollapseSimulator : Timestep 173 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 174
+INFO collapse.CollapseSimulator : Timestep 174 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 175
+INFO collapse.CollapseSimulator : Timestep 175 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 176
+INFO collapse.CollapseSimulator : Timestep 176 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 177
+INFO collapse.CollapseSimulator : Timestep 177 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 178
+INFO collapse.CollapseSimulator : Timestep 178 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 179
+INFO collapse.CollapseSimulator : Timestep 179 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 180
+INFO collapse.CollapseSimulator : Timestep 180 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 181
+INFO collapse.CollapseSimulator : Timestep 181 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 182
+INFO collapse.CollapseSimulator : Timestep 182 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 183
+INFO collapse.CollapseSimulator : Timestep 183 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 184
+INFO collapse.CollapseSimulator : Timestep 184 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 185
+INFO collapse.CollapseSimulator : Timestep 185 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 186
+INFO collapse.CollapseSimulator : Timestep 186 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 187
+INFO collapse.CollapseSimulator : Timestep 187 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 188
+INFO collapse.CollapseSimulator : Timestep 188 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 189
+INFO collapse.CollapseSimulator : Timestep 189 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 190
+INFO collapse.CollapseSimulator : Timestep 190 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 191
+INFO collapse.CollapseSimulator : Timestep 191 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 192
+INFO collapse.CollapseSimulator : Timestep 192 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 193
+INFO collapse.CollapseSimulator : Timestep 193 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 194
+INFO collapse.CollapseSimulator : Timestep 194 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 195
+INFO collapse.CollapseSimulator : Timestep 195 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 196
+INFO collapse.CollapseSimulator : Timestep 196 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 197
+INFO collapse.CollapseSimulator : Timestep 197 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 198
+INFO collapse.CollapseSimulator : Timestep 198 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 199
+INFO collapse.CollapseSimulator : Timestep 199 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 200
+INFO collapse.CollapseSimulator : Timestep 200 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 201
+INFO collapse.CollapseSimulator : Timestep 201 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 202
+INFO collapse.CollapseSimulator : Timestep 202 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 203
+INFO collapse.CollapseSimulator : Timestep 203 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 204
+INFO collapse.CollapseSimulator : Timestep 204 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 205
+INFO collapse.CollapseSimulator : Timestep 205 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 206
+INFO collapse.CollapseSimulator : Timestep 206 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 207
+INFO collapse.CollapseSimulator : Timestep 207 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 208
+INFO collapse.CollapseSimulator : Timestep 208 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 209
+INFO collapse.CollapseSimulator : Timestep 209 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 210
+INFO collapse.CollapseSimulator : Timestep 210 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 211
+INFO collapse.CollapseSimulator : Timestep 211 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 212
+INFO collapse.CollapseSimulator : Timestep 212 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 213
+INFO collapse.CollapseSimulator : Timestep 213 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 214
+INFO collapse.CollapseSimulator : Timestep 214 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 215
+INFO collapse.CollapseSimulator : Timestep 215 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 216
+INFO collapse.CollapseSimulator : Timestep 216 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 217
+INFO collapse.CollapseSimulator : Timestep 217 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 218
+INFO collapse.CollapseSimulator : Timestep 218 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 219
+INFO collapse.CollapseSimulator : Timestep 219 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 220
+INFO collapse.CollapseSimulator : Timestep 220 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 221
+INFO collapse.CollapseSimulator : Timestep 221 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 222
+INFO collapse.CollapseSimulator : Timestep 222 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 223
+INFO collapse.CollapseSimulator : Timestep 223 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 224
+INFO collapse.CollapseSimulator : Timestep 224 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 225
+INFO collapse.CollapseSimulator : Timestep 225 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 226
+INFO collapse.CollapseSimulator : Timestep 226 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 227
+INFO collapse.CollapseSimulator : Timestep 227 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 228
+INFO collapse.CollapseSimulator : Timestep 228 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 229
+INFO collapse.CollapseSimulator : Timestep 229 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 230
+INFO collapse.CollapseSimulator : Timestep 230 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 231
+INFO collapse.CollapseSimulator : Timestep 231 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 232
+INFO collapse.CollapseSimulator : Timestep 232 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 233
+INFO collapse.CollapseSimulator : Timestep 233 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 234
+INFO collapse.CollapseSimulator : Timestep 234 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 235
+INFO collapse.CollapseSimulator : Timestep 235 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 236
+INFO collapse.CollapseSimulator : Timestep 236 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 237
+INFO collapse.CollapseSimulator : Timestep 237 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 238
+INFO collapse.CollapseSimulator : Timestep 238 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 239
+INFO collapse.CollapseSimulator : Timestep 239 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 240
+INFO collapse.CollapseSimulator : Timestep 240 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 241
+INFO collapse.CollapseSimulator : Timestep 241 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 242
+INFO collapse.CollapseSimulator : Timestep 242 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 243
+INFO collapse.CollapseSimulator : Timestep 243 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 244
+INFO collapse.CollapseSimulator : Timestep 244 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 245
+INFO collapse.CollapseSimulator : Timestep 245 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 246
+INFO collapse.CollapseSimulator : Timestep 246 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 247
+INFO collapse.CollapseSimulator : Timestep 247 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 248
+INFO collapse.CollapseSimulator : Timestep 248 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 249
+INFO collapse.CollapseSimulator : Timestep 249 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 250
+INFO collapse.CollapseSimulator : Timestep 250 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 251
+INFO collapse.CollapseSimulator : Timestep 251 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 252
+INFO collapse.CollapseSimulator : Timestep 252 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 253
+INFO collapse.CollapseSimulator : Timestep 253 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 254
+INFO collapse.CollapseSimulator : Timestep 254 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 255
+INFO collapse.CollapseSimulator : Timestep 255 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 256
+INFO collapse.CollapseSimulator : Timestep 256 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 257
+INFO collapse.CollapseSimulator : Timestep 257 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 258
+INFO collapse.CollapseSimulator : Timestep 258 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 259
+INFO collapse.CollapseSimulator : Timestep 259 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 260
+INFO collapse.CollapseSimulator : Timestep 260 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 261
+INFO collapse.CollapseSimulator : Timestep 261 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 262
+INFO collapse.CollapseSimulator : Timestep 262 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 263
+INFO collapse.CollapseSimulator : Timestep 263 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 264
+INFO collapse.CollapseSimulator : Timestep 264 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 265
+INFO collapse.CollapseSimulator : Timestep 265 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 266
+INFO collapse.CollapseSimulator : Timestep 266 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 267
+INFO collapse.CollapseSimulator : Timestep 267 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 268
+INFO collapse.CollapseSimulator : Timestep 268 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 269
+INFO collapse.CollapseSimulator : Timestep 269 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 270
+INFO collapse.CollapseSimulator : Timestep 270 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 271
+INFO collapse.CollapseSimulator : Timestep 271 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 272
+INFO collapse.CollapseSimulator : Timestep 272 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 273
+INFO collapse.CollapseSimulator : Timestep 273 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 274
+INFO collapse.CollapseSimulator : Timestep 274 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 275
+INFO collapse.CollapseSimulator : Timestep 275 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 276
+INFO collapse.CollapseSimulator : Timestep 276 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 277
+INFO collapse.CollapseSimulator : Timestep 277 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 278
+INFO collapse.CollapseSimulator : Timestep 278 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 279
+INFO collapse.CollapseSimulator : Timestep 279 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 280
+INFO collapse.CollapseSimulator : Timestep 280 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 281
+INFO collapse.CollapseSimulator : Timestep 281 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 282
+INFO collapse.CollapseSimulator : Timestep 282 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 283
+INFO collapse.CollapseSimulator : Timestep 283 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 284
+INFO collapse.CollapseSimulator : Timestep 284 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 285
+INFO collapse.CollapseSimulator : Timestep 285 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 286
+INFO collapse.CollapseSimulator : Timestep 286 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 287
+INFO collapse.CollapseSimulator : Timestep 287 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 288
+INFO collapse.CollapseSimulator : Timestep 288 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 289
+INFO collapse.CollapseSimulator : Timestep 289 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 290
+INFO collapse.CollapseSimulator : Timestep 290 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 291
+INFO collapse.CollapseSimulator : Timestep 291 took 1 ms
+INFO collapse.CollapseSimulator : Timestep 292
+INFO collapse.CollapseSimulator : Timestep 292 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 293
+INFO collapse.CollapseSimulator : Timestep 293 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 294
+INFO collapse.CollapseSimulator : Timestep 294 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 295
+INFO collapse.CollapseSimulator : Timestep 295 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 296
+INFO collapse.CollapseSimulator : Timestep 296 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 297
+INFO collapse.CollapseSimulator : Timestep 297 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 298
+INFO collapse.CollapseSimulator : Timestep 298 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 299
+INFO collapse.CollapseSimulator : Timestep 299 took 0 ms
+INFO collapse.CollapseSimulator : Timestep 300
+INFO collapse.CollapseSimulator : Timestep 300 took 0 ms

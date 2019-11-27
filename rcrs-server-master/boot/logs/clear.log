@@ -1,1 +1,607 @@
 DEBUG clear.ClearSimulator : Starting Connection from Area model clear simulator. Registry: System
+DEBUG clear.ClearSimulator : Instantiating random number generator: org.uncommons.maths.random.MersenneTwisterRNG
+DEBUG clear.ClearSimulator : Using seed 1023
+INFO clear.ClearSimulator : clear.ClearSimulator@6fc1ffa9 connected
+DEBUG clear.ClearSimulator : Re-indexing world model
+DEBUG clear.ClearSimulator : Finished re-index. Took 32ms
+INFO clear.ClearSimulator : Unrecognised message type: urn:rescuecore2:messages.control:ks_aftershocks_info : TIMES = [10], INTENSITIES = [0.5]
+INFO clear.ClearSimulator : Timestep 1
+INFO clear.ClearSimulator : Timestep 1 took 1 ms
+INFO clear.ClearSimulator : Timestep 2
+INFO clear.ClearSimulator : Timestep 2 took 0 ms
+INFO clear.ClearSimulator : Timestep 3
+INFO clear.ClearSimulator : Timestep 3 took 1 ms
+INFO clear.ClearSimulator : Timestep 4
+INFO clear.ClearSimulator : Timestep 4 took 0 ms
+INFO clear.ClearSimulator : Timestep 5
+INFO clear.ClearSimulator : Timestep 5 took 1 ms
+INFO clear.ClearSimulator : Timestep 6
+INFO clear.ClearSimulator : Timestep 6 took 0 ms
+INFO clear.ClearSimulator : Timestep 7
+INFO clear.ClearSimulator : Timestep 7 took 0 ms
+INFO clear.ClearSimulator : Timestep 8
+INFO clear.ClearSimulator : Timestep 8 took 1 ms
+INFO clear.ClearSimulator : Timestep 9
+INFO clear.ClearSimulator : Timestep 9 took 0 ms
+INFO clear.ClearSimulator : Timestep 10
+INFO clear.ClearSimulator : Timestep 10 took 0 ms
+INFO clear.ClearSimulator : Timestep 11
+INFO clear.ClearSimulator : Timestep 11 took 0 ms
+INFO clear.ClearSimulator : Timestep 12
+INFO clear.ClearSimulator : Timestep 12 took 1 ms
+INFO clear.ClearSimulator : Timestep 13
+INFO clear.ClearSimulator : Timestep 13 took 0 ms
+INFO clear.ClearSimulator : Timestep 14
+INFO clear.ClearSimulator : Timestep 14 took 0 ms
+INFO clear.ClearSimulator : Timestep 15
+INFO clear.ClearSimulator : Timestep 15 took 0 ms
+INFO clear.ClearSimulator : Timestep 16
+INFO clear.ClearSimulator : Timestep 16 took 0 ms
+INFO clear.ClearSimulator : Timestep 17
+INFO clear.ClearSimulator : Timestep 17 took 0 ms
+INFO clear.ClearSimulator : Timestep 18
+INFO clear.ClearSimulator : Timestep 18 took 0 ms
+INFO clear.ClearSimulator : Timestep 19
+INFO clear.ClearSimulator : Timestep 19 took 0 ms
+INFO clear.ClearSimulator : Timestep 20
+INFO clear.ClearSimulator : Timestep 20 took 1 ms
+INFO clear.ClearSimulator : Timestep 21
+INFO clear.ClearSimulator : Timestep 21 took 0 ms
+INFO clear.ClearSimulator : Timestep 22
+INFO clear.ClearSimulator : Timestep 22 took 0 ms
+INFO clear.ClearSimulator : Timestep 23
+INFO clear.ClearSimulator : Timestep 23 took 0 ms
+INFO clear.ClearSimulator : Timestep 24
+INFO clear.ClearSimulator : Timestep 24 took 0 ms
+INFO clear.ClearSimulator : Timestep 25
+INFO clear.ClearSimulator : Timestep 25 took 0 ms
+INFO clear.ClearSimulator : Timestep 26
+INFO clear.ClearSimulator : Timestep 26 took 0 ms
+INFO clear.ClearSimulator : Timestep 27
+INFO clear.ClearSimulator : Timestep 27 took 1 ms
+INFO clear.ClearSimulator : Timestep 28
+INFO clear.ClearSimulator : Timestep 28 took 1 ms
+INFO clear.ClearSimulator : Timestep 29
+INFO clear.ClearSimulator : Timestep 29 took 0 ms
+INFO clear.ClearSimulator : Timestep 30
+INFO clear.ClearSimulator : Timestep 30 took 0 ms
+INFO clear.ClearSimulator : Timestep 31
+INFO clear.ClearSimulator : Timestep 31 took 1 ms
+INFO clear.ClearSimulator : Timestep 32
+INFO clear.ClearSimulator : Timestep 32 took 0 ms
+INFO clear.ClearSimulator : Timestep 33
+INFO clear.ClearSimulator : Timestep 33 took 0 ms
+INFO clear.ClearSimulator : Timestep 34
+INFO clear.ClearSimulator : Timestep 34 took 1 ms
+INFO clear.ClearSimulator : Timestep 35
+INFO clear.ClearSimulator : Timestep 35 took 0 ms
+INFO clear.ClearSimulator : Timestep 36
+INFO clear.ClearSimulator : Timestep 36 took 0 ms
+INFO clear.ClearSimulator : Timestep 37
+INFO clear.ClearSimulator : Timestep 37 took 0 ms
+INFO clear.ClearSimulator : Timestep 38
+INFO clear.ClearSimulator : Timestep 38 took 1 ms
+INFO clear.ClearSimulator : Timestep 39
+INFO clear.ClearSimulator : Timestep 39 took 0 ms
+INFO clear.ClearSimulator : Timestep 40
+INFO clear.ClearSimulator : Timestep 40 took 0 ms
+INFO clear.ClearSimulator : Timestep 41
+INFO clear.ClearSimulator : Timestep 41 took 0 ms
+INFO clear.ClearSimulator : Timestep 42
+INFO clear.ClearSimulator : Timestep 42 took 0 ms
+INFO clear.ClearSimulator : Timestep 43
+INFO clear.ClearSimulator : Timestep 43 took 0 ms
+INFO clear.ClearSimulator : Timestep 44
+INFO clear.ClearSimulator : Timestep 44 took 1 ms
+INFO clear.ClearSimulator : Timestep 45
+INFO clear.ClearSimulator : Timestep 45 took 0 ms
+INFO clear.ClearSimulator : Timestep 46
+INFO clear.ClearSimulator : Timestep 46 took 0 ms
+INFO clear.ClearSimulator : Timestep 47
+INFO clear.ClearSimulator : Timestep 47 took 0 ms
+INFO clear.ClearSimulator : Timestep 48
+INFO clear.ClearSimulator : Timestep 48 took 0 ms
+INFO clear.ClearSimulator : Timestep 49
+INFO clear.ClearSimulator : Timestep 49 took 1 ms
+INFO clear.ClearSimulator : Timestep 50
+INFO clear.ClearSimulator : Timestep 50 took 0 ms
+INFO clear.ClearSimulator : Timestep 51
+INFO clear.ClearSimulator : Timestep 51 took 0 ms
+INFO clear.ClearSimulator : Timestep 52
+INFO clear.ClearSimulator : Timestep 52 took 0 ms
+INFO clear.ClearSimulator : Timestep 53
+INFO clear.ClearSimulator : Timestep 53 took 0 ms
+INFO clear.ClearSimulator : Timestep 54
+INFO clear.ClearSimulator : Timestep 54 took 0 ms
+INFO clear.ClearSimulator : Timestep 55
+INFO clear.ClearSimulator : Timestep 55 took 1 ms
+INFO clear.ClearSimulator : Timestep 56
+INFO clear.ClearSimulator : Timestep 56 took 0 ms
+INFO clear.ClearSimulator : Timestep 57
+INFO clear.ClearSimulator : Timestep 57 took 0 ms
+INFO clear.ClearSimulator : Timestep 58
+INFO clear.ClearSimulator : Timestep 58 took 0 ms
+INFO clear.ClearSimulator : Timestep 59
+INFO clear.ClearSimulator : Timestep 59 took 0 ms
+INFO clear.ClearSimulator : Timestep 60
+INFO clear.ClearSimulator : Timestep 60 took 1 ms
+INFO clear.ClearSimulator : Timestep 61
+INFO clear.ClearSimulator : Timestep 61 took 0 ms
+INFO clear.ClearSimulator : Timestep 62
+INFO clear.ClearSimulator : Timestep 62 took 0 ms
+INFO clear.ClearSimulator : Timestep 63
+INFO clear.ClearSimulator : Timestep 63 took 0 ms
+INFO clear.ClearSimulator : Timestep 64
+INFO clear.ClearSimulator : Timestep 64 took 0 ms
+INFO clear.ClearSimulator : Timestep 65
+INFO clear.ClearSimulator : Timestep 65 took 0 ms
+INFO clear.ClearSimulator : Timestep 66
+INFO clear.ClearSimulator : Timestep 66 took 0 ms
+INFO clear.ClearSimulator : Timestep 67
+INFO clear.ClearSimulator : Timestep 67 took 0 ms
+INFO clear.ClearSimulator : Timestep 68
+INFO clear.ClearSimulator : Timestep 68 took 0 ms
+INFO clear.ClearSimulator : Timestep 69
+INFO clear.ClearSimulator : Timestep 69 took 0 ms
+INFO clear.ClearSimulator : Timestep 70
+INFO clear.ClearSimulator : Timestep 70 took 0 ms
+INFO clear.ClearSimulator : Timestep 71
+INFO clear.ClearSimulator : Timestep 71 took 1 ms
+INFO clear.ClearSimulator : Timestep 72
+INFO clear.ClearSimulator : Timestep 72 took 0 ms
+INFO clear.ClearSimulator : Timestep 73
+INFO clear.ClearSimulator : Timestep 73 took 0 ms
+INFO clear.ClearSimulator : Timestep 74
+INFO clear.ClearSimulator : Timestep 74 took 1 ms
+INFO clear.ClearSimulator : Timestep 75
+INFO clear.ClearSimulator : Timestep 75 took 0 ms
+INFO clear.ClearSimulator : Timestep 76
+INFO clear.ClearSimulator : Timestep 76 took 0 ms
+INFO clear.ClearSimulator : Timestep 77
+INFO clear.ClearSimulator : Timestep 77 took 0 ms
+INFO clear.ClearSimulator : Timestep 78
+INFO clear.ClearSimulator : Timestep 78 took 0 ms
+INFO clear.ClearSimulator : Timestep 79
+INFO clear.ClearSimulator : Timestep 79 took 0 ms
+INFO clear.ClearSimulator : Timestep 80
+INFO clear.ClearSimulator : Timestep 80 took 0 ms
+INFO clear.ClearSimulator : Timestep 81
+INFO clear.ClearSimulator : Timestep 81 took 0 ms
+INFO clear.ClearSimulator : Timestep 82
+INFO clear.ClearSimulator : Timestep 82 took 0 ms
+INFO clear.ClearSimulator : Timestep 83
+INFO clear.ClearSimulator : Timestep 83 took 0 ms
+INFO clear.ClearSimulator : Timestep 84
+INFO clear.ClearSimulator : Timestep 84 took 0 ms
+INFO clear.ClearSimulator : Timestep 85
+INFO clear.ClearSimulator : Timestep 85 took 0 ms
+INFO clear.ClearSimulator : Timestep 86
+INFO clear.ClearSimulator : Timestep 86 took 0 ms
+INFO clear.ClearSimulator : Timestep 87
+INFO clear.ClearSimulator : Timestep 87 took 0 ms
+INFO clear.ClearSimulator : Timestep 88
+INFO clear.ClearSimulator : Timestep 88 took 0 ms
+INFO clear.ClearSimulator : Timestep 89
+INFO clear.ClearSimulator : Timestep 89 took 0 ms
+INFO clear.ClearSimulator : Timestep 90
+INFO clear.ClearSimulator : Timestep 90 took 0 ms
+INFO clear.ClearSimulator : Timestep 91
+INFO clear.ClearSimulator : Timestep 91 took 0 ms
+INFO clear.ClearSimulator : Timestep 92
+INFO clear.ClearSimulator : Timestep 92 took 0 ms
+INFO clear.ClearSimulator : Timestep 93
+INFO clear.ClearSimulator : Timestep 93 took 0 ms
+INFO clear.ClearSimulator : Timestep 94
+INFO clear.ClearSimulator : Timestep 94 took 0 ms
+INFO clear.ClearSimulator : Timestep 95
+INFO clear.ClearSimulator : Timestep 95 took 0 ms
+INFO clear.ClearSimulator : Timestep 96
+INFO clear.ClearSimulator : Timestep 96 took 0 ms
+INFO clear.ClearSimulator : Timestep 97
+INFO clear.ClearSimulator : Timestep 97 took 1 ms
+INFO clear.ClearSimulator : Timestep 98
+INFO clear.ClearSimulator : Timestep 98 took 0 ms
+INFO clear.ClearSimulator : Timestep 99
+INFO clear.ClearSimulator : Timestep 99 took 0 ms
+INFO clear.ClearSimulator : Timestep 100
+INFO clear.ClearSimulator : Timestep 100 took 0 ms
+INFO clear.ClearSimulator : Timestep 101
+INFO clear.ClearSimulator : Timestep 101 took 0 ms
+INFO clear.ClearSimulator : Timestep 102
+INFO clear.ClearSimulator : Timestep 102 took 0 ms
+INFO clear.ClearSimulator : Timestep 103
+INFO clear.ClearSimulator : Timestep 103 took 0 ms
+INFO clear.ClearSimulator : Timestep 104
+INFO clear.ClearSimulator : Timestep 104 took 0 ms
+INFO clear.ClearSimulator : Timestep 105
+INFO clear.ClearSimulator : Timestep 105 took 0 ms
+INFO clear.ClearSimulator : Timestep 106
+INFO clear.ClearSimulator : Timestep 106 took 0 ms
+INFO clear.ClearSimulator : Timestep 107
+INFO clear.ClearSimulator : Timestep 107 took 0 ms
+INFO clear.ClearSimulator : Timestep 108
+INFO clear.ClearSimulator : Timestep 108 took 0 ms
+INFO clear.ClearSimulator : Timestep 109
+INFO clear.ClearSimulator : Timestep 109 took 1 ms
+INFO clear.ClearSimulator : Timestep 110
+INFO clear.ClearSimulator : Timestep 110 took 1 ms
+INFO clear.ClearSimulator : Timestep 111
+INFO clear.ClearSimulator : Timestep 111 took 0 ms
+INFO clear.ClearSimulator : Timestep 112
+INFO clear.ClearSimulator : Timestep 112 took 0 ms
+INFO clear.ClearSimulator : Timestep 113
+INFO clear.ClearSimulator : Timestep 113 took 0 ms
+INFO clear.ClearSimulator : Timestep 114
+INFO clear.ClearSimulator : Timestep 114 took 0 ms
+INFO clear.ClearSimulator : Timestep 115
+INFO clear.ClearSimulator : Timestep 115 took 1 ms
+INFO clear.ClearSimulator : Timestep 116
+INFO clear.ClearSimulator : Timestep 116 took 0 ms
+INFO clear.ClearSimulator : Timestep 117
+INFO clear.ClearSimulator : Timestep 117 took 0 ms
+INFO clear.ClearSimulator : Timestep 118
+INFO clear.ClearSimulator : Timestep 118 took 0 ms
+INFO clear.ClearSimulator : Timestep 119
+INFO clear.ClearSimulator : Timestep 119 took 0 ms
+INFO clear.ClearSimulator : Timestep 120
+INFO clear.ClearSimulator : Timestep 120 took 0 ms
+INFO clear.ClearSimulator : Timestep 121
+INFO clear.ClearSimulator : Timestep 121 took 0 ms
+INFO clear.ClearSimulator : Timestep 122
+INFO clear.ClearSimulator : Timestep 122 took 0 ms
+INFO clear.ClearSimulator : Timestep 123
+INFO clear.ClearSimulator : Timestep 123 took 0 ms
+INFO clear.ClearSimulator : Timestep 124
+INFO clear.ClearSimulator : Timestep 124 took 0 ms
+INFO clear.ClearSimulator : Timestep 125
+INFO clear.ClearSimulator : Timestep 125 took 0 ms
+INFO clear.ClearSimulator : Timestep 126
+INFO clear.ClearSimulator : Timestep 126 took 0 ms
+INFO clear.ClearSimulator : Timestep 127
+INFO clear.ClearSimulator : Timestep 127 took 0 ms
+INFO clear.ClearSimulator : Timestep 128
+INFO clear.ClearSimulator : Timestep 128 took 0 ms
+INFO clear.ClearSimulator : Timestep 129
+INFO clear.ClearSimulator : Timestep 129 took 0 ms
+INFO clear.ClearSimulator : Timestep 130
+INFO clear.ClearSimulator : Timestep 130 took 0 ms
+INFO clear.ClearSimulator : Timestep 131
+INFO clear.ClearSimulator : Timestep 131 took 0 ms
+INFO clear.ClearSimulator : Timestep 132
+INFO clear.ClearSimulator : Timestep 132 took 0 ms
+INFO clear.ClearSimulator : Timestep 133
+INFO clear.ClearSimulator : Timestep 133 took 0 ms
+INFO clear.ClearSimulator : Timestep 134
+INFO clear.ClearSimulator : Timestep 134 took 0 ms
+INFO clear.ClearSimulator : Timestep 135
+INFO clear.ClearSimulator : Timestep 135 took 0 ms
+INFO clear.ClearSimulator : Timestep 136
+INFO clear.ClearSimulator : Timestep 136 took 0 ms
+INFO clear.ClearSimulator : Timestep 137
+INFO clear.ClearSimulator : Timestep 137 took 0 ms
+INFO clear.ClearSimulator : Timestep 138
+INFO clear.ClearSimulator : Timestep 138 took 1 ms
+INFO clear.ClearSimulator : Timestep 139
+INFO clear.ClearSimulator : Timestep 139 took 0 ms
+INFO clear.ClearSimulator : Timestep 140
+INFO clear.ClearSimulator : Timestep 140 took 0 ms
+INFO clear.ClearSimulator : Timestep 141
+INFO clear.ClearSimulator : Timestep 141 took 0 ms
+INFO clear.ClearSimulator : Timestep 142
+INFO clear.ClearSimulator : Timestep 142 took 0 ms
+INFO clear.ClearSimulator : Timestep 143
+INFO clear.ClearSimulator : Timestep 143 took 0 ms
+INFO clear.ClearSimulator : Timestep 144
+INFO clear.ClearSimulator : Timestep 144 took 1 ms
+INFO clear.ClearSimulator : Timestep 145
+INFO clear.ClearSimulator : Timestep 145 took 0 ms
+INFO clear.ClearSimulator : Timestep 146
+INFO clear.ClearSimulator : Timestep 146 took 0 ms
+INFO clear.ClearSimulator : Timestep 147
+INFO clear.ClearSimulator : Timestep 147 took 0 ms
+INFO clear.ClearSimulator : Timestep 148
+INFO clear.ClearSimulator : Timestep 148 took 0 ms
+INFO clear.ClearSimulator : Timestep 149
+INFO clear.ClearSimulator : Timestep 149 took 0 ms
+INFO clear.ClearSimulator : Timestep 150
+INFO clear.ClearSimulator : Timestep 150 took 0 ms
+INFO clear.ClearSimulator : Timestep 151
+INFO clear.ClearSimulator : Timestep 151 took 0 ms
+INFO clear.ClearSimulator : Timestep 152
+INFO clear.ClearSimulator : Timestep 152 took 0 ms
+INFO clear.ClearSimulator : Timestep 153
+INFO clear.ClearSimulator : Timestep 153 took 1 ms
+INFO clear.ClearSimulator : Timestep 154
+INFO clear.ClearSimulator : Timestep 154 took 0 ms
+INFO clear.ClearSimulator : Timestep 155
+INFO clear.ClearSimulator : Timestep 155 took 0 ms
+INFO clear.ClearSimulator : Timestep 156
+INFO clear.ClearSimulator : Timestep 156 took 0 ms
+INFO clear.ClearSimulator : Timestep 157
+INFO clear.ClearSimulator : Timestep 157 took 83 ms
+INFO clear.ClearSimulator : Timestep 158
+INFO clear.ClearSimulator : Timestep 158 took 0 ms
+INFO clear.ClearSimulator : Timestep 159
+INFO clear.ClearSimulator : Timestep 159 took 0 ms
+INFO clear.ClearSimulator : Timestep 160
+INFO clear.ClearSimulator : Timestep 160 took 0 ms
+INFO clear.ClearSimulator : Timestep 161
+INFO clear.ClearSimulator : Timestep 161 took 0 ms
+INFO clear.ClearSimulator : Timestep 162
+INFO clear.ClearSimulator : Timestep 162 took 0 ms
+INFO clear.ClearSimulator : Timestep 163
+INFO clear.ClearSimulator : Timestep 163 took 0 ms
+INFO clear.ClearSimulator : Timestep 164
+INFO clear.ClearSimulator : Timestep 164 took 0 ms
+INFO clear.ClearSimulator : Timestep 165
+INFO clear.ClearSimulator : Timestep 165 took 0 ms
+INFO clear.ClearSimulator : Timestep 166
+INFO clear.ClearSimulator : Timestep 166 took 0 ms
+INFO clear.ClearSimulator : Timestep 167
+INFO clear.ClearSimulator : Timestep 167 took 0 ms
+INFO clear.ClearSimulator : Timestep 168
+INFO clear.ClearSimulator : Timestep 168 took 0 ms
+INFO clear.ClearSimulator : Timestep 169
+INFO clear.ClearSimulator : Timestep 169 took 0 ms
+INFO clear.ClearSimulator : Timestep 170
+INFO clear.ClearSimulator : Timestep 170 took 1 ms
+INFO clear.ClearSimulator : Timestep 171
+INFO clear.ClearSimulator : Timestep 171 took 0 ms
+INFO clear.ClearSimulator : Timestep 172
+INFO clear.ClearSimulator : Timestep 172 took 1 ms
+INFO clear.ClearSimulator : Timestep 173
+INFO clear.ClearSimulator : Timestep 173 took 0 ms
+INFO clear.ClearSimulator : Timestep 174
+INFO clear.ClearSimulator : Timestep 174 took 0 ms
+INFO clear.ClearSimulator : Timestep 175
+INFO clear.ClearSimulator : Timestep 175 took 0 ms
+INFO clear.ClearSimulator : Timestep 176
+INFO clear.ClearSimulator : Timestep 176 took 0 ms
+INFO clear.ClearSimulator : Timestep 177
+INFO clear.ClearSimulator : Timestep 177 took 0 ms
+INFO clear.ClearSimulator : Timestep 178
+INFO clear.ClearSimulator : Timestep 178 took 0 ms
+INFO clear.ClearSimulator : Timestep 179
+INFO clear.ClearSimulator : Timestep 179 took 0 ms
+INFO clear.ClearSimulator : Timestep 180
+INFO clear.ClearSimulator : Timestep 180 took 0 ms
+INFO clear.ClearSimulator : Timestep 181
+INFO clear.ClearSimulator : Timestep 181 took 0 ms
+INFO clear.ClearSimulator : Timestep 182
+INFO clear.ClearSimulator : Timestep 182 took 0 ms
+INFO clear.ClearSimulator : Timestep 183
+INFO clear.ClearSimulator : Timestep 183 took 0 ms
+INFO clear.ClearSimulator : Timestep 184
+INFO clear.ClearSimulator : Timestep 184 took 0 ms
+INFO clear.ClearSimulator : Timestep 185
+INFO clear.ClearSimulator : Timestep 185 took 0 ms
+INFO clear.ClearSimulator : Timestep 186
+INFO clear.ClearSimulator : Timestep 186 took 1 ms
+INFO clear.ClearSimulator : Timestep 187
+INFO clear.ClearSimulator : Timestep 187 took 0 ms
+INFO clear.ClearSimulator : Timestep 188
+INFO clear.ClearSimulator : Timestep 188 took 0 ms
+INFO clear.ClearSimulator : Timestep 189
+INFO clear.ClearSimulator : Timestep 189 took 0 ms
+INFO clear.ClearSimulator : Timestep 190
+INFO clear.ClearSimulator : Timestep 190 took 1 ms
+INFO clear.ClearSimulator : Timestep 191
+INFO clear.ClearSimulator : Timestep 191 took 0 ms
+INFO clear.ClearSimulator : Timestep 192
+INFO clear.ClearSimulator : Timestep 192 took 0 ms
+INFO clear.ClearSimulator : Timestep 193
+INFO clear.ClearSimulator : Timestep 193 took 0 ms
+INFO clear.ClearSimulator : Timestep 194
+INFO clear.ClearSimulator : Timestep 194 took 0 ms
+INFO clear.ClearSimulator : Timestep 195
+INFO clear.ClearSimulator : Timestep 195 took 0 ms
+INFO clear.ClearSimulator : Timestep 196
+INFO clear.ClearSimulator : Timestep 196 took 0 ms
+INFO clear.ClearSimulator : Timestep 197
+INFO clear.ClearSimulator : Timestep 197 took 0 ms
+INFO clear.ClearSimulator : Timestep 198
+INFO clear.ClearSimulator : Timestep 198 took 0 ms
+INFO clear.ClearSimulator : Timestep 199
+INFO clear.ClearSimulator : Timestep 199 took 0 ms
+INFO clear.ClearSimulator : Timestep 200
+INFO clear.ClearSimulator : Timestep 200 took 0 ms
+INFO clear.ClearSimulator : Timestep 201
+INFO clear.ClearSimulator : Timestep 201 took 0 ms
+INFO clear.ClearSimulator : Timestep 202
+INFO clear.ClearSimulator : Timestep 202 took 0 ms
+INFO clear.ClearSimulator : Timestep 203
+INFO clear.ClearSimulator : Timestep 203 took 0 ms
+INFO clear.ClearSimulator : Timestep 204
+INFO clear.ClearSimulator : Timestep 204 took 0 ms
+INFO clear.ClearSimulator : Timestep 205
+INFO clear.ClearSimulator : Timestep 205 took 0 ms
+INFO clear.ClearSimulator : Timestep 206
+INFO clear.ClearSimulator : Timestep 206 took 0 ms
+INFO clear.ClearSimulator : Timestep 207
+INFO clear.ClearSimulator : Timestep 207 took 0 ms
+INFO clear.ClearSimulator : Timestep 208
+INFO clear.ClearSimulator : Timestep 208 took 0 ms
+INFO clear.ClearSimulator : Timestep 209
+INFO clear.ClearSimulator : Timestep 209 took 0 ms
+INFO clear.ClearSimulator : Timestep 210
+INFO clear.ClearSimulator : Timestep 210 took 0 ms
+INFO clear.ClearSimulator : Timestep 211
+INFO clear.ClearSimulator : Timestep 211 took 0 ms
+INFO clear.ClearSimulator : Timestep 212
+INFO clear.ClearSimulator : Timestep 212 took 0 ms
+INFO clear.ClearSimulator : Timestep 213
+INFO clear.ClearSimulator : Timestep 213 took 0 ms
+INFO clear.ClearSimulator : Timestep 214
+INFO clear.ClearSimulator : Timestep 214 took 0 ms
+INFO clear.ClearSimulator : Timestep 215
+INFO clear.ClearSimulator : Timestep 215 took 0 ms
+INFO clear.ClearSimulator : Timestep 216
+INFO clear.ClearSimulator : Timestep 216 took 0 ms
+INFO clear.ClearSimulator : Timestep 217
+INFO clear.ClearSimulator : Timestep 217 took 0 ms
+INFO clear.ClearSimulator : Timestep 218
+INFO clear.ClearSimulator : Timestep 218 took 1 ms
+INFO clear.ClearSimulator : Timestep 219
+INFO clear.ClearSimulator : Timestep 219 took 0 ms
+INFO clear.ClearSimulator : Timestep 220
+INFO clear.ClearSimulator : Timestep 220 took 0 ms
+INFO clear.ClearSimulator : Timestep 221
+INFO clear.ClearSimulator : Timestep 221 took 0 ms
+INFO clear.ClearSimulator : Timestep 222
+INFO clear.ClearSimulator : Timestep 222 took 0 ms
+INFO clear.ClearSimulator : Timestep 223
+INFO clear.ClearSimulator : Timestep 223 took 0 ms
+INFO clear.ClearSimulator : Timestep 224
+INFO clear.ClearSimulator : Timestep 224 took 0 ms
+INFO clear.ClearSimulator : Timestep 225
+INFO clear.ClearSimulator : Timestep 225 took 0 ms
+INFO clear.ClearSimulator : Timestep 226
+INFO clear.ClearSimulator : Timestep 226 took 0 ms
+INFO clear.ClearSimulator : Timestep 227
+INFO clear.ClearSimulator : Timestep 227 took 0 ms
+INFO clear.ClearSimulator : Timestep 228
+INFO clear.ClearSimulator : Timestep 228 took 0 ms
+INFO clear.ClearSimulator : Timestep 229
+INFO clear.ClearSimulator : Timestep 229 took 0 ms
+INFO clear.ClearSimulator : Timestep 230
+INFO clear.ClearSimulator : Timestep 230 took 0 ms
+INFO clear.ClearSimulator : Timestep 231
+INFO clear.ClearSimulator : Timestep 231 took 0 ms
+INFO clear.ClearSimulator : Timestep 232
+INFO clear.ClearSimulator : Timestep 232 took 0 ms
+INFO clear.ClearSimulator : Timestep 233
+INFO clear.ClearSimulator : Timestep 233 took 0 ms
+INFO clear.ClearSimulator : Timestep 234
+INFO clear.ClearSimulator : Timestep 234 took 0 ms
+INFO clear.ClearSimulator : Timestep 235
+INFO clear.ClearSimulator : Timestep 235 took 0 ms
+INFO clear.ClearSimulator : Timestep 236
+INFO clear.ClearSimulator : Timestep 236 took 1 ms
+INFO clear.ClearSimulator : Timestep 237
+INFO clear.ClearSimulator : Timestep 237 took 0 ms
+INFO clear.ClearSimulator : Timestep 238
+INFO clear.ClearSimulator : Timestep 238 took 0 ms
+INFO clear.ClearSimulator : Timestep 239
+INFO clear.ClearSimulator : Timestep 239 took 0 ms
+INFO clear.ClearSimulator : Timestep 240
+INFO clear.ClearSimulator : Timestep 240 took 0 ms
+INFO clear.ClearSimulator : Timestep 241
+INFO clear.ClearSimulator : Timestep 241 took 0 ms
+INFO clear.ClearSimulator : Timestep 242
+INFO clear.ClearSimulator : Timestep 242 took 0 ms
+INFO clear.ClearSimulator : Timestep 243
+INFO clear.ClearSimulator : Timestep 243 took 0 ms
+INFO clear.ClearSimulator : Timestep 244
+INFO clear.ClearSimulator : Timestep 244 took 0 ms
+INFO clear.ClearSimulator : Timestep 245
+INFO clear.ClearSimulator : Timestep 245 took 0 ms
+INFO clear.ClearSimulator : Timestep 246
+INFO clear.ClearSimulator : Timestep 246 took 0 ms
+INFO clear.ClearSimulator : Timestep 247
+INFO clear.ClearSimulator : Timestep 247 took 1 ms
+INFO clear.ClearSimulator : Timestep 248
+INFO clear.ClearSimulator : Timestep 248 took 0 ms
+INFO clear.ClearSimulator : Timestep 249
+INFO clear.ClearSimulator : Timestep 249 took 0 ms
+INFO clear.ClearSimulator : Timestep 250
+INFO clear.ClearSimulator : Timestep 250 took 0 ms
+INFO clear.ClearSimulator : Timestep 251
+INFO clear.ClearSimulator : Timestep 251 took 0 ms
+INFO clear.ClearSimulator : Timestep 252
+INFO clear.ClearSimulator : Timestep 252 took 0 ms
+INFO clear.ClearSimulator : Timestep 253
+INFO clear.ClearSimulator : Timestep 253 took 0 ms
+INFO clear.ClearSimulator : Timestep 254
+INFO clear.ClearSimulator : Timestep 254 took 0 ms
+INFO clear.ClearSimulator : Timestep 255
+INFO clear.ClearSimulator : Timestep 255 took 0 ms
+INFO clear.ClearSimulator : Timestep 256
+INFO clear.ClearSimulator : Timestep 256 took 0 ms
+INFO clear.ClearSimulator : Timestep 257
+INFO clear.ClearSimulator : Timestep 257 took 0 ms
+INFO clear.ClearSimulator : Timestep 258
+INFO clear.ClearSimulator : Timestep 258 took 0 ms
+INFO clear.ClearSimulator : Timestep 259
+INFO clear.ClearSimulator : Timestep 259 took 0 ms
+INFO clear.ClearSimulator : Timestep 260
+INFO clear.ClearSimulator : Timestep 260 took 0 ms
+INFO clear.ClearSimulator : Timestep 261
+INFO clear.ClearSimulator : Timestep 261 took 0 ms
+INFO clear.ClearSimulator : Timestep 262
+INFO clear.ClearSimulator : Timestep 262 took 1 ms
+INFO clear.ClearSimulator : Timestep 263
+INFO clear.ClearSimulator : Timestep 263 took 0 ms
+INFO clear.ClearSimulator : Timestep 264
+INFO clear.ClearSimulator : Timestep 264 took 0 ms
+INFO clear.ClearSimulator : Timestep 265
+INFO clear.ClearSimulator : Timestep 265 took 0 ms
+INFO clear.ClearSimulator : Timestep 266
+INFO clear.ClearSimulator : Timestep 266 took 0 ms
+INFO clear.ClearSimulator : Timestep 267
+INFO clear.ClearSimulator : Timestep 267 took 0 ms
+INFO clear.ClearSimulator : Timestep 268
+INFO clear.ClearSimulator : Timestep 268 took 0 ms
+INFO clear.ClearSimulator : Timestep 269
+INFO clear.ClearSimulator : Timestep 269 took 0 ms
+INFO clear.ClearSimulator : Timestep 270
+INFO clear.ClearSimulator : Timestep 270 took 0 ms
+INFO clear.ClearSimulator : Timestep 271
+INFO clear.ClearSimulator : Timestep 271 took 0 ms
+INFO clear.ClearSimulator : Timestep 272
+INFO clear.ClearSimulator : Timestep 272 took 0 ms
+INFO clear.ClearSimulator : Timestep 273
+INFO clear.ClearSimulator : Timestep 273 took 0 ms
+INFO clear.ClearSimulator : Timestep 274
+INFO clear.ClearSimulator : Timestep 274 took 0 ms
+INFO clear.ClearSimulator : Timestep 275
+INFO clear.ClearSimulator : Timestep 275 took 0 ms
+INFO clear.ClearSimulator : Timestep 276
+INFO clear.ClearSimulator : Timestep 276 took 0 ms
+INFO clear.ClearSimulator : Timestep 277
+INFO clear.ClearSimulator : Timestep 277 took 0 ms
+INFO clear.ClearSimulator : Timestep 278
+INFO clear.ClearSimulator : Timestep 278 took 0 ms
+INFO clear.ClearSimulator : Timestep 279
+INFO clear.ClearSimulator : Timestep 279 took 1 ms
+INFO clear.ClearSimulator : Timestep 280
+INFO clear.ClearSimulator : Timestep 280 took 0 ms
+INFO clear.ClearSimulator : Timestep 281
+INFO clear.ClearSimulator : Timestep 281 took 0 ms
+INFO clear.ClearSimulator : Timestep 282
+INFO clear.ClearSimulator : Timestep 282 took 0 ms
+INFO clear.ClearSimulator : Timestep 283
+INFO clear.ClearSimulator : Timestep 283 took 1 ms
+INFO clear.ClearSimulator : Timestep 284
+INFO clear.ClearSimulator : Timestep 284 took 1 ms
+INFO clear.ClearSimulator : Timestep 285
+INFO clear.ClearSimulator : Timestep 285 took 0 ms
+INFO clear.ClearSimulator : Timestep 286
+INFO clear.ClearSimulator : Timestep 286 took 0 ms
+INFO clear.ClearSimulator : Timestep 287
+INFO clear.ClearSimulator : Timestep 287 took 0 ms
+INFO clear.ClearSimulator : Timestep 288
+INFO clear.ClearSimulator : Timestep 288 took 0 ms
+INFO clear.ClearSimulator : Timestep 289
+INFO clear.ClearSimulator : Timestep 289 took 0 ms
+INFO clear.ClearSimulator : Timestep 290
+INFO clear.ClearSimulator : Timestep 290 took 0 ms
+INFO clear.ClearSimulator : Timestep 291
+INFO clear.ClearSimulator : Timestep 291 took 0 ms
+INFO clear.ClearSimulator : Timestep 292
+INFO clear.ClearSimulator : Timestep 292 took 0 ms
+INFO clear.ClearSimulator : Timestep 293
+INFO clear.ClearSimulator : Timestep 293 took 0 ms
+INFO clear.ClearSimulator : Timestep 294
+INFO clear.ClearSimulator : Timestep 294 took 0 ms
+INFO clear.ClearSimulator : Timestep 295
+INFO clear.ClearSimulator : Timestep 295 took 0 ms
+INFO clear.ClearSimulator : Timestep 296
+INFO clear.ClearSimulator : Timestep 296 took 0 ms
+INFO clear.ClearSimulator : Timestep 297
+INFO clear.ClearSimulator : Timestep 297 took 0 ms
+INFO clear.ClearSimulator : Timestep 298
+INFO clear.ClearSimulator : Timestep 298 took 0 ms
+INFO clear.ClearSimulator : Timestep 299
+INFO clear.ClearSimulator : Timestep 299 took 0 ms
+INFO clear.ClearSimulator : Timestep 300
+INFO clear.ClearSimulator : Timestep 300 took 1 ms

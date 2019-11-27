@@ -1,0 +1,24 @@
+INFO launcher : Processing jar directory: /u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/../jars
+INFO launcher : Processing ../jars/clear.jar
+INFO launcher : Processing ../jars/collapse.jar
+INFO launcher : Processing ../jars/gis2.jar
+INFO launcher : Processing ../jars/handy.jar
+INFO launcher : Processing ../jars/human.jar
+INFO launcher : Processing ../jars/ignition.jar
+INFO launcher : Processing ../jars/kernel.jar
+INFO launcher : Processing ../jars/maps.jar
+INFO launcher : Processing ../jars/misc.jar
+INFO launcher : Processing ../jars/resq-fire.jar
+INFO launcher : Processing ../jars/sample.jar
+INFO launcher : No INSTANCE field in class sample.CustomRegistryTestAgent$CustomEntityFactory
+INFO launcher : Could not instantiate class sample.CustomRegistryTestAgent$CustomEntityFactory
+INFO launcher : Processing ../jars/standard.jar
+INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO launcher : Processing ../jars/traffic3.jar
+INFO launcher : Launching many instances of component 'sample.SampleCivilian'...
+INFO launcher : Launching instance 1...
+INFO launcher : success
+INFO launcher : Launching instance 2...
+INFO launcher : failed: No more agents

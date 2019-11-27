@@ -3,7 +3,7 @@ import RCRS_gym
 
 from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy
 # from stable_baselines.deepq.policies import MlpPolicy
-from stable_baselines.common.vec_env import DummyVecEnv
+from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize
 # from stable_baselines.deepq.policies import MlpPolicy
 from stable_baselines import PPO2, DQN
 from stable_baselines import results_plotter
@@ -44,7 +44,12 @@ os.makedirs(log_dir, exist_ok=True)
 # Create and wrap the environment
 env = gym.make('RCRS-v2')
 env = Monitor(env, log_dir, allow_early_resets=True)
-env = DummyVecEnv([lambda: env])  # The algorithms require a vectorized environment to run
+# The algorithms require a vectorized environment to run
+env = DummyVecEnv([lambda: env]) 
+# Automatically normalize the input features
+env = VecNormalize(env, norm_obs=True, norm_reward=False,
+                   clip_obs=10.)
+
 # Add some param noise for exploration
 # param_noise = AdaptiveParamNoiseSpec(initial_stddev=0.1, desired_action_stddev=0.1)
 # Because we use parameter noise, we should use a MlpPolicy with layer normalization

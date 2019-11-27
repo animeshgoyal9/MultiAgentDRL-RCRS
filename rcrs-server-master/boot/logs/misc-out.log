@@ -1,216 +1,21 @@
-TRACE launcher : Reading included config 'common.cfg'
-TRACE launcher : Reading included config 'types.cfg'
-TRACE launcher : Setting 'loadabletypes.inspect.dir' to '../jars'
-TRACE launcher : Setting 'loadabletypes.inspect.deep' to 'yes'
-TRACE launcher : Setting 'random.seed' to '1023'
-TRACE launcher : Setting 'kernel.host' to 'localhost'
-TRACE launcher : Setting 'kernel.port' to '7000'
-TRACE launcher : Setting 'senario.human.random-id' to 'true'
-TRACE launcher : Setting 'misc.buriedness.wood.none.value' to '0'
-TRACE launcher : Setting 'misc.buriedness.wood.partial.value' to '20'
-TRACE launcher : Setting 'misc.buriedness.wood.half.value' to '30'
-TRACE launcher : Setting 'misc.buriedness.wood.all.value' to '60'
-TRACE launcher : Setting 'misc.buriedness.steel.none.value' to '0'
-TRACE launcher : Setting 'misc.buriedness.steel.partial.value' to '20'
-TRACE launcher : Setting 'misc.buriedness.steel.half.value' to '35'
-TRACE launcher : Setting 'misc.buriedness.steel.all.value' to '70'
-TRACE launcher : Setting 'misc.buriedness.concrete.none.value' to '0'
-TRACE launcher : Setting 'misc.buriedness.concrete.partial.value' to '35'
-TRACE launcher : Setting 'misc.buriedness.concrete.half.value' to '60'
-TRACE launcher : Setting 'misc.buriedness.concrete.all.value' to '80'
-TRACE launcher : Setting 'misc.buriedness.wood.none.rate' to '0'
-TRACE launcher : Setting 'misc.buriedness.wood.partial.rate' to '1'
-TRACE launcher : Setting 'misc.buriedness.wood.half.rate' to '1'
-TRACE launcher : Setting 'misc.buriedness.wood.all.rate' to '1'
-TRACE launcher : Setting 'misc.buriedness.steel.none.rate' to '0'
-TRACE launcher : Setting 'misc.buriedness.steel.partial.rate' to '0.008'
-TRACE launcher : Setting 'misc.buriedness.steel.half.rate' to '0.008'
-TRACE launcher : Setting 'misc.buriedness.steel.all.rate' to '0.008'
-TRACE launcher : Setting 'misc.buriedness.concrete.none.rate' to '0'
-TRACE launcher : Setting 'misc.buriedness.concrete.partial.rate' to '0.008'
-TRACE launcher : Setting 'misc.buriedness.concrete.half.rate' to '0.008'
-TRACE launcher : Setting 'misc.buriedness.concrete.all.rate' to '0.008'
-TRACE launcher : Setting 'misc.injury.collapse.wood.none.slight' to '0'
-TRACE launcher : Setting 'misc.injury.collapse.wood.none.serious' to '0'
-TRACE launcher : Setting 'misc.injury.collapse.wood.none.critical' to '0'
-TRACE launcher : Setting 'misc.injury.collapse.wood.partial.slight' to '0.5'
-TRACE launcher : Setting 'misc.injury.collapse.wood.partial.serious' to '0.3'
-TRACE launcher : Setting 'misc.injury.collapse.wood.partial.critical' to '0.02'
-TRACE launcher : Setting 'misc.injury.collapse.wood.half.slight' to '0.5'
-TRACE launcher : Setting 'misc.injury.collapse.wood.half.serious' to '0.3'
-TRACE launcher : Setting 'misc.injury.collapse.wood.half.critical' to '0.02'
-TRACE launcher : Setting 'misc.injury.collapse.wood.all.slight' to '0.5'
-TRACE launcher : Setting 'misc.injury.collapse.wood.all.serious' to '0.3'
-TRACE launcher : Setting 'misc.injury.collapse.wood.all.critical' to '0.02'
-TRACE launcher : Setting 'misc.injury.collapse.steel.none.slight' to '0'
-TRACE launcher : Setting 'misc.injury.collapse.steel.none.serious' to '0'
-TRACE launcher : Setting 'misc.injury.collapse.steel.none.critical' to '0'
-TRACE launcher : Setting 'misc.injury.collapse.steel.partial.slight' to '0.1'
-TRACE launcher : Setting 'misc.injury.collapse.steel.partial.serious' to '0.03'
-TRACE launcher : Setting 'misc.injury.collapse.steel.partial.critical' to '0.005'
-TRACE launcher : Setting 'misc.injury.collapse.steel.half.slight' to '0.1'
-TRACE launcher : Setting 'misc.injury.collapse.steel.half.serious' to '0.03'
-TRACE launcher : Setting 'misc.injury.collapse.steel.half.critical' to '0.005'
-TRACE launcher : Setting 'misc.injury.collapse.steel.all.slight' to '0.1'
-TRACE launcher : Setting 'misc.injury.collapse.steel.all.serious' to '0.03'
-TRACE launcher : Setting 'misc.injury.collapse.steel.all.critical' to '0.005'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.none.slight' to '0'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.none.serious' to '0'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.none.critical' to '0'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.partial.slight' to '0.1'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.partial.serious' to '0.03'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.partial.critical' to '0.005'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.half.slight' to '0.1'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.half.serious' to '0.03'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.half.critical' to '0.005'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.all.slight' to '0.1'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.all.serious' to '0.03'
-TRACE launcher : Setting 'misc.injury.collapse.concrete.all.critical' to '0.005'
-TRACE launcher : Setting 'misc.injury.collapse.slight' to '2'
-TRACE launcher : Setting 'misc.injury.collapse.serious' to '10'
-TRACE launcher : Setting 'misc.injury.collapse.critical' to '10000'
-TRACE launcher : Setting 'misc.injury.collapse.multiplier.ambulance' to '0.2'
-TRACE launcher : Setting 'misc.injury.collapse.multiplier.police' to '0.2'
-TRACE launcher : Setting 'misc.injury.collapse.multiplier.fire' to '0.2'
-TRACE launcher : Setting 'misc.injury.bury.wood.none.slight' to '0'
-TRACE launcher : Setting 'misc.injury.bury.wood.none.serious' to '0'
-TRACE launcher : Setting 'misc.injury.bury.wood.none.critical' to '0'
-TRACE launcher : Setting 'misc.injury.bury.wood.partial.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.bury.wood.partial.serious' to '0.5'
-TRACE launcher : Setting 'misc.injury.bury.wood.partial.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.bury.wood.half.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.bury.wood.half.serious' to '0.5'
-TRACE launcher : Setting 'misc.injury.bury.wood.half.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.bury.wood.all.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.bury.wood.all.serious' to '0.5'
-TRACE launcher : Setting 'misc.injury.bury.wood.all.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.bury.steel.none.slight' to '0'
-TRACE launcher : Setting 'misc.injury.bury.steel.none.serious' to '0'
-TRACE launcher : Setting 'misc.injury.bury.steel.none.critical' to '0'
-TRACE launcher : Setting 'misc.injury.bury.steel.partial.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.bury.steel.partial.serious' to '0.5'
-TRACE launcher : Setting 'misc.injury.bury.steel.partial.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.bury.steel.half.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.bury.steel.half.serious' to '0.5'
-TRACE launcher : Setting 'misc.injury.bury.steel.half.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.bury.steel.all.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.bury.steel.all.serious' to '0.5'
-TRACE launcher : Setting 'misc.injury.bury.steel.all.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.bury.concrete.none.slight' to '0'
-TRACE launcher : Setting 'misc.injury.bury.concrete.none.serious' to '0'
-TRACE launcher : Setting 'misc.injury.bury.concrete.none.critical' to '0'
-TRACE launcher : Setting 'misc.injury.bury.concrete.partial.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.bury.concrete.partial.serious' to '0.5'
-TRACE launcher : Setting 'misc.injury.bury.concrete.partial.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.bury.concrete.half.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.bury.concrete.half.serious' to '0.5'
-TRACE launcher : Setting 'misc.injury.bury.concrete.half.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.bury.concrete.all.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.bury.concrete.all.serious' to '0.5'
-TRACE launcher : Setting 'misc.injury.bury.concrete.all.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.bury.slight' to '3'
-TRACE launcher : Setting 'misc.injury.bury.serious' to '15'
-TRACE launcher : Setting 'misc.injury.bury.critical' to '100'
-TRACE launcher : Setting 'misc.injury.bury.multiplier.ambulance' to '0.2'
-TRACE launcher : Setting 'misc.injury.bury.multiplier.police' to '0.2'
-TRACE launcher : Setting 'misc.injury.bury.multiplier.fire' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.wood.none.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.wood.none.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.wood.none.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.wood.partial.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.wood.partial.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.wood.partial.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.wood.half.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.wood.half.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.wood.half.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.wood.all.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.wood.all.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.wood.all.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.steel.none.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.steel.none.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.steel.none.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.steel.partial.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.steel.partial.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.steel.partial.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.steel.half.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.steel.half.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.steel.half.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.steel.all.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.steel.all.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.steel.all.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.concrete.none.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.concrete.none.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.concrete.none.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.concrete.partial.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.concrete.partial.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.concrete.partial.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.concrete.half.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.concrete.half.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.concrete.half.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.concrete.all.slight' to '0.4'
-TRACE launcher : Setting 'misc.injury.fire.concrete.all.serious' to '0.2'
-TRACE launcher : Setting 'misc.injury.fire.concrete.all.critical' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.slight' to '5'
-TRACE launcher : Setting 'misc.injury.fire.serious' to '20'
-TRACE launcher : Setting 'misc.injury.fire.critical' to '100'
-TRACE launcher : Setting 'misc.injury.fire.multiplier.ambulance' to '1'
-TRACE launcher : Setting 'misc.injury.fire.multiplier.police' to '1'
-TRACE launcher : Setting 'misc.injury.fire.multiplier.fire' to '0.2'
-TRACE launcher : Setting 'misc.injury.collapse.k' to '0.00025'
-TRACE launcher : Setting 'misc.injury.collapse.l' to '0.01'
-TRACE launcher : Setting 'misc.injury.collapse.noise.mean' to '0.1'
-TRACE launcher : Setting 'misc.injury.collapse.noise.sd' to '0.01'
-TRACE launcher : Setting 'misc.injury.bury.k' to '0.000035'
-TRACE launcher : Setting 'misc.injury.bury.l' to '0.01'
-TRACE launcher : Setting 'misc.injury.bury.noise.mean' to '0.1'
-TRACE launcher : Setting 'misc.injury.bury.noise.sd' to '0.01'
-TRACE launcher : Setting 'misc.injury.fire.k' to '0.00025'
-TRACE launcher : Setting 'misc.injury.fire.l' to '0.03'
-TRACE launcher : Setting 'misc.injury.fire.noise.mean' to '0.1'
-TRACE launcher : Setting 'misc.injury.fire.noise.sd' to '0.01'
 INFO launcher : Processing jar directory: /u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/../jars
 INFO launcher : Processing ../jars/clear.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Processing ../jars/collapse.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Processing ../jars/gis2.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Processing ../jars/handy.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Processing ../jars/human.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Processing ../jars/ignition.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Processing ../jars/kernel.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Processing ../jars/maps.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Processing ../jars/misc.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Processing ../jars/resq-fire.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Processing ../jars/sample.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 WARN launcher : Class sample.CustomRegistryTestAgent$CustomEntityFactory not found
 INFO launcher : Processing ../jars/standard.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
 INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
 INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
 INFO launcher : Processing ../jars/traffic3.jar
-DEBUG launcher : Inspecting manifest...
-DEBUG launcher : Looking for likely class names...
 INFO launcher : Launching 1 instances of component 'misc.MiscSimulator'...
 INFO launcher : Launching instance 1...
+INFO launcher : success
