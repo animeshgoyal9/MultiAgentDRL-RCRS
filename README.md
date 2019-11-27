@@ -16,6 +16,8 @@
 
 ## 3. Compile
 
+---------------
+
 Open a terminal window, navigate to the `rcrs-server-master` root directory and compile 
 
 `$ ./gradlew clean`
