@@ -10,7 +10,7 @@
 * Python 3.5+
 * Openai Gym
 * Stable Baselines
-* Tensorboard 1.14 (Note: Stable baselines is not comparible with Tensorboard 2.0) 
+* Tensorboard 1.14 (Note: Stable baselines is not compatible with Tensorboard 2.0) 
 
 ## 2. Download project from GitHub
 
