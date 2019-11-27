@@ -12,7 +12,7 @@
 
 ## 2. Download project from GitHub
 
-$ git clone https://github.com/animeshgoyal9/RoboCup-Gym.git 
+`$ git clone https://github.com/animeshgoyal9/RoboCup-Gym.git` 
 
 ## 3. Compile
 
@@ -20,9 +20,9 @@ Open two terminals
 
 In the first terminal, navigate to the `rcrs-server` root directory and compile 
 
-$ ./gradlew clean
+`$ ./gradlew clean
 
-$ ./gradlew completeBuild
+$ ./gradlew completeBuild`
 
 
 
