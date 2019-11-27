@@ -53,6 +53,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
     private Simulator sim;
     private World world;
     private FireSimulatorGUI fireSimulatorGUI = null;
+    private Server server;
 
 	@Override
 	public JComponent getGUIComponent() {
@@ -96,8 +97,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
         sim.initialize();	
         
         try {
-        	System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        	Server server = ServerBuilder.forPort(4007).addService(new AnimFireChal()).build();            
+        	server = ServerBuilder.forPort(4007).addService(new AnimFireChal()).build();            
 			server.start();
 			System.out.println("Server started at " + server.getPort());	
 		} catch (Exception e) {
@@ -161,6 +161,19 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
             }
         }
         sim.step(c.getTime());
+        System.out.println("------------------Fire Simulator Wrapper: "+c.getTime());
+        if(c.getTime() == 302) {
+        	try {
+				System.out.println("*********** Fire Simulator Terminating ***********"+server.isTerminated());
+				server.shutdown();
+				server.awaitTermination();
+				System.out.println("*********** Fire Simulator Exiting ***********"+server.isTerminated());
+				System.exit(1);
+			} catch (InterruptedException e) {
+				server.shutdownNow();
+				System.out.println(e.getMessage());
+			}
+        }
         // Get changes
         
         String buildings = "";
