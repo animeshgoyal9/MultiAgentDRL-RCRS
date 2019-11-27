@@ -16,15 +16,13 @@
 
 ## 3. Compile
 
-Open two terminals
-
-In the first terminal, navigate to the `rcrs-server` root directory and compile 
+Open a terminal window, navigate to the `rcrs-server-master` root directory and compile 
 
 `$ ./gradlew clean`
 
 `$ ./gradlew completeBuild`
 
-In the second terminal, navigate to the `rcrs-adf-sample-master` root directory and compile 
+Open another terminal window, navigate to the `rcrs-adf-sample-master` root directory and compile 
 
 `$ ./clean`
 
