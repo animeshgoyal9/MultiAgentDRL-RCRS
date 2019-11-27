@@ -9,6 +9,8 @@
 * OpenJDK Java 8+
 * Python 3.5+
 * Openai Gym
+* Stable Baselines
+* Tensorboard 1.14 (Note: Stable baselines does not run with Tensorboard 2.0) 
 
 ## 2. Download project from GitHub
 
@@ -36,7 +38,13 @@ In the first terminal, navigate to the boot folder in  `rcrs-server-master` dire
 
 `$ testing.py`
 
+## 5. Visualization
 
+To visualize the reward over time, losses etc, you can use tensorboard. 
+
+Open a new terminal window and run the following bash command
+
+`tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/`
 
 
 
