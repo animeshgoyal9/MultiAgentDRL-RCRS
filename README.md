@@ -46,7 +46,9 @@ Open a new terminal window and run the following bash command
 
 `tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/`
 
+You can also log past logging folders
 
+`tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/;./dqn_RoboCupGym_tensorboard/`
 
 
 
