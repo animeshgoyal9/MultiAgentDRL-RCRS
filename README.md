@@ -1,5 +1,5 @@
-# RoboCup-Gym
-
+# RoboCup Rescue Simulator(RCRS)-Gym Integration
+ 
 (Linux) Instructions to download, build and run the RoboCup Rescue Simulator (RCRS) integrated with gym interface
 
 ## 1. Software Pre-Requisites
