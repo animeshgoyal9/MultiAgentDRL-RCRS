@@ -1,6 +1,6 @@
 # RoboCup Rescue Simulator(RCRS)-Gym Integration
  
-(Linux) Instructions to download, build and run the RoboCup Rescue Simulator (RCRS) integrated with gym interface
+(Linux) Instructions to download, build and run the RoboCup Rescue Simulator (RCRS) integrated with OpenAI Gym. OpenAI Gym is a toolkit for developing and comparing reinforcement learning algorithms.
 
 ## 1. Software Pre-Requisites
 
