@@ -223,7 +223,7 @@ public class CollapseSimulator extends StandardSimulator implements
 		int time = c.getTime();
 		Logger.info("Timestep " + time);
 		if (gui != null) {
-			gui.timestep(time);
+//			gui.timestep(time);
 		}
 		Collection<Building> collapsed = doCollapse(changes, time);
 		Map<Road, Collection<java.awt.geom.Area>> newBlock = doBlock(collapsed,
@@ -259,7 +259,7 @@ public class CollapseSimulator extends StandardSimulator implements
 	private Collection<Building> doCollapse(ChangeSet changes, int time) {
 		Collection<Building> result = new HashSet<Building>();
 		if (gui != null) {
-			gui.startCollapse(buildingCache.size());
+//			gui.startCollapse(buildingCache.size());
 		}
 		if (time == 1) {
 			result.addAll(doEarthquakeCollapse(changes));
@@ -269,14 +269,14 @@ public class CollapseSimulator extends StandardSimulator implements
 			result.addAll(doEarthquakeCollapse(changes));
 		}
 		if (gui != null) {
-			gui.endCollapse();
+//			gui.endCollapse();
 		}
 		if (gui != null) {
-			gui.startFire(buildingCache.size());
+//			gui.startFire(buildingCache.size());
 		}
 		// result.addAll(doFireCollapse(changes));
 		if (gui != null) {
-			gui.endFire();
+//			gui.endFire();
 		}
 		return result;
 	}
@@ -297,16 +297,16 @@ public class CollapseSimulator extends StandardSimulator implements
 			return result;
 		}
 		if (gui != null) {
-			gui.startBlock(collapsed.size());
+//			gui.startBlock(collapsed.size());
 		}
 		for (Building b : collapsed) {
 			createBlockages(b, result, time);
 			if (gui != null) {
-				gui.bumpBlock();
+//				gui.bumpBlock();
 			}
 		}
 		if (gui != null) {
-			gui.endBlock();
+//			gui.endBlock();
 		}
 		return result;
 	}
@@ -354,7 +354,7 @@ public class CollapseSimulator extends StandardSimulator implements
 				result.add(b);
 			}
 			if (gui != null) {
-				gui.bumpCollapse();
+//				gui.bumpCollapse();
 			}
 		}
 		Logger.info("Finished collapsing buildings: ");
@@ -383,7 +383,7 @@ public class CollapseSimulator extends StandardSimulator implements
 
 			if (!b.isFierynessDefined()) {
 				if (gui != null) {
-					gui.bumpFire();
+//					gui.bumpFire();
 				}
 				continue;
 			}
@@ -419,7 +419,7 @@ public class CollapseSimulator extends StandardSimulator implements
 				result.add(b);
 			}
 			if (gui != null) {
-				gui.bumpFire();
+//				gui.bumpFire();
 			}
 		}
 		Logger.debug("Finished checking fire damage");
