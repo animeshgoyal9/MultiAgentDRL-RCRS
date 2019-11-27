@@ -20,9 +20,9 @@ Open two terminals
 
 In the first terminal, navigate to the `rcrs-server` root directory and compile 
 
-`$ ./gradlew clean
+`$ ./gradlew clean`
 
-$ ./gradlew completeBuild`
+`$ ./gradlew completeBuild`
 
 
 
