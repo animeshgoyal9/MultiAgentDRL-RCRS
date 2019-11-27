@@ -3,13 +3,15 @@ package sample;
 import static rescuecore2.misc.java.JavaTools.instantiate;
 
 import rescuecore2.messages.control.KVTimestep;
+import rescuecore2.misc.CommandLineOptions;
 import rescuecore2.view.ViewComponent;
 import rescuecore2.view.ViewListener;
 import rescuecore2.view.RenderedObject;
 import rescuecore2.score.ScoreFunction;
 import rescuecore2.Constants;
 import rescuecore2.Timestep;
-
+import rescuecore2.config.Config;
+import rescuecore2.connection.TCPConnection;
 import rescuecore2.standard.view.AnimatedWorldModelViewer;
 
 import java.awt.Dimension;
@@ -52,6 +54,7 @@ public class SampleViewer extends StandardViewer {
     private JLabel teamLabel;
     private JLabel mapLabel;
     private NumberFormat format;
+    private Server server;
 
     @Override
     protected void postConnect() {
@@ -129,14 +132,12 @@ public class SampleViewer extends StandardViewer {
             });
         
         try {
-        	Server server = ServerBuilder.forPort(2212).addService(new AnimFireChal()).build();
-        	System.out.println("##############################################################");
-            
-			server.start();
+        	server = ServerBuilder.forPort(2212).addService(new AnimFireChal()).build();
+        	server.start();
 			System.out.println("Server started at " + server.getPort());	
 //			server.awaitTermination();
 		} catch (Exception e) {
-			e.printStackTrace();
+			server.shutdownNow();
 			System.out.println(e.getMessage());
 		}
     }
@@ -147,6 +148,33 @@ public class SampleViewer extends StandardViewer {
         SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
                     timeLabel.setText("Time: " + t.getTime());
+                    
+                    if (t.getTime() == 301) {
+                    	try {
+                    		System.out.println("*********** Server Terminating ***********"+server.isTerminated());
+                    		server.shutdown();
+                    		server.awaitTermination();
+	        				System.out.println("*********** Server Exiting ***********"+server.isTerminated());
+							System.exit(1);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+                    }
+//                    if(t.getTime() == 100) {
+//                    	Config config = new Config();
+//                        int port = config.getIntValue(Constants.KERNEL_PORT_NUMBER_KEY, Constants.DEFAULT_KERNEL_PORT_NUMBER);
+//                        String host = config.getValue(Constants.KERNEL_HOST_NAME_KEY, Constants.DEFAULT_KERNEL_HOST_NAME);
+//                    	TCPConnection c;
+//						try {
+//							c = new TCPConnection(host, port);
+//	                    	c.shutdownImpl();
+//						} catch (IOException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//                    }
+                    
                     scoreLabel.setText("Score: " + format.format(scoreFunction.score(model, new Timestep(t.getTime()))));
                     Resources.setReward(Double.parseDouble(format.format(scoreFunction.score(model, new Timestep(t.getTime())))));
                     viewer.view(model, t.getCommands());
