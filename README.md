@@ -24,6 +24,20 @@ In the first terminal, navigate to the `rcrs-server` root directory and compile
 
 `$ ./gradlew completeBuild`
 
+In the second terminal, navigate to the `rcrs-adf-sample-master` root directory and compile 
+
+`$ ./clean`
+
+`$ ./compile.sh`
+
+Close the second terminal
+
+## 4. Execute
+
+In the first terminal, navigate to the boot folder in  `rcrs-server-master` directory. 
+
+
+
 
 
 
