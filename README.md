@@ -34,7 +34,11 @@ Close the second terminal
 
 ## 4. Execute
 
-In the first terminal, navigate to the boot folder in  `rcrs-server-master` directory. 
+In the first terminal, navigate to the boot folder in  `rcrs-server-master` directory and run the following python file 
+
+`$ testing.py`
+
+
 
 
 
