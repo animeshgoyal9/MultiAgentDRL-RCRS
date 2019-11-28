@@ -48,7 +48,11 @@ Close the second terminal
 
 On the first terminal, navigate to the `boot` folder in  `rcrs-server-master` directory and run the following python file 
 
-`$ testing.py`
+```bash
+
+$ testing.py
+
+``` 
 
 ## 5. Visualization
 
@@ -56,11 +60,12 @@ To visualize the reward over time, losses etc, you can use tensorboard.
 
 Open a new terminal window and run the following bash command
 
-`tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/`
+```bash
 
-You can also log past logging folders
+$ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 
-`tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/;./dqn_RoboCupGym_tensorboard/`
+``` 
+
 
 
 
