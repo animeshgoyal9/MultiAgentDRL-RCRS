@@ -77,7 +77,7 @@ class RCRSenv(gym.Env):
             subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
         print("******************************")
 #         time.sleep(0.119)
-        time.sleep(1.15)
+        time.sleep(1.1)
         # int(input("pause.."))
         return np.array(self.state), self.reward, done , {}
 
