@@ -14,21 +14,33 @@
 
 ## 2. Download project from GitHub
 
-`$ git clone https://github.com/animeshgoyal9/RoboCup-Gym.git` 
+```bash
+
+$ git clone https://github.com/animeshgoyal9/RoboCup-Gym.git
+
+``` 
 
 ## 3. Compile
 
 Open a terminal window, navigate to the `rcrs-server-master` root directory and compile 
 
-`$ ./gradlew clean`
+```bash 
 
-`$ ./gradlew completeBuild`
+$ ./gradlew clean
+
+$ ./gradlew completeBuild
+
+```
 
 Open another terminal window, navigate to the `rcrs-adf-sample-master` root directory and compile 
 
-`$ ./clean`
+```bash 
 
-`$ ./compile.sh`
+$ ./clean
+
+$ ./compile.sh
+
+```
 
 Close the second terminal
 
