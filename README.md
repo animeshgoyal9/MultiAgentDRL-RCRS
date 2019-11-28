@@ -36,9 +36,9 @@ Open another terminal window, navigate to the `rcrs-adf-sample` root directory a
 
 ```bash 
 
-$ ./clean
+$ sh clean.sh
 
-$ ./compile.sh
+$ sh compile.sh
 
 ```
 
