@@ -32,7 +32,7 @@ $ ./gradlew completeBuild
 
 ```
 
-Open another terminal window, navigate to the `rcrs-adf-sample-master` root directory and compile 
+Open another terminal window, navigate to the `rcrs-adf-sample` root directory and compile 
 
 ```bash 
 
