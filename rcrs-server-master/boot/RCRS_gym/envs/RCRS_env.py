@@ -76,15 +76,15 @@ class RCRSenv(gym.Env):
         if done == True:
             subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
         print("******************************")
-        time.sleep(0.119)
-        # time.sleep(1.1)
+#         time.sleep(0.119)
+        time.sleep(1.15)
         # int(input("pause.."))
         return np.array(self.state), self.reward, done , {}
 
     def reset(self):
         # time.sleep(2)
         subprocess.call(['gnome-terminal', '-e', "python3 /u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/launch_file.py"])
-        time.sleep(11.5)
+        time.sleep(13)
         self.curr_episode = 0
         reset_action = [0, 0]
         reset = []
