@@ -14,21 +14,33 @@
 
 ## 2. Download project from GitHub
 
-`$ git clone https://github.com/animeshgoyal9/RoboCup-Gym.git` 
+```bash
+
+$ git clone https://github.com/animeshgoyal9/RoboCup-Gym.git
+
+``` 
 
 ## 3. Compile
 
 Open a terminal window, navigate to the `rcrs-server-master` root directory and compile 
 
-`$ ./gradlew clean`
+```bash 
 
-`$ ./gradlew completeBuild`
+$ ./gradlew clean
 
-Open another terminal window, navigate to the `rcrs-adf-sample-master` root directory and compile 
+$ ./gradlew completeBuild
 
-`$ ./clean`
+```
 
-`$ ./compile.sh`
+Open another terminal window, navigate to the `rcrs-adf-sample` root directory and compile 
+
+```bash 
+
+$ sh clean.sh
+
+$ sh compile.sh
+
+```
 
 Close the second terminal
 
@@ -36,7 +48,11 @@ Close the second terminal
 
 On the first terminal, navigate to the `boot` folder in  `rcrs-server-master` directory and run the following python file 
 
-`$ testing.py`
+```bash
+
+$ testing.py
+
+``` 
 
 ## 5. Visualization
 
@@ -44,11 +60,12 @@ To visualize the reward over time, losses etc, you can use tensorboard.
 
 Open a new terminal window and run the following bash command
 
-`tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/`
+```bash
 
-You can also log past logging folders
+$ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 
-`tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/;./dqn_RoboCupGym_tensorboard/`
+``` 
+
 
 
 
