@@ -70,7 +70,7 @@ class RCRSenv(gym.Env):
         # print("Current Action_1: ", self.current_action_1)
         # print("Current Action_2: ", self.current_action_2)
         # print("Current State: ", self.state)
-        print("Current Episode: ", self.curr_episode)
+#         print("Current Episode: ", self.curr_episode)
         
         done = bool(self.curr_episode == MAX_TIMESTEP)
         if done == True:
@@ -109,8 +109,8 @@ def run_adf(bid):
     
     with grpc.insecure_channel('localhost:3400') as channel:
         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
-        print("Current action_1 for 210552869: ", action_set_list[bid[0]])
-        print("Current action_2 for 1962675462: ", action_set_list[bid[1]])
+        print("Current action for FB1 (210552869): ", action_set_list[bid[0]])
+        print("Current action for FB2 (1962675462): ", action_set_list[bid[1]])
         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
             AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
             # AgentInfo_pb2.Action(agent_id = aid, building_id=action_set_list[bid])]))
