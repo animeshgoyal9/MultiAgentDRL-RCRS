@@ -1,6 +1,0 @@
-DEBUG sample.SampleViewer : Starting Connection from sample.SampleViewer. Registry: System
-DEBUG sample.SampleViewer : Instantiating random number generator: org.uncommons.maths.random.MersenneTwisterRNG
-DEBUG sample.SampleViewer : Using seed 1023
-INFO sample.SampleViewer : Sample viewer connected
-DEBUG sample.SampleViewer : Re-indexing world model
-DEBUG sample.SampleViewer : Finished re-index. Took 9ms
