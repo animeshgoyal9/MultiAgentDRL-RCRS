@@ -25,8 +25,10 @@ import time, os
 import signal, sys
 import threading
 
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-MAX_TIMESTEP = 300
+MAX_TIMESTEP = 100
 
 action_set_list = np.array([255, 960, 905, 934, 935, 936, 937, 298, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 
                     950, 951, 247, 952, 248, 953, 249, 954, 250, 955, 251, 956, 957, 253, 958, 254, 959], dtype = object)
@@ -70,21 +72,22 @@ class RCRSenv(gym.Env):
         # print("Current Action_1: ", self.current_action_1)
         # print("Current Action_2: ", self.current_action_2)
         # print("Current State: ", self.state)
-#         print("Current Episode: ", self.curr_episode)
+        # print("Current Episode: ", self.curr_episode)
         
         done = bool(self.curr_episode == MAX_TIMESTEP)
         if done == True:
             subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
-        print("******************************")
-#         time.sleep(0.119)
-        time.sleep(1.1)
+        # print("******************************")
+        time.sleep(0.14)
+        # time.sleep(1.1)
         # int(input("pause.."))
         return np.array(self.state), self.reward, done , {}
 
     def reset(self):
         # time.sleep(2)
         subprocess.call(['gnome-terminal', '-e', "python3 /u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/launch_file.py"])
-        time.sleep(13)
+        time.sleep(11)
+        # time.sleep(13)
         self.curr_episode = 0
         reset_action = [0, 0]
         reset = []
@@ -109,8 +112,8 @@ def run_adf(bid):
     
     with grpc.insecure_channel('localhost:3400') as channel:
         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
-        print("Current action for FB1 (210552869): ", action_set_list[bid[0]])
-        print("Current action for FB2 (1962675462): ", action_set_list[bid[1]])
+        # print("Current action_1 for 210552869: ", action_set_list[bid[0]])
+        # print("Current action_2 for 1962675462: ", action_set_list[bid[1]])
         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
             AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
             # AgentInfo_pb2.Action(agent_id = aid, building_id=action_set_list[bid])]))
