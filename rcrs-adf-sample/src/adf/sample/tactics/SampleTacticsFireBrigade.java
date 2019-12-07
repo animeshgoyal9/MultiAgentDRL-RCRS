@@ -55,8 +55,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 
 	private Boolean isVisualDebug;
 	private Server server;
-	private int counter;
-
+	
     @Override
     public void initialize(AgentInfo agentInfo, WorldInfo worldInfo, ScenarioInfo scenarioInfo, ModuleManager moduleManager, MessageManager messageManager, DevelopData developData)
     {
@@ -109,8 +108,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
         registerModule(this.commandExecutorFire);
         registerModule(this.commandExecutorScout);
         
-		counter = 0;
-        server = ServerBuilder.forPort(3400).addService(new AnimFireChalAgent()).build();
+		server = ServerBuilder.forPort(3400).addService(new AnimFireChalAgent()).build();
 		try {
 			server.start();
 			System.out.println("Server started at " + server.getPort());	
@@ -152,22 +150,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
     @Override
     public Action think(AgentInfo agentInfo, WorldInfo worldInfo, ScenarioInfo scenarioInfo, ModuleManager moduleManager, MessageManager messageManager, DevelopData developData)
     {
-    	counter++;
-//    	System.out.println("----------------Agent Fire Brigade time: "+counter);
-    	if(counter == 301) {
-    		try {
-				System.out.println("*********** Agent Terminating ***********"+server.isTerminated());
-				server.shutdown();
-				server.awaitTermination();
-				System.out.println("*********** Agent Exiting ***********"+server.isTerminated());
-				System.exit(1);
-			} catch (InterruptedException e) {
-				server.shutdownNow();
-				System.out.println(e.getMessage());
-			}
-    	}
-    	
-        this.messageTool.reflectMessage(agentInfo, worldInfo, scenarioInfo, messageManager);
+    	this.messageTool.reflectMessage(agentInfo, worldInfo, scenarioInfo, messageManager);
         this.messageTool.sendRequestMessages(agentInfo, worldInfo, scenarioInfo, messageManager);
         this.messageTool.sendInformationMessages(agentInfo, worldInfo, scenarioInfo, messageManager);
 
@@ -259,7 +242,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
                 
                 FireBrigade agent1 = (FireBrigade) agentInfo.me();
 				
-				AgentBean[] agentDetails = { new AgentBean((int) agentInfo.getID().getValue(), agentInfo.getX(), agentInfo.getY(), agent1.getWater(), agent1.getHP())};
+				AgentBean agentDetails = new AgentBean((int) agentInfo.getID().getValue(), agentInfo.getX(), agentInfo.getY(), agent1.getWater(), agent1.getHP());
 				
 				AgentResources.setAgents(agentDetails);
                 

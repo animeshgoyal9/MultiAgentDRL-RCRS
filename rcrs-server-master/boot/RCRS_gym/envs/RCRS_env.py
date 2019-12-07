@@ -39,8 +39,8 @@ class RCRSenv(gym.Env):
     def __init__(self):
         self.action_space = spaces.MultiDiscrete([37, 37])
         
-        low = np.array([0]*79)
-        high = np.array([inf]*79)
+        low = np.array([0]*84)
+        high = np.array([inf]*84)
 
         self.observation_space = spaces.Box(low, high, dtype=np.float32, shape=None)
 
@@ -61,6 +61,7 @@ class RCRSenv(gym.Env):
 
         state_info.append(run_server())
         state_info.append(run_adf(action))
+        print(state_info)
 
         flat_list = [item for sublist in state_info for item in sublist]
         
@@ -78,16 +79,16 @@ class RCRSenv(gym.Env):
         if done == True:
             subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
         # print("******************************")
-        time.sleep(0.14)
-        # time.sleep(1.1)
+        # time.sleep(0.14)
+        time.sleep(1.1)
         # int(input("pause.."))
         return np.array(self.state), self.reward, done , {}
 
     def reset(self):
         # time.sleep(2)
         subprocess.call(['gnome-terminal', '-e', "python3 /u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/launch_file.py"])
-        time.sleep(11)
-        # time.sleep(13)
+        # time.sleep(11)
+        time.sleep(13)
         self.curr_episode = 0
         reset_action = [0, 0]
         reset = []
@@ -117,7 +118,9 @@ def run_adf(bid):
         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
             AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
             # AgentInfo_pb2.Action(agent_id = aid, building_id=action_set_list[bid])]))
-    # print(response.agents)
+    print("-----------------------------------")
+    print(response.agents)
+    print("-----------------------------------")
     agent_state_info = []
 
     for i in response.agents:

@@ -1,2 +1,0 @@
-AmbulanceTeam, FireBrigade, PoliceForce: Icons-land.com
-AmbulanceCentre, FireStation, PoliceOffice, Refuge, Civilian: Wikimedia commons

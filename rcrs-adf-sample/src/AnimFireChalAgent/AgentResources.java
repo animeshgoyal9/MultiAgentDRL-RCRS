@@ -1,8 +1,12 @@
 package AnimFireChalAgent;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class AgentResources {
 	static ActionBean actions[] = new ActionBean[1];
-	static AgentBean agents[] = new AgentBean[1];
+	static AgentBean agents[] = new AgentBean[2];
+	static Map<Integer, AgentBean> agentMap = new HashMap<Integer, AgentBean>();
 	
 	public static ActionBean[] getActions() {
 		return actions;
@@ -11,9 +15,10 @@ public class AgentResources {
 		AgentResources.actions = actions;
 	}
 	public static AgentBean[] getAgents() {
-		return agents;
+//		System.out.println(agentMap.values().toArray(new AgentBean[0]));
+		return agentMap.values().toArray(new AgentBean[0]);
 	}
-	public static void setAgents(AgentBean[] agents) {
-		AgentResources.agents = agents;
+	public static void setAgents(AgentBean agent) {
+		agentMap.put(agent.getAgent_id(), agent);
 	}
 }
