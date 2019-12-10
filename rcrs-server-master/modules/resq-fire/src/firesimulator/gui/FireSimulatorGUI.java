@@ -112,7 +112,7 @@ public class FireSimulatorGUI extends JPanel {
 			SwingUtilities.invokeLater(new Runnable() {
 				@Override
 				public void run() {
-//					updateStringData();
+					updateStringData();
 				}
 			});
 		} catch (Exception e) {

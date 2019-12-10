@@ -150,6 +150,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
     @Override
     public Action think(AgentInfo agentInfo, WorldInfo worldInfo, ScenarioInfo scenarioInfo, ModuleManager moduleManager, MessageManager messageManager, DevelopData developData)
     {
+    	System.out.println("Check 1 -----------------");
     	this.messageTool.reflectMessage(agentInfo, worldInfo, scenarioInfo, messageManager);
         this.messageTool.sendRequestMessages(agentInfo, worldInfo, scenarioInfo, messageManager);
         this.messageTool.sendInformationMessages(agentInfo, worldInfo, scenarioInfo, messageManager);
@@ -228,9 +229,19 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 
     private void sendActionMessage(MessageManager messageManager, FireBrigade agent, Action action, AgentInfo agentInfo)
     {
-        Class<? extends Action> actionClass = action.getClass();
+    	System.out.println("Check 2 -----------------");
+    	System.out.println(((FireBrigade) agentInfo.me()).getHP());
+    	
+    	Class<? extends Action> actionClass = action.getClass();
         int actionIndex = -1;
         EntityID target = null;
+        
+        FireBrigade agent1 = (FireBrigade) agentInfo.me();
+		
+		AgentBean agentDetails = new AgentBean((int) agentInfo.getID().getValue(), agentInfo.getX(), agentInfo.getY(), agent1.getWater(), agent1.getHP());
+		
+		AgentResources.setAgents(agentDetails);
+		
         if (actionClass == ActionMove.class)
         {
             actionIndex = MessageFireBrigade.ACTION_MOVE;
@@ -239,13 +250,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
             {	
                 target = path.get(path.size() - 1);
                 System.out.println("***************Start Moving***********************");
-                
-                FireBrigade agent1 = (FireBrigade) agentInfo.me();
-				
-				AgentBean agentDetails = new AgentBean((int) agentInfo.getID().getValue(), agentInfo.getX(), agentInfo.getY(), agent1.getWater(), agent1.getHP());
-				
-				AgentResources.setAgents(agentDetails);
-                
+     
             }
         }
         else if (actionClass == ActionExtinguish.class)
