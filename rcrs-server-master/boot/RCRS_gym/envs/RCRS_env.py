@@ -3,27 +3,25 @@ from __future__ import print_function
 import logging
 
 import grpc
-
 import AgentInfo_pb2
 import AgentInfo_pb2_grpc
 import BuildingInfo_pb2
 import BuildingInfo_pb2_grpc
 
-import os, subprocess, time, signal
-import gym, numpy as np
-from gym import error, spaces
-from gym import utils
+import gym
+from gym import error, spaces, utils
+from gym.spaces import Discrete, Tuple
 from gym.utils import seeding
+
 import logging, random
 import socket, pickle, json, subprocess, ast
-from subprocess import *
 import numpy as np
 import threading
-import time, math
-from numpy import inf
-import time, os 
+import time, math, os
 import signal, sys
 import threading
+from subprocess import *
+from numpy import inf
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
@@ -37,10 +35,12 @@ class RCRSenv(gym.Env):
     metadata = {'render.modes' : None}  
     current_action = 0
     def __init__(self):
-        self.action_space = spaces.MultiDiscrete([37, 37])
-        
-        low = np.array([0]*84)
-        high = np.array([inf]*84)
+    # Action space for PPO
+        # self.action_space = spaces.MultiDiscrete([37, 37])
+    # Action space for DQN
+        self.action_space = spaces.Discrete(37)
+        low = np.array([0]*86)
+        high = np.array([inf]*86)
 
         self.observation_space = spaces.Box(low, high, dtype=np.float32, shape=None)
 
@@ -57,8 +57,8 @@ class RCRSenv(gym.Env):
             self.reward = 0
         else:
             self.reward = run_reward()
-        state_info = []
         
+        state_info = []
         state_info.append(run_server())
         
     # To run greedy algorithm, uncomment 
@@ -80,14 +80,15 @@ class RCRSenv(gym.Env):
         # action = [action_for_greedy_algo_A1, action_for_greedy_algo_A2]
         
         state_info.append(run_adf(action))
-        # print(state_info)
 
         flat_list = [item for sublist in state_info for item in sublist]
         
         self.state = flat_list
 
-        self.current_action_1 = action[0]
-        self.current_action_2 = action[1]
+    # Actions for PPO
+        # self.current_action_1 = action[0]
+        # self.current_action_2 = action[1]
+
 
         # print("Current Action_1: ", self.current_action_1)
         # print("Current Action_2: ", self.current_action_2)
@@ -97,20 +98,29 @@ class RCRSenv(gym.Env):
         done = bool(self.curr_episode == MAX_TIMESTEP)
         if done == True:
             subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
-        # print("******************************")
+    # Timer for 100 ms 
         time.sleep(0.14)
+    # Timer for 1000 ms
         # time.sleep(1.3)
+    # Timer for 10000 ms
+        # time.sleep(10)
+    # For cross checking
         # int(input("pause.."))
         return np.array(self.state), self.reward, done , {}
 
     def reset(self):
-        # time.sleep(2)
         subprocess.call(['gnome-terminal', '-e', "python3 /u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/launch_file.py"])
+    # Timer for 100 ms 
         time.sleep(11)
+    # Timer for 1000 ms
         # time.sleep(13)
+    # Timer for 10000 ms
         # time.sleep(25)
         self.curr_episode = 0
-        reset_action = [0, 0]
+    # Reset Action for PPO
+        # reset_action = [0, 0]
+    # Reset action for DQN
+        reset_action = 0
         reset = []
 
         reset.append(run_server())
@@ -125,6 +135,7 @@ class RCRSenv(gym.Env):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
 
+
 def run_adf(bid):
     global flag
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
@@ -133,15 +144,11 @@ def run_adf(bid):
     
     with grpc.insecure_channel('localhost:3400') as channel:
         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
-        print("Current action_1 for 210552869: ", action_set_list[bid[0]])
-        print("Current action_2 for 1962675462: ", action_set_list[bid[1]])
+        print("Current action_1 for 210552869: ", action_set_list[bid])
+        print("Current action_2 for 1962675462: ", action_set_list[36-bid])
         print("-----------------------------------")
         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
-            AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
-            # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[action_for_greedy_algo]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[action_for_greedy_algo])]))
-    # print("-----------------------------------")
-    # print(response.agents)
-    # print("-----------------------------------")
+            AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[36-bid])]))
     agent_state_info = []
 
     for i in response.agents:
@@ -150,6 +157,7 @@ def run_adf(bid):
         agent_state_info.append(i.y)
         agent_state_info.append(i.water)
         agent_state_info.append(i.hp)
+        agent_state_info.append(i.idle)
     return agent_state_info
 
 def run_reward():
@@ -158,10 +166,7 @@ def run_reward():
     # of the code.
     with grpc.insecure_channel('localhost:2212') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
-        # response = stub.getBuildingInfo(BuildingInfo_pb2.BuildingInfo(buildings = [
-            # BuildingInfo_pb2.Building(fieryness = 1, temperature=1, building_id = 1), BuildingInfo_pb2.Building(fieryness = 2, temperature=2, building_id = 2)]))
         response_reward = stub.getRewards(BuildingInfo_pb2.Empty())
-    # print(response_reward.reward)
     return response_reward.reward
 
 def run_server():
@@ -170,8 +175,6 @@ def run_server():
     # of the code.
     with grpc.insecure_channel('localhost:4007') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
-        # response = stub.getBuildingInfo(BuildingInfo_pb2.BuildingInfo(buildings = [
-            # BuildingInfo_pb2.Building(fieryness = 1, temperature=1, building_id = 1), BuildingInfo_pb2.Building(fieryness = 2, temperature=2, building_id = 2)]))
         response = stub.getBuildingInfo(BuildingInfo_pb2.Empty())
     building_state_info = []
 
@@ -179,19 +182,4 @@ def run_server():
         building_state_info.append(i.fieryness)
         building_state_info.append(i.temperature)
         # building_state_info.append(i.building_id)
-    # print(fieryness_values
     return building_state_info
-    print("*******************************************")
-
-# if __name__ == '__main__':
-#     logging.basicConfig()
-#     state_info = []
-#     while True:
-#         run_adf(253)
-#         run_reward()
-#         run_server()
-#         state_info.append(run_server())
-#         # state_info.append(run_adf(249))
-#         flat_list = [item for sublist in state_info for item in sublist]
-#         print(flat_list)
-#         time.sleep(4)

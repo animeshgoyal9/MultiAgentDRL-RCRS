@@ -1623,6 +1623,12 @@ public final class AnimFireChalProto {
      * @return The hp.
      */
     int getHp();
+
+    /**
+     * <code>int32 idle = 6;</code>
+     * @return The idle.
+     */
+    int getIdle();
   }
   /**
    * Protobuf type {@code AnimFireChalAgent.Agent}
@@ -1636,7 +1642,7 @@ public final class AnimFireChalProto {
     private Agent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    Agent() {
+    private Agent() {
     }
 
     @java.lang.Override
@@ -1692,6 +1698,11 @@ public final class AnimFireChalProto {
             case 40: {
 
               hp_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              idle_ = input.readInt32();
               break;
             }
             default: {
@@ -1776,6 +1787,16 @@ public final class AnimFireChalProto {
       return hp_;
     }
 
+    public static final int IDLE_FIELD_NUMBER = 6;
+    private int idle_;
+    /**
+     * <code>int32 idle = 6;</code>
+     * @return The idle.
+     */
+    public int getIdle() {
+      return idle_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1804,6 +1825,9 @@ public final class AnimFireChalProto {
       }
       if (hp_ != 0) {
         output.writeInt32(5, hp_);
+      }
+      if (idle_ != 0) {
+        output.writeInt32(6, idle_);
       }
       unknownFields.writeTo(output);
     }
@@ -1834,6 +1858,10 @@ public final class AnimFireChalProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, hp_);
       }
+      if (idle_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, idle_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1861,6 +1889,8 @@ public final class AnimFireChalProto {
           != other.getWater()) return false;
       if (getHp()
           != other.getHp()) return false;
+      if (getIdle()
+          != other.getIdle()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1884,6 +1914,8 @@ public final class AnimFireChalProto {
       hash = (53 * hash) + getWater();
       hash = (37 * hash) + HP_FIELD_NUMBER;
       hash = (53 * hash) + getHp();
+      hash = (37 * hash) + IDLE_FIELD_NUMBER;
+      hash = (53 * hash) + getIdle();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2027,6 +2059,8 @@ public final class AnimFireChalProto {
 
         hp_ = 0;
 
+        idle_ = 0;
+
         return this;
       }
 
@@ -2058,6 +2092,7 @@ public final class AnimFireChalProto {
         result.y_ = y_;
         result.water_ = water_;
         result.hp_ = hp_;
+        result.idle_ = idle_;
         onBuilt();
         return result;
       }
@@ -2120,6 +2155,9 @@ public final class AnimFireChalProto {
         }
         if (other.getHp() != 0) {
           setHp(other.getHp());
+        }
+        if (other.getIdle() != 0) {
+          setIdle(other.getIdle());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2296,6 +2334,36 @@ public final class AnimFireChalProto {
       public Builder clearHp() {
         
         hp_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int idle_ ;
+      /**
+       * <code>int32 idle = 6;</code>
+       * @return The idle.
+       */
+      public int getIdle() {
+        return idle_;
+      }
+      /**
+       * <code>int32 idle = 6;</code>
+       * @param value The idle to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdle(int value) {
+        
+        idle_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 idle = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIdle() {
+        
+        idle_ = 0;
         onChanged();
         return this;
       }
@@ -2938,14 +3006,14 @@ public final class AnimFireChalProto {
       "\n\017AgentInfo.proto\022\021AnimFireChalAgent\"5\n\t" +
       "AgentInfo\022(\n\006agents\030\001 \003(\0132\030.AnimFireChal" +
       "Agent.Agent\"8\n\nActionInfo\022*\n\007actions\030\001 \003" +
-      "(\0132\031.AnimFireChalAgent.Action\"J\n\005Agent\022\020" +
+      "(\0132\031.AnimFireChalAgent.Action\"X\n\005Agent\022\020" +
       "\n\010agent_id\030\001 \001(\005\022\t\n\001x\030\002 \001(\001\022\t\n\001y\030\003 \001(\001\022\r" +
-      "\n\005water\030\004 \001(\005\022\n\n\002hp\030\005 \001(\005\"/\n\006Action\022\020\n\010a" +
-      "gent_id\030\001 \001(\005\022\023\n\013building_id\030\002 \001(\0052b\n\021An" +
-      "imFireChalAgent\022M\n\014getAgentInfo\022\035.AnimFi" +
-      "reChalAgent.ActionInfo\032\034.AnimFireChalAge" +
-      "nt.AgentInfo\"\000B&\n\021AnimFireChalAgentB\021Ani" +
-      "mFireChalProtob\006proto3"
+      "\n\005water\030\004 \001(\005\022\n\n\002hp\030\005 \001(\005\022\014\n\004idle\030\006 \001(\005\"" +
+      "/\n\006Action\022\020\n\010agent_id\030\001 \001(\005\022\023\n\013building_" +
+      "id\030\002 \001(\0052b\n\021AnimFireChalAgent\022M\n\014getAgen" +
+      "tInfo\022\035.AnimFireChalAgent.ActionInfo\032\034.A" +
+      "nimFireChalAgent.AgentInfo\"\000B&\n\021AnimFire" +
+      "ChalAgentB\021AnimFireChalProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2968,7 +3036,7 @@ public final class AnimFireChalProto {
     internal_static_AnimFireChalAgent_Agent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AnimFireChalAgent_Agent_descriptor,
-        new java.lang.String[] { "AgentId", "X", "Y", "Water", "Hp", });
+        new java.lang.String[] { "AgentId", "X", "Y", "Water", "Hp", "Idle", });
     internal_static_AnimFireChalAgent_Action_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_AnimFireChalAgent_Action_fieldAccessorTable = new

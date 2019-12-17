@@ -26,7 +26,7 @@ public class AnimFireChalAgent extends AnimFireChalAgentImplBase {
 		
 		AgentBean[] agents2 = AgentResources.getAgents();
 		for(int i=0; i<agents2.length; i++) {
-			Agent a = Agent.newBuilder().setAgentId(agents2[i].getAgent_id()).setX(agents2[i].getX()).setY(agents2[i].getY()).setWater(agents2[i].getWater()).setHp(agents2[i].getHp()).build();
+			Agent a = Agent.newBuilder().setAgentId(agents2[i].getAgent_id()).setX(agents2[i].getX()).setY(agents2[i].getY()).setWater(agents2[i].getWater()).setHp(agents2[i].getHp()).setIdle(1).build();
 			resp.addAgents(a);
 		}
 		

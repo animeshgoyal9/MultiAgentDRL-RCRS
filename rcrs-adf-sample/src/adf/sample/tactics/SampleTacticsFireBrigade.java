@@ -203,17 +203,19 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
             }
         }
         // autonomous
+        
         EntityID target = this.buildingDetector.calc().getTarget();
         
         Action action = this.actionFireFighting.setTarget(target).calc().getAction();
+        System.out.println("Check 4 -----------------" + action);
         if (action != null)
         {
             this.sendActionMessage(messageManager, agent, action, agentInfo);
             return action;
         }
-        
+        System.out.println("Check 5 -----------------");
         target = this.search.calc().getTarget();
-        
+        System.out.println("Check 6 -----------------");
         action = this.actionExtMove.setTarget(target).calc().getAction();
         if (action != null)
         {
