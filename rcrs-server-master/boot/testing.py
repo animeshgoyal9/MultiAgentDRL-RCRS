@@ -13,8 +13,8 @@ from datetime import date, datetime
 import subprocess
 from subprocess import *
 
-# from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy
-from stable_baselines.deepq.policies import MlpPolicy
+from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy
+# from stable_baselines.deepq.policies import MlpPolicy
 from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize, VecEnv
 from stable_baselines import PPO2, DQN
 # from stable_baselines.common.evaluation import evaluate_policy
@@ -27,30 +27,6 @@ from stable_baselines.ddpg import AdaptiveParamNoiseSpec
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
-
-# best_mean_reward, n_steps = -np.inf, 0
-# def callback(_locals, _globals):
-#     global n_steps, best_mean_reward
-#     # Print stats every 1000 calls
-#     if (n_steps + 1) % 10 == 0:
-# # Evaluate policy training performance
-#         x, y = ts2xy(load_results(log_dir), 'timesteps')
-#         if len(x) > 0:
-#             mean_reward = np.mean(y[-100:])
-#             print(x[-1], 'timesteps')
-#             print("Best mean reward: {:.2f} - Last mean reward per episode: {:.2f}".format(best_mean_reward, mean_reward))
-#             best_mean_reward = mean_reward
-#             print("Saving new best model")
-#             _locals['self'].save(log_dir + 'best_model.pkl')
-#             # New best model, you could save the agent here
-#             # if mean_reward > best_mean_reward:
-#                 # best_mean_reward = mean_reward
-#                 # Example for saving best model
-#                 # print("Saving new best model")
-#                 # _locals['self'].save(log_dir + 'best_model.pkl')
-#     n_steps += 1
-#     return True
-
 
 # Create log dir
 log_dir = "/u/animesh9/Documents/RoboCup-gRPC/plots/"
@@ -70,47 +46,37 @@ env = VecNormalize(env, norm_obs=True, norm_reward=False, clip_obs=10.)
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y")
 
-number_of_loops =               2
-total_timesteps_to_learn =      5000
-total_timesteps_to_predict =    5000
-interal_btw_mean_std_calc =     500
-algo_used =                     "DQN"
+total_timesteps_to_learn =      5000 # 50 episodes
+total_timesteps_to_predict =    5000 # 50 episodes
+algo_used =                     "PPO2"
 
-for j in range(number_of_loops):
-    model = DQN(MlpPolicy, env, verbose=1, tensorboard_log = "./ppo2_rcrs_tensorboard/")
+model = PPO2(MlpPolicy, env, verbose=1, tensorboard_log = "./ppo2_rcrs_tensorboard/")
+
+for k in range(10):
     # Train the agent
     model.learn(total_timesteps=int(total_timesteps_to_learn))
+    # Saving the model
+    model.save("{}_{}_{}".format("rcrs_wgts", k, algo_used))
 
-    model.save("{}_{}_{}".format("rcrs_gym", j, algo_used))
-    del model  # delete trained model to demonstrate loading
-
+for j in range(10):
     # Load the trained agent
-    model = DQN.load("{}_{}_{}".format("rcrs_gym", j, algo_used))
-
+    model = PPO2.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
+    # Reset the environment
     obs = env.reset()
-    # print(obs)
-    # int(input("pause.."))
+    # Create an empty list to store reward values 
     final_rewards = []
-    mean_reward_interval = []
-    std_reward_interval = []
-    for i in range(total_timesteps_to_predict):
+    for _ in range(total_timesteps_to_predict):
+        # predict the values
         action, _states = model.predict(obs)
         obs, rewards, dones, info = env.step(action)
-        # int(input("pause.."))
         if dones == True:
             final_rewards.append(rewards)
-        # print("This is the final reward:", final_rewards)
-        if ((i+1)%interal_btw_mean_std_calc == 0):
-            mean_reward_interval.append(np.mean(final_rewards))
-            std_reward_interval.append(stats.sem(final_rewards))
-            print("This is the mean reward at interval:", mean_reward_interval)
-            print("This is the std reward at interval:", std_reward_interval)
-        if ((i+1)%total_timesteps_to_predict == 0):
-            df1 = pd.DataFrame([mean_reward_interval, std_reward_interval], index = ['Rewards', 'Standard Error'])
-            df1.to_excel("{}_{}_{}_{}".format(j+1, i+1, "MeanRewardAndStd.xlsx", algo_used))
-        print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
     print(np.mean(final_rewards))
     print(stats.sem(final_rewards))
+    # Create a dataframe to save the mean and standard deviation
     df2 = pd.DataFrame([np.mean(final_rewards), stats.sem(final_rewards)], index = ['Rewards', 'Standard Error'])
-    df2.to_excel("{}_{}_{}".format(j+1, "FinalMeanRewardAndStd.xlsx", algo_used))
+    # Convert to excel
+    df2.to_excel("{}_{}_{}".format(j+1, algo_used, "MeanAndStdReward.xlsx" ))
+
+# Kill the process once training and testing is done
 subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)

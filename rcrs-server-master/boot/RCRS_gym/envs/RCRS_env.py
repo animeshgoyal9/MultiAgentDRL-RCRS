@@ -36,9 +36,9 @@ class RCRSenv(gym.Env):
     current_action = 0
     def __init__(self):
     # Action space for PPO
-        # self.action_space = spaces.MultiDiscrete([37, 37])
+        self.action_space = spaces.MultiDiscrete([37, 37])
     # Action space for DQN
-        self.action_space = spaces.Discrete(37)
+        # self.action_space = spaces.Discrete(37)
         low = np.array([0]*86)
         high = np.array([inf]*86)
 
@@ -118,9 +118,10 @@ class RCRSenv(gym.Env):
         # time.sleep(25)
         self.curr_episode = 0
     # Reset Action for PPO
-        # reset_action = [0, 0]
+        reset_action = [0, 0]
     # Reset action for DQN
-        reset_action = 0
+        # reset_action = 0
+
         reset = []
 
         reset.append(run_server())
@@ -144,11 +145,17 @@ def run_adf(bid):
     
     with grpc.insecure_channel('localhost:3400') as channel:
         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
-        print("Current action_1 for 210552869: ", action_set_list[bid])
-        print("Current action_2 for 1962675462: ", action_set_list[36-bid])
+    # print for PPO2
+        print("Current action_1 for 210552869: ", action_set_list[bid[0]])
+        print("Current action_2 for 1962675462: ", action_set_list[bid[1]])
         print("-----------------------------------")
+    # print for DQN
+        # print("Current action_1 for 210552869: ", action_set_list[bid])
+        # print("Current action_2 for 1962675462: ", action_set_list[36-bid])
+        # print("-----------------------------------")
         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
-            AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[36-bid])]))
+            AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
+            # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[36-bid])]))
     agent_state_info = []
 
     for i in response.agents:
