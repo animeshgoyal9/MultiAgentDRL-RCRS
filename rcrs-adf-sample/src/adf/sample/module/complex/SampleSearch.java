@@ -116,7 +116,7 @@ public class SampleSearch extends Search {
 
 	@Override
 	public Search calc() {
-		System.out.println("Check 3 -----------------");
+		System.out.println("Check 33 -----------------");
 		
 		this.result = null;
 		this.pathPlanning.setFrom(this.agentInfo.getPosition());
@@ -133,20 +133,20 @@ public class SampleSearch extends Search {
 		if (currentTarget != null && path.size() == 1) {
 			    	currentTarget = null;
 		}
-		
+
 		if(currentTarget == null)
 			currentTarget = target;
-		
+
 		System.out.println("Changed Entities: "+ this.worldInfo.getChanged().getChangedEntities());
 		System.out.println(this.agentInfo.getID().getValue() +" Target: "+target);
 		System.out.println(this.agentInfo.getID().getValue() +" Current Target: "+currentTarget);
-		
+
 		this.unsearchedBuildingIDs.clear();
 		this.unsearchedBuildingIDs.add(currentTarget);
-		
+
 		this.pathPlanning.setDestination(this.unsearchedBuildingIDs);
 		path = this.pathPlanning.calc().getResult();
-		
+
 		System.out.println("Path: " + path);
 		if (path != null && path.size() > 0) {
 			this.result = path.get(path.size() - 1);

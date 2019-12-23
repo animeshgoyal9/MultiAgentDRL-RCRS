@@ -63,21 +63,23 @@ class RCRSenv(gym.Env):
         
     # To run greedy algorithm, uncomment 
 
-        # action_for_greedy_algo_A1 = int((state_info[0].index(max(state_info[0])) + 1)/2)
-        
-        # maximum=max(state_info[0][0],state_info[0][1]) 
-        # secondmax=min(state_info[0][0],state_info[0][1]) 
-          
-        # for i in range(2,len(state_info[0])): 
-        #     if state_info[0][i]>maximum: 
-        #         secondmax=maximum
-        #         maximum=state_info[0][i] 
-        #     else: 
-        #         if state_info[0][i]>secondmax: 
-        #             secondmax=state_info[0][i] 
+        state_info_temp = state_info[0][1::2]
 
-        # action_for_greedy_algo_A2 = int((state_info[0].index(secondmax) + 1)/2)
-        # action = [action_for_greedy_algo_A1, action_for_greedy_algo_A2]
+        action_for_greedy_algo_A1 = int((state_info_temp.index(max(state_info_temp))))
+        
+        maximum=max(state_info_temp[0],state_info_temp[1]) 
+        secondmax=min(state_info_temp[0],state_info_temp[1]) 
+          
+        for i in range(2,len(state_info_temp)): 
+            if state_info_temp[i]>maximum: 
+                secondmax=maximum
+                maximum=state_info_temp[i] 
+            else: 
+                if state_info_temp[i]>secondmax: 
+                    secondmax=state_info_temp[i] 
+
+        action_for_greedy_algo_A2 = int((state_info_temp.index(secondmax)))
+        action = [action_for_greedy_algo_A1+1, action_for_greedy_algo_A2+1]
         
         state_info.append(run_adf(action))
 

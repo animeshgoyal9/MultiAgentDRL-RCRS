@@ -45,20 +45,22 @@ env = VecNormalize(env, norm_obs=True, norm_reward=False, clip_obs=10.)
 
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y")
+columns = ['Mean Rewards', 'Standard error']
+df = pd.DataFrame(columns=columns)
 
-total_timesteps_to_learn =      5000 # 50 episodes
-total_timesteps_to_predict =    5000 # 50 episodes
-algo_used =                     "PPO2"
+total_timesteps_to_learn =      500 # 50 episodes
+total_timesteps_to_predict =    500 # 50 episodes
+algo_used =                     "Greedy"
 
 model = PPO2(MlpPolicy, env, verbose=1, tensorboard_log = "./ppo2_rcrs_tensorboard/")
 
-for k in range(10):
+for k in range(2):
     # Train the agent
     model.learn(total_timesteps=int(total_timesteps_to_learn))
     # Saving the model
     model.save("{}_{}_{}".format("rcrs_wgts", k, algo_used))
 
-for j in range(10):
+for j in range(2):
     # Load the trained agent
     model = PPO2.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
     # Reset the environment
@@ -71,12 +73,18 @@ for j in range(10):
         obs, rewards, dones, info = env.step(action)
         if dones == True:
             final_rewards.append(rewards)
+    # Print the mean reward
     print(np.mean(final_rewards))
+    # Print the standard error of reward
     print(stats.sem(final_rewards))
-    # Create a dataframe to save the mean and standard deviation
-    df2 = pd.DataFrame([np.mean(final_rewards), stats.sem(final_rewards)], index = ['Rewards', 'Standard Error'])
-    # Convert to excel
-    df2.to_excel("{}_{}_{}".format(j+1, algo_used, "MeanAndStdReward.xlsx" ))
+    # Create a DataFrame to save the mean and standard deviation
+    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard error': stats.sem(final_rewards)}, ignore_index=True)
+    # # Create a dataframe to save the mean and standard deviation
+    # df2 = pd.DataFrame([np.mean(final_rewards), stats.sem(final_rewards)], index = ['Rewards', 'Standard Error'])
+    # Convert to csv
+    df.to_csv("{}_{}_{}".format(1, algo_used, "MeanAndStdReward.csv", sep=',',index=True))
+    # # Convert to excel
+    # df2.to_excel("{}_{}_{}".format(j+1, algo_used, "MeanAndStdReward.xlsx" ))
 
 # Kill the process once training and testing is done
 subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
