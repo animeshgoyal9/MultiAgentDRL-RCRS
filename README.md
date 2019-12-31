@@ -75,7 +75,8 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 - `./rcrs-server-master/boot/testing.py`: contains code for applying Deep Reinforcement learning to RCRS
 - `./rcrs-server-master/boot/RCRS_gym/`: folder containing gym integration for RCRS
 - `./rcrs-server-master/maps/`: 
-   - maps that can be run in the simulation server (default map is `..maps/gml/test/map`)
+   - `..maps/gml/test/map` : maps that can be run in the simulation server (default map is `..maps/gml/test/map`)
+   - `..maps/gml/test/config`: configuration file associated with the map
 
 
 
