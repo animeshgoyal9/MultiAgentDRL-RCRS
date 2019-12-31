@@ -66,7 +66,7 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 
 ``` 
 
-## 6. Code Structre
+## 6. Code Structure
 
 - `./rcrs-server-master/`: folder where simulation server resides
 - `./rcrs-adf-sample/`   : folder where simulation client resides
@@ -74,7 +74,10 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 - `./New_RCRS/`          : gRPC java and proto files for server side
 - `./rcrs-server-master/boot/testing.py`: contains code for applying Deep Reinforcement learning to RCRS
 - `./rcrs-server-master/boot/RCRS_gym/`: folder containing gym integration for RCRS
-- `./rcrs-server-master/maps/`: maps that can be run in the simulation server. Currently, `/gml/test/` map is used for simulation
+- `./rcrs-server-master/maps/`: 
+-- maps that can be run in the simulation server (default map is `..maps/gml/test/map`)
+
+
 
 
 
