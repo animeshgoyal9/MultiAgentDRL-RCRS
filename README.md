@@ -78,6 +78,8 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
    - `..maps/gml/test/map` : default map 
    - `..maps/gml/test/config`: configuration file associated with the map
 
+## 7. Results 
+
 ##### No Trained
 <img src="NoTrained.gif" height="400px" width="600px" >
 
