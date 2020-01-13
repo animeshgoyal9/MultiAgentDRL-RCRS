@@ -78,6 +78,6 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
    - `..maps/gml/test/map` : default map 
    - `..maps/gml/test/config`: configuration file associated with the map
 
-<img src="/u/animesh9/Downloads/ezgif.com-video-to-gif.gif" height="400px" width="400px" >
+<img src="ezgif.com-video-to-gif.gif" height="400px" width="400px" >
 
 
