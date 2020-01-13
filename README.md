@@ -79,14 +79,15 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
    - `..maps/gml/test/config`: configuration file associated with the map
 
 ## 7. Results 
+Below is an example of agents trained using PPO algorithm
 
-##### No Trained
+##### Training episodes = 0
 <img src="/GIFs/NoTrained.gif" height="400px" width="600px" >
 
-##### Partially Trained
+##### Training episodes = 50
 <img src="/GIFs/PartiallyTrained.gif" height="400px" width="600px" >
 
-##### Fully Trained
+##### Training episodes = 100
 <img src="/GIFs/FullyTrained.gif" height="400px" width="600px" >
 
 
