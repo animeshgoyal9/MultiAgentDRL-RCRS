@@ -78,6 +78,13 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
    - `..maps/gml/test/map` : default map 
    - `..maps/gml/test/config`: configuration file associated with the map
 
-<img src="ezgif.com-video-to-gif.gif" height="400px" width="600px" >
+##### No Trained
+<img src="NoTrained.gif" height="400px" width="600px" >
+
+##### Partially Trained
+<img src="PartiallyTrained.gif" height="400px" width="600px" >
+
+##### Fully Trained
+<img src="FullyTrained.gif" height="400px" width="600px" >
 
 
