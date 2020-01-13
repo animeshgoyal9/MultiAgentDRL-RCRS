@@ -81,12 +81,12 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 ## 7. Results 
 
 ##### No Trained
-<img src="NoTrained.gif" height="400px" width="600px" >
+<img src="/GIFs/NoTrained.gif" height="400px" width="600px" >
 
 ##### Partially Trained
-<img src="PartiallyTrained.gif" height="400px" width="600px" >
+<img src="/GIFs/PartiallyTrained.gif" height="400px" width="600px" >
 
 ##### Fully Trained
-<img src="FullyTrained.gif" height="400px" width="600px" >
+<img src="/GIFs/FullyTrained.gif" height="400px" width="600px" >
 
 
