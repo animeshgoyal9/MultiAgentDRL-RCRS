@@ -59,6 +59,8 @@ for k in range(2):
     model.learn(total_timesteps=int(total_timesteps_to_learn))
     # Saving the model
     model.save("{}_{}_{}".format("rcrs_wgts", k, algo_used))
+    # Kill the process
+    subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
 
 for j in range(2):
     # Load the trained agent
