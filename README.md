@@ -71,7 +71,7 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 - `./rcrs-server-master/`: folder where simulation server resides
 - `./rcrs-adf-sample/`   : folder where simulation client resides
 - `./PyRCRSClient/`      : gRPC python and proto files for client side 
-- `./New_RCRS/`          : gRPC java and proto files for server side
+- `./JavaRCRSServer/`          : gRPC java and proto files for server side
 - `./rcrs-server-master/boot/testing.py`: contains code for applying Deep Reinforcement learning to RCRS
 - `./rcrs-server-master/boot/RCRS_gym/`: folder containing gym integration for RCRS
 - `./rcrs-server-master/maps/`: maps that can be run in the simulation server
@@ -79,14 +79,15 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
    - `..maps/gml/test/config`: configuration file associated with the map
 
 ## 7. Results 
+Below is an example of agents trained using PPO algorithm
 
-##### No Trained
+##### Trained agents after episode = 1
 <img src="/GIFs/NoTrained.gif" height="400px" width="600px" >
 
-##### Partially Trained
+##### Trained agents after episode = 50
 <img src="/GIFs/PartiallyTrained.gif" height="400px" width="600px" >
 
-##### Fully Trained
+##### Trained agents after episode = 100
 <img src="/GIFs/FullyTrained.gif" height="400px" width="600px" >
 
 
