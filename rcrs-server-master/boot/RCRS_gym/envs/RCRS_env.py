@@ -53,33 +53,40 @@ class RCRSenv(gym.Env):
         logging.basicConfig()
         
         self.curr_episode += 1
-        if (self.curr_episode <= (MAX_TIMESTEP - 1)):
-            self.reward = 0
-        else:
-            self.reward = run_reward()
+        fieryeness_counter = collections.Counter(state_info[0][0::2])
+        
+        for key, value in fieryeness_counter.items():
+            if 0 <= key <= 2:
+                fieryeness_counter[key] = (value*10)/len(state_info[0][0::2])
+            elif 3 <= key <= 5:
+                fieryeness_counter[key] = value*(-5)/len(state_info[0][0::2])
+            else:
+                fieryeness_counter[key] = value*(-10)/len(state_info[0][0::2])
+        
+        self.reward = sum(fieryeness_counter.values())
         
         state_info = []
         state_info.append(run_server())
         
     # To run greedy algorithm, uncomment 
 
-        state_info_temp = state_info[0][1::2]
+        # state_info_temp = state_info[0][1::2]
 
-        action_for_greedy_algo_A1 = int((state_info_temp.index(max(state_info_temp))))
+        # action_for_greedy_algo_A1 = int((state_info_temp.index(max(state_info_temp))))
         
-        maximum=max(state_info_temp[0],state_info_temp[1]) 
-        secondmax=min(state_info_temp[0],state_info_temp[1]) 
+        # maximum=max(state_info_temp[0],state_info_temp[1]) 
+        # secondmax=min(state_info_temp[0],state_info_temp[1]) 
           
-        for i in range(2,len(state_info_temp)): 
-            if state_info_temp[i]>maximum: 
-                secondmax=maximum
-                maximum=state_info_temp[i] 
-            else: 
-                if state_info_temp[i]>secondmax: 
-                    secondmax=state_info_temp[i] 
+        # for i in range(2,len(state_info_temp)): 
+        #     if state_info_temp[i]>maximum: 
+        #         secondmax=maximum
+        #         maximum=state_info_temp[i] 
+        #     else: 
+        #         if state_info_temp[i]>secondmax: 
+        #             secondmax=state_info_temp[i] 
 
-        action_for_greedy_algo_A2 = int((state_info_temp.index(secondmax)))
-        action = [action_for_greedy_algo_A1+1, action_for_greedy_algo_A2+1]
+        # action_for_greedy_algo_A2 = int((state_info_temp.index(secondmax)))
+        # action = [action_for_greedy_algo_A1+1, action_for_greedy_algo_A2+1]
         
         state_info.append(run_adf(action))
 
