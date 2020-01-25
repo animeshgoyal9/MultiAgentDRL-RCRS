@@ -97,7 +97,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
         sim.initialize();	
         
         try {
-        	server = ServerBuilder.forPort(4007).addService(new AnimFireChal()).build();            
+        	server = ServerBuilder.forPort(4008).addService(new AnimFireChal()).build();            
 			server.start();
 			System.out.println("Server started at " + server.getPort());	
 		} catch (Exception e) {
@@ -191,7 +191,6 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
                 changes.addChange(oldB, oldB.getTemperatureProperty());
             }
             buildings += b.getFieryness()+","+b.getTemperature()+","+b.getID();
-//            System.out.println(buildings[i]);
         }
 		Resources.setB(buildings);
 		
@@ -215,7 +214,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
                 rescuecore2.standard.entities.FireBrigade fb = (rescuecore2.standard.entities.FireBrigade)next;
                 fb.setWater(config.getIntValue(MAX_WATER_KEY));
                 changes.addChange(fb, fb.getWaterProperty());
-                
+//                System.out.println(model.getEntitiesOfType(StandardEntityURN.BUILDING));
             }
         }
         long end = System.currentTimeMillis();

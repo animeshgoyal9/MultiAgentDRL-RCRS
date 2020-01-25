@@ -130,6 +130,9 @@ public class SampleSearch extends Search {
 			} catch (Exception e) {
 			}
 		}
+		
+//		For Waiting Command------------------------------------
+		
 		if (currentTarget != null && path.size() == 1) {
 			    	currentTarget = null;
 		}
@@ -144,6 +147,10 @@ public class SampleSearch extends Search {
 		this.unsearchedBuildingIDs.clear();
 		this.unsearchedBuildingIDs.add(currentTarget);
 
+//		For Instant Switch--------------------------------------
+		
+//		this.unsearchedBuildingIDs.clear();
+//		this.unsearchedBuildingIDs.add(target);
 		this.pathPlanning.setDestination(this.unsearchedBuildingIDs);
 		path = this.pathPlanning.calc().getResult();
 

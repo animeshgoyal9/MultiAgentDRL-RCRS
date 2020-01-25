@@ -20,7 +20,7 @@
   <scenario:hydrant scenario:location="5131"/>
   <scenario:hydrant scenario:location="3852"/>
   <scenario:hydrant scenario:location="27404"/>
-  <scenario:hydrant scenario:location="51341"/>
+  <!-- <scenario:hydrant scenario:location="51341"/>
   <scenario:hydrant scenario:location="31886"/>
   <scenario:hydrant scenario:location="10510"/>
   <scenario:hydrant scenario:location="49296"/>
@@ -287,11 +287,11 @@
   <scenario:civilian scenario:location="19079"/>
   <scenario:civilian scenario:location="71324"/>
   <scenario:civilian scenario:location="3925"/>
-  <scenario:civilian scenario:location="61544"/>
+  <scenario:civilian scenario:location="61544"/> -->
   <scenario:civilian scenario:location="22031"/>
   <scenario:firebrigade scenario:location="28907"/>
   <scenario:firebrigade scenario:location="62658"/>
-  <scenario:firebrigade scenario:location="44368"/>
+  <!-- <scenario:firebrigade scenario:location="44368"/>
   <scenario:firebrigade scenario:location="56215"/>
   <scenario:firebrigade scenario:location="56215"/>
   <scenario:firebrigade scenario:location="53294"/>
@@ -402,5 +402,5 @@
   <scenario:ambulanceteam scenario:location="4922"/>
   <scenario:ambulanceteam scenario:location="24830"/>
   <scenario:ambulancecentre scenario:location="58404"/>
-  <scenario:ambulancecentre scenario:location="41070"/>
+  <scenario:ambulancecentre scenario:location="41070"/> -->
 </scenario:scenario>

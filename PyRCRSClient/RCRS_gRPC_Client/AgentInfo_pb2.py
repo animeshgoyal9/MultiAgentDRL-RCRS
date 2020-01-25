@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='AnimFireChalAgent',
   syntax='proto3',
   serialized_options=_b('\n\021AnimFireChalAgentB\021AnimFireChalProto'),
-  serialized_pb=_b('\n\x0f\x41gentInfo.proto\x12\x11\x41nimFireChalAgent\"5\n\tAgentInfo\x12(\n\x06\x61gents\x18\x01 \x03(\x0b\x32\x18.AnimFireChalAgent.Agent\"8\n\nActionInfo\x12*\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\x19.AnimFireChalAgent.Action\"J\n\x05\x41gent\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\x05\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\r\n\x05water\x18\x04 \x01(\x05\x12\n\n\x02hp\x18\x05 \x01(\x05\"/\n\x06\x41\x63tion\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\x05\x12\x13\n\x0b\x62uilding_id\x18\x02 \x01(\x05\x32\x62\n\x11\x41nimFireChalAgent\x12M\n\x0cgetAgentInfo\x12\x1d.AnimFireChalAgent.ActionInfo\x1a\x1c.AnimFireChalAgent.AgentInfo\"\x00\x42&\n\x11\x41nimFireChalAgentB\x11\x41nimFireChalProtob\x06proto3')
+  serialized_pb=_b('\n\x0f\x41gentInfo.proto\x12\x11\x41nimFireChalAgent\"5\n\tAgentInfo\x12(\n\x06\x61gents\x18\x01 \x03(\x0b\x32\x18.AnimFireChalAgent.Agent\"8\n\nActionInfo\x12*\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\x19.AnimFireChalAgent.Action\"X\n\x05\x41gent\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\x05\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\r\n\x05water\x18\x04 \x01(\x05\x12\n\n\x02hp\x18\x05 \x01(\x05\x12\x0c\n\x04idle\x18\x06 \x01(\x05\"/\n\x06\x41\x63tion\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\x05\x12\x13\n\x0b\x62uilding_id\x18\x02 \x01(\x05\x32\x62\n\x11\x41nimFireChalAgent\x12M\n\x0cgetAgentInfo\x12\x1d.AnimFireChalAgent.ActionInfo\x1a\x1c.AnimFireChalAgent.AgentInfo\"\x00\x42&\n\x11\x41nimFireChalAgentB\x11\x41nimFireChalProtob\x06proto3')
 )
 
 
@@ -130,6 +130,13 @@ _AGENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='idle', full_name='AnimFireChalAgent.Agent.idle', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -143,7 +150,7 @@ _AGENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=151,
-  serialized_end=225,
+  serialized_end=239,
 )
 
 
@@ -180,8 +187,8 @@ _ACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=227,
-  serialized_end=274,
+  serialized_start=241,
+  serialized_end=288,
 )
 
 _AGENTINFO.fields_by_name['agents'].message_type = _AGENT
@@ -229,8 +236,8 @@ _ANIMFIRECHALAGENT = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=276,
-  serialized_end=374,
+  serialized_start=290,
+  serialized_end=388,
   methods=[
   _descriptor.MethodDescriptor(
     name='getAgentInfo',

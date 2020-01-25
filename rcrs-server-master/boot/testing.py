@@ -1,7 +1,6 @@
 import gym
 import RCRS_gym
 
-
 import os
 import numpy as np
 from scipy import stats
@@ -28,6 +27,7 @@ from stable_baselines.ddpg import AdaptiveParamNoiseSpec
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
+
 # Create log dir
 log_dir = "/u/animesh9/Documents/RoboCup-gRPC/plots/"
 os.makedirs(log_dir, exist_ok=True)
@@ -48,21 +48,23 @@ dt_string = now.strftime("%d/%m/%Y")
 columns = ['Mean Rewards', 'Standard error']
 df = pd.DataFrame(columns=columns)
 
-total_timesteps_to_learn =      500 # 50 episodes
-total_timesteps_to_predict =    500 # 50 episodes
+total_timesteps_to_learn =      2500 # 50 episodes
+total_timesteps_to_predict =    2500 # 50 episodes
 algo_used =                     "Greedy"
 
-model = PPO2(MlpPolicy, env, verbose=1, tensorboard_log = "./ppo2_rcrs_tensorboard/")
+# for i in range(2):
+model = PPO2(MlpPolicy, env, verbose=1, learning_rate=0.00025, tensorboard_log = "./ppo2_rcrs_tensorboard/")
+# model = PPO2(MlpPolicy, env, verbose=1, learning_rate=0.0025, buffer_size = 1000, learning_starts = 100, target_network_update_freq = 50)
 
-for k in range(2):
+for k in range(25):
     # Train the agent
     model.learn(total_timesteps=int(total_timesteps_to_learn))
     # Saving the model
     model.save("{}_{}_{}".format("rcrs_wgts", k, algo_used))
-    # Kill the process
+
     subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
 
-for j in range(2):
+for j in range(25):
     # Load the trained agent
     model = PPO2.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
     # Reset the environment
@@ -87,6 +89,7 @@ for j in range(2):
     df.to_csv("{}_{}_{}".format(1, algo_used, "MeanAndStdReward.csv", sep=',',index=True))
     # # Convert to excel
     # df2.to_excel("{}_{}_{}".format(j+1, algo_used, "MeanAndStdReward.xlsx" ))
+    subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
 
-# Kill the process once training and testing is done
+    # Kill the process once training and testing is done
 subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)

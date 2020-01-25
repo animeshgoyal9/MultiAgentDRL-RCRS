@@ -23,6 +23,7 @@ message Agent {
   double y = 3; 
   int32 water = 4;
   int32 hp = 5; 
+  int32 idle = 6;
 }
 
 message Action {

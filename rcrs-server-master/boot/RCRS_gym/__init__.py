@@ -7,3 +7,8 @@ register(
     id='RCRS-v2',
     entry_point='RCRS_gym.envs:RCRSenv',
 )
+
+# register(
+#     id='RCRS-v2',
+#     entry_point='RCRS_gym.envs:RCRSVecEnv',
+# )

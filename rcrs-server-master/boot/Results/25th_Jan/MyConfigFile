@@ -1,0 +1,17 @@
+Algo = PPO
+Map size = Small 
+No. of training steps = 25*25
+Learning rate = 0.00025
+Switch type = Instant
+No. of iterations = 1
+Batch Size = 32
+Checking timesteps = 25
+Date = 25th_Jan
+
+New Reward function used. 
+
+1. if Slightly burned: +10 points
+2. if Moderately burned: -2 points
+3. if Critically burned: -5 points
+4. if Totally burned: -10 points
+

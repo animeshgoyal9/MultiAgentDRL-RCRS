@@ -135,18 +135,12 @@ def run_adf(bid):
     return agent_state_info
 
 def run_reward():
-    # NOTE(gRPC Python Team): .close() is possible on a channel and should be
-    # used in circumstances in which the with statement does not fit the needs
-    # of the code.
     with grpc.insecure_channel('localhost:2212') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
         response_reward = stub.getRewards(BuildingInfo_pb2.Empty())
     return response_reward.reward
 
 def run_server():
-    # NOTE(gRPC Python Team): .close() is possible on a channel and should be
-    # used in circumstances in which the with statement does not fit the needs
-    # of the code.
     with grpc.insecure_channel('localhost:4007') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
         response = stub.getBuildingInfo(BuildingInfo_pb2.Empty())
@@ -161,10 +155,7 @@ def run_server():
 
 
 if __name__ == "__main__":
-    # Can also register the env creator function explicitly with:
-    # register_env("corridor", lambda config: SimpleCorridor(config))
     ray.init()
-    # ModelCatalog.register_custom_model("rcrs_env", RCRSenv())
     register_env("rcrs_env", lambda config: RCRSMultienv())
     single_env = gym.make("RCRS-v2")
     obs_space = single_env.observation_space
@@ -217,6 +208,3 @@ if __name__ == "__main__":
             print("checkpoint saved at", checkpoint)
     statess = trainer.save()
     trainer.stop()
-
-    subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
-subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
