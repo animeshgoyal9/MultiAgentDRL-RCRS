@@ -1,0 +1,9 @@
+Algo = DQN
+Map size = Small 
+No. of training steps = 25*100
+Learning rate = 0.0025
+Switch type = Waiting
+No. of iterations = 1
+Batch Size = 64
+Checking timesteps = 100
+Date = 28th_Jan

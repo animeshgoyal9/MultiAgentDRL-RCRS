@@ -12,8 +12,8 @@ from datetime import date, datetime
 import subprocess
 from subprocess import *
 
-from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy
-# from stable_baselines.deepq.policies import MlpPolicy
+# from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy
+from stable_baselines.deepq.policies import MlpPolicy
 from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize, VecEnv
 from stable_baselines import PPO2, DQN
 # from stable_baselines.common.evaluation import evaluate_policy
@@ -50,10 +50,10 @@ df = pd.DataFrame(columns=columns)
 
 total_timesteps_to_learn =      2500 # 50 episodes
 total_timesteps_to_predict =    2500 # 50 episodes
-algo_used =                     "Greedy"
+algo_used =                     "DQN"
 
 # for i in range(2):
-model = PPO2(MlpPolicy, env, verbose=1, learning_rate=0.00025, tensorboard_log = "./ppo2_rcrs_tensorboard/")
+model = DQN(MlpPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", batch_size = 64)
 # model = PPO2(MlpPolicy, env, verbose=1, learning_rate=0.0025, buffer_size = 1000, learning_starts = 100, target_network_update_freq = 50)
 
 for k in range(25):
@@ -66,7 +66,7 @@ for k in range(25):
 
 for j in range(25):
     # Load the trained agent
-    model = PPO2.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
+    model = DQN.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
     # Reset the environment
     obs = env.reset()
     # Create an empty list to store reward values 

@@ -123,8 +123,8 @@
   <scenario:civilian scenario:location="43044"/> -->
   <scenario:firebrigade scenario:location="16330"/>
   <scenario:firebrigade scenario:location="3304"/>
-  <!-- <scenario:firebrigade scenario:location="17392"/>
-  <scenario:firebrigade scenario:location="14557"/>
+  <!-- <scenario:firebrigade scenario:location="17392"/> -->
+  <!-- <scenario:firebrigade scenario:location="14557"/>
   <scenario:firebrigade scenario:location="8707"/>
   <scenario:policeforce scenario:location="53397"/>
   <scenario:policeforce scenario:location="30009"/>

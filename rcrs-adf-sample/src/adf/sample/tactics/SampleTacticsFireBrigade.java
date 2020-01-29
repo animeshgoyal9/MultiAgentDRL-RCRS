@@ -108,7 +108,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
         registerModule(this.commandExecutorFire);
         registerModule(this.commandExecutorScout);
         
-		server = ServerBuilder.forPort(3401).addService(new AnimFireChalAgent()).build();
+		server = ServerBuilder.forPort(3402).addService(new AnimFireChalAgent()).build();
 		try {
 			server.start();
 			System.out.println("Server started at " + server.getPort());	
