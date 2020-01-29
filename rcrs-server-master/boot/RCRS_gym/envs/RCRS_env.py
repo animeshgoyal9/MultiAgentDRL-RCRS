@@ -43,17 +43,19 @@ n_agents  = 2
 action_set_list = np.array([255, 960, 905, 934, 935, 936, 937, 298, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 
                     950, 951, 247, 952, 248, 953, 249, 954, 250, 955, 251, 956, 957, 253, 958, 254, 959], dtype = object)
 
+len_action_list = len(action_set_list)
+
 class RCRSenv(gym.Env):
     metadata = {'render.modes' : None}  
     current_action = 0
     def __init__(self):
     # Action space for PPO
-        self.action_space = MultiDiscrete([len(action_set_list), len(action_set_list)])
+        # self.action_space = MultiDiscrete([len(action_set_list), len(action_set_list)])
     # Action space for DQN
-        # self.action_space = Discrete(len(action_set_list))
+        self.action_space = Discrete(len_action_list*len_action_list)
 
-        low = np.array([-inf]*n_agents*(len(action_set_list)+6))
-        high = np.array([inf]*n_agents*(len(action_set_list)+6))
+        low = np.array([-inf]*n_agents*(len_action_list+6))
+        high = np.array([inf]*n_agents*(len_action_list+6))
         self.observation_space = Box(low, high, dtype=np.float32, shape=None)
         self.curr_episode = 0
         self.seed()
@@ -72,6 +74,12 @@ class RCRSenv(gym.Env):
         state_info = []
         state_info.append(run_server())
 
+        # Creating A new reward calculation which takes in the fieryness value and calculates the reward accordingly
+
+        # if fieryness: [0:2] --> +10 points
+        # if fieryness: [3:5] -->  -5 points
+        # if fieryness: [6+]  --> -10 points
+        
         fieryeness_counter = collections.Counter(state_info[0][0::2])
         
         for key, value in fieryeness_counter.items():
@@ -84,6 +92,7 @@ class RCRSenv(gym.Env):
         
         self.reward = sum(fieryeness_counter.values())
         print(self.reward)
+        
     # To run greedy algorithm, uncomment 
 
         # state_info_temp = state_info[0][1::2]
@@ -132,14 +141,14 @@ class RCRSenv(gym.Env):
     # Timer for 100 ms 
         time.sleep(11)
     # Timer for 1000 ms
-        # time.sleep(13)
+        # time.sleep(13.5)
     # Timer for 10000 ms
         # time.sleep(25)
         self.curr_episode = 0
     # Reset Action for PPO
-        reset_action = [0, 0]
+        # reset_action = [0, 0]
     # # Reset action for DQN
-        # reset_action = 0
+        reset_action = 0
 
         reset = []
         reset.append(run_server())
@@ -160,21 +169,15 @@ def run_adf(bid):
     # used in circumstances in which the with statement does not fit the needs
     # of the code.
     
-    with grpc.insecure_channel('localhost:3401') as channel:
+    with grpc.insecure_channel('localhost:3402') as channel:
         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
-    # # print for PPO2
-        print("Current action_1 for 210552869: ", action_set_list[bid[0]])
-        print("Current action_2 for 1962675462: ", action_set_list[bid[1]])
-        print("-----------------------------------")
-    # print for DQN
-        # print("Current action_1 for 210552869: ", action_set_list[bid])
-        # print("Current action_2 for 1962675462: ", action_set_list[len(action_set_list)-1-bid])
-        # print("-----------------------------------")
         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
-            AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
+            AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid//len_action_list]), 
+            AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid%len_action_list])]))
             # AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[bid[1]])]))
             # AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid]), AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[1425-bid])]))
             # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[len(action_set_list)-1-bid])]))
+            
     agent_state_info = []
 
     for i in response.agents:
@@ -190,7 +193,7 @@ def run_reward():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
     # used in circumstances in which the with statement does not fit the needs
     # of the code.
-    with grpc.insecure_channel('localhost:2213') as channel:
+    with grpc.insecure_channel('localhost:2214') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
         response_reward = stub.getRewards(BuildingInfo_pb2.Empty())
     return response_reward.reward
@@ -199,7 +202,7 @@ def run_server():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
     # used in circumstances in which the with statement does not fit the needs
     # of the code.
-    with grpc.insecure_channel('localhost:4008') as channel:
+    with grpc.insecure_channel('localhost:4009') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
         response = stub.getBuildingInfo(BuildingInfo_pb2.Empty())
     building_state_info = []
