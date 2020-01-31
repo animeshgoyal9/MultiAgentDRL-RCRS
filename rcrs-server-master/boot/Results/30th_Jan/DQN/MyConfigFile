@@ -1,0 +1,17 @@
+Algo = DQN
+Map size = Small 
+No. of training steps = 50*25 
+Learning rate = 0.0025
+Switch type = Instant
+No. of iterations = 1
+Batch Size = 128
+Checking timesteps = 25
+Date = 30th_Jan
+
+Reward function 
+
+
+1. Percentage of Slightly burned buildings: 35%
+2. Percentage of Moderately burned buildings: 30%
+3. Percentage of Critically burned buildings: 10%
+4. Percentage of Totally burned buildings: 25%
