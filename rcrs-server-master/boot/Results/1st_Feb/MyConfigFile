@@ -1,0 +1,9 @@
+Algo = A2C
+Map size = Big
+No. of training steps = 25*100
+Learning rate = 0.005
+Switch type = Waiting
+No. of iterations = 1
+Batch Size = 256
+Checking timesteps = 100
+Date = 1st_Feb

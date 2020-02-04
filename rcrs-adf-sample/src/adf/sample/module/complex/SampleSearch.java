@@ -133,24 +133,23 @@ public class SampleSearch extends Search {
 		
 //		For Waiting Command------------------------------------
 		
-//		if (currentTarget != null && path.size() == 1) {
-//			    	currentTarget = null;
-//		}
-//
-//		if(currentTarget == null)
-//			currentTarget = target;
-//
-//		System.out.println("Changed Entities: "+ this.worldInfo.getChanged().getChangedEntities());
-//		System.out.println(this.agentInfo.getID().getValue() +" Target: "+target);
-//		System.out.println(this.agentInfo.getID().getValue() +" Current Target: "+currentTarget);
-//
-//		this.unsearchedBuildingIDs.clear();
-//		this.unsearchedBuildingIDs.add(currentTarget);
+		if (currentTarget != null && path.size() == 1) {
+			    	currentTarget = null;
+		}
+
+		if(currentTarget == null)
+			currentTarget = target;
+
+		System.out.println("Changed Entities: "+ this.worldInfo.getChanged().getChangedEntities());
+		System.out.println(this.agentInfo.getID().getValue() +" Target: "+target);
+		System.out.println(this.agentInfo.getID().getValue() +" Current Target: "+currentTarget);
+
+		this.unsearchedBuildingIDs.add(currentTarget);
 
 //		For Instant Switch--------------------------------------
 		
-		this.unsearchedBuildingIDs.clear();
-		this.unsearchedBuildingIDs.add(target);
+//		this.unsearchedBuildingIDs.clear();
+//		this.unsearchedBuildingIDs.add(target);
 		
 //		--------------------------------------------------------
 		this.pathPlanning.setDestination(this.unsearchedBuildingIDs);

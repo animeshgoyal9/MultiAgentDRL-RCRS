@@ -3,6 +3,7 @@ import RCRS_gym
 
 import os
 import numpy as np
+import shutil
 from scipy import stats
 import pandas as pd
 from openpyxl import Workbook 
@@ -12,15 +13,15 @@ from datetime import date, datetime
 import subprocess
 from subprocess import *
 
-# from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy
-from stable_baselines.deepq.policies import MlpPolicy
+from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy, FeedForwardPolicy
+# from stable_baselines.deepq.policies import MlpPolicy
 from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize, VecEnv
-from stable_baselines import PPO2, DQN
+from stable_baselines import PPO2, DQN, A2C
 # from stable_baselines.common.evaluation import evaluate_policy
 from stable_baselines import results_plotter
 from stable_baselines.bench import Monitor
 from stable_baselines.results_plotter import load_results, ts2xy
-from stable_baselines import DDPG
+# from stable_baselines import DDPG
 from stable_baselines.ddpg import AdaptiveParamNoiseSpec
 
 
@@ -45,16 +46,28 @@ env = VecNormalize(env, norm_obs=True, norm_reward=False, clip_obs=10.)
 
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y")
-columns = ['Mean Rewards', 'Standard error']
+columns = ['Mean Rewards', 'Standard error', 'Standard deviation']
 df = pd.DataFrame(columns=columns)
 
 total_timesteps_to_learn =      2500 # 50 episodes
 total_timesteps_to_predict =    2500 # 50 episodes
-algo_used =                     "DQN"
+algo_used =                     "PPO2"
+
+
+# Custom MLP policy of three layers of size 128 each
+class CustomPolicy(FeedForwardPolicy):
+    def __init__(self, *args, **kwargs):
+        super(CustomPolicy, self).__init__(*args, **kwargs,
+                                           net_arch=[dict(pi=[256, 256, 64, 64],
+                                                          vf=[256, 256, 64, 64])], 
+                                           feature_extraction="mlp")
+
 
 # for i in range(2):
-model = DQN(MlpPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", batch_size = 64)
-# model = PPO2(MlpPolicy, env, verbose=1, learning_rate=0.0025, buffer_size = 1000, learning_starts = 100, target_network_update_freq = 50)
+# model = DQN(MlpPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", batch_size = 64)
+model = PPO2(CustomPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", n_steps = 256)
+# model = PPO2.load("rcrs_wgts_18_PPO2.pkl")
+# obs = env.reset()
 
 for k in range(25):
     # Train the agent
@@ -64,9 +77,11 @@ for k in range(25):
 
     subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
 
+
+
 for j in range(25):
     # Load the trained agent
-    model = DQN.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
+    model = PPO2.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
     # Reset the environment
     obs = env.reset()
     # Create an empty list to store reward values 
@@ -81,14 +96,17 @@ for j in range(25):
     print(np.mean(final_rewards))
     # Print the standard error of reward
     print(stats.sem(final_rewards))
+    # Print the standard deviation of reward
+    print(np.std(final_rewards))
     # Create a DataFrame to save the mean and standard deviation
-    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard error': stats.sem(final_rewards)}, ignore_index=True)
+    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard error': stats.sem(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
     # # Create a dataframe to save the mean and standard deviation
     # df2 = pd.DataFrame([np.mean(final_rewards), stats.sem(final_rewards)], index = ['Rewards', 'Standard Error'])
     # Convert to csv
     df.to_csv("{}_{}_{}".format(1, algo_used, "MeanAndStdReward.csv", sep=',',index=True))
     # # Convert to excel
     # df2.to_excel("{}_{}_{}".format(j+1, algo_used, "MeanAndStdReward.xlsx" ))
+
     subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
 
     # Kill the process once training and testing is done
