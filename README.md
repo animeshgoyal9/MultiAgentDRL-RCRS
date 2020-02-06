@@ -84,13 +84,19 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 ## 7. Results 
 Below is an example of agents trained using PPO algorithm
 
-##### Trained agents after episode = 1
-<img src="/GIFs/NoTrained.gif" height="400px" width="600px" >
-
-##### Trained agents after episode = 50
-<img src="/GIFs/PartiallyTrained.gif" height="400px" width="600px" >
-
-##### Trained agents after episode = 100
-<img src="/GIFs/FullyTrained.gif" height="400px" width="600px" >
+##### PPO2
 
 
+<p float="left">
+   <img src="/GIFs/NoTrained.gif" width = "250"/>
+   <img src="/GIFs/PartiallyTrained.gif" width = "250px" />
+   <img src="/GIFs/FullyTrained.gif" width="250px" />
+</p> 
+
+##### DQN
+
+<p float="left">
+   <img src="/GIFs/DQN_Episode 5.gif" width = "250" /> 
+   <img src="/GIFs/DQN_Episode 150.gif" width = "250px" />
+   <img src="/GIFs/DQN_Episode 250.gif" width="250px" />
+</p>
