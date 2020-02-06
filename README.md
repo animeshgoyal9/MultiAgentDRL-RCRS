@@ -86,11 +86,12 @@ Below is an example of agents trained using PPO algorithm
 
 ##### PPO2
 
+
 <p float="left">
-   <img src="/GIFs/NoTrained.gif" width = "250" /> 
-   <img src="/GIFs/PartiallyTrained.gif" width = "250px" />
-   <img src="/GIFs/FullyTrained.gif" width="250px" />
-</p>
+   a <img src="/GIFs/NoTrained.gif" width = "250" /> 
+   b <img src="/GIFs/PartiallyTrained.gif" width = "250px" />
+   c <img src="/GIFs/FullyTrained.gif" width="250px" />
+</p> 
 
 ##### DQN
 
@@ -99,11 +100,3 @@ Below is an example of agents trained using PPO algorithm
    <img src="/GIFs/DQN_Episode 150.gif" height = "250" width = "250px" />
    <img src="/GIFs/DQN_Episode 250.gif" height = "250" width="250px" />
 </p>
-
-##### Trained agents after episode = 50
-<img src="/GIFs/PartiallyTrained.gif" height="400px" width="600px" >
-
-##### Trained agents after episode = 100
-<img src="/GIFs/FullyTrained.gif" height="400px" width="600px" >
-
-
