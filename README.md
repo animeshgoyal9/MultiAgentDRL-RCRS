@@ -88,9 +88,10 @@ Below is an example of agents trained using PPO algorithm
 
 
 <p float="left">
-   a <img src="/GIFs/NoTrained.gif" width = "250" /> 
-   b <img src="/GIFs/PartiallyTrained.gif" width = "250px" />
-   c <img src="/GIFs/FullyTrained.gif" width="250px" />
+   a-------------------|b--------------------|c---------------------
+   <img src="/GIFs/NoTrained.gif" width = "250" /> 
+   <img src="/GIFs/PartiallyTrained.gif" width = "250px" />
+   <img src="/GIFs/FullyTrained.gif" width="250px" />
 </p> 
 
 ##### DQN
