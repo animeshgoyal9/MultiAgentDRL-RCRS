@@ -93,9 +93,9 @@ Below is an example of agents trained using PPO algorithm
    <img src="/GIFs/PartiallyTrained.gif" width = "250px" />
    
    <img src="/GIFs/FullyTrained.gif" width="250px" />
-   <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
-   <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
-   <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+   <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption><br>
+   <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption><br>
+   <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption><br>
 </p> 
 
 ##### DQN
