@@ -96,7 +96,7 @@ Below is an example of agents trained using PPO algorithm
 ##### DQN
 
 <p float="left">
-   <img src="/GIFs/DQN_Episode 5.gif" height = "250" width = "250" /> 
-   <img src="/GIFs/DQN_Episode 150.gif" height = "250" width = "250px" />
-   <img src="/GIFs/DQN_Episode 250.gif" height = "250" width="250px" />
+   <img src="/GIFs/DQN_Episode 5.gif" width = "250" /> 
+   <img src="/GIFs/DQN_Episode 150.gif" width = "250px" />
+   <img src="/GIFs/DQN_Episode 250.gif" width="250px" />
 </p>
