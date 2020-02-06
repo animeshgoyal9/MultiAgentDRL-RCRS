@@ -83,12 +83,12 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 
 ## 7. Results 
 
-| <img src="/GIFs/NoTrained.gif" width = "250"/>  |  <img src="/GIFs/PartiallyTrained.gif" width = "250px" /> | <img src="/GIFs/FullyTrained.gif" width="250px" /> |
+| <img src="/Images/GIFs/NoTrained.gif" width = "250"/>  |  <img src="/Images/GIFs/PartiallyTrained.gif" width = "250px" /> | <img src="/Images/GIFs/FullyTrained.gif" width="250px" /> |
 |:---:|:---:|:---:|
 | PPO 5 episodes | PPO 200 episodes | PPO 400 episodes |
 
 
-| <img src="/GIFs/DQN_Episode 5.gif" width = "250" />   | <img src="/GIFs/DQN_Episode 150.gif" width = "250px" /> | <img src="/GIFs/DQN_Episode 250.gif" width="250px" /> |
+| <img src="/Images/GIFs/DQN_Episode 5.gif" width = "250" />   | <img src="/Images/GIFs/DQN_Episode 150.gif" width = "250px" /> | <img src="/Images/GIFs/DQN_Episode 250.gif" width="250px" /> |
 |:---:|:---:|:---:|
 | DQN 5 episodes| DQN 200 episodes | DQN 400 episodes |
 
