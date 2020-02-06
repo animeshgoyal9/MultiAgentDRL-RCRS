@@ -46,12 +46,12 @@ env = VecNormalize(env, norm_obs=True, norm_reward=False, clip_obs=10.)
 
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y")
-columns = ['Mean Rewards', 'Standard error', 'Standard deviation']
+columns = ['Mean Rewards', 'Standard deviation']
 df = pd.DataFrame(columns=columns)
 
 total_timesteps_to_learn =      2500 # 50 episodes
 total_timesteps_to_predict =    2500 # 50 episodes
-algo_used =                     "PPO2"
+algo_used =                     "A2C"
 
 
 # Custom MLP policy of three layers of size 128 each
@@ -65,7 +65,7 @@ class CustomPolicy(FeedForwardPolicy):
 
 # for i in range(2):
 # model = DQN(MlpPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", batch_size = 64)
-model = PPO2(CustomPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", n_steps = 256)
+model = A2C(CustomPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", n_steps = 256)
 # model = PPO2.load("rcrs_wgts_18_PPO2.pkl")
 # obs = env.reset()
 
@@ -81,7 +81,7 @@ for k in range(25):
 
 for j in range(25):
     # Load the trained agent
-    model = PPO2.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
+    model = A2C.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
     # Reset the environment
     obs = env.reset()
     # Create an empty list to store reward values 
@@ -94,12 +94,10 @@ for j in range(25):
             final_rewards.append(rewards)
     # Print the mean reward
     print(np.mean(final_rewards))
-    # Print the standard error of reward
-    print(stats.sem(final_rewards))
     # Print the standard deviation of reward
     print(np.std(final_rewards))
     # Create a DataFrame to save the mean and standard deviation
-    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard error': stats.sem(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
+    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
     # # Create a dataframe to save the mean and standard deviation
     # df2 = pd.DataFrame([np.mean(final_rewards), stats.sem(final_rewards)], index = ['Rewards', 'Standard Error'])
     # Convert to csv

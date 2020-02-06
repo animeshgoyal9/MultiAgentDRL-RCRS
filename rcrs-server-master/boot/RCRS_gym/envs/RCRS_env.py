@@ -3,7 +3,7 @@ import logging
 
 import grpc
 import sys
-sys.path.append("/u/animesh9/Documents/RoboCup-gRPC/PyRCRSClient/RCRS_gRPC_Client")
+sys.path.append("/u/animesh9/Desktop/RCRS_Github_Backup/MultiAgentDRL-RCRS/PyRCRSClient/RCRS_gRPC_Client")
 import AgentInfo_pb2
 import AgentInfo_pb2_grpc
 import BuildingInfo_pb2
@@ -86,9 +86,9 @@ class RCRSenv(gym.Env):
         fieryeness_counter = np.array(state_info[0][0::2])
         appending_list = []
         for i in fieryeness_counter:
-            if 0 <= key <= 2:
+            if 0 <= i <= 2:
                 appending_list.append(float(10/len(fieryeness_counter)))
-            elif 3 <= key <= 5:
+            elif 3 <= i <= 5:
                 appending_list.append(float(5/len(fieryeness_counter)))
             else:
                 appending_list.append(float(-10/len(fieryeness_counter)))
@@ -174,7 +174,7 @@ def run_adf(bid):
     # used in circumstances in which the with statement does not fit the needs
     # of the code.
     
-    with grpc.insecure_channel('localhost:3402') as channel:
+    with grpc.insecure_channel('localhost:3902') as channel:
         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
             # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid//len_action_list]), 
