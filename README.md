@@ -82,21 +82,24 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
    - `..maps/gml/test/config`: configuration file associated with the map
 
 ## 7. Results 
-Below is an example of agents trained using PPO algorithm
 
-##### PPO2
+| <img src="/GIFs/NoTrained.gif" width = "250"/>  |  <img src="/GIFs/PartiallyTrained.gif" width = "250px" /> | <img src="/GIFs/FullyTrained.gif" width="250px" /> |
+|:---:|:---:|:---:|
+| PPO 5 episodes | PPO 200 episodes | PPO 400 episodes |
 
 
-<p float="left">
-   <img src="/GIFs/NoTrained.gif" width = "250"/>
-   <img src="/GIFs/PartiallyTrained.gif" width = "250px" />
-   <img src="/GIFs/FullyTrained.gif" width="250px" />
-</p> 
+| <img src="/GIFs/DQN_Episode 5.gif" width = "250" />   | <img src="/GIFs/DQN_Episode 150.gif" width = "250px" /> | <img src="/GIFs/DQN_Episode 250.gif" width="250px" /> |
+|:---:|:---:|:---:|
+| DQN 5 episodes| DQN 200 episodes | DQN 400 episodes |
 
-##### DQN
 
-<p float="left">
-   <img src="/GIFs/DQN_Episode 5.gif" width = "250" /> 
-   <img src="/GIFs/DQN_Episode 150.gif" width = "250px" />
-   <img src="/GIFs/DQN_Episode 250.gif" width="250px" />
-</p>
+##### Learning Curve
+
+<img src="/Graphs/LearningCurve_SmallMap.png" />
+
+##### Hyperparameters
+
+<img src="/Graphs/Hyperparameters.png" />
+
+
+
