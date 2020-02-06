@@ -92,14 +92,17 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
    edwd &emsp; &emsp; &emsp;  <img src="/GIFs/FullyTrained.gif" width="250px" />
 </p> 
 
+| <img src="/GIFs/NoTrained.gif" width = "250"/>  |  <img src="/GIFs/PartiallyTrained.gif" width = "250px" /> | <img src="/GIFs/FullyTrained.gif" width="250px" /> |
+|:---:|:---:|:---:|
+| PPO 5 | PPO 150 | PPO 250 |
+
+
 ##### DQN
 
-<p float="left">
-   abc &emsp; cdv &emsp; edwd &emsp;
-   <img src="/GIFs/DQN_Episode 5.gif" width = "250" /> 
-   <img src="/GIFs/DQN_Episode 150.gif" width = "250px" />
-   <img src="/GIFs/DQN_Episode 250.gif" width="250px" />
-</p>
+| <img src="/GIFs/DQN_Episode 5.gif" width = "250" />   | <img src="/GIFs/DQN_Episode 150.gif" width = "250px" /> | <img src="/GIFs/DQN_Episode 250.gif" width="250px" /> |
+|:---:|:---:|:---:|
+| DQN 5 | DQN 150 | DQN 250 |
+
 
 ##### Learning Curve
 
@@ -109,6 +112,5 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 
 <img src="/Graphs/Hyperparameters.png" />
 
-| <img src="/GIFs/DQN_Episode 5.gif" width = "250" />   | <img src="/GIFs/DQN_Episode 150.gif" width = "250px" /> | <img src="/GIFs/DQN_Episode 250.gif" width="250px" /> |
-|:---:|:---:|:---:|
-| DQN 5 | DQN 150 | DQN 250 |
+
+
