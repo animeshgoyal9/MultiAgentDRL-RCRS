@@ -101,9 +101,12 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 
 <img src="/Images/Graphs/LearningCurve_SmallMap.png" />
 
+<img src="/Images/Graphs/LearningCurve_BigMap.png" />
+
 ##### Hyperparameters
 
 <img src="/Images/Graphs/Hyperparameters.png" />
+
 
 
 
