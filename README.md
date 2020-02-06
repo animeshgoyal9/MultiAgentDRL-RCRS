@@ -87,9 +87,11 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 
 
 <p float="left">
-   abc &emsp;&emsp;&emsp; cdv &emsp; &emsp; &emsp; edwd &emsp; &emsp; &emsp;
+   abc &emsp;&emsp;&emsp;  
    <img src="/GIFs/NoTrained.gif" width = "250"/>
+   cdv &emsp; &emsp; &emsp;
    <img src="/GIFs/PartiallyTrained.gif" width = "250px" />
+   edwd &emsp; &emsp; &emsp;
    <img src="/GIFs/FullyTrained.gif" width="250px" />
 </p> 
 
