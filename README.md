@@ -90,7 +90,7 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 
 | <img src="/GIFs/DQN_Episode 5.gif" width = "250" />   | <img src="/GIFs/DQN_Episode 150.gif" width = "250px" /> | <img src="/GIFs/DQN_Episode 250.gif" width="250px" /> |
 |:---:|:---:|:---:|
-| DQN 5 episodes| DQN 150 episodes | DQN 250 episodes episodes|
+| DQN 5 episodes| DQN 150 episodes | DQN 250 episodes |
 
 
 ##### Learning Curve
