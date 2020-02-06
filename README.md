@@ -109,4 +109,6 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 
 <img src="/Graphs/Hyperparameters.png" />
 
-
+| <img src="/GIFs/DQN_Episode 5.gif" width = "250" />   | <img src="/GIFs/DQN_Episode 150.gif" width = "250px" /> | <img src="/GIFs/DQN_Episode 250.gif" width="250px" /> |
+|:---:|:---:|:---:|
+| DQN 5 | DQN 150 | DQN 250 |
