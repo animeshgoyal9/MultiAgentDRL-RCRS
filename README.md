@@ -82,7 +82,6 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
    - `..maps/gml/test/config`: configuration file associated with the map
 
 ## 7. Results 
-Below is an example of agents trained using PPO algorithm
 
 ##### PPO2
 
