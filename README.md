@@ -83,21 +83,10 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 
 ## 7. Results 
 
-##### PPO2
-
-
-<p float="left">
-   abc &emsp;&emsp;&emsp;  <img src="/GIFs/NoTrained.gif" width = "250"/>
-   cdv &emsp; &emsp; &emsp;  <img src="/GIFs/PartiallyTrained.gif" width = "250px" />
-   edwd &emsp; &emsp; &emsp;  <img src="/GIFs/FullyTrained.gif" width="250px" />
-</p> 
-
 | <img src="/GIFs/NoTrained.gif" width = "250"/>  |  <img src="/GIFs/PartiallyTrained.gif" width = "250px" /> | <img src="/GIFs/FullyTrained.gif" width="250px" /> |
 |:---:|:---:|:---:|
 | PPO 5 | PPO 150 | PPO 250 |
 
-
-##### DQN
 
 | <img src="/GIFs/DQN_Episode 5.gif" width = "250" />   | <img src="/GIFs/DQN_Episode 150.gif" width = "250px" /> | <img src="/GIFs/DQN_Episode 250.gif" width="250px" /> |
 |:---:|:---:|:---:|
