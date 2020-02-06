@@ -93,7 +93,9 @@ Below is an example of agents trained using PPO algorithm
    <img src="/GIFs/FullyTrained.gif" width="250px" />
 </p> 
 
-<img src="/GIFs/FullyTrained.gif" width="250px" />*Fig. 2: The minimum dominating set of a graph*
+| <img src="/GIFs/FullyTrained.gif" width="250px" /> |
+|Fig. 2: The minimum dominating set of a graph|
+
 ##### DQN
 
 <p float="left">
