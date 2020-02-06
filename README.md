@@ -86,7 +86,10 @@ Below is an example of agents trained using PPO algorithm
 
 ##### Trained agents after episode = 1
 
-<img src="/GIFs/NoTrained.gif" /> < img src="/GIFs/PartiallyTrained.gif"/ >
+<p float="left">
+   <img src="/GIFs/NoTrained.gif"/> 
+   <img src="/GIFs/PartiallyTrained.gif"/>
+</p>
 
 ##### Trained agents after episode = 50
 <img src="/GIFs/PartiallyTrained.gif" height="400px" width="600px" >
