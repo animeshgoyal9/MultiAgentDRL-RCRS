@@ -84,7 +84,7 @@ $ tensorboard --logdir ./ppo2_RoboCupGym_tensorboard/
 ## 7. Results 
 Below is an example of agents trained using PPO algorithm
 
-##### Trained agents after episode = 1
+##### PPO2
 
 <p float="left">
    <img src="/GIFs/NoTrained.gif" width = "250" /> 
