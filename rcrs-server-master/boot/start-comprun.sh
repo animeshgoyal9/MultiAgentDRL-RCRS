@@ -4,6 +4,10 @@
 
 processArgs $*
 
+# To create different log directories
+echo $LOGDIR
+LOGDIR="$LOGDIR-$HOSTNAME"
+
 # Delete old logs
 rm -f $LOGDIR/*.log
 
