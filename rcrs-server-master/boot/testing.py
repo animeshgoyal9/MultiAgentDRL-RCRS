@@ -30,7 +30,7 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
 # Create log dir
-log_dir = "/u/animesh9/Documents/RoboCup-gRPC/plots/"
+log_dir = "/u/animesh9/Documents/MultiAgentDRL-RCRS//plots/"
 os.makedirs(log_dir, exist_ok=True)
 # Create and wrap the environment
 env = gym.make('RCRS-v2')
@@ -75,7 +75,7 @@ for k in range(25):
     # Saving the model
     model.save("{}_{}_{}".format("rcrs_wgts", k, algo_used))
 
-    subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
+    subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
 
 
 
@@ -105,7 +105,7 @@ for j in range(25):
     # # Convert to excel
     # df2.to_excel("{}_{}_{}".format(j+1, algo_used, "MeanAndStdReward.xlsx" ))
 
-    subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
+    subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
 
     # Kill the process once training and testing is done
-subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/kill.sh", shell=True)
+subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)

@@ -1,9 +1,0 @@
-Algo = PPO
-Map size = Big 
-No. of training steps = 25*100
-Learning rate = 0.00025
-Switch type = Waiting
-No. of iterations = 1
-Batch Size = 32
-Checking timesteps = 100
-Date = 27th_Jan
