@@ -5,8 +5,12 @@ import RCRS_gym
 import matplotlib
 
 from collections import defaultdict
+<<<<<<< HEAD
 import utils
 
+=======
+import utils.plotting as plotting
+>>>>>>> 45dca0e9e2b72d272620a173a7b1013648a3d791
 
 class hierarchicalQLearningAgent():
     def __init__(self, env = gym.make('RCRS-v2'), meta_goals = [255, 960, 905, 934, 935, 936], num_episodes = 2500,
