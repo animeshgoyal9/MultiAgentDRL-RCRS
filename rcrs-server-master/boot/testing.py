@@ -30,11 +30,11 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
 # Create log dir
-log_dir = "/u/animesh9/Documents/MultiAgentDRL-RCRS//plots/"
-os.makedirs(log_dir, exist_ok=True)
+# log_dir = "/u/animesh9/Documents/MultiAgentDRL-RCRS//plots/"
+# os.makedirs(log_dir, exist_ok=True)
 # Create and wrap the environment
 env = gym.make('RCRS-v2')
-env = Monitor(env, log_dir, allow_early_resets=True)
+# env = Monitor(env, allow_early_resets=True)
 # The algorithms require a vectorized environment to run
 env = DummyVecEnv([lambda: env]) 
 # Automatically normalize the input features

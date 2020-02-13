@@ -116,7 +116,7 @@ class RCRSenv(gym.Env):
         # action_for_greedy_algo_A2 = int((state_info_temp.index(secondmax)))
         # action = [action_for_greedy_algo_A1+1, action_for_greedy_algo_A2+1]
 
-        # state_info.append(run_adf(action))
+        state_info.append(run_adf(action))
         print("Action for 210552869" , action_set_list[action[0]])
         print("Action for 1962675462" , action_set_list[action[1]])
         print("-----------------------------------------------")
@@ -157,7 +157,7 @@ class RCRSenv(gym.Env):
 
         reset = []
         reset.append(run_server())
-        # reset.append(run_adf(reset_action))
+        reset.append(run_adf(reset_action))
 
         flat_list_reset = [item for sublist in reset for item in sublist]
 
@@ -168,33 +168,33 @@ class RCRSenv(gym.Env):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
 
-# def run_adf(bid):
-#     global flag
-#     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
-#     # used in circumstances in which the with statement does not fit the needs
-#     # of the code.
+def run_adf(bid):
+    global flag
+    # NOTE(gRPC Python Team): .close() is possible on a channel and should be
+    # used in circumstances in which the with statement does not fit the needs
+    # of the code.
     
-#     with grpc.insecure_channel('localhost:3902') as channel:
-#         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
-#         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
-#             # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid//len_action_list]), 
-#             # AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid%len_action_list])]))
+    with grpc.insecure_channel('localhost:3902') as channel:
+        stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
+        response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
+            # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid//len_action_list]), 
+            # AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid%len_action_list])]))
 
-#             # AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid[0]]), 
-#             # AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[bid[1]])]))
-#             # AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid]), AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[1425-bid])]))
-#             AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
+            # AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid[0]]), 
+            # AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[bid[1]])]))
+            # AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid]), AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[1425-bid])]))
+            AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
             
-#     agent_state_info = []
+    agent_state_info = []
 
-#     for i in response.agents:
-#         agent_state_info.append(i.agent_id)
-#         agent_state_info.append(i.x)
-#         agent_state_info.append(i.y)
-#         agent_state_info.append(i.water)
-#         agent_state_info.append(i.hp)
-#         agent_state_info.append(i.idle)
-#     return agent_state_info
+    for i in response.agents:
+        agent_state_info.append(i.agent_id)
+        agent_state_info.append(i.x)
+        agent_state_info.append(i.y)
+        agent_state_info.append(i.water)
+        agent_state_info.append(i.hp)
+        agent_state_info.append(i.idle)
+    return agent_state_info
 
 def run_reward():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
