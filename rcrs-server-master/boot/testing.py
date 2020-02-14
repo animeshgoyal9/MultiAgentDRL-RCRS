@@ -221,11 +221,7 @@ class DQN(CustomPolicy):
 
         return self
 
-# for i in range(2):
-# model = DQN(MlpPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", batch_size = 64)
 model = DQN(CustomPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", n_steps = 256)
-
-
 
 for k in range(25):
     # Train the agent
@@ -234,7 +230,6 @@ for k in range(25):
     model.save("{}_{}_{}".format("rcrs_wgts", k, algo_used))
 
     subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
-
 
 
 for j in range(25):
