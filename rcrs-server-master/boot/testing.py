@@ -59,7 +59,10 @@ class CustomPolicy(FeedForwardPolicy):
                                                           vf=[256, 256, 64, 64])], 
                                            feature_extraction="mlp")
 
-
+class DQN():
+    def __init__(self):
+        super(DQN, self).__init__()
+        
     def learn(self, total_timesteps, callback=None, log_interval=100, tb_log_name="DQN",
               reset_num_timesteps=True, replay_wrapper=None):
 
@@ -219,6 +222,8 @@ class CustomPolicy(FeedForwardPolicy):
 
         return self
 
+# for i in range(2):
+# model = DQN(MlpPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", batch_size = 64)
 model = DQN(CustomPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", n_steps = 256)
 
 
