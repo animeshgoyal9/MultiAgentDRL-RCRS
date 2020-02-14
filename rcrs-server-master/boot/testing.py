@@ -219,8 +219,6 @@ class CustomPolicy(FeedForwardPolicy):
 
         return self
 
-# for i in range(2):
-# model = DQN(MlpPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", batch_size = 64)
 model = DQN(CustomPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", n_steps = 256)
 
 
