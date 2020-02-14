@@ -126,14 +126,14 @@ class DQN(CustomPolicy):
                     kwargs['update_param_noise_scale'] = True
 
                 # Check if agent is busy or idle
-                while (run_adf(action) == 0):
+                while (check_busy_idle() == 0):
                     with self.sess.as_default():
                         action = self.act(np.array(obs)[None], update_eps=update_eps, **kwargs)[0]
                     env_action = action
                     reset = False
                     new_obs, rew, done, info = self.env.step(env_action)
                     F = F + rew         
-                    
+
                 # Store transition in the replay buffer.
                 self.replay_buffer.add(obs, action, F, new_obs, float(done))
                 obs = new_obs
@@ -267,17 +267,10 @@ subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/bo
 
 
 # Run gRPC server
-def run_adf(bid):
-    with grpc.insecure_channel('localhost:3902') as channel:
+def check_busy_idle():
+    with grpc.insecure_channel('localhost:3702') as channel:
         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
-        response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
-            AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid[0]]), 
-            AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[bid[1]]),
-            AgentInfo_pb2.Action(agent_id = 1127234487, building_id=action_set_list[bid[2]]), 
-            AgentInfo_pb2.Action(agent_id = 1535509101, building_id=action_set_list[bid[3]])]))
-            
-    agent_state_info = []
+        response_busy_idle = stub.getAgentInfo(AgentInfo_pb2.ActionInfo())
+    return response_busy_idle
 
-    for i in response.agents:
-        agent_state_info.append(i.idle)
-    return agent_state_info
+
