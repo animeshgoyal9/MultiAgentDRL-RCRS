@@ -59,7 +59,7 @@ class CustomPolicy(FeedForwardPolicy):
                                                           vf=[256, 256, 64, 64])], 
                                            feature_extraction="mlp")
 
-class DQN():
+class DQN(CustomPolicy):
     def __init__(self):
         super(DQN, self).__init__()
         
