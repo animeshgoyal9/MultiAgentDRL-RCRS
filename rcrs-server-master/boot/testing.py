@@ -62,7 +62,7 @@ class CustomPolicy(FeedForwardPolicy):
 class DQN(CustomPolicy):
     def __init__(self):
         super(DQN, self).__init__()
-        
+
     def learn(self, total_timesteps, callback=None, log_interval=100, tb_log_name="DQN",
               reset_num_timesteps=True, replay_wrapper=None):
 
@@ -125,16 +125,15 @@ class DQN(CustomPolicy):
                     kwargs['update_param_noise_threshold'] = update_param_noise_threshold
                     kwargs['update_param_noise_scale'] = True
 
-                with self.sess.as_default():
-                    action = self.act(np.array(obs)[None], update_eps=update_eps, **kwargs)[0]
-
                 # Check if agent is busy or idle
                 while (run_adf(action) == 0):
+                    with self.sess.as_default():
+                        action = self.act(np.array(obs)[None], update_eps=update_eps, **kwargs)[0]
                     env_action = action
                     reset = False
                     new_obs, rew, done, info = self.env.step(env_action)
                     F = F + rew         
-
+                    
                 # Store transition in the replay buffer.
                 self.replay_buffer.add(obs, action, F, new_obs, float(done))
                 obs = new_obs
