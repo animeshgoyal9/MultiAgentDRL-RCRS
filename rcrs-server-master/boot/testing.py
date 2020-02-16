@@ -96,6 +96,3 @@ for j in range(1):
     
     subprocess.Popen(path_for_kill_file, shell=True)
 subprocess.Popen(path_for_kill_file, shell=True)
-
-    # Kill the process once training and testing is done
-subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
