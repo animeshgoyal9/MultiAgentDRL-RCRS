@@ -194,15 +194,3 @@ subprocess.Popen(path_for_kill_file, shell=True)
 
     # Kill the process once training and testing is done
 subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
-
-
-
-# Run gRPC server
-def check_busy_idle():
-    with grpc.insecure_channel('localhost:3702') as channel:
-        stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
-        response_busy_idle = stub.getAgentInfo(AgentInfo_pb2.ActionInfo())
-    return response_busy_idle
-
-
->>>>>>> a5db411d60744d145bbd41d2161d6f1e3d1a469a
