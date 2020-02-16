@@ -1,14 +1,6 @@
 import gym
 import RCRS_gym
 
-
-import sys
-sys.path.append("/u/animesh9/Documents/MultiAgentDRL-RCRS/PyRCRSClient/RCRS_gRPC_Client")
-import AgentInfo_pb2
-import AgentInfo_pb2_grpc
-import BuildingInfo_pb2
-import BuildingInfo_pb2_grpc
-
 import os
 import numpy as np
 import shutil
