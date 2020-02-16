@@ -4,6 +4,8 @@ import RCRS_gym
 import os
 import numpy as np
 import shutil
+import sys
+import socket
 from scipy import stats
 import pandas as pd
 from openpyxl import Workbook 
@@ -29,28 +31,28 @@ import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
 
-# Create log dir
-# log_dir = "/u/animesh9/Documents/MultiAgentDRL-RCRS//plots/"
-# os.makedirs(log_dir, exist_ok=True)
+# Directory 
+hostname = socket.gethostname()
+# Parent Directory path 
+parent_dir = sys.path[0]
+# Path 
+path = os.path.join(parent_dir, hostname) 
+# os.mkdir(path) 
+path_for_kill_file = os.path.join(parent_dir, "kill.sh")
+
 # Create and wrap the environment
 env = gym.make('RCRS-v2')
-# env = Monitor(env, allow_early_resets=True)
 # The algorithms require a vectorized environment to run
 env = DummyVecEnv([lambda: env]) 
 # Automatically normalize the input features
 env = VecNormalize(env, norm_obs=True, norm_reward=False, clip_obs=10.)
 
-# Add some param noise for exploration
-# param_noise = AdaptiveParamNoiseSpec(initial_stddev=0.1, desired_action_stddev=0.1)
-# Because we use parameter noise, we should use a MlpPolicy with layer normalization
 
-now = datetime.now()
-dt_string = now.strftime("%d/%m/%Y")
 columns = ['Mean Rewards', 'Standard deviation']
 df = pd.DataFrame(columns=columns)
 
-total_timesteps_to_learn =      2500 # 50 episodes
-total_timesteps_to_predict =    2500 # 50 episodes
+total_timesteps_to_learn =      100 # 50 episodes
+total_timesteps_to_predict =    100 # 50 episodes
 algo_used =                     "A2C"
 
 
@@ -63,25 +65,19 @@ class CustomPolicy(FeedForwardPolicy):
                                            feature_extraction="mlp")
 
 
-# for i in range(2):
-# model = DQN(MlpPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", batch_size = 64)
-model = A2C(CustomPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", n_steps = 256)
-# model = PPO2.load("rcrs_wgts_18_PPO2.pkl")
-# obs = env.reset()
+model = A2C(CustomPolicy, env, verbose=1, learning_rate=0.0025,  n_steps = 256)
 
-for k in range(25):
+for k in range(1):
     # Train the agent
     model.learn(total_timesteps=int(total_timesteps_to_learn))
-    # Saving the model
-    model.save("{}_{}_{}".format("rcrs_wgts", k, algo_used))
+    # Saving the model 
+    
+    model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algo_used, hostname))
+    subprocess.Popen(path_for_kill_file, shell=True)
 
-    subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
-
-
-
-for j in range(25):
+for j in range(1):
     # Load the trained agent
-    model = A2C.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
+    model = A2C.load("{}_{}_{}_{}".format("rcrs_wgts", j, algo_used, hostname))
     # Reset the environment
     obs = env.reset()
     # Create an empty list to store reward values 
@@ -102,10 +98,6 @@ for j in range(25):
     # df2 = pd.DataFrame([np.mean(final_rewards), stats.sem(final_rewards)], index = ['Rewards', 'Standard Error'])
     # Convert to csv
     df.to_csv("{}_{}_{}".format(1, algo_used, "MeanAndStdReward.csv", sep=',',index=True))
-    # # Convert to excel
-    # df2.to_excel("{}_{}_{}".format(j+1, algo_used, "MeanAndStdReward.xlsx" ))
-
-    subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
-
-    # Kill the process once training and testing is done
-subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
+    
+    subprocess.Popen(path_for_kill_file, shell=True)
+subprocess.Popen(path_for_kill_file, shell=True)
