@@ -1,6 +1,14 @@
 import gym
 import RCRS_gym
 
+
+import sys
+sys.path.append("/u/animesh9/Documents/MultiAgentDRL-RCRS/PyRCRSClient/RCRS_gRPC_Client")
+import AgentInfo_pb2
+import AgentInfo_pb2_grpc
+import BuildingInfo_pb2
+import BuildingInfo_pb2_grpc
+
 import os
 import numpy as np
 import shutil
@@ -15,8 +23,8 @@ from datetime import date, datetime
 import subprocess
 from subprocess import *
 
-from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy, FeedForwardPolicy
-# from stable_baselines.deepq.policies import MlpPolicy
+# from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy, FeedForwardPolicy
+from stable_baselines.deepq.policies import MlpPolicy
 from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize, VecEnv
 from stable_baselines import PPO2, DQN, A2C
 # from stable_baselines.common.evaluation import evaluate_policy
@@ -30,7 +38,6 @@ from stable_baselines.ddpg import AdaptiveParamNoiseSpec
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-
 # Directory 
 hostname = socket.gethostname()
 # Parent Directory path 
@@ -40,13 +47,12 @@ path = os.path.join(parent_dir, hostname)
 # os.mkdir(path) 
 path_for_kill_file = os.path.join(parent_dir, "kill.sh")
 
-# Create and wrap the environment
+
 env = gym.make('RCRS-v2')
 # The algorithms require a vectorized environment to run
 env = DummyVecEnv([lambda: env]) 
 # Automatically normalize the input features
 env = VecNormalize(env, norm_obs=True, norm_reward=False, clip_obs=10.)
-
 
 columns = ['Mean Rewards', 'Standard deviation']
 df = pd.DataFrame(columns=columns)
@@ -56,7 +62,6 @@ total_timesteps_to_predict =    100 # 50 episodes
 algo_used =                     "A2C"
 
 
-# Custom MLP policy of three layers of size 128 each
 class CustomPolicy(FeedForwardPolicy):
     def __init__(self, *args, **kwargs):
         super(CustomPolicy, self).__init__(*args, **kwargs,
@@ -64,6 +69,92 @@ class CustomPolicy(FeedForwardPolicy):
                                                           vf=[256, 256, 64, 64])], 
                                            feature_extraction="mlp")
 
+class DQN(CustomPolicy):
+    def __init__(self):
+        super(DQN, self).__init__()
+
+    def learn(self, total_timesteps, callback=None, log_interval=100, tb_log_name="DQN",
+              reset_num_timesteps=True, replay_wrapper=None):
+
+        new_tb_log = self._init_num_timesteps(reset_num_timesteps)
+
+        with SetVerbosity(self.verbose), TensorboardWriter(self.graph, self.tensorboard_log, tb_log_name, new_tb_log) \
+                as writer:
+            self._setup_learn()
+
+            # Create the replay buffer
+            if self.prioritized_replay:
+                self.replay_buffer = PrioritizedReplayBuffer(self.buffer_size, alpha=self.prioritized_replay_alpha)
+                if self.prioritized_replay_beta_iters is None:
+                    prioritized_replay_beta_iters = total_timesteps
+                else:
+                    prioritized_replay_beta_iters = self.prioritized_replay_beta_iters
+                self.beta_schedule = LinearSchedule(prioritized_replay_beta_iters,
+                                                    initial_p=self.prioritized_replay_beta0,
+                                                    final_p=1.0)
+            else:
+                self.replay_buffer = ReplayBuffer(self.buffer_size)
+                self.beta_schedule = None
+
+            if replay_wrapper is not None:
+                assert not self.prioritized_replay, "Prioritized replay buffer is not supported by HER"
+                self.replay_buffer = replay_wrapper(self.replay_buffer)
+
+            # Create the schedule for exploration starting from 1.
+            self.exploration = LinearSchedule(schedule_timesteps=int(self.exploration_fraction * total_timesteps),
+                                              initial_p=self.exploration_initial_eps,
+                                              final_p=self.exploration_final_eps)
+
+            episode_rewards = [0.0]
+            episode_successes = []
+            obs = self.env.reset()
+            reset = True
+            F = 0
+
+
+            for _ in range(total_timesteps):
+                if callback is not None:
+                    # Only stop training if return value is False, not when it is None. This is for backwards
+                    # compatibility with callbacks that have no return statement.
+                    if callback(locals(), globals()) is False:
+                        break
+                # Take action and update exploration to the newest value
+                kwargs = {}
+                if not self.param_noise:
+                    update_eps = self.exploration.value(self.num_timesteps)
+                    update_param_noise_threshold = 0.
+                else:
+                    update_eps = 0.
+                    # Compute the threshold such that the KL divergence between perturbed and non-perturbed
+                    # policy is comparable to eps-greedy exploration with eps = exploration.value(t).
+                
+                    update_param_noise_threshold = \
+                        -np.log(1. - self.exploration.value(self.num_timesteps) +
+                                self.exploration.value(self.num_timesteps) / float(self.env.action_space.n))
+                    kwargs['reset'] = reset
+                    kwargs['update_param_noise_threshold'] = update_param_noise_threshold
+                    kwargs['update_param_noise_scale'] = True
+
+                # Check if agent is busy or idle
+                while (check_busy_idle() == 0):
+                    with self.sess.as_default():
+                        action = self.act(np.array(obs)[None], update_eps=update_eps, **kwargs)[0]
+                    env_action = action
+                    reset = False
+                    new_obs, rew, done, info = self.env.step(env_action)
+                    F = F + rew         
+
+                # Store transition in the replay buffer.
+                self.replay_buffer.add(obs, action, F, new_obs, float(done))
+                obs = new_obs
+
+                if writer is not None:
+                    ep_rew = np.array([F]).reshape((1, -1))
+                    ep_done = np.array([done]).reshape((1, -1))
+                    total_episode_reward_logger(self.episode_reward, ep_rew, ep_done, writer,
+                                                self.num_timesteps)
+
+                episode_rewards[-1] += F
 
 model = A2C(CustomPolicy, env, verbose=1, learning_rate=0.0025,  n_steps = 256)
 
@@ -78,6 +169,7 @@ for k in range(1):
 for j in range(1):
     # Load the trained agent
     model = A2C.load("{}_{}_{}_{}".format("rcrs_wgts", j, algo_used, hostname))
+
     # Reset the environment
     obs = env.reset()
     # Create an empty list to store reward values 
@@ -94,10 +186,23 @@ for j in range(1):
     print(np.std(final_rewards))
     # Create a DataFrame to save the mean and standard deviation
     df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
-    # # Create a dataframe to save the mean and standard deviation
-    # df2 = pd.DataFrame([np.mean(final_rewards), stats.sem(final_rewards)], index = ['Rewards', 'Standard Error'])
-    # Convert to csv
+    
     df.to_csv("{}_{}_{}".format(1, algo_used, "MeanAndStdReward.csv", sep=',',index=True))
     
     subprocess.Popen(path_for_kill_file, shell=True)
 subprocess.Popen(path_for_kill_file, shell=True)
+
+    # Kill the process once training and testing is done
+subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
+
+
+
+# Run gRPC server
+def check_busy_idle():
+    with grpc.insecure_channel('localhost:3702') as channel:
+        stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
+        response_busy_idle = stub.getAgentInfo(AgentInfo_pb2.ActionInfo())
+    return response_busy_idle
+
+
+>>>>>>> a5db411d60744d145bbd41d2161d6f1e3d1a469a
