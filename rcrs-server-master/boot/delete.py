@@ -2,16 +2,10 @@ import subprocess
 import os
 import socket
 import sys
+import htcondor
+import classad
 
-# Directory 
-directory = socket.gethostname()
-  
-# Parent Directory path 
-parent_dir = sys.path[0]
-  
-# Path 
-path = os.path.join(parent_dir, directory) 
-  
-# os.mkdir(path) 
-print("Directory '% s' created" % directory) 
-print(os.path.join(parent_dir, "../../rcrs-adf-sample/launch.sh '-all'"))
+coll = htcondor.Collector()
+
+ad = coll.locate(htcondor.DaemonTypes.Schedd, "submit-1.chtc.wisc.edu")
+ad["MyAddress"]

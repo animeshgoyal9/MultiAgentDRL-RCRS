@@ -57,13 +57,10 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	
 	if (algorithm == "PPO2"):
 	    from stable_baselines.common.policies import MlpPolicy
+	    model = PPO2(CustomPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
 	else:
 	    from stable_baselines.deepq.policies import MlpPolicy
-
-	if (algorithm == "PPO2"):
-		model = PPO2(CustomPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
-	else:
-		model = PPO2(CustomPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
+	    model = PPO2(CustomPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
 
 	for k in range(training_iterations):
     # Train the agent
