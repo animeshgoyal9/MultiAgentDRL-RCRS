@@ -1,0 +1,12 @@
+	
+# Condor submit file
+# Running myprogram with arguments "-v 235" and "-kf 'cgs' -v 6543"
+universe = vanilla
+
+executable = testing.py
+
+arguments  = "PPO2 200 200 1 1 0.0025 256"
+queue 
+
+arguments  = "PPO2 2500 2500 1 1 0.0025 256"
+queue 
