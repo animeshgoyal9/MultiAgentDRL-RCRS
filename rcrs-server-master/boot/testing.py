@@ -6,6 +6,7 @@ import numpy as np
 import shutil
 import sys
 import socket
+import argparse
 from scipy import stats
 import pandas as pd
 from openpyxl import Workbook 
@@ -18,25 +19,13 @@ from subprocess import *
 from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize, VecEnv
 from stable_baselines import PPO2, DQN, A2C, DDPG
 from stable_baselines import results_plotter
+from stable_baselines.common.policies import FeedForwardPolicy
 from stable_baselines.bench import Monitor
 from stable_baselines.results_plotter import load_results, ts2xy
 from stable_baselines.ddpg import AdaptiveParamNoiseSpec
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
-
-
-total_timesteps_to_learn =      2500 # 50 episodes
-total_timesteps_to_predict =    2500 # 50 episodes
-algo_used =                     "PPO2"
-training_iterations =           20
-testing_iterations =            20
-
-
-if (algo_used == "PPO2"):
-    from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy, FeedForwardPolicy
-else:
-    from stable_baselines.deepq.policies import MlpPolicy
 
 # Directory 
 hostname = socket.gethostname()
@@ -63,38 +52,66 @@ class CustomPolicy(FeedForwardPolicy):
                                                           vf=[256, 256, 64, 64])], 
                                            feature_extraction="mlp")
 
-model = PPO2(CustomPolicy, env, verbose=1, learning_rate=0.0025,  n_steps = 256)
 
-for k in range(training_iterations):
+def run_model(algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size):
+	
+	if (algorithm == "PPO2"):
+	    from stable_baselines.common.policies import MlpPolicy
+	else:
+	    from stable_baselines.deepq.policies import MlpPolicy
+
+	if (algorithm == "PPO2"):
+		model = PPO2(CustomPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
+	else:
+		model = PPO2(CustomPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
+
+	for k in range(training_iterations):
     # Train the agent
-    model.learn(total_timesteps=int(total_timesteps_to_learn))
-    # Saving the model 
-    
-    model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algo_used, hostname))
-    subprocess.Popen(path_for_kill_file, shell=True)
+	    model.learn(total_timesteps=int(training_timesteps))
+	    # Saving the model 
+	    
+	    model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algorithm, hostname))
+	    subprocess.Popen(path_for_kill_file, shell=True)
 
-for j in range(testing_iterations):
-    # Load the trained agent
-    model = PPO2.load("{}_{}_{}_{}".format("rcrs_wgts", j, algo_used, hostname))
+	for j in range(testing_iterations):
+	    # Load the trained agent
+	    if (algorithm == "PPO2"):
+	    	model = PPO2.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
+	    else:
+	    	model = DQN.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
+	    # Reset the environment
+	    obs = env.reset()
+	    # Create an empty list to store reward values 
+	    final_rewards = []
+	    for _ in range(testing_timesteps):
+	        # predict the values
+	        action, _states = model.predict(obs)
+	        obs, rewards, dones, info = env.step(action)
+	        if dones == True:
+	            final_rewards.append(rewards)
+	    # Print the mean reward
+	    print(np.mean(final_rewards))
+	    # Print the standard deviation of reward
+	    print(np.std(final_rewards))
+	    # Create a DataFrame to save the mean and standard deviation
+	    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
+	    
+	    df.to_csv("{}_{}_{}".format(1, algorithm, "MeanAndStdReward.csv", sep=',',index=True))
+	    
+	    subprocess.Popen(path_for_kill_file, shell=True)
+	subprocess.Popen(path_for_kill_file, shell=True)
 
-    # Reset the environment
-    obs = env.reset()
-    # Create an empty list to store reward values 
-    final_rewards = []
-    for _ in range(total_timesteps_to_predict):
-        # predict the values
-        action, _states = model.predict(obs)
-        obs, rewards, dones, info = env.step(action)
-        if dones == True:
-            final_rewards.append(rewards)
-    # Print the mean reward
-    print(np.mean(final_rewards))
-    # Print the standard deviation of reward
-    print(np.std(final_rewards))
-    # Create a DataFrame to save the mean and standard deviation
-    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
-    
-    df.to_csv("{}_{}_{}".format(1, algo_used, "MeanAndStdReward.csv", sep=',',index=True))
-    
-    subprocess.Popen(path_for_kill_file, shell=True)
-subprocess.Popen(path_for_kill_file, shell=True)
+def main():
+	parser = argparse.ArgumentParser()
+	parser.add_argument("algorithm", help = 'Which algorithm are you using', type= str)
+	parser.add_argument("training_timesteps", help = "How many traning steps are there?", type=int)
+	parser.add_argument("testing_timesteps", help = "How many testing steps are there?", type=int)
+	parser.add_argument("training_iterations", help = "How many traning iterations are there?", type=int)
+	parser.add_argument("testing_iterations", help = "How many traning iterations are there?", type=int)
+	parser.add_argument("learning_rate", help = "What is the learning rate?", type=float)
+	parser.add_argument("batch_size", help = "What is the batch size?", type=int)
+	args = parser.parse_args()
+	run_model(args.algorithm, args.training_timesteps,args.testing_timesteps, args.training_iterations, args.testing_iterations, args.learning_rate, args.batch_size)
+
+if __name__ == '__main__':
+	main()
