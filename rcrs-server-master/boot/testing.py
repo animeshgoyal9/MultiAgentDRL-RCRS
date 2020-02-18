@@ -35,9 +35,6 @@ parent_dir = sys.path[0]
 path = os.path.join(parent_dir, hostname) 
 # os.mkdir(path) 
 path_for_kill_file = os.path.join(parent_dir, "kill.sh")
-columns = ['Mean Rewards', 'Standard deviation']
-df = pd.DataFrame(columns=columns)
-
 
 env = gym.make('RCRS-v2')
 # The algorithms require a vectorized environment to run
@@ -90,9 +87,11 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    # Print the standard deviation of reward
 	    print(np.std(final_rewards))
 	    # Create a DataFrame to save the mean and standard deviation
+	    columns = ['Mean Rewards', 'Standard deviation']
+	    df = pd.DataFrame(columns=columns)
 	    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
 	    
-	    df.to_csv("{}_{}_{}_{}".format(1, algorithm, hostname, "MeanAndStdReward.csv", sep=',',index=True))
+	    df.to_csv("{}_{}_{}".format(algorithm, hostname, "MeanAndStdReward.csv", sep=',',index=True))
 	    
 	    subprocess.Popen(path_for_kill_file, shell=True)
 	subprocess.Popen(path_for_kill_file, shell=True)
