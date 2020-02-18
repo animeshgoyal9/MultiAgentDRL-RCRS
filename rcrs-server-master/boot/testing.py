@@ -51,7 +51,8 @@ class CustomPolicy(FeedForwardPolicy):
                                            feature_extraction="mlp")
 
 def run_model(algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size):
-	
+	columns = ['Mean Rewards', 'Standard deviation'] 
+	df = pd.DataFrame(columns=columns)
 	if (algorithm == "PPO2"):
 	    from stable_baselines.common.policies import MlpPolicy
 	    model = PPO2(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
@@ -59,12 +60,12 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    from stable_baselines.deepq.policies import MlpPolicy
 	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
 
-	# for k in range(training_iterations):
- #    # Train the agent
-	#     model.learn(total_timesteps=int(training_timesteps))
-	#     # Saving the model 
-	#     model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algorithm, hostname))
-	#     subprocess.Popen(path_for_kill_file, shell=True)
+	for k in range(training_iterations):
+		# Train the agent
+		model.learn(total_timesteps=int(training_timesteps))
+	     # Saving the model 
+		model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algorithm, hostname))
+		subprocess.Popen(path_for_kill_file, shell=True)
 
 	for j in range(testing_iterations):
 	    # Load the trained agent
@@ -87,10 +88,7 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    # Print the standard deviation of reward
 	    print(np.std(final_rewards))
 	    # Create a DataFrame to save the mean and standard deviation
-	    columns = ['Mean Rewards', 'Standard deviation']
-	    df = pd.DataFrame(columns=columns)
 	    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
-	    
 	    df.to_csv("{}_{}_{}".format(algorithm, hostname, "MeanAndStdReward.csv", sep=',',index=True))
 	    
 	    subprocess.Popen(path_for_kill_file, shell=True)
