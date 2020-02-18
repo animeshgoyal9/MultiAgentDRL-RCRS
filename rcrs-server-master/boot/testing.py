@@ -62,12 +62,12 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    from stable_baselines.deepq.policies import MlpPolicy
 	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
 
-	for k in range(training_iterations):
-    # Train the agent
-	    model.learn(total_timesteps=int(training_timesteps))
-	    # Saving the model 
-	    model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algorithm, hostname))
-	    subprocess.Popen(path_for_kill_file, shell=True)
+	# for k in range(training_iterations):
+ #    # Train the agent
+	#     model.learn(total_timesteps=int(training_timesteps))
+	#     # Saving the model 
+	#     model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algorithm, hostname))
+	#     subprocess.Popen(path_for_kill_file, shell=True)
 
 	for j in range(testing_iterations):
 	    # Load the trained agent
@@ -92,7 +92,7 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    # Create a DataFrame to save the mean and standard deviation
 	    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
 	    
-	    df.to_csv("{}_{}_{}".format(1, algorithm, "MeanAndStdReward.csv", sep=',',index=True))
+	    df.to_csv("{}_{}_{}_{}".format(1, algorithm, hostname, "MeanAndStdReward.csv", sep=',',index=True))
 	    
 	    subprocess.Popen(path_for_kill_file, shell=True)
 	subprocess.Popen(path_for_kill_file, shell=True)
