@@ -1,13 +1,23 @@
 	
 # Condor submit file
-universe = vanilla
-executable = testing.py
-Log        = simple.log
-Output     = simple.out
-Error      = simple.error
-arguments  = "PPO2 200 200 1 1 0.0025 256"
-queue 
 
-arguments  = "PPO2 2500 2500 1 1 0.0025 256"
-queue 
+Executable = testing.py
+Universe = vanilla
+Environment = ONCONDOR=true
+Getenv = true
+Requirements = ARCH == "X86_64" && !GPU
+Rank = -SlotId-1*InMastodon
 
++Group = "GRAD"
++Project = "AI_ROBOTICS"
+
++ProjectDescription = "simulating the RoboCup Rescue Simulator"
+
+arguments = "PPO2 2500 2500 2 2 0.0025 256"
+
+Input = /dev/null
+Output = simple.out
+error = simple.error
+
+
+queue 

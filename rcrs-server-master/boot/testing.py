@@ -45,6 +45,7 @@ env = DummyVecEnv([lambda: env])
 # Automatically normalize the input features
 env = VecNormalize(env, norm_obs=True, norm_reward=False, clip_obs=10.)
 
+
 class CustomPolicy(FeedForwardPolicy):
     def __init__(self, *args, **kwargs):
         super(CustomPolicy, self).__init__(*args, **kwargs,
@@ -56,16 +57,15 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	
 	if (algorithm == "PPO2"):
 	    from stable_baselines.common.policies import MlpPolicy
-	    model = PPO2(CustomPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
+	    model = PPO2(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
 	else:
 	    from stable_baselines.deepq.policies import MlpPolicy
-	    model = DQN(CustomPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
+	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
 
 	for k in range(training_iterations):
     # Train the agent
 	    model.learn(total_timesteps=int(training_timesteps))
 	    # Saving the model 
-	    
 	    model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algorithm, hostname))
 	    subprocess.Popen(path_for_kill_file, shell=True)
 
@@ -108,7 +108,6 @@ def main():
 	parser.add_argument("batch_size", help = "What is the batch size?", type=int)
 	args = parser.parse_args()
 	run_model(args.algorithm, args.training_timesteps,args.testing_timesteps, args.training_iterations, args.testing_iterations, args.learning_rate, args.batch_size)
-
 
 if __name__ == '__main__':
 	main()

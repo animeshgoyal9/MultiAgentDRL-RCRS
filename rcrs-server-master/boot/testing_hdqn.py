@@ -20,7 +20,6 @@ from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize, VecEnv
 from stable_baselines import PPO2, DQN, A2C, DDPG
 from stable_baselines import results_plotter
 from stable_baselines.deepq.policies import MlpPolicy, FeedForwardPolicy
-# from stable_baselines.common.policies import FeedForwardPolicy
 from stable_baselines.bench import Monitor
 from stable_baselines.results_plotter import load_results, ts2xy
 from stable_baselines.ddpg import AdaptiveParamNoiseSpec
