@@ -135,17 +135,13 @@ public class SampleSearch extends Search {
 		
 		if (currentTarget != null && path.size() == 1) {
 			    	currentTarget = null;
-		} else {
+		} 
+
+		if(currentTarget == null) {
 			currentTarget = target;
 		}
-
-//		if(currentTarget == null)
-//			currentTarget = target;
-
-		System.out.println("Changed Entities: "+ this.worldInfo.getChanged().getChangedEntities());
-		System.out.println(this.agentInfo.getID().getValue() +" Target: "+target);
-		System.out.println(this.agentInfo.getID().getValue() +" Current Target: "+currentTarget);
-
+			
+		this.unsearchedBuildingIDs.clear();
 		this.unsearchedBuildingIDs.add(currentTarget);
 
 //		For Instant Switch--------------------------------------
