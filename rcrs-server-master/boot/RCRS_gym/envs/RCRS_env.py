@@ -87,7 +87,7 @@ class RCRSenv(gym.Env):
         appending_list = []
         for i in fieryeness_counter:
             if 0 <= i <= 2:
-                appending_list.append(float(10/len(fieryeness_counter)))
+                appending_list.append(float(100/len(fieryeness_counter)))
             elif 3 <= i <= 5:
                 appending_list.append(float(5/len(fieryeness_counter)))
             else:
@@ -177,7 +177,6 @@ def run_adf(bid):
             AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[bid[1]]),
             AgentInfo_pb2.Action(agent_id = 1535509101, building_id=action_set_list[bid[2]]), 
             AgentInfo_pb2.Action(agent_id = 1127234487, building_id=action_set_list[bid[3]])]))
-            # AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid]), AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[1425-bid])]))
             # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
             
     agent_state_info = []
