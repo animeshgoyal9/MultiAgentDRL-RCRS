@@ -92,7 +92,6 @@ class DQN(CustomPolicy):
             episode_successes = []
             obs = self.env.reset()
             reset = True
-            F = 0
 
 
             for _ in range(total_timesteps):
@@ -117,27 +116,28 @@ class DQN(CustomPolicy):
                     kwargs['reset'] = reset
                     kwargs['update_param_noise_threshold'] = update_param_noise_threshold
                     kwargs['update_param_noise_scale'] = True
-
+                
                 # Check if agent is busy or idle
-                while (check_busy_idle() == 0):
+                while (check_busy_idle() == 0):  
                     with self.sess.as_default():
                         action = self.act(np.array(obs)[None], update_eps=update_eps, **kwargs)[0]
                     env_action = action
                     reset = False
-                    new_obs, rew, done, info = self.env.step(env_action)
-                    F = F + rew         
+                    new_obs, F, done, info = self.env.step(env_action)
+                    self.replay_buffer.add(obs, env_action, F, new_obs, float(done))         
+                    F = 0
+                    obs = new_obs
 
-                # Store transition in the replay buffer.
-                self.replay_buffer.add(obs, action, F, new_obs, float(done))
-                obs = new_obs
+                new_obs, rew, done, info = self.env.step(env_action)
+
 
                 if writer is not None:
-                    ep_rew = np.array([F]).reshape((1, -1))
+                    ep_rew = np.array([rew]).reshape((1, -1))
                     ep_done = np.array([done]).reshape((1, -1))
                     total_episode_reward_logger(self.episode_reward, ep_rew, ep_done, writer,
                                                 self.num_timesteps)
 
-                episode_rewards[-1] += F
+                episode_rewards[-1] += rew
 
                 if done:
                     maybe_is_success = info.get('is_success')
