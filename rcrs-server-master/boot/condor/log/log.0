@@ -140,3 +140,52 @@
 	Error from slot1@nauro-0.cs.utexas.edu: SHADOW at 128.83.120.157 failed to send file(s) to <128.83.144.2:43795>: error reading from /u/animesh9/Desktop/Environment/lib64: (errno 21) Is a directory; Transfer of symlinks to directories is not supported.; STARTER failed to receive file(s) from <128.83.120.157:9618>
 	Code 13 Subcode 21
 ...
+000 (54688.000.000) 02/18 23:46:22 Job submitted from host: <128.83.120.157:9618?addrs=128.83.120.157-9618+[--1]-9618&noUDP&sock=1833_dd30_3>
+...
+009 (54687.000.000) 02/18 23:47:52 Job was aborted by the user.
+	via condor_rm (by user animesh9)
+...
+009 (54686.000.000) 02/18 23:47:52 Job was aborted by the user.
+	via condor_rm (by user animesh9)
+...
+004 (54688.000.000) 02/18 23:47:56 Job was evicted.
+	(0) Job was not checkpointed.
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	1008293504  -  Run Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated
+	   Cpus                 :                 1         1
+	   Disk (KB)            :  1250000  1250000   4946769
+	   Gpus                 :                           0
+	   Memory (MB)          :              4000      4025
+...
+009 (54688.000.000) 02/18 23:47:56 Job was aborted by the user.
+	via condor_rm (by user animesh9)
+...
+000 (54689.000.000) 02/18 23:48:06 Job submitted from host: <128.83.120.157:9618?addrs=128.83.120.157-9618+[--1]-9618&noUDP&sock=1833_dd30_3>
+...
+001 (54689.000.000) 02/18 23:49:14 Job executing on host: <128.83.144.2:9618?addrs=128.83.144.2-9618+[--1]-9618&noUDP&sock=1076_9ffe_3>
+...
+006 (54689.000.000) 02/18 23:49:16 Image size of job updated: 48800
+	0  -  MemoryUsage of job (MB)
+	0  -  ResidentSetSize of job (KB)
+...
+005 (54689.000.000) 02/18 23:49:16 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	168  -  Run Bytes Sent By Job
+	1020616000  -  Run Bytes Received By Job
+	168  -  Total Bytes Sent By Job
+	1020616000  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated
+	   Cpus                 :                 1         1
+	   Disk (KB)            :  1000000  1000000   4946769
+	   Gpus                 :                           0
+	   Memory (MB)          :        0     4000      4025
+...
+000 (54690.000.000) 02/19 00:01:55 Job submitted from host: <128.83.120.157:9618?addrs=128.83.120.157-9618+[--1]-9618&noUDP&sock=1833_dd30_3>
+...
