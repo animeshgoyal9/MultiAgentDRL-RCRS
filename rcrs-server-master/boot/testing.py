@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import gym
 import RCRS_gym
 
@@ -94,6 +96,7 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    # Print the standard deviation of reward
 	    print(np.std(final_rewards))
 	    # Create a DataFrame to save the mean and standard deviation
+	    print(learning_rate)
 	    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
 	    df.to_csv("{}_{}_{}".format(algorithm, hostname, "MeanAndStdReward.csv", sep=',',index=True))
 	    
