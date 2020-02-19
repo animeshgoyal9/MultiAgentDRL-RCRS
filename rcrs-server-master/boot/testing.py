@@ -20,6 +20,7 @@ from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize, VecEnv
 from stable_baselines import PPO2, DQN, A2C, DDPG
 from stable_baselines import results_plotter
 from stable_baselines.common.policies import FeedForwardPolicy
+# from stable_baselines.deepq.policies import FeedForwardPolicy
 from stable_baselines.bench import Monitor
 from stable_baselines.results_plotter import load_results, ts2xy
 from stable_baselines.ddpg import AdaptiveParamNoiseSpec
@@ -56,6 +57,9 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	if (algorithm == "PPO2"):
 	    from stable_baselines.common.policies import MlpPolicy
 	    model = PPO2(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
+	elif (algorithm == "A2C"):
+		from stable_baselines.common.policies import MlpPolicy
+		model = A2C(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
 	else:
 	    from stable_baselines.deepq.policies import MlpPolicy
 	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
@@ -71,6 +75,8 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    # Load the trained agent
 	    if (algorithm == "PPO2"):
 	    	model = PPO2.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
+	    elif (algorithm == "A2C"):
+	    	model = A2C.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
 	    else:
 	    	model = DQN.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
 	    # Reset the environment

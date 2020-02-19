@@ -26,7 +26,7 @@ import collections
 
 # map_used = "Small"
 map_used = "Big"
-algo_used = "PPO2"
+algo_used = "A2C" 
 
 if (map_used == 'Small'):
     MAX_TIMESTEP = 100
@@ -61,7 +61,7 @@ class RCRSenv(gym.Env):
     metadata = {'render.modes' : None}  
     current_action = 0
     def __init__(self):
-        if (algo_used == "PPO2"):
+        if (algo_used == "PPO2" or algo_used == "A2C"):
             self.action_space = MultiDiscrete([len(action_set_list)]*n_agents)
         else:
             self.action_space = Discrete(len_action_list*len_action_list)
