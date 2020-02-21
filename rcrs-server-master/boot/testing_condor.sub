@@ -1,20 +1,28 @@
 
 universe = vanilla
-executable = testing_condor.py 
+executable = testing.py 
 
 +Group = "GRAD"
 +Project = "AI_ROBOTICS"
 +ProjectDescription = "simulating the RoboCup Rescue Simulator"
 
-notify_user = animesh.goyal9@gmail.com
-notification = error
-request_memory = 4000
-Requirements = InMastodon
+# notify_user = animesh.goyal9@gmail.com
+# notification = error
+# request_memory = 4000
+# Requirements = TARGET.UidDomain == "cs.utexas.edu" &&  TARGET.FileSystemDomain == "cs.utexas.edu" && InMastodon
+
+Environment = ONCONDOR=true
+Getenv = true
+Requirements = ARCH == "X86_64" && !GPU
+Rank = -SlotId-1*InMastodon
+
+# initialdir      = boot
 
 should_transfer_files = YES
 when_to_transfer_output = ON_Exit
 transfer_output         = True
-transfer_input_files    = testing_condor.py
+#transfer_input_files    = testing.py
+transfer_input_files    = RCRS_gym, ../../PyRCRSClient, ../../PyRCRSClient/RCRS_gRPC_Client/AgentInfo_pb2.py, ../../PyRCRSClient/RCRS_gRPC_Client/AgentInfo_pb2_grpc.py, ../../PyRCRSClient/RCRS_gRPC_Client/BuildingInfo_pb2.py, ../../PyRCRSClient/RCRS_gRPC_Client/BuildingInfo_pb2_grpc.py
 
 getenv = true
 
@@ -22,7 +30,7 @@ log = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/log/
 error = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/error/err.$(Process)
 output = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/output/out.$(Process)
 
-arguments = "PPO2"
+arguments = "PPO2 2500 2500 2 0.0025 64"
 queue 1
 
 
@@ -30,6 +38,6 @@ log = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/log/
 error = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/error/err.$(Process)
 output = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/output/out.$(Process)
 
-arguments = "DQN"
+arguments = "PPO2 2500 2500 2 2 0.0025 64"
 queue 1
 
