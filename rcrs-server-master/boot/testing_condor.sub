@@ -1,6 +1,6 @@
-universe = vanilla
-executable = testing.py 
 
+universe = vanilla
+executable = testing_condor.py 
 
 +Group = "GRAD"
 +Project = "AI_ROBOTICS"
@@ -9,18 +9,20 @@ executable = testing.py
 notify_user = animesh.goyal9@gmail.com
 notification = error
 request_memory = 4000
+Requirements = InMastodon
 
 should_transfer_files = YES
 when_to_transfer_output = ON_Exit
 transfer_output         = True
-transfer_input_files    = /u/animesh9/Desktop/Environment, testing.py
+transfer_input_files    = testing_condor.py
 
+getenv = true
 
 log = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/log/log.$(Process)
 error = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/error/err.$(Process)
 output = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/output/out.$(Process)
 
-arguments = "PPO2 200 200 2 2 0.0025 64"
+arguments = "PPO2"
 queue 1
 
 
@@ -28,6 +30,6 @@ log = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/log/
 error = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/error/err.$(Process)
 output = /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/condor/output/out.$(Process)
 
-arguments = "PPO2 200 200 2 2 0.0075 64"
+arguments = "DQN"
 queue 1
 
