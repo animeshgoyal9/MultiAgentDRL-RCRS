@@ -1,0 +1,2430 @@
+--------------------------------------------------------------------------
+[[28667,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: oliphaunt-1
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/u/animesh9/Desktop/Environment/lib/python3.6/site-packages/gym/logger.py:30: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  warnings.warn(colorize('%s: %s'%('WARN', msg % args), 'yellow'))
+WARNING:tensorflow:From /u/animesh9/Desktop/Environment/lib/python3.6/site-packages/stable_baselines/common/tf_util.py:58: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /u/animesh9/Desktop/Environment/lib/python3.6/site-packages/stable_baselines/common/tf_util.py:67: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+WARNING:tensorflow:From /u/animesh9/Desktop/Environment/lib/python3.6/site-packages/stable_baselines/common/policies.py:115: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+WARNING:tensorflow:From /u/animesh9/Desktop/Environment/lib/python3.6/site-packages/stable_baselines/common/input.py:25: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /u/animesh9/Desktop/Environment/lib/python3.6/site-packages/stable_baselines/common/policies.py:560: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+WARNING:tensorflow:Entity <bound method Flatten.call of <tensorflow.python.layers.core.Flatten object at 0x15014ebe5ef0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Flatten.call of <tensorflow.python.layers.core.Flatten object at 0x15014ebe5ef0>>: AttributeError: module 'gast' has no attribute 'Num'
+WARNING:tensorflow:From /u/animesh9/Desktop/Environment/lib/python3.6/site-packages/stable_baselines/a2c/utils.py:156: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:Entity <bound method Flatten.call of <tensorflow.python.layers.core.Flatten object at 0x15014db7bdd8>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Flatten.call of <tensorflow.python.layers.core.Flatten object at 0x15014db7bdd8>>: AttributeError: module 'gast' has no attribute 'Num'
+WARNING:tensorflow:From /u/animesh9/Desktop/Environment/lib/python3.6/site-packages/stable_baselines/ppo2/ppo2.py:194: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+WARNING:tensorflow:From /u/animesh9/Desktop/Environment/lib/python3.6/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /u/animesh9/Desktop/Environment/lib/python3.6/site-packages/stable_baselines/ppo2/ppo2.py:210: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From /u/animesh9/Desktop/Environment/lib/python3.6/site-packages/stable_baselines/ppo2/ppo2.py:246: The name tf.summary.merge_all is deprecated. Please use tf.compat.v1.summary.merge_all instead.
+
+/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs
+Waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/kernel.log' to exist...
+Still waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/kernel.log' to exist...
+TRACE startup : Reading included config 'common.cfg'
+TRACE startup : Reading included config 'types.cfg'
+TRACE startup : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE startup : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE startup : Setting 'random.seed' to '1023'
+TRACE startup : Setting 'kernel.host' to 'localhost'
+TRACE startup : Setting 'kernel.port' to '7000'
+TRACE startup : Setting 'senario.human.random-id' to 'true'
+TRACE startup : Reading included config 'gis.cfg'
+TRACE startup : Setting 'gis.map.dir' to '../maps/gml/legacy/Kobe'
+TRACE startup : Setting 'gis.map.file' to 'map.gml'
+TRACE startup : Setting 'gis.map.scenario' to 'scenario.xml'
+TRACE startup : Setting 'gis.map.floor-placement.random' to 'true'
+TRACE startup : Setting 'gis.map.floor-placement.random.floor-rate.1' to '2'
+TRACE startup : Setting 'gis.map.floor-placement.random.floor-rate.2' to '1'
+TRACE startup : Setting 'gis.map.floor-placement.random.floor-rate.3' to '1'
+TRACE startup : Setting 'gis.map.building-code-placement.random' to 'true'
+TRACE startup : Setting 'gis.map.building-code-placement.random.code-rate.0' to '75'
+TRACE startup : Setting 'gis.map.building-code-placement.random.code-rate.1' to '20'
+TRACE startup : Setting 'gis.map.building-code-placement.random.code-rate.2' to '5'
+TRACE startup : Reading included config 'comms.cfg'
+TRACE startup : Reading included config 'comms/comms-05-medium.cfg'
+TRACE startup : Setting 'comms.channels.count' to '4'
+TRACE startup : Setting 'comms.channels.0.type' to 'voice'
+TRACE startup : Setting 'comms.channels.0.range' to '30000'
+TRACE startup : Setting 'comms.channels.0.messages.size' to '256'
+TRACE startup : Setting 'comms.channels.0.messages.max' to '1'
+TRACE startup : Setting 'comms.channels.0.noise.input.dropout.use' to 'yes'
+TRACE startup : Setting 'comms.channels.0.noise.input.dropout.p' to '0.1'
+TRACE startup : Setting 'comms.channels.1.type' to 'radio'
+TRACE startup : Setting 'comms.channels.1.bandwidth' to '1024'
+TRACE startup : Setting 'comms.channels.1.noise.input.failure.use' to 'yes'
+TRACE startup : Setting 'comms.channels.1.noise.input.failure.p' to '0.1'
+TRACE startup : Setting 'comms.channels.1.noise.output.dropout.use' to 'yes'
+TRACE startup : Setting 'comms.channels.1.noise.output.dropout.p' to '0.05'
+TRACE startup : Setting 'comms.channels.2.type' to 'radio'
+TRACE startup : Setting 'comms.channels.2.bandwidth' to '1024'
+TRACE startup : Setting 'comms.channels.2.noise.input.failure.use' to 'yes'
+TRACE startup : Setting 'comms.channels.2.noise.input.failure.p' to '0.1'
+TRACE startup : Setting 'comms.channels.2.noise.output.dropout.use' to 'yes'
+TRACE startup : Setting 'comms.channels.2.noise.output.dropout.p' to '0.05'
+TRACE startup : Setting 'comms.channels.3.type' to 'radio'
+TRACE startup : Setting 'comms.channels.3.bandwidth' to '1024'
+TRACE startup : Setting 'comms.channels.3.noise.input.failure.use' to 'yes'
+TRACE startup : Setting 'comms.channels.3.noise.input.failure.p' to '0.1'
+TRACE startup : Setting 'comms.channels.3.noise.output.dropout.use' to 'yes'
+TRACE startup : Setting 'comms.channels.3.noise.output.dropout.p' to '0.05'
+TRACE startup : Setting 'comms.channels.max.platoon' to '1'
+TRACE startup : Setting 'comms.channels.max.centre' to '2'
+TRACE startup : Reading included config 'perception.cfg'
+TRACE startup : Setting 'perception.standard.view-distance' to '10000'
+TRACE startup : Setting 'perception.standard.use-far-fires' to 'true'
+TRACE startup : Setting 'perception.standard.far-fire-distance' to '10000'
+TRACE startup : Setting 'perception.standard.hp-precision' to '1000'
+TRACE startup : Setting 'perception.standard.damage-precision' to '100'
+TRACE startup : Setting 'perception.los.max-distance' to '30000'
+TRACE startup : Setting 'perception.los.ray-count' to '72'
+TRACE startup : Setting 'perception.los.precision.hp' to '1000'
+TRACE startup : Setting 'perception.los.precision.damage' to '50'
+TRACE startup : Reading included config 'score.cfg'
+TRACE startup : Setting 'score.function' to 'rescuecore2.standard.score.LegacyScoreFunction'
+TRACE startup : Setting 'score.standard.building-fire.heating' to '0.66'
+TRACE startup : Setting 'score.standard.building-fire.burning' to '0.33'
+TRACE startup : Setting 'score.standard.building-fire.inferno' to '0.0'
+TRACE startup : Setting 'score.standard.building-fire.water-damage' to '0.90'
+TRACE startup : Setting 'score.standard.building-fire.minor-damage' to '0.75'
+TRACE startup : Setting 'score.standard.building-fire.moderate-damage' to '0.5'
+TRACE startup : Setting 'score.standard.building-fire.severe-damage' to '0.25'
+TRACE startup : Setting 'score.standard.building-fire.burnt-out' to '0'
+TRACE startup : Setting 'score.standard.building-fire.absolute' to 'false'
+TRACE startup : Setting 'score.standard.health.absolute' to 'false'
+TRACE startup : Reading included config 'collapse.cfg'
+TRACE startup : Reading included config 'common.cfg'
+TRACE startup : Reading included config 'types.cfg'
+TRACE startup : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE startup : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE startup : Setting 'random.seed' to '1023'
+TRACE startup : Setting 'kernel.host' to 'localhost'
+TRACE startup : Setting 'kernel.port' to '7000'
+TRACE startup : Setting 'senario.human.random-id' to 'true'
+TRACE startup : Setting 'collapse.wood.p-destroyed' to '0.2'
+TRACE startup : Setting 'collapse.wood.p-severe' to '0.15'
+TRACE startup : Setting 'collapse.wood.p-moderate' to '0.15'
+TRACE startup : Setting 'collapse.wood.p-slight' to '0.1'
+TRACE startup : Setting 'collapse.wood.p-none' to '0.4'
+TRACE startup : Setting 'collapse.steel.p-destroyed' to '0.2'
+TRACE startup : Setting 'collapse.steel.p-severe' to '0.2'
+TRACE startup : Setting 'collapse.steel.p-moderate' to '0.2'
+TRACE startup : Setting 'collapse.steel.p-slight' to '0.2'
+TRACE startup : Setting 'collapse.steel.p-none' to '0.2'
+TRACE startup : Setting 'collapse.concrete.p-destroyed' to '0.35'
+TRACE startup : Setting 'collapse.concrete.p-severe' to '0.25'
+TRACE startup : Setting 'collapse.concrete.p-moderate' to '0.2'
+TRACE startup : Setting 'collapse.concrete.p-slight' to '0.1'
+TRACE startup : Setting 'collapse.concrete.p-none' to '0.1'
+TRACE startup : Setting 'collapse.destroyed.mean' to '100'
+TRACE startup : Setting 'collapse.destroyed.sd' to '5'
+TRACE startup : Setting 'collapse.severe.mean' to '75'
+TRACE startup : Setting 'collapse.severe.sd' to '5'
+TRACE startup : Setting 'collapse.moderate.mean' to '50'
+TRACE startup : Setting 'collapse.moderate.sd' to '5'
+TRACE startup : Setting 'collapse.slight.mean' to '25'
+TRACE startup : Setting 'collapse.slight.sd' to '5'
+TRACE startup : Setting 'collapse.create-road-blockages' to 'false'
+TRACE startup : Setting 'collapse.floor-height' to '7'
+TRACE startup : Setting 'collapse.wall-extent.min' to '0.4'
+TRACE startup : Setting 'collapse.wall-extent.max' to '1'
+TRACE startup : Reading included config 'clear.cfg'
+TRACE startup : Reading included config 'common.cfg'
+TRACE startup : Reading included config 'types.cfg'
+TRACE startup : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE startup : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE startup : Setting 'random.seed' to '1023'
+TRACE startup : Setting 'kernel.host' to 'localhost'
+TRACE startup : Setting 'kernel.port' to '7000'
+TRACE startup : Setting 'senario.human.random-id' to 'true'
+TRACE startup : Setting 'clear.repair.rate' to '15'
+TRACE startup : Setting 'clear.repair.distance' to '10000'
+TRACE startup : Setting 'clear.repair.rad' to '2000'
+TRACE startup : Reading included config 'misc.cfg'
+TRACE startup : Reading included config 'common.cfg'
+TRACE startup : Reading included config 'types.cfg'
+TRACE startup : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE startup : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE startup : Setting 'random.seed' to '1023'
+TRACE startup : Setting 'kernel.host' to 'localhost'
+TRACE startup : Setting 'kernel.port' to '7000'
+TRACE startup : Setting 'senario.human.random-id' to 'true'
+TRACE startup : Setting 'misc.buriedness.wood.none.value' to '0'
+TRACE startup : Setting 'misc.buriedness.wood.partial.value' to '20'
+TRACE startup : Setting 'misc.buriedness.wood.half.value' to '30'
+TRACE startup : Setting 'misc.buriedness.wood.all.value' to '60'
+TRACE startup : Setting 'misc.buriedness.steel.none.value' to '0'
+TRACE startup : Setting 'misc.buriedness.steel.partial.value' to '20'
+TRACE startup : Setting 'misc.buriedness.steel.half.value' to '35'
+TRACE startup : Setting 'misc.buriedness.steel.all.value' to '70'
+TRACE startup : Setting 'misc.buriedness.concrete.none.value' to '0'
+TRACE startup : Setting 'misc.buriedness.concrete.partial.value' to '35'
+TRACE startup : Setting 'misc.buriedness.concrete.half.value' to '60'
+TRACE startup : Setting 'misc.buriedness.concrete.all.value' to '80'
+TRACE startup : Setting 'misc.buriedness.wood.none.rate' to '0'
+TRACE startup : Setting 'misc.buriedness.wood.partial.rate' to '1'
+TRACE startup : Setting 'misc.buriedness.wood.half.rate' to '1'
+TRACE startup : Setting 'misc.buriedness.wood.all.rate' to '1'
+TRACE startup : Setting 'misc.buriedness.steel.none.rate' to '0'
+TRACE startup : Setting 'misc.buriedness.steel.partial.rate' to '0.008'
+TRACE startup : Setting 'misc.buriedness.steel.half.rate' to '0.008'
+TRACE startup : Setting 'misc.buriedness.steel.all.rate' to '0.008'
+TRACE startup : Setting 'misc.buriedness.concrete.none.rate' to '0'
+TRACE startup : Setting 'misc.buriedness.concrete.partial.rate' to '0.008'
+TRACE startup : Setting 'misc.buriedness.concrete.half.rate' to '0.008'
+TRACE startup : Setting 'misc.buriedness.concrete.all.rate' to '0.008'
+TRACE startup : Setting 'misc.injury.collapse.wood.none.slight' to '0'
+TRACE startup : Setting 'misc.injury.collapse.wood.none.serious' to '0'
+TRACE startup : Setting 'misc.injury.collapse.wood.none.critical' to '0'
+TRACE startup : Setting 'misc.injury.collapse.wood.partial.slight' to '0.5'
+TRACE startup : Setting 'misc.injury.collapse.wood.partial.serious' to '0.3'
+TRACE startup : Setting 'misc.injury.collapse.wood.partial.critical' to '0.02'
+TRACE startup : Setting 'misc.injury.collapse.wood.half.slight' to '0.5'
+TRACE startup : Setting 'misc.injury.collapse.wood.half.serious' to '0.3'
+TRACE startup : Setting 'misc.injury.collapse.wood.half.critical' to '0.02'
+TRACE startup : Setting 'misc.injury.collapse.wood.all.slight' to '0.5'
+TRACE startup : Setting 'misc.injury.collapse.wood.all.serious' to '0.3'
+TRACE startup : Setting 'misc.injury.collapse.wood.all.critical' to '0.02'
+TRACE startup : Setting 'misc.injury.collapse.steel.none.slight' to '0'
+TRACE startup : Setting 'misc.injury.collapse.steel.none.serious' to '0'
+TRACE startup : Setting 'misc.injury.collapse.steel.none.critical' to '0'
+TRACE startup : Setting 'misc.injury.collapse.steel.partial.slight' to '0.1'
+TRACE startup : Setting 'misc.injury.collapse.steel.partial.serious' to '0.03'
+TRACE startup : Setting 'misc.injury.collapse.steel.partial.critical' to '0.005'
+TRACE startup : Setting 'misc.injury.collapse.steel.half.slight' to '0.1'
+TRACE startup : Setting 'misc.injury.collapse.steel.half.serious' to '0.03'
+TRACE startup : Setting 'misc.injury.collapse.steel.half.critical' to '0.005'
+TRACE startup : Setting 'misc.injury.collapse.steel.all.slight' to '0.1'
+TRACE startup : Setting 'misc.injury.collapse.steel.all.serious' to '0.03'
+TRACE startup : Setting 'misc.injury.collapse.steel.all.critical' to '0.005'
+TRACE startup : Setting 'misc.injury.collapse.concrete.none.slight' to '0'
+TRACE startup : Setting 'misc.injury.collapse.concrete.none.serious' to '0'
+TRACE startup : Setting 'misc.injury.collapse.concrete.none.critical' to '0'
+TRACE startup : Setting 'misc.injury.collapse.concrete.partial.slight' to '0.1'
+TRACE startup : Setting 'misc.injury.collapse.concrete.partial.serious' to '0.03'
+TRACE startup : Setting 'misc.injury.collapse.concrete.partial.critical' to '0.005'
+TRACE startup : Setting 'misc.injury.collapse.concrete.half.slight' to '0.1'
+TRACE startup : Setting 'misc.injury.collapse.concrete.half.serious' to '0.03'
+TRACE startup : Setting 'misc.injury.collapse.concrete.half.critical' to '0.005'
+TRACE startup : Setting 'misc.injury.collapse.concrete.all.slight' to '0.1'
+TRACE startup : Setting 'misc.injury.collapse.concrete.all.serious' to '0.03'
+TRACE startup : Setting 'misc.injury.collapse.concrete.all.critical' to '0.005'
+TRACE startup : Setting 'misc.injury.collapse.slight' to '2'
+TRACE startup : Setting 'misc.injury.collapse.serious' to '10'
+TRACE startup : Setting 'misc.injury.collapse.critical' to '10000'
+TRACE startup : Setting 'misc.injury.collapse.multiplier.ambulance' to '0.2'
+TRACE startup : Setting 'misc.injury.collapse.multiplier.police' to '0.2'
+TRACE startup : Setting 'misc.injury.collapse.multiplier.fire' to '0.2'
+TRACE startup : Setting 'misc.injury.bury.wood.none.slight' to '0'
+TRACE startup : Setting 'misc.injury.bury.wood.none.serious' to '0'
+TRACE startup : Setting 'misc.injury.bury.wood.none.critical' to '0'
+TRACE startup : Setting 'misc.injury.bury.wood.partial.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.bury.wood.partial.serious' to '0.5'
+TRACE startup : Setting 'misc.injury.bury.wood.partial.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.bury.wood.half.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.bury.wood.half.serious' to '0.5'
+TRACE startup : Setting 'misc.injury.bury.wood.half.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.bury.wood.all.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.bury.wood.all.serious' to '0.5'
+TRACE startup : Setting 'misc.injury.bury.wood.all.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.bury.steel.none.slight' to '0'
+TRACE startup : Setting 'misc.injury.bury.steel.none.serious' to '0'
+TRACE startup : Setting 'misc.injury.bury.steel.none.critical' to '0'
+TRACE startup : Setting 'misc.injury.bury.steel.partial.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.bury.steel.partial.serious' to '0.5'
+TRACE startup : Setting 'misc.injury.bury.steel.partial.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.bury.steel.half.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.bury.steel.half.serious' to '0.5'
+TRACE startup : Setting 'misc.injury.bury.steel.half.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.bury.steel.all.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.bury.steel.all.serious' to '0.5'
+TRACE startup : Setting 'misc.injury.bury.steel.all.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.bury.concrete.none.slight' to '0'
+TRACE startup : Setting 'misc.injury.bury.concrete.none.serious' to '0'
+TRACE startup : Setting 'misc.injury.bury.concrete.none.critical' to '0'
+TRACE startup : Setting 'misc.injury.bury.concrete.partial.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.bury.concrete.partial.serious' to '0.5'
+TRACE startup : Setting 'misc.injury.bury.concrete.partial.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.bury.concrete.half.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.bury.concrete.half.serious' to '0.5'
+TRACE startup : Setting 'misc.injury.bury.concrete.half.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.bury.concrete.all.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.bury.concrete.all.serious' to '0.5'
+TRACE startup : Setting 'misc.injury.bury.concrete.all.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.bury.slight' to '3'
+TRACE startup : Setting 'misc.injury.bury.serious' to '15'
+TRACE startup : Setting 'misc.injury.bury.critical' to '100'
+TRACE startup : Setting 'misc.injury.bury.multiplier.ambulance' to '0.2'
+TRACE startup : Setting 'misc.injury.bury.multiplier.police' to '0.2'
+TRACE startup : Setting 'misc.injury.bury.multiplier.fire' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.wood.none.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.wood.none.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.wood.none.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.wood.partial.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.wood.partial.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.wood.partial.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.wood.half.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.wood.half.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.wood.half.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.wood.all.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.wood.all.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.wood.all.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.steel.none.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.steel.none.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.steel.none.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.steel.partial.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.steel.partial.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.steel.partial.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.steel.half.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.steel.half.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.steel.half.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.steel.all.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.steel.all.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.steel.all.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.concrete.none.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.concrete.none.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.concrete.none.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.concrete.partial.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.concrete.partial.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.concrete.partial.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.concrete.half.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.concrete.half.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.concrete.half.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.concrete.all.slight' to '0.4'
+TRACE startup : Setting 'misc.injury.fire.concrete.all.serious' to '0.2'
+TRACE startup : Setting 'misc.injury.fire.concrete.all.critical' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.slight' to '5'
+TRACE startup : Setting 'misc.injury.fire.serious' to '20'
+TRACE startup : Setting 'misc.injury.fire.critical' to '100'
+TRACE startup : Setting 'misc.injury.fire.multiplier.ambulance' to '1'
+TRACE startup : Setting 'misc.injury.fire.multiplier.police' to '1'
+TRACE startup : Setting 'misc.injury.fire.multiplier.fire' to '0.2'
+TRACE startup : Setting 'misc.injury.collapse.k' to '0.00025'
+TRACE startup : Setting 'misc.injury.collapse.l' to '0.01'
+TRACE startup : Setting 'misc.injury.collapse.noise.mean' to '0.1'
+TRACE startup : Setting 'misc.injury.collapse.noise.sd' to '0.01'
+TRACE startup : Setting 'misc.injury.bury.k' to '0.000035'
+TRACE startup : Setting 'misc.injury.bury.l' to '0.01'
+TRACE startup : Setting 'misc.injury.bury.noise.mean' to '0.1'
+TRACE startup : Setting 'misc.injury.bury.noise.sd' to '0.01'
+TRACE startup : Setting 'misc.injury.fire.k' to '0.00025'
+TRACE startup : Setting 'misc.injury.fire.l' to '0.03'
+TRACE startup : Setting 'misc.injury.fire.noise.mean' to '0.1'
+TRACE startup : Setting 'misc.injury.fire.noise.sd' to '0.01'
+TRACE startup : Reading included config 'resq-fire.cfg'
+TRACE startup : Reading included config 'common.cfg'
+TRACE startup : Reading included config 'types.cfg'
+TRACE startup : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE startup : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE startup : Setting 'random.seed' to '1023'
+TRACE startup : Setting 'kernel.host' to 'localhost'
+TRACE startup : Setting 'kernel.port' to '7000'
+TRACE startup : Setting 'senario.human.random-id' to 'true'
+TRACE startup : Setting 'resq-fire.water_capacity' to '25000'
+TRACE startup : Setting 'fire.tank.maximum' to '25000'
+TRACE startup : Setting 'resq-fire.water_refill_rate' to '2500'
+TRACE startup : Setting 'fire.tank.refill_rate' to '2500'
+TRACE startup : Setting 'resq-fire.water_hydrant_refill_rate' to '400'
+TRACE startup : Setting 'fire.tank.refill_hydrant_rate' to '400'
+TRACE startup : Setting 'resq-fire.water_distance' to '50000'
+TRACE startup : Setting 'fire.extinguish.max-distance' to '50000'
+TRACE startup : Setting 'fire.extinguish.max-sum' to '3000'
+TRACE startup : Setting 'resq-fire.max_extinguish_power_sum' to '3000'
+TRACE startup : Setting 'resq-fire.rays.dir' to 'rays'
+TRACE startup : Setting 'resq-fire.wind_speed' to '0'
+TRACE startup : Setting 'resq-fire.steel_capacity' to '1.0'
+TRACE startup : Setting 'resq-fire.wooden_energy' to '2400.0'
+TRACE startup : Setting 'resq-fire.cell_size' to '5000'
+TRACE startup : Setting 'resq-fire.air_cell_heat_capacity' to '0.004'
+TRACE startup : Setting 'resq-fire.wooden_ignition' to '47.0'
+TRACE startup : Setting 'resq-fire.water_thermal_capacity' to '20'
+TRACE startup : Setting 'resq-fire.steel_burning' to '850.0'
+TRACE startup : Setting 'resq-fire.concrete_energy' to '350.0'
+TRACE startup : Setting 'resq-fire.air_to_air_flow' to '1.0'
+TRACE startup : Setting 'resq-fire.gamma' to '0.2'
+TRACE startup : Setting 'resq-fire.ambulancecenter_inflammable' to 'false'
+TRACE startup : Setting 'resq-fire.steel_ignition' to '47.0'
+TRACE startup : Setting 'resq-fire.wind_random' to '1'
+TRACE startup : Setting 'resq-fire.radiation_coefficient' to '0.011'
+TRACE startup : Setting 'resq-fire.steel_energy' to '800.0'
+TRACE startup : Setting 'resq-fire.wooden_burning' to '800.0'
+TRACE startup : Setting 'resq-fire.refuge_inflammable' to 'false'
+TRACE startup : Setting 'resq-fire.policeoffice_inflammable' to 'false'
+TRACE startup : Setting 'resq-fire.air_to_building_flow' to '0.0015'
+TRACE startup : Setting 'resq-fire.concrete_burning' to '800.0'
+TRACE startup : Setting 'resq-fire.wooden_capacity' to '1.1'
+TRACE startup : Setting 'resq-fire.concrete_ignition' to '47.0'
+TRACE startup : Setting 'resq-fire.wind_direction' to '100.0'
+TRACE startup : Setting 'resq-fire.concrete_speed' to '0.05'
+TRACE startup : Setting 'resq-fire.firestation_inflammable' to 'false'
+TRACE startup : Setting 'resq-fire.steel_speed' to '0.05'
+TRACE startup : Setting 'resq-fire.randomseed' to '23'
+TRACE startup : Setting 'resq-fire.concrete_capacity' to '1.5'
+TRACE startup : Setting 'resq-fire.wooden_speed' to '0.05'
+TRACE startup : Setting 'resq-fire.energy_loss' to '0.86'
+TRACE startup : Setting 'resq-fire.ray_rate' to '0.0025'
+TRACE startup : Setting 'resq-fire.max_ray_distance' to '200000'
+TRACE startup : Setting 'resq-fire.burn-rate-average' to '0.15'
+TRACE startup : Setting 'resq-fire.burn-rate-variance' to '0.02'
+TRACE startup : Reading included config 'traffic3.cfg'
+TRACE startup : Reading included config 'common.cfg'
+TRACE startup : Reading included config 'types.cfg'
+TRACE startup : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE startup : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE startup : Setting 'random.seed' to '1023'
+TRACE startup : Setting 'kernel.host' to 'localhost'
+TRACE startup : Setting 'kernel.port' to '7000'
+TRACE startup : Setting 'senario.human.random-id' to 'true'
+TRACE startup : Reading included config 'ignition.cfg'
+TRACE startup : Reading included config 'common.cfg'
+TRACE startup : Reading included config 'types.cfg'
+TRACE startup : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE startup : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE startup : Setting 'random.seed' to '1023'
+TRACE startup : Setting 'kernel.host' to 'localhost'
+TRACE startup : Setting 'kernel.port' to '7000'
+TRACE startup : Setting 'senario.human.random-id' to 'true'
+TRACE startup : Setting 'ignition.random.lambda' to '0.1'
+TRACE startup : Setting 'ignition.gas_station.explosion.range' to '50000'
+TRACE startup : Reading included config 'civilian.cfg'
+TRACE startup : Reading included config 'common.cfg'
+TRACE startup : Reading included config 'types.cfg'
+TRACE startup : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE startup : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE startup : Setting 'random.seed' to '1023'
+TRACE startup : Setting 'kernel.host' to 'localhost'
+TRACE startup : Setting 'kernel.port' to '7000'
+TRACE startup : Setting 'senario.human.random-id' to 'true'
+TRACE startup : Setting 'civilian.help.probability' to '0.1'
+TRACE startup : Setting 'civilian.ouch.probability' to '0.1'
+TRACE startup : Setting 'civilian.conscious.threshold' to '2500'
+TRACE startup : Reading included config 'sample-agents.cfg'
+TRACE startup : Reading included config 'common.cfg'
+TRACE startup : Reading included config 'types.cfg'
+TRACE startup : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE startup : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE startup : Setting 'random.seed' to '1023'
+TRACE startup : Setting 'kernel.host' to 'localhost'
+TRACE startup : Setting 'kernel.port' to '7000'
+TRACE startup : Setting 'senario.human.random-id' to 'true'
+TRACE startup : Reading included config 'viewer.cfg'
+TRACE startup : Reading included config 'common.cfg'
+TRACE startup : Reading included config 'types.cfg'
+TRACE startup : Setting 'loadabletypes.inspect.dir' to '../jars'
+TRACE startup : Setting 'loadabletypes.inspect.deep' to 'yes'
+TRACE startup : Setting 'random.seed' to '1023'
+TRACE startup : Setting 'kernel.host' to 'localhost'
+TRACE startup : Setting 'kernel.port' to '7000'
+TRACE startup : Setting 'senario.human.random-id' to 'true'
+TRACE startup : Reading included config 'score.cfg'
+TRACE startup : Setting 'score.function' to 'rescuecore2.standard.score.LegacyScoreFunction'
+TRACE startup : Setting 'score.standard.building-fire.heating' to '0.66'
+TRACE startup : Setting 'score.standard.building-fire.burning' to '0.33'
+TRACE startup : Setting 'score.standard.building-fire.inferno' to '0.0'
+TRACE startup : Setting 'score.standard.building-fire.water-damage' to '0.90'
+TRACE startup : Setting 'score.standard.building-fire.minor-damage' to '0.75'
+TRACE startup : Setting 'score.standard.building-fire.moderate-damage' to '0.5'
+TRACE startup : Setting 'score.standard.building-fire.severe-damage' to '0.25'
+TRACE startup : Setting 'score.standard.building-fire.burnt-out' to '0'
+TRACE startup : Setting 'score.standard.building-fire.absolute' to 'false'
+TRACE startup : Setting 'score.standard.health.absolute' to 'false'
+TRACE startup : Setting 'view.standard.human.icons.size' to '48'
+TRACE startup : Setting 'view.standard.human.icons.use' to 'false'
+TRACE startup : Setting 'kernel.logname' to 'logs/rescue.log'
+TRACE startup : Setting 'kernel.timesteps' to '300'
+TRACE startup : Setting 'kernel.termination' to 'kernel.TimestepTerminationCondition'
+TRACE startup : Setting 'kernel.agents.think-time' to '100'
+TRACE startup : Setting 'kernel.agents.ignoreuntil' to '3'
+TRACE startup : Setting 'kernel.commandcollectors' to 'kernel.TimedCommandCollector'
+TRACE startup : Setting 'kernel.commandfilters' to 'kernel.WrongTimeCommandFilter'
+TRACE startup : Appending 'kernel.FrozenAgentsCommandFilter' to 'kernel.commandfilters'
+TRACE startup : Appending 'rescuecore2.standard.kernel.DeadAgentsCommandFilter' to 'kernel.commandfilters'
+TRACE startup : Appending 'rescuecore2.standard.kernel.BuriedAgentsCommandFilter' to 'kernel.commandfilters'
+TRACE startup : Appending 'rescuecore2.standard.kernel.SingleCommandFilter' to 'kernel.commandfilters'
+TRACE startup : Setting 'kernel.agents.registrar' to 'rescuecore2.standard.kernel.StandardAgentRegistrar'
+TRACE startup : Setting 'kernel.startup.connect-time' to '300000'
+TRACE startup : Setting 'kernel.gis.auto' to 'gis2.GMLWorldModelCreator'
+TRACE startup : Setting 'kernel.perception.auto' to 'rescuecore2.standard.kernel.LineOfSightPerception'
+TRACE startup : Setting 'kernel.communication.auto' to 'rescuecore2.standard.kernel.comms.ChannelCommunicationModel'
+TRACE startup : Setting 'kernel.ui.components' to 'rescuecore2.standard.kernel.StandardWorldModelViewerComponent'
+INFO startup : Looking for gis, perception, communication, agent, simulator and viewer implementations
+INFO startup : Processing jar directory: /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/../jars
+INFO startup : Processing ../jars/clear.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Adding clear.ClearSimulator to kernel.simulators
+INFO startup : Processing ../jars/collapse.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Adding collapse.CollapseSimulator to kernel.simulators
+INFO startup : Processing ../jars/gis2.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Adding gis2.GMLWorldModelCreator to kernel.gis
+INFO startup : Processing ../jars/handy.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Processing ../jars/human.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Adding human.ControlledAgentGUI$ControlViewer to kernel.viewers
+INFO startup : Adding human.ControlledFireBrigade to kernel.agents
+INFO startup : Adding human.ControlledPoliceForce to kernel.agents
+INFO startup : Adding human.ControlledAmbulanceTeam to kernel.agents
+INFO startup : Processing ../jars/ignition.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Adding ignition.IgnitionSimulator to kernel.simulators
+INFO startup : Processing ../jars/kernel.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Adding kernel.RemoteGISWorldModelCreator to kernel.gis
+INFO startup : Adding kernel.AbstractCommunicationModel to kernel.communication
+INFO startup : Processing ../jars/maps.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Processing ../jars/misc.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Adding misc.MiscSimulator to kernel.simulators
+INFO startup : Processing ../jars/resq-fire.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Processing ../jars/sample.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Adding sample.SampleAmbulanceTeam to kernel.agents
+INFO startup : No INSTANCE field in class sample.CustomRegistryTestAgent$CustomEntityFactory
+INFO startup : Could not instantiate class sample.CustomRegistryTestAgent$CustomEntityFactory
+INFO startup : Adding sample.SampleCentre to kernel.agents
+INFO startup : Adding sample.SampleCivilian to kernel.agents
+INFO startup : Adding sample.SampleFireBrigade to kernel.agents
+INFO startup : Adding sample.SamplePoliceForce to kernel.agents
+INFO startup : Adding sample.SampleSimulator to kernel.simulators
+INFO startup : Adding sample.SampleViewer to kernel.viewers
+INFO startup : Processing ../jars/standard.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+INFO startup : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO startup : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO startup : Adding rescuecore2.standard.components.StandardSimulator to kernel.simulators
+INFO startup : Adding rescuecore2.standard.components.StandardViewer to kernel.viewers
+INFO startup : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO startup : Adding rescuecore2.standard.kernel.LineOfSightPerception to kernel.perception
+INFO startup : Adding rescuecore2.standard.kernel.StandardPerception to kernel.perception
+INFO startup : Adding rescuecore2.standard.kernel.comms.ChannelCommunicationModel to kernel.communication
+INFO startup : Adding rescuecore2.standard.kernel.comms.StandardCommunicationModel to kernel.communication
+INFO startup : Processing ../jars/traffic3.jar
+DEBUG startup : Inspecting manifest...
+DEBUG startup : Looking for likely class names...
+
+(process:8271): dconf-CRITICAL **: 18:01:53.479: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8271): dconf-CRITICAL **: 18:01:53.480: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8271): dconf-CRITICAL **: 18:01:53.481: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+INFO startup : Adding traffic3.simulator.TrafficSimulator to kernel.simulators
+Waiting for 'Listening for connections'...
+Still waiting for 'Listening for connections'...
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.dom4j.io.SAXContentHandler (file:/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/lib/dom4j.jar) to method com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$LocatorProxy.getEncoding()
+WARNING: Please consider reporting this to the maintainers of org.dom4j.io.SAXContentHandler
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+waiting for misc to connect...
+Waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/misc-out.log' to exist...
+Still waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/misc-out.log' to exist...
+INFO launcher : Processing jar directory: /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/../jars
+INFO launcher : Processing ../jars/clear.jar
+INFO launcher : Processing ../jars/collapse.jar
+INFO launcher : Processing ../jars/gis2.jar
+INFO launcher : Processing ../jars/handy.jar
+INFO launcher : Processing ../jars/human.jar
+INFO launcher : Processing ../jars/ignition.jar
+INFO launcher : Processing ../jars/kernel.jar
+INFO launcher : Processing jar directory: /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/../jars
+INFO launcher : Processing ../jars/maps.jar
+INFO launcher : Processing ../jars/clear.jar
+INFO launcher : Processing ../jars/collapse.jar
+INFO launcher : Processing ../jars/gis2.jar
+INFO launcher : Processing ../jars/misc.jar
+INFO launcher : Processing ../jars/handy.jar
+INFO launcher : Processing ../jars/human.jar
+INFO launcher : Processing ../jars/ignition.jar
+INFO launcher : Processing ../jars/kernel.jar
+INFO launcher : Processing jar directory: /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/../jars
+INFO launcher : Processing ../jars/clear.jar
+INFO launcher : Processing ../jars/maps.jar
+INFO launcher : Processing ../jars/collapse.jar
+INFO launcher : Processing jar directory: /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/../jars
+INFO launcher : Processing ../jars/clear.jar
+INFO launcher : Processing ../jars/gis2.jar
+INFO launcher : Processing ../jars/collapse.jar
+INFO launcher : Processing jar directory: /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/../jars
+INFO launcher : Processing ../jars/misc.jar
+INFO launcher : Processing ../jars/gis2.jar
+INFO launcher : Processing ../jars/clear.jar
+INFO launcher : Processing ../jars/collapse.jar
+INFO launcher : Processing ../jars/gis2.jar
+INFO launcher : Processing jar directory: /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/../jars
+INFO launcher : Processing ../jars/handy.jar
+INFO launcher : Processing ../jars/handy.jar
+INFO launcher : Processing ../jars/clear.jar
+INFO launcher : Processing ../jars/human.jar
+INFO launcher : Processing ../jars/human.jar
+INFO launcher : Processing ../jars/ignition.jar
+INFO launcher : Processing ../jars/collapse.jar
+INFO launcher : Processing ../jars/kernel.jar
+INFO launcher : Processing ../jars/handy.jar
+INFO launcher : Processing ../jars/ignition.jar
+INFO launcher : Processing ../jars/gis2.jar
+INFO launcher : Processing ../jars/kernel.jar
+INFO launcher : Processing ../jars/human.jar
+INFO launcher : Processing ../jars/maps.jar
+INFO launcher : Processing ../jars/ignition.jar
+INFO launcher : Processing ../jars/kernel.jar
+INFO launcher : Processing ../jars/maps.jar
+INFO launcher : Processing ../jars/maps.jar
+INFO launcher : Processing ../jars/misc.jar
+INFO launcher : Processing ../jars/handy.jar
+INFO launcher : Processing ../jars/human.jar
+INFO launcher : Processing ../jars/ignition.jar
+INFO launcher : Processing ../jars/kernel.jar
+INFO launcher : Processing ../jars/misc.jar
+INFO launcher : Processing ../jars/misc.jar
+INFO launcher : Processing ../jars/maps.jar
+INFO launcher : Processing ../jars/misc.jar
+INFO launcher : Processing ../jars/resq-fire.jar
+INFO launcher : Processing ../jars/resq-fire.jar
+INFO launcher : Processing ../jars/sample.jar
+INFO launcher : Processing ../jars/sample.jar
+WARN launcher : Class sample.CustomRegistryTestAgent$CustomEntityFactory not found
+WARN launcher : Class sample.CustomRegistryTestAgent$CustomEntityFactory not found
+INFO launcher : Processing ../jars/standard.jar
+INFO launcher : Processing ../jars/standard.jar
+INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO launcher : Processing ../jars/resq-fire.jar
+INFO launcher : Processing ../jars/resq-fire.jar
+INFO launcher : Processing ../jars/resq-fire.jar
+INFO launcher : Processing ../jars/resq-fire.jar
+INFO launcher : Processing ../jars/traffic3.jar
+INFO launcher : Processing ../jars/traffic3.jar
+INFO launcher : Launching 1 instances of component 'misc.MiscSimulator'...
+INFO launcher : Launching 1 instances of component 'ignition.IgnitionSimulator'...
+INFO launcher : Launching instance 1...
+INFO launcher : Processing ../jars/sample.jar
+INFO launcher : Processing ../jars/sample.jar
+INFO launcher : Processing ../jars/sample.jar
+INFO launcher : Launching instance 1...
+INFO launcher : Processing ../jars/sample.jar
+WARN launcher : Class sample.CustomRegistryTestAgent$CustomEntityFactory not found
+WARN launcher : Class sample.CustomRegistryTestAgent$CustomEntityFactory not found
+WARN launcher : Class sample.CustomRegistryTestAgent$CustomEntityFactory not found
+WARN launcher : Class sample.CustomRegistryTestAgent$CustomEntityFactory not found
+INFO launcher : Processing ../jars/standard.jar
+INFO launcher : Processing ../jars/standard.jar
+INFO launcher : Processing ../jars/standard.jar
+INFO launcher : Processing ../jars/standard.jar
+INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO launcher : Processing ../jars/traffic3.jar
+INFO launcher : Launching 1 instances of component 'traffic3.simulator.TrafficSimulator'...
+INFO launcher : Processing ../jars/traffic3.jar
+INFO launcher : Processing ../jars/traffic3.jar
+INFO launcher : Launching 1 instances of component 'firesimulator.FireSimulatorWrapper'...
+INFO launcher : Launching 1 instances of component 'collapse.CollapseSimulator'...
+INFO launcher : Processing ../jars/traffic3.jar
+INFO launcher : Launching 1 instances of component 'clear.ClearSimulator'...
+INFO launcher : Launching instance 1...
+INFO launcher : Launching instance 1...
+INFO launcher : Launching instance 1...
+INFO launcher : success
+INFO launcher : success
+
+(process:8303): dconf-CRITICAL **: 18:01:55.453: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8303): dconf-CRITICAL **: 18:01:55.454: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8303): dconf-CRITICAL **: 18:01:55.454: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8300): dconf-CRITICAL **: 18:01:55.547: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8300): dconf-CRITICAL **: 18:01:55.547: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8300): dconf-CRITICAL **: 18:01:55.548: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8310): dconf-CRITICAL **: 18:01:55.572: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8310): dconf-CRITICAL **: 18:01:55.572: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8310): dconf-CRITICAL **: 18:01:55.573: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+INFO launcher : success
+INFO launcher : success
+INFO launcher : Launching instance 1...
+Waiting for 'success'...
+waiting for traffic to connect...
+Waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/traffic-out.log' to exist...
+Waiting for 'success'...
+Still waiting for 'success'...
+INFO launcher : success
+Server started at 4009
+
+(process:8306): dconf-CRITICAL **: 18:01:55.994: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8306): dconf-CRITICAL **: 18:01:55.995: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8306): dconf-CRITICAL **: 18:01:55.995: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+INFO launcher : success
+waiting for fire to connect...
+Waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/fire-out.log' to exist...
+Waiting for 'success'...
+waiting for ignition to connect...
+Waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/ignition-out.log' to exist...
+Waiting for 'success'...
+waiting for collapse to connect...
+Waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/collapse-out.log' to exist...
+Waiting for 'success'...
+waiting for clear to connect...
+Waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/clear-out.log' to exist...
+Waiting for 'success'...
+INFO launcher : Processing jar directory: /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/../jars
+INFO launcher : Processing ../jars/clear.jar
+INFO launcher : Processing ../jars/collapse.jar
+INFO launcher : Processing ../jars/gis2.jar
+INFO launcher : Processing ../jars/handy.jar
+INFO launcher : Processing ../jars/human.jar
+INFO launcher : Processing ../jars/ignition.jar
+INFO launcher : Processing ../jars/kernel.jar
+INFO launcher : Processing ../jars/maps.jar
+INFO launcher : Processing ../jars/misc.jar
+INFO launcher : Processing ../jars/resq-fire.jar
+INFO launcher : Processing ../jars/sample.jar
+INFO launcher : No INSTANCE field in class sample.CustomRegistryTestAgent$CustomEntityFactory
+INFO launcher : Could not instantiate class sample.CustomRegistryTestAgent$CustomEntityFactory
+INFO launcher : Processing ../jars/standard.jar
+INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO launcher : Processing ../jars/traffic3.jar
+INFO launcher : Launching many instances of component 'sample.SampleCivilian'...
+INFO launcher : Launching instance 1...
+INFO launcher : success
+INFO launcher : Launching instance 2...
+INFO launcher : failed: No more agents
+waiting for viewer to connect...
+Waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/viewer-out.log' to exist...
+Still waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/viewer-out.log' to exist...
+INFO launcher : Processing jar directory: /u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/../jars
+INFO launcher : Processing ../jars/clear.jar
+INFO launcher : Processing ../jars/collapse.jar
+INFO launcher : Processing ../jars/gis2.jar
+INFO launcher : Processing ../jars/handy.jar
+INFO launcher : Processing ../jars/human.jar
+INFO launcher : Processing ../jars/ignition.jar
+INFO launcher : Processing ../jars/kernel.jar
+INFO launcher : Processing ../jars/maps.jar
+INFO launcher : Processing ../jars/misc.jar
+INFO launcher : Processing ../jars/resq-fire.jar
+INFO launcher : Processing ../jars/sample.jar
+INFO launcher : No INSTANCE field in class sample.CustomRegistryTestAgent$CustomEntityFactory
+INFO launcher : Could not instantiate class sample.CustomRegistryTestAgent$CustomEntityFactory
+INFO launcher : Processing ../jars/standard.jar
+INFO launcher : Registered entity factory 'rescuecore2.standard.entities.StandardEntityFactory' with registry System
+INFO launcher : Registered property factory 'rescuecore2.standard.entities.StandardPropertyFactory' with registry System
+INFO launcher : Registered message factory 'rescuecore2.standard.messages.StandardMessageFactory' with registry System
+INFO launcher : Processing ../jars/traffic3.jar
+INFO launcher : Launching 1 instances of component 'sample.SampleViewer'...
+INFO launcher : Launching instance 1...
+
+(process:8488): dconf-CRITICAL **: 18:01:59.382: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8488): dconf-CRITICAL **: 18:01:59.382: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+
+(process:8488): dconf-CRITICAL **: 18:01:59.383: unable to create directory '/run/user/38852/dconf': Permission denied.  dconf will not work properly.
+Waiting for 'success'...
+Still waiting for 'success'...
+Server started at 2214
+INFO launcher : success
+Start your agents
+Waiting for '/u/animesh9/Desktop/MultiAgentDRL-RCRS/rcrs-server-master/boot/logs-oliphaunt-1/kernel.log' to exist...
+Waiting for 'Kernel has shut down'...
+[ RCRS ADF Version 2.3.0 (build 20190221171246) ]
+
+[START ] Connect to server (host:localhost, port:7000)
+[FINISH] Connect AmbulanceCentre (success:0)
+[FINISH] Connect AmbulanceTeam (success:0)
+[FINISH] Connect PoliceOffice (success:0)
+[FINISH] Connect PoliceForce (success:0)
+[FINISH] Connect FireStation (success:0)
+[INFO  ] Connected - adf.agent.platoon.PlatoonFire@3e92c36b (NON_PRECOMPUTE)
+Server started at 3902
+[SampleKMeans] Cluster : 2
+[INFO  ] Connected - adf.agent.platoon.PlatoonFire@77be8cc2 (NON_PRECOMPUTE)
+java.io.IOException: Failed to bind
+	at io.grpc.netty.shaded.io.grpc.netty.NettyServer.start(NettyServer.java:246)
+	at io.grpc.internal.ServerImpl.start(ServerImpl.java:184)
+	at io.grpc.internal.ServerImpl.start(ServerImpl.java:90)
+	at adf.sample.tactics.SampleTacticsFireBrigade.initialize(SampleTacticsFireBrigade.java:113)
+	at adf.agent.platoon.Platoon.postConnect(Platoon.java:32)
+	at adf.agent.platoon.PlatoonFire.postConnect(PlatoonFire.java:23)
+	at rescuecore2.components.AbstractComponent.postConnect(AbstractComponent.java:76)
+	at rescuecore2.components.AbstractAgent.postConnect(AbstractAgent.java:43)
+	at rescuecore2.components.AbstractAgent$AgentConnectionListener.handleConnectOK(AbstractAgent.java:148)
+	at rescuecore2.components.AbstractAgent$AgentConnectionListener.messageReceived(AbstractAgent.java:138)
+	at rescuecore2.connection.AbstractConnection$MessageBroadcastThread.work(AbstractConnection.java:283)
+	at rescuecore2.misc.WorkerThread.run(WorkerThread.java:48)
+Caused by: io.grpc.netty.shaded.io.netty.channel.unix.Errors$NativeIoException: bind(..) failed: Address already in use
+[SampleKMeans] Cluster : 2
+[FINISH] Connect FireBrigade (success:2)
+[FINISH] Done connecting to server (2 agents)
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [281, 273, 969, 968, 970, 971, 279, 274, 976, 927, 956]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [274, 279, 971, 970, 968, 969, 273, 281, 256, 912, 940, 939]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 1
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [255]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [281, 273, 969, 968, 970, 971, 279, 274, 255]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 2
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [255]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [281, 273, 969, 968, 970, 971, 279, 274, 255]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 3
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [969, 968, 970, 971, 279, 274, 255]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [255]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 4
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [976, 975, 974, 262, 280, 259, 336, 250]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 4 -----------------ActionExtinguish [target=248, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 5
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 1 -----------------
+Path: [968, 970, 971, 279, 274, 255]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [975, 974, 262, 280, 259, 336, 250]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 6
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 274, 255]
+Check 6 -----------------
+Check 2 -----------------
+10000
+Check 1 -----------------
+***************Start Moving***********************
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [262, 280, 259, 336, 250]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 7
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [255]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [250]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 8
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [976, 927, 956]
+Check 6 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Path: [336, 259, 297, 296, 281, 273, 969, 349, 248]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 9
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [296, 281, 273, 969, 349, 248]
+Path: [956]
+Check 6 -----------------
+Check 2 -----------------
+10000
+Check 6 -----------------
+***************Start Moving***********************
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 10
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [927, 976, 274, 279, 971, 970, 968, 251]
+Path: [296, 281, 273, 969, 349, 248]
+Check 6 -----------------
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 11
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [281, 273, 969, 349, 248]
+Check 6 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 2 -----------------
+9997
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 12
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [969, 349, 248]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9994
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 13
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [969, 349, 248]
+Check 6 -----------------
+Check 2 -----------------
+10000
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+***************Start Moving***********************
+Check 2 -----------------
+9991
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 14
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [248]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9988
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 15
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Path: [349, 969, 968, 970, 971, 279, 266, 269, 932, 953]
+Check 6 -----------------
+Check 2 -----------------
+9984
+***************Start Moving***********************
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 16
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [970, 971, 279, 266, 269, 932, 953]
+Check 6 -----------------
+Check 2 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+10000
+***************Start Moving***********************
+Check 2 -----------------
+9980
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 17
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Path: [279, 266, 269, 932, 953]
+Check 6 -----------------
+Check 2 -----------------
+9976
+Check 2 -----------------
+***************Start Moving***********************
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 18
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [269, 932, 953]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9972
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 19
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [953]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9968
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 20
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [932, 269, 266, 279, 274, 976, 975, 974, 918, 946]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9964
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 21
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Path: [279, 274, 976, 975, 974, 918, 946]
+Check 6 -----------------
+Check 2 -----------------
+9960
+Check 2 -----------------
+10000
+***************Start Moving***********************
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 22
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [976, 975, 974, 918, 946]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9956
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 23
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [975, 974, 918, 946]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9952
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 24
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [918, 946]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9947
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 25
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [946]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9942
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 26
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [918, 974, 262, 280, 259, 336, 250]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9937
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 27
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [336, 250]
+Check 6 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 2 -----------------
+Check 6 -----------------
+10000
+***************Start Moving***********************
+Check 2 -----------------
+9932
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 28
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [250]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9927
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 29
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [336, 259, 297, 915, 943]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9922
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 30
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 2 -----------------
+9917
+Path: [915, 943]
+Check 6 -----------------
+***************Start Moving***********************
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 31
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [943]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [279, 971, 970, 968, 251]
+Check 6 -----------------
+Check 2 -----------------
+9912
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 32
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9907
+***************Start Extinguishing***********************
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [915, 297, 259, 280, 257, 270, 916, 944]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 33
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+9901
+***************Start Extinguishing***********************
+Path: [280, 257, 270, 916, 944]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 34
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9895
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+***************Start Extinguishing***********************
+Path: [270, 916, 944]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 35
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [944]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9889
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 36
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [916, 270, 257, 280, 259, 336, 250]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9883
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 37
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9877
+***************Start Extinguishing***********************
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [280, 259, 336, 250]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 38
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Path: [250]
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9871
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 39
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9865
+Path: [336, 259, 297, 296, 281, 256, 912, 940, 939]
+***************Start Extinguishing***********************
+Check 6 -----------------
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 40
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9859
+Path: [296, 281, 256, 912, 940, 939]
+Check 6 -----------------
+***************Start Extinguishing***********************
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 41
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------null
+Check 5 -----------------
+Check 33 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9853
+Path: [296, 281, 256, 912, 940, 939]
+Check 6 -----------------
+***************Start Extinguishing***********************
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 42
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+10000
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9846
+***************Start Extinguishing***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 43
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+10000
+9839
+***************Start Extinguishing***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 44
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+10000
+9832
+***************Start Extinguishing***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 45
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+10000
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+***************Start Extinguishing***********************
+9825
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 46
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9818
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 47
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9811
+***************Start Extinguishing***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 48
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9804
+***************Start Extinguishing***********************
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 49
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9797
+***************Start Extinguishing***********************
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 50
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9790
+***************Start Extinguishing***********************
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[297, 259, 280, 262, 974, 975, 976, 255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 51
+Check 1 -----------------
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[259, 280, 262, 974, 975, 976, 255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9782
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 52
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9774
+***************Start Extinguishing***********************
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[259, 280, 262, 974, 975, 976, 255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 53
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9766
+***************Start Extinguishing***********************
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[974, 975, 976, 255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 54
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9758
+***************Start Extinguishing***********************
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 55
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9750
+***************Start Extinguishing***********************
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 56
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9742
+***************Start Extinguishing***********************
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+***************Start Refilling***********************
+------------------Fire Simulator Wrapper: 57
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9734
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+***************Start Refilling***********************
+------------------Fire Simulator Wrapper: 58
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+9726
+***************Start Refilling***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 59
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9718
+10000
+***************Start Extinguishing***********************
+***************Start Refilling***********************
+------------------Fire Simulator Wrapper: 60
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+***************Start Refilling***********************
+Check 2 -----------------
+9709
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 61
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9700
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+***************Start Refilling***********************
+------------------Fire Simulator Wrapper: 62
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9691
+10000
+***************Start Extinguishing***********************
+***************Start Refilling***********************
+------------------Fire Simulator Wrapper: 63
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9682
+10000
+***************Start Extinguishing***********************
+***************Start Refilling***********************
+------------------Fire Simulator Wrapper: 64
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+10000
+9673
+***************Start Refilling***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 65
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9664
+***************Start Extinguishing***********************
+10000
+***************Start Refilling***********************
+------------------Fire Simulator Wrapper: 66
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9655
+***************Start Extinguishing***********************
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[274, 279, 266, 269, 258, 275, 268, 278, 271, 910]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 67
+Check 1 -----------------
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[269, 258, 275, 268, 278, 271, 910]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9646
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 68
+Check 1 -----------------
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[258, 275, 268, 278, 271, 910]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9637
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 69
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9627
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[268, 278, 271, 910]]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 70
+----------------Check 1--------------------------------
+----------------Check 2--------------------------------
+----------------Check 3--------------------------------
+----------------Check 4--------------------------------
+----------------Check 5--------------------------------
+1
+100.00000000000007
+2
+97.43243243243249
+3
+97.43243243243249
+4
+97.43243243243249
+5
+97.43243243243249
+6
+97.43243243243249
+7
+97.43243243243249
+8
+97.43243243243249
+9
+97.43243243243249
+10
+97.43243243243249
+11
+97.43243243243249
+12
+97.43243243243249
+13
+97.43243243243249
+14
+97.43243243243249
+15
+97.43243243243249
+16
+97.43243243243249
+17
+97.43243243243249
+18
+97.43243243243249
+19
+97.43243243243249
+20
+97.43243243243249
+21
+97.43243243243249
+22
+97.43243243243249
+23
+97.43243243243249
+24
+97.43243243243249
+25
+97.43243243243249
+26
+97.43243243243249
+27
+97.43243243243249
+28
+97.43243243243249
+29
+97.43243243243249
+30
+97.43243243243249
+31
+97.43243243243249
+32
+97.43243243243249
+33
+97.43243243243249
+34
+97.43243243243249
+35
+97.43243243243249
+36
+97.43243243243249
+37
+97.43243243243249
+38
+97.43243243243249
+39
+97.43243243243249
+40
+97.43243243243249
+41
+97.43243243243249
+42
+97.43243243243249
+43
+97.43243243243249
+44
+94.86486486486491
+45
+94.86486486486491
+46
+94.86486486486491
+47
+94.86486486486491
+48
+94.86486486486491
+49
+94.86486486486491
+50
+94.86486486486491
+51
+94.86486486486491
+52
+94.86486486486491
+53
+94.86486486486491
+54
+94.86486486486491
+55
+94.86486486486491
+56
+94.86486486486491
+57
+94.86486486486491
+58
+92.29729729729735
+59
+92.29729729729735
+60
+92.29729729729735
+61
+92.29729729729735
+62
+92.29729729729735
+63
+89.72972972972977
+64
+89.72972972972977
+------------------------------------
+| approxkl           | 0.04318806  |
+| clipfrac           | 0.3828125   |
+| explained_variance | 0.000332    |
+| fps                | 6           |
+| n_updates          | 1           |
+| policy_entropy     | 7.211186    |
+| policy_loss        | -0.06697592 |
+| serial_timesteps   | 64          |
+| time_elapsed       | 8.34e-06    |
+| total_timesteps    | 64          |
+| value_loss         | 830798.75   |
+------------------------------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9617
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 71
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9607
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 72
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+10000
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9597
+***************Start Extinguishing***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 73
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9587
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 74
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9577
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 75
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9567
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+***************Start Extinguishing***********************
+10000
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 76
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 2 -----------------
+10000
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9557
+***************Start Extinguishing***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 77
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=905, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9547
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 78
+Check 1 -----------------
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[278, 268, 275, 258, 269, 266, 279, 274, 255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9536
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 79
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9525
+***************Start Extinguishing***********************
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[275, 258, 269, 266, 279, 274, 255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 80
+Check 1 -----------------
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[266, 279, 274, 255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9514
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 81
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9503
+***************Start Extinguishing***********************
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[279, 274, 255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 82
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9492
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+***************Start Refilling***********************
+------------------Fire Simulator Wrapper: 83
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+***************Start Refilling***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9481
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 84
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9470
+***************Start Extinguishing***********************
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+***************Start Refilling***********************
+------------------Fire Simulator Wrapper: 85
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+***************Start Refilling***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9459
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 86
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+***************Start Refilling***********************
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9447
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 87
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9435
+***************Start Extinguishing***********************
+***************Start Refilling***********************
+------------------Fire Simulator Wrapper: 88
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9423
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+***************Start Refilling***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 89
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+***************Start Refilling***********************
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9411
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 90
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+***************Start Refilling***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9399
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 91
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+10000
+9387
+***************Start Refilling***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 92
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9375
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[976, 975, 974, 262, 280, 257, 270, 916]]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 93
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9363
+***************Start Extinguishing***********************
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[975, 974, 262, 280, 257, 270, 916]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 94
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 2 -----------------
+10000
+9351
+***************Start Extinguishing***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 95
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9338
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 96
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9325
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 97
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9312
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 98
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9299
+***************Start Extinguishing***********************
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 99
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 2 -----------------
+10000
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+9286
+***************Start Extinguishing***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 100
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 2 -----------------
+10000
+Check 4 -----------------ActionExtinguish [target=958, power=3000]
+Check 2 -----------------
+***************Start Extinguishing***********************
+9273
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 101
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=955, power=3000]
+Check 2 -----------------
+9260
+***************Start Extinguishing***********************
+Check 4 -----------------ActionExtinguish [target=944, power=3000]
+Check 2 -----------------
+10000
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 102
+Check 1 -----------------
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[976, 255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=955, power=3000]
+Check 2 -----------------
+9247
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 103
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionExtinguish [target=955, power=3000]
+Check 2 -----------------
+9234
+***************Start Extinguishing***********************
+Check 4 -----------------ActionMove [usePosition=false, posX=0, posY=0, path=[255]]
+Check 2 -----------------
+10000
+***************Start Moving***********************
+------------------Fire Simulator Wrapper: 104
+Check 1 -----------------
+Check 1 -----------------
+Check 4 -----------------ActionRefill []
+Check 2 -----------------
+10000
+Check 4 -----------------ActionExtinguish [target=955, power=3000]
+Check 2 -----------------
+9220
+***************Start Refilling***********************
+***************Start Extinguishing***********************
+------------------Fire Simulator Wrapper: 105

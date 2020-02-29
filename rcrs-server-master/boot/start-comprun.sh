@@ -12,8 +12,8 @@ LOGDIR="$LOGDIR-$HOSTNAME"
 rm -f $LOGDIR/*.log
 
 #startGIS
-startKernel --nomenu --autorun
-startSims
+startKernel --nomenu --autorun 
+startSims 
 
 echo "Start your agents"
 waitFor $LOGDIR/kernel.log "Kernel has shut down" 30

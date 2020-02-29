@@ -162,6 +162,7 @@ function startKernel {
     KERNEL_OPTIONS="-c $CONFIGDIR/kernel.cfg --gis.map.dir=$MAP --kernel.logname=$LOGDIR/rescue.log $*"
     makeClasspath $BASEDIR/jars $BASEDIR/lib
 
+    # echo "============START KERNEL COMMAND: java -Xmx2048m -cp $CP -Dlog4j.log.dir=$LOGDIR kernel.StartKernel $KERNEL_OPTIONS"
     execute kernel "java -Xmx2048m -cp $CP -Dlog4j.log.dir=$LOGDIR kernel.StartKernel $KERNEL_OPTIONS"
     # Wait for the kernel to start
     waitFor $LOGDIR/kernel.log "Listening for connections"

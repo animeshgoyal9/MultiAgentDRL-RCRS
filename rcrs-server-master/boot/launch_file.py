@@ -1,9 +1,17 @@
+#!/usr/bin/env python
+#!/bin/bash
+
+
 import subprocess
 import time, os 
 import signal, sys
+import socket
 
-# subprocess.Popen("/u/animesh9/Documents/RoboCup-gRPC/rcrs-server-master/boot/start-comprun.sh -m ../maps/gml/berlin/map -c ../maps/gml/berlin/config", shell=True)
-subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/start-comprun.sh", shell=True)
+path_for_start_file = os.path.join(sys.path[0], "start-comprun.sh")
+# path_for_start_file = os.path.join(sys.path[0], "start-comprun.sh -m ../maps/gml/berlin/map -c ../maps/gml/berlin/config")
+path_for_launch_file = os.path.join(sys.path[0], "../../rcrs-adf-sample/launch.sh '-all'")
+
+subprocess.Popen(path_for_start_file, shell=True)
 time.sleep(10)
-subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-adf-sample/launch.sh '-all'", shell=True)
+subprocess.Popen(path_for_launch_file, shell=True)
 time.sleep(5000000)	

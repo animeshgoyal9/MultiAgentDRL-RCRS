@@ -1,9 +1,15 @@
+#!/usr/bin/env python
+#!/bin/bash
+
 import gym
 import RCRS_gym
 
 import os
 import numpy as np
 import shutil
+import sys
+import socket
+import argparse
 from scipy import stats
 import pandas as pd
 from openpyxl import Workbook 
@@ -13,99 +19,93 @@ from datetime import date, datetime
 import subprocess
 from subprocess import *
 
-from stable_baselines.common.policies import MlpPolicy, MlpLstmPolicy, FeedForwardPolicy
-# from stable_baselines.deepq.policies import MlpPolicy
 from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize, VecEnv
-from stable_baselines import PPO2, DQN, A2C
-# from stable_baselines.common.evaluation import evaluate_policy
+from stable_baselines import PPO2, DQN, A2C, DDPG
 from stable_baselines import results_plotter
+from stable_baselines.common.policies import FeedForwardPolicy
 from stable_baselines.bench import Monitor
 from stable_baselines.results_plotter import load_results, ts2xy
-# from stable_baselines import DDPG
 from stable_baselines.ddpg import AdaptiveParamNoiseSpec
-
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
+# Directory 
+hostname = socket.gethostname()
+# Path 
+path = os.path.join(sys.path[0], hostname) 
+# os.mkdir(path) 
+path_for_kill_file = os.path.join(sys.path[0], "kill.sh")
 
-# Create log dir
-# log_dir = "/u/animesh9/Documents/MultiAgentDRL-RCRS//plots/"
-# os.makedirs(log_dir, exist_ok=True)
-# Create and wrap the environment
 env = gym.make('RCRS-v2')
-# env = Monitor(env, allow_early_resets=True)
 # The algorithms require a vectorized environment to run
 env = DummyVecEnv([lambda: env]) 
 # Automatically normalize the input features
 env = VecNormalize(env, norm_obs=True, norm_reward=False, clip_obs=10.)
 
-# Add some param noise for exploration
-# param_noise = AdaptiveParamNoiseSpec(initial_stddev=0.1, desired_action_stddev=0.1)
-# Because we use parameter noise, we should use a MlpPolicy with layer normalization
 
-now = datetime.now()
-dt_string = now.strftime("%d/%m/%Y")
-columns = ['Mean Rewards', 'Standard deviation']
-df = pd.DataFrame(columns=columns)
-
-total_timesteps_to_learn =      2500 # 50 episodes
-total_timesteps_to_predict =    2500 # 50 episodes
-algo_used =                     "A2C"
-
-
-# Custom MLP policy of three layers of size 128 each
 class CustomPolicy(FeedForwardPolicy):
     def __init__(self, *args, **kwargs):
         super(CustomPolicy, self).__init__(*args, **kwargs,
-                                           net_arch=[dict(pi=[256, 256, 64, 64],
-                                                          vf=[256, 256, 64, 64])], 
+                                           net_arch=[dict(pi=[256, 256, 64, 8],
+                                                          vf=[256, 256, 64, 8])], 
                                            feature_extraction="mlp")
 
+def run_model(algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size):
+	columns = ['Mean Rewards', 'Standard deviation'] 
+	df = pd.DataFrame(columns=columns)
+	if (algorithm == "PPO2"):
+	    from stable_baselines.common.policies import MlpPolicy
+	    model = PPO2(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
+	else:
+	    from stable_baselines.deepq.policies import MlpPolicy
+	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
 
-# for i in range(2):
-# model = DQN(MlpPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", batch_size = 64)
-model = A2C(CustomPolicy, env, verbose=1, learning_rate=0.0025, tensorboard_log = "./ppo2_rcrs_tensorboard/", n_steps = 256)
-# model = PPO2.load("rcrs_wgts_18_PPO2.pkl")
-# obs = env.reset()
+	for k in range(training_iterations):
+		# Train the agent
+		model.learn(total_timesteps=int(training_timesteps))
+	     # Saving the model 
+		model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algorithm, hostname))
+		subprocess.Popen(path_for_kill_file, shell=True)
 
-for k in range(25):
-    # Train the agent
-    model.learn(total_timesteps=int(total_timesteps_to_learn))
-    # Saving the model
-    model.save("{}_{}_{}".format("rcrs_wgts", k, algo_used))
+	for j in range(testing_iterations):
+	    # Load the trained agent
+	    if (algorithm == "PPO2"):
+	    	model = PPO2.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
+	    else:
+	    	model = DQN.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
+	    # Reset the environment
+	    obs = env.reset()
+	    # Create an empty list to store reward values 
+	    final_rewards = []
+	    for _ in range(testing_timesteps):
+	        # predict the values
+	        action, _states = model.predict(obs)
+	        obs, rewards, dones, info = env.step(action)
+	        if dones == True:
+	            final_rewards.append(rewards)
+	    # Print the mean reward
+	    print(np.mean(final_rewards))
+	    # Print the standard deviation of reward
+	    print(np.std(final_rewards))
+	    # Create a DataFrame to save the mean and standard deviation
+	    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
+	    df.to_csv("{}_{}_{}".format(algorithm, hostname, "MeanAndStdReward.csv", sep=',',index=True))
+	    
+	    subprocess.Popen(path_for_kill_file, shell=True)
+	subprocess.Popen(path_for_kill_file, shell=True)
 
-    subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
+def main():
+	parser = argparse.ArgumentParser()
+	parser.add_argument("algorithm", help = 'Which algorithm are you using', type= str)
+	parser.add_argument("training_timesteps", help = "How many traning steps are there?", type=int)
+	parser.add_argument("testing_timesteps", help = "How many testing steps are there?", type=int)
+	parser.add_argument("training_iterations", help = "How many traning iterations are there?", type=int)
+	parser.add_argument("testing_iterations", help = "How many traning iterations are there?", type=int)
+	parser.add_argument("learning_rate", help = "What is the learning rate?", type=float)
+	parser.add_argument("batch_size", help = "What is the batch size?", type=int)
+	args = parser.parse_args()
+	run_model(args.algorithm, args.training_timesteps,args.testing_timesteps, args.training_iterations, args.testing_iterations, args.learning_rate, args.batch_size)
 
-
-
-for j in range(25):
-    # Load the trained agent
-    model = A2C.load("{}_{}_{}".format("rcrs_wgts", j, algo_used))
-    # Reset the environment
-    obs = env.reset()
-    # Create an empty list to store reward values 
-    final_rewards = []
-    for _ in range(total_timesteps_to_predict):
-        # predict the values
-        action, _states = model.predict(obs)
-        obs, rewards, dones, info = env.step(action)
-        if dones == True:
-            final_rewards.append(rewards)
-    # Print the mean reward
-    print(np.mean(final_rewards))
-    # Print the standard deviation of reward
-    print(np.std(final_rewards))
-    # Create a DataFrame to save the mean and standard deviation
-    df = df.append({'Mean Rewards': np.mean(final_rewards), 'Standard deviation': np.std(final_rewards)}, ignore_index=True)
-    # # Create a dataframe to save the mean and standard deviation
-    # df2 = pd.DataFrame([np.mean(final_rewards), stats.sem(final_rewards)], index = ['Rewards', 'Standard Error'])
-    # Convert to csv
-    df.to_csv("{}_{}_{}".format(1, algo_used, "MeanAndStdReward.csv", sep=',',index=True))
-    # # Convert to excel
-    # df2.to_excel("{}_{}_{}".format(j+1, algo_used, "MeanAndStdReward.xlsx" ))
-
-    subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
-
-    # Kill the process once training and testing is done
-subprocess.Popen("/u/animesh9/Documents/MultiAgentDRL-RCRS/rcrs-server-master/boot/kill.sh", shell=True)
+if __name__ == '__main__':
+	main()
