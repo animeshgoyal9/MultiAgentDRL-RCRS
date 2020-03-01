@@ -27,9 +27,9 @@ from subprocess import *
 from numpy import inf
 import collections
 
-map_used = "Small"
-# map_used = "Big"
-algo_used = "PPO2"
+# map_used = "Small"
+map_used = "Big"
+algo_used = "DQN"
 
 if (map_used == 'Small'):
     MAX_TIMESTEP = 100
@@ -57,6 +57,8 @@ parent_dir = sys.path[0]
 path = os.path.join(parent_dir, hostname) 
 path_for_kill_file = os.path.join(parent_dir, "kill.sh")
 string_for_launch_file = "python3" + " " + sys.path[0] + "/launch_file.py"
+path_for_ctrl_c = "python3" + " " + sys.path[0] + "/handle-ctrl-c.py"
+
 
 len_action_list = len(action_set_list)
 
@@ -64,17 +66,18 @@ class RCRSenv(gym.Env):
     metadata = {'render.modes' : None}  
     current_action = 0
     def __init__(self):
+        print(algo_used, "=============================================================")
         if (algo_used == "PPO2"):
             self.action_space = MultiDiscrete([len(action_set_list)]*n_agents)
         else:
-            self.action_space = Discrete(len_action_list*len_action_list)
-        # low = np.array([-inf]*2876)
-        # high = np.array([inf]*2876)
+            self.action_space = Discrete(len_action_list*len_action_list*len_action_list)
+        low = np.array([-inf]*2876)
+        high = np.array([inf]*2876)
         # low = np.array([-inf]*98)
         # high = np.array([inf]*98)
 
-        low = np.array([-inf]*n_agents*(len_action_list+6))
-        high = np.array([inf]*n_agents*(len_action_list+6))
+        # low = np.array([-inf]*n_agents*(len_action_list+6))
+        # high = np.array([inf]*n_agents*(len_action_list+6))
         self.observation_space = Box(low, high, dtype=np.float32, shape=None)
         self.curr_episode = 0
         self.seed()
@@ -134,6 +137,7 @@ class RCRSenv(gym.Env):
 
         done = bool(self.curr_episode == MAX_TIMESTEP)
         if done == True:
+            # subprocess.Popen(path_for_ctrl_c)
             subprocess.Popen(path_for_kill_file, shell=True)
         if (map_used == 'Small'):
             time.sleep(0.14)
@@ -143,8 +147,10 @@ class RCRSenv(gym.Env):
 
     def reset(self):
         
-        # subprocess.Popen(['xterm', '-e', string_for_launch_file])
-        subprocess.Popen([sys.path[0] + "/launch_file.py"])
+        # subprocess.Popen(['env -u SESSION_MANAGER xterm', '-e', string_for_launch_file])
+        subprocess.Popen(['xterm', '-e', string_for_launch_file])
+        # subprocess.Popen([sys.path[0] + "/launch_file.py"])
+        # subprocess.Popen(['xvfb-run', string_for_launch_file])
         # subprocess.Popen(['screen', '-d', '-m', string_for_launch_file])
 
         
@@ -158,7 +164,8 @@ class RCRSenv(gym.Env):
         #     reset_action = [0]*n_agents
         # else:
         #     reset_action = 0
-        reset_action = [0]*n_agents
+        # reset_action = [0]*n_agents
+        reset_action = 0
         reset = []
         reset.append(run_adf(reset_action))
         
@@ -181,16 +188,33 @@ def run_adf(bid):
     # of the code.
     
     with grpc.insecure_channel('localhost:3902') as channel:
+        print(bid, "====================================")
         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
+        bid_1 = np.random.randint(len_action_list)
+        # bid_1 = bid // (len_action_list)**3
+        # bid = bid % (len_action_list)**3
+        bid_2 = bid // (len_action_list)**2
+        bid = bid % (len_action_list)**2
+        bid_3 = bid // (len_action_list)
+        bid_4 = bid % len_action_list 
         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
             # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid//len_action_list]), 
             # AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid%len_action_list])]))
+
+            AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid_1]), 
+            AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[bid_2]),
+            AgentInfo_pb2.Action(agent_id = 1535509101, building_id=action_set_list[bid_3]),
+            AgentInfo_pb2.Action(agent_id = 1127234487, building_id=action_set_list[bid_4])]))
 
             # AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid[0]]), 
             # AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[bid[1]]),
             # AgentInfo_pb2.Action(agent_id = 1535509101, building_id=action_set_list[bid[2]]), 
             # AgentInfo_pb2.Action(agent_id = 1127234487, building_id=action_set_list[bid[3]])]))
-            AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
+
+            # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
+        print(action_set_list[bid_1], action_set_list[bid_2], action_set_list[bid_3], action_set_list[bid_4])
+        print("============================================")
+            
             
     agent_state_info = []
 

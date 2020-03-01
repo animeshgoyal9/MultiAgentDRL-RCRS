@@ -119,34 +119,47 @@ class HDQN(DQN):
                     kwargs['update_param_noise_scale'] = True
 
                 # Check if agent is busy or idle
-                while (check_busy_idle() == 0):
-                    with self.sess.as_default():
+                OBS_IS_IDLE = True
+                if( OBS_IS_IDLE ):
+                        if not reset:
+                            # Store HDQN transition
+                            self.replay_buffer.add(obs_hdqn_old, action_hdqn, F, obs, float(done))
+
+                        # Select new goal for the agent using the current Q function
                         action = self.act(np.array(obs)[None], update_eps=update_eps, **kwargs)[0]
-                    env_action = action
+                        env_action = action
+
+                        # Update bookkeepping for next HDQN buffer update
+                        obs_hdqn_old = obs
+                        action_hdqn = env_action
+                        F = 0.
+                    else:
+                        # Agent is busy, so select a dummy action (it will be ignored anyway)
+                        env_action = 0
+
                     reset = False
                     new_obs, rew, done, info = self.env.step(env_action)
-                    F = F + rew         
+                    F = F + rew
 
-                # Store transition in the replay buffer.
-                self.replay_buffer.add(obs, action, F, new_obs, float(done))
-                obs = new_obs
+                    if writer is not None:
+                        ep_rew = np.array([rew]).reshape((1, -1))
+                        ep_done = np.array([done]).reshape((1, -1))
+                        total_episode_reward_logger(self.episode_reward, ep_rew, ep_done, writer,
+                                                    self.num_timesteps)
 
-                if writer is not None:
-                    ep_rew = np.array([F]).reshape((1, -1))
-                    ep_done = np.array([done]).reshape((1, -1))
-                    total_episode_reward_logger(self.episode_reward, ep_rew, ep_done, writer,
-                                                self.num_timesteps)
+                    episode_rewards[-1] += rew
 
-                episode_rewards[-1] += F
+                    if done:
+                        # Store HDQN transition
+                        self.replay_buffer.add(obs_hdqn_old, action_hdqn, F, obs, float(done))
 
-                if done:
-                    maybe_is_success = info.get('is_success')
-                    if maybe_is_success is not None:
-                        episode_successes.append(float(maybe_is_success))
-                    if not isinstance(self.env, VecEnv):
-                        obs = self.env.reset()
-                    episode_rewards.append(0.0)
-                    reset = True
+                        maybe_is_success = info.get('is_success')
+                        if maybe_is_success is not None:
+                            episode_successes.append(float(maybe_is_success))
+                        if not isinstance(self.env, VecEnv):
+                            obs = self.env.reset()
+                        episode_rewards.append(0.0)
+                        reset = True
 
                 # Do not train if the warmup phase is not over
                 # or if there are not enough samples in the replay buffer

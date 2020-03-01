@@ -26,6 +26,8 @@ from stable_baselines.common.policies import FeedForwardPolicy
 from stable_baselines.bench import Monitor
 from stable_baselines.results_plotter import load_results, ts2xy
 from stable_baselines.ddpg import AdaptiveParamNoiseSpec
+# from hdqn import HDQN
+
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
@@ -52,6 +54,7 @@ class CustomPolicy(FeedForwardPolicy):
                                            feature_extraction="mlp")
 
 def run_model(algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size):
+	
 	columns = ['Mean Rewards', 'Standard deviation'] 
 	df = pd.DataFrame(columns=columns)
 	if (algorithm == "PPO2"):
@@ -60,7 +63,7 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	else:
 	    from stable_baselines.deepq.policies import MlpPolicy
 	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
-
+	    print("HDQN is working ==========================================================")
 	for k in range(training_iterations):
 		# Train the agent
 		model.learn(total_timesteps=int(training_timesteps))
