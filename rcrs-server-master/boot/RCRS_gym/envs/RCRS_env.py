@@ -29,6 +29,7 @@ import collections
 
 # map_used = "Small"
 map_used = "Big"
+
 algo_used = "DQN"
 
 if (map_used == 'Small'):
@@ -57,6 +58,7 @@ parent_dir = sys.path[0]
 path = os.path.join(parent_dir, hostname) 
 path_for_kill_file = os.path.join(parent_dir, "kill.sh")
 string_for_launch_file = "python3" + " " + sys.path[0] + "/launch_file.py"
+
 path_for_ctrl_c = "python3" + " " + sys.path[0] + "/handle-ctrl-c.py"
 
 
@@ -66,6 +68,7 @@ class RCRSenv(gym.Env):
     metadata = {'render.modes' : None}  
     current_action = 0
     def __init__(self):
+
         print(algo_used, "=============================================================")
         if (algo_used == "PPO2"):
             self.action_space = MultiDiscrete([len(action_set_list)]*n_agents)
@@ -126,6 +129,7 @@ class RCRSenv(gym.Env):
         # action = [action_for_greedy_algo_A1+1, action_for_greedy_algo_A2+1]
 
         state_info.append(run_adf(action))
+
         # print("Action for 210552869" ,   action_set_list[action[0]])
         # print("Action for 1618773504" ,  action_set_list[action[1]])
         # print("Action for 1535509101" ,  action_set_list[action[2]])
@@ -137,7 +141,6 @@ class RCRSenv(gym.Env):
 
         done = bool(self.curr_episode == MAX_TIMESTEP)
         if done == True:
-            # subprocess.Popen(path_for_ctrl_c)
             subprocess.Popen(path_for_kill_file, shell=True)
         if (map_used == 'Small'):
             time.sleep(0.14)
@@ -146,7 +149,6 @@ class RCRSenv(gym.Env):
         return np.array(self.state), self.reward, done , {}
 
     def reset(self):
-        
         # subprocess.Popen(['env -u SESSION_MANAGER xterm', '-e', string_for_launch_file])
         subprocess.Popen(['xterm', '-e', string_for_launch_file])
         # subprocess.Popen([sys.path[0] + "/launch_file.py"])
@@ -164,6 +166,7 @@ class RCRSenv(gym.Env):
         #     reset_action = [0]*n_agents
         # else:
         #     reset_action = 0
+<<<<<<< HEAD
         # reset_action = [0]*n_agents
         reset_action = 0
         reset = []
@@ -214,8 +217,7 @@ def run_adf(bid):
             # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
         print(action_set_list[bid_1], action_set_list[bid_2], action_set_list[bid_3], action_set_list[bid_4])
         print("============================================")
-            
-            
+                        
     agent_state_info = []
 
     for i in response.agents:

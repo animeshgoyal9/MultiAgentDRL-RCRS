@@ -28,12 +28,12 @@ from stable_baselines.results_plotter import load_results, ts2xy
 from stable_baselines.ddpg import AdaptiveParamNoiseSpec
 # from hdqn import HDQN
 
-
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
 # Directory 
 hostname = socket.gethostname()
+
 # Path 
 path = os.path.join(sys.path[0], hostname) 
 # os.mkdir(path) 
@@ -54,12 +54,13 @@ class CustomPolicy(FeedForwardPolicy):
                                            feature_extraction="mlp")
 
 def run_model(algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size):
-	
+
 	columns = ['Mean Rewards', 'Standard deviation'] 
 	df = pd.DataFrame(columns=columns)
 	if (algorithm == "PPO2"):
 	    from stable_baselines.common.policies import MlpPolicy
 	    model = PPO2(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
+
 	else:
 	    from stable_baselines.deepq.policies import MlpPolicy
 	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
@@ -75,6 +76,7 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    # Load the trained agent
 	    if (algorithm == "PPO2"):
 	    	model = PPO2.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
+
 	    else:
 	    	model = DQN.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
 	    # Reset the environment

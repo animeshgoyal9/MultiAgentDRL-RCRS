@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 universe = vanilla
 executable = testing_condor.sh 
 
@@ -48,4 +49,3 @@ queue 1
 
 # arguments = PPO2 8500 8500 20 20 0.0025 64 
 # queue 1
-

@@ -19,7 +19,7 @@ from subprocess import *
 from stable_baselines.common.vec_env import DummyVecEnv, VecNormalize, VecEnv
 from stable_baselines import PPO2, DQN, A2C, DDPG
 from stable_baselines import results_plotter
-from stable_baselines.deepq.policies import MlpPolicy, FeedForwardPolicy
+from stable_baselines.deepq.policies import MlpPolicy, FeedForwardPolicy, DQNPolicy
 from stable_baselines.bench import Monitor
 from stable_baselines.results_plotter import load_results, ts2xy
 from stable_baselines.ddpg import AdaptiveParamNoiseSpec
@@ -52,9 +52,7 @@ class CustomPolicy(FeedForwardPolicy):
                                                           vf=[256, 256, 64, 64])], 
                                            feature_extraction="mlp")
 
-class HDQN(DQN):
-    def __init__(self):
-        super(DQN, self).__init__()
+class DQN(MlpPolicy):
 
     def learn(self, total_timesteps, callback=None, log_interval=100, tb_log_name="DQN",
               reset_num_timesteps=True, replay_wrapper=None):
@@ -91,9 +89,11 @@ class HDQN(DQN):
             episode_rewards = [0.0]
             episode_successes = []
             obs = self.env.reset()
-            reset = True
-            F = 0
 
+            obs_hdqn_old = None
+            action_hdqn = None
+            F = 0.
+            reset = True
 
             for _ in range(total_timesteps):
                 if callback is not None:
@@ -117,49 +117,49 @@ class HDQN(DQN):
                     kwargs['reset'] = reset
                     kwargs['update_param_noise_threshold'] = update_param_noise_threshold
                     kwargs['update_param_noise_scale'] = True
-
-                # Check if agent is busy or idle
-                OBS_IS_IDLE = True
-                if( OBS_IS_IDLE ):
-                        if not reset:
-                            # Store HDQN transition
-                            self.replay_buffer.add(obs_hdqn_old, action_hdqn, F, obs, float(done))
-
-                        # Select new goal for the agent using the current Q function
-                        action = self.act(np.array(obs)[None], update_eps=update_eps, **kwargs)[0]
-                        env_action = action
-
-                        # Update bookkeepping for next HDQN buffer update
-                        obs_hdqn_old = obs
-                        action_hdqn = env_action
-                        F = 0.
-                    else:
-                        # Agent is busy, so select a dummy action (it will be ignored anyway)
-                        env_action = 0
-
-                    reset = False
-                    new_obs, rew, done, info = self.env.step(env_action)
-                    F = F + rew
-
-                    if writer is not None:
-                        ep_rew = np.array([rew]).reshape((1, -1))
-                        ep_done = np.array([done]).reshape((1, -1))
-                        total_episode_reward_logger(self.episode_reward, ep_rew, ep_done, writer,
-                                                    self.num_timesteps)
-
-                    episode_rewards[-1] += rew
-
-                    if done:
+               
+                ### UPDATE ###
+                obs[-1] = 0
+                if(obs[-1] == 0):
+                    if not reset:
                         # Store HDQN transition
                         self.replay_buffer.add(obs_hdqn_old, action_hdqn, F, obs, float(done))
 
-                        maybe_is_success = info.get('is_success')
-                        if maybe_is_success is not None:
-                            episode_successes.append(float(maybe_is_success))
-                        if not isinstance(self.env, VecEnv):
-                            obs = self.env.reset()
-                        episode_rewards.append(0.0)
-                        reset = True
+                    # Select new goal for the agent using the current Q function
+                    action = self.act(np.array(obs)[None], update_eps=update_eps, **kwargs)[0]
+                    env_action = action
+
+                    # Update bookkeepping for next HDQN buffer update
+                    obs_hdqn_old = obs
+                    action_hdqn = env_action
+                    F = 0.
+                else:
+                    # Agent is busy, so select a dummy action (it will be ignored anyway)
+                    env_action = 0
+
+                reset = False
+                new_obs, rew, done, info = self.env.step(env_action)
+                F = F + rew
+
+                if writer is not None:
+                    ep_rew = np.array([rew]).reshape((1, -1))
+                    ep_done = np.array([done]).reshape((1, -1))
+                    total_episode_reward_logger(self.episode_reward, ep_rew, ep_done, writer,
+                                                self.num_timesteps)
+
+                episode_rewards[-1] += rew
+
+                if done:
+                    # Store HDQN transition
+                    self.replay_buffer.add(obs_hdqn_old, action_hdqn, F, obs, float(done))
+
+                    maybe_is_success = info.get('is_success')
+                    if maybe_is_success is not None:
+                        episode_successes.append(float(maybe_is_success))
+                    if not isinstance(self.env, VecEnv):
+                        obs = self.env.reset()
+                    episode_rewards.append(0.0)
+                    reset = True
 
                 # Do not train if the warmup phase is not over
                 # or if there are not enough samples in the replay buffer
@@ -230,22 +230,18 @@ class HDQN(DQN):
 
 
 def run_model(algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size):
-
-    model = HDQN(CustomPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
+	 
+    model = DQN(CustomPolicy, env, learning_rate=learning_rate,  batch_size = batch_size)
 
     for k in range(training_iterations):
-    # Train the agent
-	    model.learn(total_timesteps=int(training_timesteps))
-	    # Saving the model 
-
+        model.learn(total_timesteps=int(training_timesteps))
         model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algorithm, hostname))
-        
         subprocess.Popen(path_for_kill_file, shell=True)
 
-        for j in range(testing_iterations):
+    for j in range(testing_iterations):
 	    # Load the trained agent
 
-	    model = HDQN.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
+	    model = DQN.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
 	    # Reset the environment
 	    obs = env.reset()
 	    # Create an empty list to store reward values 
@@ -266,16 +262,8 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    df.to_csv("{}_{}_{}".format(1, algorithm, "MeanAndStdReward.csv", sep=',',index=True))
 	    
 	    subprocess.Popen(path_for_kill_file, shell=True)
-        
-	subprocess.Popen(path_for_kill_file, shell=True)
+    subprocess.Popen(path_for_kill_file, shell=True)
 
-
-# Run gRPC server
-def check_busy_idle():
-    with grpc.insecure_channel('localhost:3702') as channel:
-        stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
-        response_busy_idle = stub.getAgentInfo(AgentInfo_pb2.ActionInfo())
-    return response_busy_idle
 
 def main():
 	parser = argparse.ArgumentParser()
