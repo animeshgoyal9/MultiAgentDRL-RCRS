@@ -2,10 +2,18 @@ import subprocess
 import os
 import socket
 import sys
-import htcondor
-import classad
 
-coll = htcondor.Collector()
+# coll = htcondor.Collector()
 
-ad = coll.locate(htcondor.DaemonTypes.Schedd, "submit-1.chtc.wisc.edu")
-ad["MyAddress"]
+# ad = coll.locate(htcondor.DaemonTypes.Schedd, "submit-1.chtc.wisc.edu")
+# ad["MyAddress"]
+
+a = [1,2,4,7,9,3,3]
+b = [1,2,4,6,7,9,3]
+
+for i in range(len(a)-1):
+	if a[i] != b[i]:
+		print(b[i])
+		break
+x = set(b) - set(a)
+print(x)

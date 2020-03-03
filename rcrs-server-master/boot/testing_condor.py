@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-#!/bin/bash
 
 import subprocess, sys, argparse, socket, os, time
 import gym
@@ -33,11 +32,33 @@ from stable_baselines.ddpg import AdaptiveParamNoiseSpec
 
 string_for_launch_file = "python3" + " " + sys.path[0] + "/launch_file.py"
 path_for_kill_file = os.path.join(sys.path[0], "kill.sh")
-
-subprocess.call(["xterm", "-e", string_for_launch_file])
-time.sleep(5)
+print("Check 1-----------------------------------------------------------")
+# subprocess.Popen(["xterm", "-e", string_for_launch_file])
+subprocess.Popen([sys.path[0] + "/launch_file.py"])
+time.sleep(20)
+print("Check 2-----------------------------------------------------------")
 # subprocess.Popen(path_for_kill_file, shell=True)
-print("this is working--------------------------------------------")
+# subprocess.Popen([sys.path[0], "/kill.sh"])
+# time.sleep(2)
+# print("Check 3-----------------------------------------------------------")
+# # subprocess.Popen(["xterm", "-e", string_for_launch_file])
+# subprocess.Popen([sys.path[0] + "/launch_file.py"])
+# time.sleep(30)
+# print("Check 4-----------------------------------------------------------")
+# # subprocess.Popen(path_for_kill_file, shell=True)
+# subprocess.Popen([sys.path[0], "/kill.sh"])
+# time.sleep(2)
+# print("Check 5-----------------------------------------------------------")
+
+
+
+
+# subprocess.Popen(["xterm", "-e", string_for_launch_file])
+# time.sleep(30)
+# print("Check 4-----------------------------------------------------------")
+# subprocess.Popen(path_for_kill_file, shell=True)
+# print("Check 5-----------------------------------------------------------")
+# print("this is working--------------------------------------------")
 # path_for_start_file = os.path.join(sys.path[0], "start-comprun.sh -m ../maps/gml/berlin/map -c ../maps/gml/berlin/config")
 # path_for_launch_file = os.path.join(sys.path[0], "../../rcrs-adf-sample/launch.sh '-all'")
 # path_for_kill_file = os.path.join(sys.path[0], "kill.sh")

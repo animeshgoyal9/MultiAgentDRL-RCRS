@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-#!/bin/bash
-
 
 import subprocess
 import time, os 

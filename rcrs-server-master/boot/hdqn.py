@@ -183,6 +183,8 @@ class HDQN(OffPolicyRLModel):
             episode_rewards = [0.0]
             episode_successes = []
             obs = self.env.reset()
+            obs_hdqn_old = None
+            action_hdqn = None
             reset = True
             F = 0
 

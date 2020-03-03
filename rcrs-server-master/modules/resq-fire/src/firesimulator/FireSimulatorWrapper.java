@@ -97,7 +97,7 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
         sim.initialize();	
         
         try {
-        	server = ServerBuilder.forPort(4009).addService(new AnimFireChal()).build();            
+        	server = ServerBuilder.forPort(4019).addService(new AnimFireChal()).build();            
 			server.start();
 			System.out.println("Server started at " + server.getPort());	
 		} catch (Exception e) {

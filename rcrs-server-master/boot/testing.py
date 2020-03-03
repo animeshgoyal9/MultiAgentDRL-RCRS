@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-#!/bin/bash
 
 import gym
 import RCRS_gym
@@ -26,7 +25,7 @@ from stable_baselines.common.policies import FeedForwardPolicy
 from stable_baselines.bench import Monitor
 from stable_baselines.results_plotter import load_results, ts2xy
 from stable_baselines.ddpg import AdaptiveParamNoiseSpec
-# from hdqn import HDQN
+from hdqn import HDQN
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
