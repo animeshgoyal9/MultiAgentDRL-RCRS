@@ -61,7 +61,10 @@ function printUsage {
     echo "-l    --log       <logdir>    Set the log directory. Default: \"logs\""
     echo "-s    --timestamp             Create a log sub-directory including timestamp, team name and map name"
     echo "[+|-]x                        Enable/Disable XTerm use. Default: \"Disable\""
+    echo "-p1    --port1                Port for buildingID"
+    echo "-p2    --port2                Port for Rewards"
 }
+
 
 # Process command-line arguments
 function processArgs {
@@ -71,6 +74,8 @@ function processArgs {
     TEAM=""
     TIMESTAMP_LOGS=""
     XTERM="no"
+    PORT1 = 5001
+    PORT2 = 5002
     
     if [ $# -gt 0 ] && [[ $1 != -* ]]; then
         MAP="$1/map"
@@ -94,6 +99,14 @@ function processArgs {
                 ;;
             -t | --team)
                 TEAM="$2"
+                shift 2
+                ;;
+            -p1 | --port1)
+                PORT1="$2"
+                shift 2
+                ;;
+            -p2 | --port2)
+                PORT2="$2"
                 shift 2
                 ;;
             -s | --timestamp)
@@ -168,6 +181,7 @@ function startKernel {
     waitFor $LOGDIR/kernel.log "Listening for connections"
 }
 
+
 # Start the viewer and simulators
 function startSims {
     makeClasspath $BASEDIR/lib
@@ -185,23 +199,23 @@ function startSims {
     execute collapse "java -Xmx512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/collapse.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents collapse.CollapseSimulator -c $CONFIGDIR/collapse.cfg $*"
     execute clear "java -Xmx512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/clear.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents clear.ClearSimulator -c $CONFIGDIR/clear.cfg $*"
     
-    echo "waiting for misc to connect..."
-    waitFor $LOGDIR/misc-out.log "success"
+    # echo "waiting for misc to connect..."
+    # waitFor $LOGDIR/misc-out.log "success"
     
-    echo "waiting for traffic to connect..."
-    waitFor $LOGDIR/traffic-out.log "success"
+    # echo "waiting for traffic to connect..."
+    # waitFor $LOGDIR/traffic-out.log "success"
     
-    echo "waiting for fire to connect..."
-    waitFor $LOGDIR/fire-out.log "success"
+    # echo "waiting for fire to connect..."
+    # waitFor $LOGDIR/fire-out.log "success"
     
-    echo "waiting for ignition to connect..."
-    waitFor $LOGDIR/ignition-out.log "success"
+    # echo "waiting for ignition to connect..."
+    # waitFor $LOGDIR/ignition-out.log "success"
     
-    echo "waiting for collapse to connect..."
-    waitFor $LOGDIR/collapse-out.log "success"
+    # echo "waiting for collapse to connect..."
+    # waitFor $LOGDIR/collapse-out.log "success"
     
-    echo "waiting for clear to connect..."    
-    waitFor $LOGDIR/clear-out.log "success"
+    # echo "waiting for clear to connect..."    
+    # waitFor $LOGDIR/clear-out.log "success"
     
     execute civilian "java -Xmx1512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/sample.jar:$BASEDIR/jars/kernel.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents sample.SampleCivilian*n -c $CONFIGDIR/civilian.cfg $*"
     sleep 2

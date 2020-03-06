@@ -11,7 +11,9 @@ import rescuecore2.score.ScoreFunction;
 import rescuecore2.Constants;
 import rescuecore2.Timestep;
 import rescuecore2.config.Config;
+import rescuecore2.config.ConfigException;
 import rescuecore2.connection.TCPConnection;
+import rescuecore2.log.Logger;
 import rescuecore2.standard.view.AnimatedWorldModelViewer;
 
 import java.awt.Dimension;
@@ -25,6 +27,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+
+import org.dom4j.DocumentException;
 
 import AnimFireChalBuilding.AnimFireChal;
 import AnimFireChalBuilding.Resources;
@@ -132,9 +136,9 @@ public class SampleViewer extends StandardViewer {
             });
         
         try {
-        	server = ServerBuilder.forPort(2217).addService(new AnimFireChal()).build();
+        	server = ServerBuilder.forPort(config.getIntValue("viewer.portReward", 5002)).addService(new AnimFireChal()).build();
         	server.start();
-			System.out.println("Server started at " + server.getPort());	
+			System.out.println("Server started at " + server.getPort() + "******************************************");	
 //			server.awaitTermination();
 		} catch (Exception e) {
 			server.shutdownNow();

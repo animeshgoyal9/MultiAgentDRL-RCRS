@@ -127,6 +127,7 @@ public class Configuration {
 		Props.add(new Prop(PREFIX + "rays.dir","rays",null,null,true,"rays"));
 		Props.add(new Prop(PREFIX + "burn-rate-average","burn-rate-average",null,null,true,"0.2"));
 		Props.add(new Prop(PREFIX + "burn-rate-variance","burn-rate-variance",null,null,true,"0"));
+		Props.add(new Prop(PREFIX + "portBuildingID","portBuildingID",null,null,true,"0"));
 	}
 
 	public void parse(String cmdLine){

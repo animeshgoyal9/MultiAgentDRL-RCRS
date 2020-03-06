@@ -32,7 +32,6 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # Directory 
 hostname = socket.gethostname()
-
 # Path 
 path = os.path.join(sys.path[0], hostname) 
 # os.mkdir(path) 
@@ -48,22 +47,19 @@ env = VecNormalize(env, norm_obs=True, norm_reward=False, clip_obs=10.)
 class CustomPolicy(FeedForwardPolicy):
     def __init__(self, *args, **kwargs):
         super(CustomPolicy, self).__init__(*args, **kwargs,
-                                           net_arch=[dict(pi=[256, 256, 64, 8],
-                                                          vf=[256, 256, 64, 8])], 
+                                           net_arch=[dict(pi=[64, 64, 64, 64],
+                                                          vf=[64, 64, 64, 64])], 
                                            feature_extraction="mlp")
 
-def run_model(algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size):
-
+def run_model(algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size, port_1, port_2, port_3):
 	columns = ['Mean Rewards', 'Standard deviation'] 
 	df = pd.DataFrame(columns=columns)
 	if (algorithm == "PPO2"):
 	    from stable_baselines.common.policies import MlpPolicy
 	    model = PPO2(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
-
 	else:
 	    from stable_baselines.deepq.policies import MlpPolicy
 	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
-	    print("HDQN is working ==========================================================")
 	for k in range(training_iterations):
 		# Train the agent
 		model.learn(total_timesteps=int(training_timesteps))
@@ -99,6 +95,7 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    subprocess.Popen(path_for_kill_file, shell=True)
 	subprocess.Popen(path_for_kill_file, shell=True)
 
+
 def main():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("algorithm", help = 'Which algorithm are you using', type= str)
@@ -108,8 +105,11 @@ def main():
 	parser.add_argument("testing_iterations", help = "How many traning iterations are there?", type=int)
 	parser.add_argument("learning_rate", help = "What is the learning rate?", type=float)
 	parser.add_argument("batch_size", help = "What is the batch size?", type=int)
+	parser.add_argument("port_1", help = "enter the port for agents", type = int)
+	parser.add_argument("port_2", help = "enter the port for reward", type = int)
+	parser.add_argument("port_3", help = "enter the port for building", type = int)
 	args = parser.parse_args()
-	run_model(args.algorithm, args.training_timesteps,args.testing_timesteps, args.training_iterations, args.testing_iterations, args.learning_rate, args.batch_size)
+	run_model(args.algorithm, args.training_timesteps,args.testing_timesteps, args.training_iterations, args.testing_iterations, args.learning_rate, args.batch_size, args.port_1, args.port_2, args.port_3)
 
 if __name__ == '__main__':
 	main()

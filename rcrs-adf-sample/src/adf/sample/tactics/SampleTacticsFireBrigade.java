@@ -150,7 +150,7 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
     @Override
     public Action think(AgentInfo agentInfo, WorldInfo worldInfo, ScenarioInfo scenarioInfo, ModuleManager moduleManager, MessageManager messageManager, DevelopData developData)
     {
-    	System.out.println("Check 1 -----------------");
+    	// System.out.println("Check 1 -----------------");
     	this.messageTool.reflectMessage(agentInfo, worldInfo, scenarioInfo, messageManager);
         this.messageTool.sendRequestMessages(agentInfo, worldInfo, scenarioInfo, messageManager);
         this.messageTool.sendInformationMessages(agentInfo, worldInfo, scenarioInfo, messageManager);
@@ -207,15 +207,15 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
         EntityID target = this.buildingDetector.calc().getTarget();
         
         Action action = this.actionFireFighting.setTarget(target).calc().getAction();
-        System.out.println("Check 4 -----------------" + action);
+        // System.out.println("Check 4 -----------------" + action);
         if (action != null)
         {
             this.sendActionMessage(messageManager, agent, action, agentInfo);
             return action;
         }
-        System.out.println("Check 5 -----------------");
+        // System.out.println("Check 5 -----------------");
         target = this.search.calc().getTarget();
-        System.out.println("Check 6 -----------------");
+        // System.out.println("Check 6 -----------------");
         action = this.actionExtMove.setTarget(target).calc().getAction();
         if (action != null)
         {
@@ -231,8 +231,8 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
 
     private void sendActionMessage(MessageManager messageManager, FireBrigade agent, Action action, AgentInfo agentInfo)
     {
-    	System.out.println("Check 2 -----------------");
-    	System.out.println(((FireBrigade) agentInfo.me()).getHP());
+    	// System.out.println("Check 2 -----------------");
+    	// System.out.println(((FireBrigade) agentInfo.me()).getHP());
     	
     	Class<? extends Action> actionClass = action.getClass();
         int actionIndex = -1;
