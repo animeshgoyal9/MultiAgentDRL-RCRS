@@ -2,3 +2,4 @@
 /.metadata/
 *.pyc
 *.jar
+rcrs-server-master/jars/*.jar
