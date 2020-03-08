@@ -22,6 +22,8 @@ import javax.swing.JPanel;
 
 import org.dom4j.DocumentException;
 
+import firesimulator.util.Configuration;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Frame;

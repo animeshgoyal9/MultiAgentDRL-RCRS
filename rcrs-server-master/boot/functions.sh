@@ -61,8 +61,6 @@ function printUsage {
     echo "-l    --log       <logdir>    Set the log directory. Default: \"logs\""
     echo "-s    --timestamp             Create a log sub-directory including timestamp, team name and map name"
     echo "[+|-]x                        Enable/Disable XTerm use. Default: \"Disable\""
-    echo "-p1    --port1                Port for buildingID"
-    echo "-p2    --port2                Port for Rewards"
 }
 
 
@@ -74,8 +72,6 @@ function processArgs {
     TEAM=""
     TIMESTAMP_LOGS=""
     XTERM="no"
-    PORT1 = 5001
-    PORT2 = 5002
     
     if [ $# -gt 0 ] && [[ $1 != -* ]]; then
         MAP="$1/map"
@@ -101,14 +97,6 @@ function processArgs {
                 TEAM="$2"
                 shift 2
                 ;;
-            -p1 | --port1)
-                PORT1="$2"
-                shift 2
-                ;;
-            -p2 | --port2)
-                PORT2="$2"
-                shift 2
-                ;;
             -s | --timestamp)
                 TIMESTAMP_LOGS="yes"
                 shift
@@ -124,6 +112,14 @@ function processArgs {
             -h | --help)
                 printUsage
                 exit 1
+                ;;
+            -bp | --bport)
+                BP="$2"
+                shift 2
+                ;;
+            -rp | --rport)
+                RP="$2"
+                shift 2
                 ;;
             *)
                 echo "Unrecognized option: $1"
@@ -194,7 +190,7 @@ function startSims {
     # Execute the simulators
     execute misc "java -Xmx512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/misc.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents misc.MiscSimulator -c $CONFIGDIR/misc.cfg $*"
     execute traffic "java -Xmx1024m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/traffic3.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents traffic3.simulator.TrafficSimulator -c $CONFIGDIR/traffic3.cfg $*"
-    execute fire "java -Xmx1024m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/resq-fire.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents firesimulator.FireSimulatorWrapper -c $CONFIGDIR/resq-fire.cfg $*"
+    execute fire "java -Xmx1024m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/resq-fire.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents firesimulator.FireSimulatorWrapper -c $CONFIGDIR/resq-fire.cfg -bp $BP $*"
     execute ignition "java -Xmx512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/ignition.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents ignition.IgnitionSimulator -c $CONFIGDIR/ignition.cfg $*"
     execute collapse "java -Xmx512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/collapse.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents collapse.CollapseSimulator -c $CONFIGDIR/collapse.cfg $*"
     execute clear "java -Xmx512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/clear.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents clear.ClearSimulator -c $CONFIGDIR/clear.cfg $*"
@@ -219,7 +215,7 @@ function startSims {
     
     execute civilian "java -Xmx1512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/sample.jar:$BASEDIR/jars/kernel.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents sample.SampleCivilian*n -c $CONFIGDIR/civilian.cfg $*"
     sleep 2
-    execute viewer "java -Xmx512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/sample.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents sample.SampleViewer -c $CONFIGDIR/viewer.cfg $TEAM_NAME_ARG $*"
+    execute viewer "java -Xmx512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/sample.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents sample.SampleViewer -c $CONFIGDIR/viewer.cfg -rp $RP $TEAM_NAME_ARG $*"
     
     # Wait for all simulators to start
     echo "waiting for viewer to connect..."

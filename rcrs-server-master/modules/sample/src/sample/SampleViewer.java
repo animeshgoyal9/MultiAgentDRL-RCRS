@@ -136,7 +136,7 @@ public class SampleViewer extends StandardViewer {
             });
         
         try {
-        	server = ServerBuilder.forPort(config.getIntValue("viewer.portReward", 5002)).addService(new AnimFireChal()).build();
+        	server = ServerBuilder.forPort(config.getIntValue("rp")).addService(new AnimFireChal()).build();
         	server.start();
 			System.out.println("Server started at " + server.getPort() + "******************************************");	
 //			server.awaitTermination();

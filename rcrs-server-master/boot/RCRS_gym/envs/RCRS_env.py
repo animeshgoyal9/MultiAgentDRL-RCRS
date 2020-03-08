@@ -150,7 +150,7 @@ class RCRSenv(gym.Env):
 
     def reset(self):
         print("Reset running======================================")
-        subprocess.Popen(['gnome-terminal', '-e', string_for_launch_file])
+        subprocess.Popen(['xterm', '-e', string_for_launch_file])
         # subprocess.Popen([sys.path[0] + "/launch_file.py"])
   
         if (map_used == 'Small'):
@@ -215,7 +215,7 @@ def run_adf(bid):
     return agent_state_info
 
 def run_reward():
-    with grpc.insecure_channel('localhost:2217') as channel:
+    with grpc.insecure_channel('localhost:5003') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
         response_reward = stub.getRewards(BuildingInfo_pb2.Empty())
     print("client for reward running======================================")
@@ -223,7 +223,7 @@ def run_reward():
 
 def run_server():
     print("client for buildings running 1======================================")
-    with grpc.insecure_channel('localhost:4019') as channel:
+    with grpc.insecure_channel('localhost:4007') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
         response = stub.getBuildingInfo(BuildingInfo_pb2.Empty())
     building_state_info = []

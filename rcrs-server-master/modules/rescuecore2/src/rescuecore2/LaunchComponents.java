@@ -50,6 +50,7 @@ public final class LaunchComponents {
             int port = config.getIntValue(Constants.KERNEL_PORT_NUMBER_KEY, Constants.DEFAULT_KERNEL_PORT_NUMBER);
             String host = config.getValue(Constants.KERNEL_HOST_NAME_KEY, Constants.DEFAULT_KERNEL_HOST_NAME);
             processJarFiles(config);
+            config.setIntValue("bp", 4007);
             ComponentLauncher launcher = new TCPComponentLauncher(host, port, config);
             for (String next : toLaunch) {
                 connect(launcher, next, gui);

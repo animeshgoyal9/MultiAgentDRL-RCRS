@@ -49,6 +49,12 @@ public final class CommandLineOptions {
             else if (PORT_FLAG.equals(next)) {
                 config.setValue(Constants.KERNEL_PORT_NUMBER_KEY, it.next());
             }
+            else if ("-bp".equals(next)) {
+                config.setIntValue("bp", Integer.parseInt(it.next()));
+            }
+            else if ("-rp".equals(next)) {
+                config.setIntValue("rp", Integer.parseInt(it.next()));
+            }
             else if (next.startsWith("--") && next.indexOf("=") != -1) {
                 int index = next.indexOf("=");
                 String key = next.substring(2, index);

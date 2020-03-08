@@ -74,7 +74,6 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
         super.postConnect();
         Configuration c = new Configuration();
         c.initialize();
-        System.out.println(config);
         for (String next : c.getPropertyNames()) {
             try {
                 String value = config.getValue(next);
@@ -99,9 +98,9 @@ public class FireSimulatorWrapper extends StandardSimulator implements GUICompon
         sim.initialize();	
         
         try {
-        	server = ServerBuilder.forPort(Integer.parseInt( Configuration.getValue("resq-fire.portBuildingID"))).addService(new AnimFireChal()).build();            
+        	server = ServerBuilder.forPort(config.getIntValue("bp")).addService(new AnimFireChal()).build();            
 			server.start();
-			System.out.println("Server started at &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&" + server.getPort());	
+			System.out.println("Server started at: " + server.getPort());	
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());

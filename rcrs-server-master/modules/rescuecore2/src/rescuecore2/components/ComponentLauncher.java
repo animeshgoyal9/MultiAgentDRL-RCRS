@@ -44,6 +44,20 @@ public abstract class ComponentLauncher implements RequestIDGenerator {
             Logger.popLogContext();
         }
     }
+    
+    public void connect(Component c, Config config) throws InterruptedException, ConnectionException, ComponentConnectionException {
+        Connection connection = makeConnection();
+        connection.setName("Connection from " + c.getName());
+        Logger.pushLogContext(c.getPreferredLogContext());
+        connection.setRegistry(c.getPreferredRegistry(defaultRegistry));
+        connection.startup();
+        try {
+            c.connect(connection, this, new Config(config));
+        }
+        finally {
+            Logger.popLogContext();
+        }
+    }
 
     @Override
     public int generateRequestID() {

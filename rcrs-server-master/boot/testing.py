@@ -51,7 +51,7 @@ class CustomPolicy(FeedForwardPolicy):
                                                           vf=[64, 64, 64, 64])], 
                                            feature_extraction="mlp")
 
-def run_model(algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size, port_1, port_2, port_3):
+def run_model(algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size):
 	columns = ['Mean Rewards', 'Standard deviation'] 
 	df = pd.DataFrame(columns=columns)
 	if (algorithm == "PPO2"):
@@ -105,11 +105,8 @@ def main():
 	parser.add_argument("testing_iterations", help = "How many traning iterations are there?", type=int)
 	parser.add_argument("learning_rate", help = "What is the learning rate?", type=float)
 	parser.add_argument("batch_size", help = "What is the batch size?", type=int)
-	parser.add_argument("port_1", help = "enter the port for agents", type = int)
-	parser.add_argument("port_2", help = "enter the port for reward", type = int)
-	parser.add_argument("port_3", help = "enter the port for building", type = int)
 	args = parser.parse_args()
-	run_model(args.algorithm, args.training_timesteps,args.testing_timesteps, args.training_iterations, args.testing_iterations, args.learning_rate, args.batch_size, args.port_1, args.port_2, args.port_3)
+	run_model(args.algorithm, args.training_timesteps,args.testing_timesteps, args.training_iterations, args.testing_iterations, args.learning_rate, args.batch_size)
 
 if __name__ == '__main__':
 	main()

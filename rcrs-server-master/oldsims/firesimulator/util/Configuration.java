@@ -24,7 +24,7 @@ public class Configuration {
     private static final Logger LOG = Logger.getLogger(Configuration.class);
 
     private static final String PREFIX = "resq-fire.";
-
+    private static int bport;
 
 	public class Prop{
 
@@ -127,7 +127,7 @@ public class Configuration {
 		Props.add(new Prop(PREFIX + "rays.dir","rays",null,null,true,"rays"));
 		Props.add(new Prop(PREFIX + "burn-rate-average","burn-rate-average",null,null,true,"0.2"));
 		Props.add(new Prop(PREFIX + "burn-rate-variance","burn-rate-variance",null,null,true,"0"));
-		Props.add(new Prop(PREFIX + "portBuildingID","portBuildingID",null,null,true,"0"));
+//		Props.add(new Prop(PREFIX + "portBuildingID","portBuildingID",null,null,true,"0"));
 	}
 
 	public void parse(String cmdLine){
@@ -309,5 +309,14 @@ public class Configuration {
 		fos.close();
 	}
 
+	public static int getBport() {
+		System.out.println("------------------- Getting" + Configuration.bport);
+		return Configuration.bport;
+	}
+
+	public static void setBport(int bport) {
+		System.out.println("------------------- Setting" + Configuration.bport);
+		Configuration.bport = bport;
+	}
 
 }
