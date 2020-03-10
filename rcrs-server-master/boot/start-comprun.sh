@@ -13,8 +13,8 @@ LOGDIR="$LOGDIR-$HOSTNAME"
 rm -f $LOGDIR/*.log
 
 #startGIS
-startKernel --nomenu --autorun --nogui
-startSims --nogui
+startKernel --nomenu --autorun 
+startSims 
 
 
 rm -f $LOGDIR/*.log

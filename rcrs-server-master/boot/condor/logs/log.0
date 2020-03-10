@@ -278,3 +278,1579 @@
 	   Gpus                 :                           0
 	   Memory (MB)          :      149    16384     21163
 ...
+000 (65599.000.000) 03/09 12:36:18 Job submitted from host: <128.83.120.157:9618?addrs=128.83.120.157-9618+[--1]-9618&noUDP&sock=1833_dd30_3>
+...
+001 (65599.000.000) 03/09 12:36:52 Job executing on host: <128.83.130.161:9618?addrs=128.83.130.161-9618+[--1]-9618&noUDP&sock=1430_7085_3>
+...
+006 (65599.000.000) 03/09 12:37:01 Image size of job updated: 553404
+	411  -  MemoryUsage of job (MB)
+	420012  -  ResidentSetSize of job (KB)
+...
+005 (65599.000.000) 03/09 12:37:05 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:08, Sys 0 00:00:01  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:08, Sys 0 00:00:01  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated
+	   Cpus                 :                 1         1
+	   Disk (KB)            :        3  1048576  23788962
+	   Gpus                 :                           0
+	   Memory (MB)          :      411    16384     24187
+...
+000 (65600.000.000) 03/09 15:27:51 Job submitted from host: <128.83.120.157:9618?addrs=128.83.120.157-9618+[--1]-9618&noUDP&sock=1833_dd30_3>
+...
+001 (65600.000.000) 03/09 15:28:00 Job executing on host: <128.83.130.161:9618?addrs=128.83.130.161-9618+[--1]-9618&noUDP&sock=1430_7085_3>
+...
+006 (65600.000.000) 03/09 15:28:09 Image size of job updated: 727016
+	556  -  MemoryUsage of job (MB)
+	568576  -  ResidentSetSize of job (KB)
+...
+005 (65600.000.000) 03/09 15:28:19 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:26, Sys 0 00:00:02  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:26, Sys 0 00:00:02  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated
+	   Cpus                 :                 1         1
+	   Disk (KB)            :        3  1048576  23788980
+	   Gpus                 :                           0
+	   Memory (MB)          :      556    16384     24187
+...
+000 (65601.000.000) 03/09 15:32:32 Job submitted from host: <128.83.120.157:9618?addrs=128.83.120.157-9618+[--1]-9618&noUDP&sock=1833_dd30_3>
+...
+007 (65601.000.000) 03/09 15:32:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:32:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:32:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:32:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:32:54 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:33:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:33:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:33:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:33:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:33:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:34:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:34:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:34:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:34:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:34:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:35:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:35:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:35:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:35:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:35:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:36:54 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:36:54 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:36:54 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:36:54 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:36:54 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:37:52 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:37:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:37:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:37:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:37:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:38:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:38:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:38:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:38:54 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:38:54 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:39:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:39:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:39:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:39:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:39:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:40:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:40:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:40:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:40:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:40:53 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:41:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:41:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:41:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:41:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:41:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:42:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:42:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:42:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:42:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:42:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:43:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:43:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:43:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:43:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:43:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:44:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:44:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:44:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:44:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:44:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:45:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:45:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:45:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:45:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:45:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:46:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:46:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:46:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:46:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:46:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:47:28 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:47:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:47:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:47:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:47:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:48:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:48:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:48:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:48:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:48:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:49:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:49:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:49:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:49:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:49:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:50:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:50:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:50:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:50:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:50:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:51:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:51:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:51:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:51:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:51:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:52:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:52:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:52:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:52:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:52:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:53:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:53:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:53:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:53:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:53:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:54:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:54:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:54:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:54:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:54:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:55:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:55:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:55:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:55:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:55:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:56:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:56:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:56:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:56:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:56:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:57:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:57:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:57:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:57:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:57:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:58:29 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:58:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:58:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:58:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:58:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:59:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:59:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:59:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:59:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 15:59:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:00:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:00:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:00:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:00:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:00:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:01:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:01:30 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:01:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:01:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:01:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:02:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:02:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:02:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:02:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:02:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:03:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:03:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:03:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:03:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:03:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:04:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:04:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:04:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:04:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:04:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:05:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:05:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:05:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:05:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:05:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:06:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:06:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:06:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:06:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:06:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:07:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:07:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:07:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:07:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:07:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:08:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:08:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:08:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:08:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:08:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:09:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:09:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:09:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:09:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:09:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:10:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:10:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:10:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:10:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:10:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:11:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:11:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:11:31 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:11:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:11:32 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:11:57 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:11:57 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:11:57 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:11:57 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:11:57 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:12:23 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:12:23 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:12:23 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:12:23 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:12:23 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:12:50 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:12:51 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:12:51 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:12:51 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:12:51 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:13:17 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:13:17 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:13:17 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:13:17 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:13:18 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:13:44 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:13:44 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:13:44 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:13:44 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:13:45 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:14:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:14:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:14:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:14:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:14:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:15:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:15:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:15:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:15:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:15:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:16:14 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:16:14 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:16:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:16:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:16:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:17:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:17:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:17:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:17:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:17:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:18:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:18:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:18:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:18:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:18:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:19:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:19:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:19:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:19:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:19:15 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:20:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:20:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:20:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:20:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:20:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:21:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:21:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:21:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:21:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:21:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:22:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:22:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:22:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:22:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:22:17 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:23:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:23:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:23:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:23:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:23:17 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:24:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:24:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:24:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:24:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:24:17 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:25:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:25:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:25:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:25:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:25:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:26:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:26:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:26:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:26:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:26:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:28:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:28:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:28:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:28:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:28:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:29:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:29:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:29:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:29:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+007 (65601.000.000) 03/09 16:29:16 Shadow exception!
+	Can no longer talk to condor_starter <128.83.130.161:9618>
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+...
+001 (65601.000.000) 03/09 16:30:16 Job executing on host: <128.83.130.161:9618?addrs=128.83.130.161-9618+[--1]-9618&noUDP&sock=1430_7085_3>
+...
+006 (65601.000.000) 03/09 16:30:24 Image size of job updated: 547248
+	411  -  MemoryUsage of job (MB)
+	420636  -  ResidentSetSize of job (KB)
+...
+006 (65601.000.000) 03/09 16:30:38 Image size of job updated: 547248
+	527  -  MemoryUsage of job (MB)
+	539564  -  ResidentSetSize of job (KB)
+...
+005 (65601.000.000) 03/09 16:30:38 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:27, Sys 0 00:00:03  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:27, Sys 0 00:00:03  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated
+	   Cpus                 :                 1         1
+	   Disk (KB)            :        3  1048576  23788957
+	   Gpus                 :                           0
+	   Memory (MB)          :      527    16384     24187
+...

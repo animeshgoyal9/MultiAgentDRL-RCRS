@@ -105,7 +105,10 @@ def main():
 	parser.add_argument("testing_iterations", help = "How many traning iterations are there?", type=int)
 	parser.add_argument("learning_rate", help = "What is the learning rate?", type=float)
 	parser.add_argument("batch_size", help = "What is the batch size?", type=int)
+	parser.add_argument("port_1", help = "What is the port 1?", type=int)
+	parser.add_argument("port_2", help = "What is the port 2?", type=int)
 	args = parser.parse_args()
+	launch_components(args.port_1, args.port_2)
 	run_model(args.algorithm, args.training_timesteps,args.testing_timesteps, args.training_iterations, args.testing_iterations, args.learning_rate, args.batch_size)
 
 if __name__ == '__main__':

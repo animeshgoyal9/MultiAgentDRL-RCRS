@@ -195,23 +195,23 @@ function startSims {
     execute collapse "java -Xmx512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/collapse.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents collapse.CollapseSimulator -c $CONFIGDIR/collapse.cfg $*"
     execute clear "java -Xmx512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/clear.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents clear.ClearSimulator -c $CONFIGDIR/clear.cfg $*"
     
-    # echo "waiting for misc to connect..."
-    # waitFor $LOGDIR/misc-out.log "success"
+    echo "waiting for misc to connect..."
+    waitFor $LOGDIR/misc-out.log "success"
     
-    # echo "waiting for traffic to connect..."
-    # waitFor $LOGDIR/traffic-out.log "success"
+    echo "waiting for traffic to connect..."
+    waitFor $LOGDIR/traffic-out.log "success"
     
-    # echo "waiting for fire to connect..."
-    # waitFor $LOGDIR/fire-out.log "success"
+    echo "waiting for fire to connect..."
+    waitFor $LOGDIR/fire-out.log "success"
     
-    # echo "waiting for ignition to connect..."
-    # waitFor $LOGDIR/ignition-out.log "success"
+    echo "waiting for ignition to connect..."
+    waitFor $LOGDIR/ignition-out.log "success"
     
-    # echo "waiting for collapse to connect..."
-    # waitFor $LOGDIR/collapse-out.log "success"
+    echo "waiting for collapse to connect..."
+    waitFor $LOGDIR/collapse-out.log "success"
     
-    # echo "waiting for clear to connect..."    
-    # waitFor $LOGDIR/clear-out.log "success"
+    echo "waiting for clear to connect..."    
+    waitFor $LOGDIR/clear-out.log "success"
     
     execute civilian "java -Xmx1512m -cp $CP:$BASEDIR/jars/rescuecore2.jar:$BASEDIR/jars/standard.jar:$BASEDIR/jars/sample.jar:$BASEDIR/jars/kernel.jar -Dlog4j.log.dir=$LOGDIR rescuecore2.LaunchComponents sample.SampleCivilian*n -c $CONFIGDIR/civilian.cfg $*"
     sleep 2

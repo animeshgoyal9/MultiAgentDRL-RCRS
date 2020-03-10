@@ -240,7 +240,17 @@ public class SampleTacticsFireBrigade extends TacticsFireBrigade
         
         FireBrigade agent1 = (FireBrigade) agentInfo.me();
 		
-		AgentBean agentDetails = new AgentBean((int) agentInfo.getID().getValue(), agentInfo.getX(), agentInfo.getY(), agent1.getWater(), agent1.getHP());
+		AgentBean agentDetails = AgentResources.getAgent((int) agentInfo.getID().getValue());
+		
+		if(agentDetails == null) {
+			agentDetails = new AgentBean();
+		}
+		
+		agentDetails.setAgent_id((int) agentInfo.getID().getValue());
+		agentDetails.setHp(agent1.getHP());
+		agentDetails.setWater(agent1.getWater());
+		agentDetails.setX(agentInfo.getX());
+		agentDetails.setY(agentInfo.getY());
 		
 		AgentResources.setAgents(agentDetails);
 		

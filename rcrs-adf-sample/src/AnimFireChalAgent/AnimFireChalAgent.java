@@ -24,10 +24,18 @@ public class AnimFireChalAgent extends AnimFireChalAgentImplBase {
 		
 		AgentInfo.Builder resp = AgentInfo.newBuilder();
 		
-		AgentBean[] agents2 = AgentResources.getAgents();
-		for(int i=0; i<agents2.length; i++) {
-			Agent a = Agent.newBuilder().setAgentId(agents2[i].getAgent_id()).setX(agents2[i].getX()).setY(agents2[i].getY()).setWater(agents2[i].getWater()).setHp(agents2[i].getHp()).setIdle(1).build();
+		AgentBean[] agents = AgentResources.getAgents();
+		for(int i=0; i<agents.length; i++) {
+			System.out.println("-----------------------------------------------------");
+			System.out.println(agents[i].toString());
+			System.out.println("-----------------------------------------------------");
+			Agent a = Agent.newBuilder().setAgentId(agents[i].getAgent_id()).setX(agents[i].getX()).setY(agents[i].getY()).setWater(agents[i].getWater()).setHp(agents[i].getHp()).setIdle(agents[i].getIdle()).build();
 			resp.addAgents(a);
+			agents[i].setIdle(1);
+			AgentResources.setAgents(agents[i]);
+			System.out.println("******************* When new Target *************************");
+			System.out.println(agents[i]);
+			System.out.println("********************************************");
 		}
 		
 		responseObserver.onNext(resp.build());

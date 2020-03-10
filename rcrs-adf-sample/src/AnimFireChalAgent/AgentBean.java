@@ -6,20 +6,12 @@ public class AgentBean {
 	double y;
 	int water;
 	int hp;
+	int idle = 1;
 	
 	
 	public AgentBean() {
 		
-	}
-	public AgentBean(int agent_id, double x, double y, int water, int hp) {
-		
-		this.agent_id = agent_id;
-		this.x = x;
-		this.y = y;
-		this.water = water;
-		this.hp = hp;
-	}
-	
+	}	
 	public int getAgent_id() {
 		return agent_id;
 	}
@@ -50,8 +42,14 @@ public class AgentBean {
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
+	public int getIdle() {
+		return idle;
+	}
+	public void setIdle(int idle) {
+		this.idle = idle;
+	}
 	@Override
 	public String toString() {
-		return "AgentBean [agent_id=" + agent_id + ", x=" + x + ", y=" + y + ", water=" + water + ", hp=" + hp + "]";
+		return "AgentBean [agent_id=" + agent_id + ", x=" + x + ", y=" + y + ", water=" + water + ", hp=" + hp  + ", idle=" + idle + "]";
 	}
 }

@@ -18,6 +18,10 @@ public class AgentResources {
 //		System.out.println(agentMap.values().toArray(new AgentBean[0]));
 		return agentMap.values().toArray(new AgentBean[0]);
 	}
+	public static AgentBean getAgent(int id) {
+//		System.out.println(agentMap.values().toArray(new AgentBean[0]));
+		return agentMap.get(id);
+	}
 	public static void setAgents(AgentBean agent) {
 		agentMap.put(agent.getAgent_id(), agent);
 	}

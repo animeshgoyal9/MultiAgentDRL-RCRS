@@ -58,7 +58,7 @@ path_for_kill_file = os.path.join(sys.path[0], "kill_rcrs.sh")
 path_for_cache_file = os.path.join(sys.path[0], "__pycache__")
 string_for_launch_file = "python3" + " " + sys.path[0] + "/launch_file.py"
 len_action_list = len(action_set_list)
-
+path_for_calling_function = "python3" + "-c" + "'RCRS_env.launch_components('')"
 #delete cache files
 dirpath_1 = os.path.join(sys.path[0], "__pycache__")
 dirpath_2 = os.path.join(sys.path[0], "RCRS_gym/__pycache__")
@@ -150,13 +150,13 @@ class RCRSenv(gym.Env):
 
     def reset(self):
         print("Reset running======================================")
-        subprocess.Popen(['xterm', '-e', string_for_launch_file])
+        subprocess.Popen(['gnome-terminal', '-e', string_for_launch_file])
         # subprocess.Popen([sys.path[0] + "/launch_file.py"])
   
         if (map_used == 'Small'):
             time.sleep(11)
         else:
-            time.sleep(14)
+            time.sleep(13.5)
         
         self.curr_episode = 0
         if (algo_used == "PPO2"):
@@ -215,7 +215,7 @@ def run_adf(bid):
     return agent_state_info
 
 def run_reward():
-    with grpc.insecure_channel('localhost:5003') as channel:
+    with grpc.insecure_channel('localhost:5011') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
         response_reward = stub.getRewards(BuildingInfo_pb2.Empty())
     print("client for reward running======================================")
@@ -223,7 +223,7 @@ def run_reward():
 
 def run_server():
     print("client for buildings running 1======================================")
-    with grpc.insecure_channel('localhost:4007') as channel:
+    with grpc.insecure_channel('localhost:5008') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
         response = stub.getBuildingInfo(BuildingInfo_pb2.Empty())
     building_state_info = []
@@ -233,4 +233,5 @@ def run_server():
         # building_state_info.append(i.building_id)
     print("client for buildings running 2======================================")
     return building_state_info
+
 

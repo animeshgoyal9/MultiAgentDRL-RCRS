@@ -16,7 +16,9 @@ import rescuecore2.worldmodel.EntityID;
 import java.util.*;
 
 import AnimFireChalAgent.ActionBean;
+import AnimFireChalAgent.AgentBean;
 import AnimFireChalAgent.AgentResources;
+import AnimFireChalAgent.AnimFireChalProto.Agent;
 
 import static rescuecore2.standard.entities.StandardEntityURN.*;
 
@@ -134,10 +136,18 @@ public class SampleSearch extends Search {
 //		For Waiting Command------------------------------------
 		
 		if (currentTarget != null && path.size() == 1) {
-			    	currentTarget = null;
+			currentTarget = null;
 		} 
 
 		if(currentTarget == null) {
+			AgentBean agent = AgentResources.getAgent(this.agentInfo.getID().getValue());
+			if(agent != null) {
+				agent.setIdle(0);
+				AgentResources.setAgents(agent);
+				System.out.println("******************* When Target null *************************");
+				System.out.println(agent);
+				System.out.println("********************************************");
+			}	
 			currentTarget = target;
 		}
 			
