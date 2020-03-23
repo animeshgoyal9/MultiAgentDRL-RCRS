@@ -28,8 +28,8 @@ import collections
 import shutil
 
 
-map_used = "Small"
-# map_used = "Big"
+# map_used = "Small"
+map_used = "Big"
 algo_used = "PPO2"
 
 if (map_used == 'Small'):
@@ -40,7 +40,7 @@ if (map_used == 'Small'):
 else:
     MAX_TIMESTEP = 250
     n_agents  = 4
-    # action_set_list = np.array([55887, 55875, 32789, 26534, 50850, 55870, 56223, 56229, 56214, 55917, 55962, 55898, 33041, 25233, 27992, 
+    #action_set_list = np.array([55887, 55875, 32789, 26534, 50850, 55870, 56223, 56229, 56214, 55917, 55962, 55898, 33041, 25233, 27992, 
     #                             33041, 56246, 55859, 55762, 55632, 35851, 39766, 35851, 36181, 42695, 53898, 48470, 35921, 53948, 32688, 
     #                             55606, 37342, 51857, 45972, 54494, 53426, 32855, 32762, 54508, 24141, 53719, 56395, 53581, 49264, 45054, 
     #                             52924, 25658, 52940, 57434, 52875, 33514, 55115, 53473, 52674, 52949, 29373, 41923, 51225, 50767, 51583, 
@@ -72,8 +72,10 @@ class RCRSenv(gym.Env):
             self.action_space = MultiDiscrete([len(action_set_list)]*n_agents)
         else:
             self.action_space = Discrete(len_action_list*len_action_list)
-        low = np.array([-inf]*(len_action_list*2+(6*n_agents)))
-        high = np.array([inf]*(len_action_list*2+(6*n_agents)))
+        #low = np.array([-inf]*(len_action_list*2+(6*n_agents)))
+        #high = np.array([inf]*(len_action_list*2+(6*n_agents)))
+        low = np.array([-inf]*2876)
+        high = np.array([-inf]*2876)
         self.observation_space = Box(low, high, dtype=np.float32, shape=None)
         self.curr_episode = 0
         self.seed()
@@ -90,33 +92,35 @@ class RCRSenv(gym.Env):
         appending_list = []
         for i in fieryeness_counter:
             if 0 <= i <= 2:
-                appending_list.append(float(100/len(fieryeness_counter)))
+                appending_list.append(float(10/len(fieryeness_counter)))
             elif 3 <= i <= 5:
                 appending_list.append(float(5/len(fieryeness_counter)))
             else:
                 appending_list.append(float(-10/len(fieryeness_counter)))
         
         self.reward = sum(appending_list)
-
+        print(self.reward)
     # uncomment to run greedy algorithm
 
-        # state_info_temp = state_info[0][1::2]
-
-        # action_for_greedy_algo_A1 = int((state_info_temp.index(max(state_info_temp))))
+        state_info_temp = state_info[0][1::2]
         
-        # maximum=max(state_info_temp[0],state_info_temp[1]) 
-        # secondmax=min(state_info_temp[0],state_info_temp[1]) 
+        action = greedy_actions(state_info_temp, n_agents)
+        
+        #action_for_greedy_algo_A1 = int((state_info_temp.index(max(state_info_temp))))
+        
+        #maximum=max(state_info_temp[0],state_info_temp[1]) 
+        #secondmax=min(state_info_temp[0],state_info_temp[1]) 
           
-        # for i in range(2,len(state_info_temp)): 
-        #     if state_info_temp[i]>maximum: 
-        #         secondmax=maximum
-        #         maximum=state_info_temp[i] 
-        #     else: 
-        #         if state_info_temp[i]>secondmax: 
-        #             secondmax=state_info_temp[i] 
+        #for i in range(2,len(state_info_temp)): 
+        #    if state_info_temp[i]>maximum: 
+        #        secondmax=maximum
+        #        maximum=state_info_temp[i] 
+        #    else: 
+        #        if state_info_temp[i]>secondmax: 
+        #            secondmax=state_info_temp[i] 
 
-        # action_for_greedy_algo_A2 = int((state_info_temp.index(secondmax)))
-        # action = [action_for_greedy_algo_A1+1, action_for_greedy_algo_A2+1]
+        #action_for_greedy_algo_A2 = int((state_info_temp.index(secondmax)))
+        #action = [action_for_greedy_algo_A1+1, action_for_greedy_algo_A2+1]
 
         state_info.append(run_adf(action))
 
@@ -150,13 +154,13 @@ class RCRSenv(gym.Env):
 
     def reset(self):
         print("Reset running======================================")
-        subprocess.Popen(['gnome-terminal', '-e', string_for_launch_file])
+        subprocess.Popen(['xterm', '-e', string_for_launch_file])
         # subprocess.Popen([sys.path[0] + "/launch_file.py"])
   
         if (map_used == 'Small'):
             time.sleep(11)
         else:
-            time.sleep(13.5)
+            time.sleep(14)
         
         self.curr_episode = 0
         if (algo_used == "PPO2"):
@@ -177,6 +181,21 @@ class RCRSenv(gym.Env):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
 
+def greedy_actions(list, N):
+    final_list = []
+
+    for i in range(0,N):
+        max1=0
+
+        for j in range(len(list)):
+            if list[j] > max1:
+                max1 = list[j]
+
+        list.remove(max1)
+        final_list.append(max1)
+    final_list = [round(k) for k in final_list]
+    return final_list
+
 
 def run_adf(bid):
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
@@ -184,7 +203,7 @@ def run_adf(bid):
     # of the code.
     print("client for agents running 1======================================")
 
-    with grpc.insecure_channel('localhost:3912') as channel:
+    with grpc.insecure_channel('localhost:20001') as channel:
         stub = AgentInfo_pb2_grpc.AnimFireChalAgentStub(channel)
         response = stub.getAgentInfo(AgentInfo_pb2.ActionInfo(actions = [
             # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid//len_action_list]), 
@@ -195,12 +214,12 @@ def run_adf(bid):
             # AgentInfo_pb2.Action(agent_id = 1535509101, building_id=action_set_list[bid_3]),
             # AgentInfo_pb2.Action(agent_id = 1127234487, building_id=action_set_list[bid_4])]))
 
-            # AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid[0]]), 
-            # AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[bid[1]]),
-            # AgentInfo_pb2.Action(agent_id = 1535509101, building_id=action_set_list[bid[2]]), 
-            # AgentInfo_pb2.Action(agent_id = 1127234487, building_id=action_set_list[bid[3]])]))
+            AgentInfo_pb2.Action(agent_id = 2090075220, building_id=action_set_list[bid[0]]), 
+            AgentInfo_pb2.Action(agent_id = 1618773504, building_id=action_set_list[bid[1]]),
+            AgentInfo_pb2.Action(agent_id = 1535509101, building_id=action_set_list[bid[2]]), 
+            AgentInfo_pb2.Action(agent_id = 1127234487, building_id=action_set_list[bid[3]])]))
 
-            AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
+            # AgentInfo_pb2.Action(agent_id = 210552869, building_id=action_set_list[bid[0]]), AgentInfo_pb2.Action(agent_id = 1962675462, building_id=action_set_list[bid[1]])]))
                        
     agent_state_info = []
 
@@ -215,7 +234,7 @@ def run_adf(bid):
     return agent_state_info
 
 def run_reward():
-    with grpc.insecure_channel('localhost:5011') as channel:
+    with grpc.insecure_channel('localhost:20002') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
         response_reward = stub.getRewards(BuildingInfo_pb2.Empty())
     print("client for reward running======================================")
@@ -223,7 +242,7 @@ def run_reward():
 
 def run_server():
     print("client for buildings running 1======================================")
-    with grpc.insecure_channel('localhost:5008') as channel:
+    with grpc.insecure_channel('localhost:20003') as channel:
         stub = BuildingInfo_pb2_grpc.AnimFireChalBuildingStub(channel)
         response = stub.getBuildingInfo(BuildingInfo_pb2.Empty())
     building_state_info = []

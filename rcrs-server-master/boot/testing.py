@@ -56,10 +56,10 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	df = pd.DataFrame(columns=columns)
 	if (algorithm == "PPO2"):
 	    from stable_baselines.common.policies import MlpPolicy
-	    model = PPO2(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  n_steps = batch_size)
+	    model = PPO2(MlpPolicy, env, verbose=1, learning_rate=learning_rate, tensorboard_log = "./{}_rcrs_tensorboard/".format(hostname), n_steps = batch_size)
 	else:
 	    from stable_baselines.deepq.policies import MlpPolicy
-	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate,  batch_size = batch_size)
+	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate, tensorboard_log = "./{}_rcrs_tensorboard/".format(hostname),  batch_size = batch_size)
 	for k in range(training_iterations):
 		# Train the agent
 		model.learn(total_timesteps=int(training_timesteps))
@@ -73,7 +73,7 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    	model = PPO2.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
 
 	    else:
-	    	model = DQN.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
+            model = DQN.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
 	    # Reset the environment
 	    obs = env.reset()
 	    # Create an empty list to store reward values 
