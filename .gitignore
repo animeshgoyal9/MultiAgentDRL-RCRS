@@ -3,3 +3,7 @@
 *.pyc
 *.jar
 rcrs-server-master/jars/*.jar
+
+.settings folder
+.classpath
+.project
