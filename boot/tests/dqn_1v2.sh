@@ -1,1 +1,0 @@
-python3 ../dqn_tag.py --env simple_tag_guided_1v2 --experiment_prefix ./results/dqn_1v2/
