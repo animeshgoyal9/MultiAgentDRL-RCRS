@@ -4,6 +4,6 @@
 *.jar
 rcrs-server-master/jars/*.jar
 
-.settings folder
-.classpath
-.project
+/.settings folder
+/.classpath
+/.project
