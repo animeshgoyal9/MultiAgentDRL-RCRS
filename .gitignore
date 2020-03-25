@@ -11,3 +11,6 @@ rcrs-server-master/jars/*.jar
 /.project
 
 /.metadata
+
+.~*
+._*
