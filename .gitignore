@@ -9,3 +9,5 @@ rcrs-server-master/jars/*.jar
 /.settings folder
 /.classpath
 /.project
+
+/.metadata
