@@ -6,7 +6,7 @@ rcrs-server-master/jars/*.jar
 
 .DS_Store
 
-/.settings folder
+/.settings
 /.classpath
 /.project
 
