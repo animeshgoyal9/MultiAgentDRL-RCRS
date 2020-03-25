@@ -62,7 +62,9 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    model = DQN(MlpPolicy, env, verbose=1, learning_rate=learning_rate, tensorboard_log = "./{}_rcrs_tensorboard/".format(hostname),  batch_size = batch_size)
 	for k in range(training_iterations):
 		# Train the agent
+		print("MODEL IS LEARNING __________________________________________________________________________________________________________________________________________________________________")
 		model.learn(total_timesteps=int(training_timesteps))
+		print("MODEL HAS LEARNED __________________________________________________________________________________________________________________________________________________________________")
 	     # Saving the model 
 		model.save("{}_{}_{}_{}".format("rcrs_wgts", k, algorithm, hostname))
 		subprocess.Popen(path_for_kill_file, shell=True)
@@ -71,9 +73,8 @@ def run_model(algorithm, training_timesteps, testing_timesteps, training_iterati
 	    # Load the trained agent
 	    if (algorithm == "PPO2"):
 	    	model = PPO2.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
-
 	    else:
-            model = DQN.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
+	    	model = DQN.load("{}_{}_{}_{}".format("rcrs_wgts", j, algorithm, hostname))
 	    # Reset the environment
 	    obs = env.reset()
 	    # Create an empty list to store reward values 

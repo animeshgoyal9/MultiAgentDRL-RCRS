@@ -3,4 +3,9 @@
 *.pyc
 *.jar
 rcrs-server-master/jars/*.jar
+
 .DS_Store
+
+/.settings folder
+/.classpath
+/.project

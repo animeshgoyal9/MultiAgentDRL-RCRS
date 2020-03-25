@@ -102,9 +102,9 @@ class RCRSenv(gym.Env):
         print(self.reward)
     # uncomment to run greedy algorithm
 
-        state_info_temp = state_info[0][1::2]
+        #state_info_temp = state_info[0][1::2]
         
-        action = greedy_actions(state_info_temp, n_agents)
+        #action = greedy_actions(state_info_temp, n_agents)
         
         #action_for_greedy_algo_A1 = int((state_info_temp.index(max(state_info_temp))))
         
