@@ -72,10 +72,10 @@ class RCRSenv(gym.Env):
             self.action_space = MultiDiscrete([len(action_set_list)]*n_agents)
         else:
             self.action_space = Discrete(len_action_list*len_action_list)
-        #low = np.array([-inf]*(len_action_list*2+(6*n_agents)))
-        #high = np.array([inf]*(len_action_list*2+(6*n_agents)))
-        low = np.array([-inf]*2876)
-        high = np.array([-inf]*2876)
+        low = np.array([-inf]*(len_action_list*2+(6*n_agents)))
+        high = np.array([inf]*(len_action_list*2+(6*n_agents)))
+        # low = np.array([-inf]*2876)
+        # high = np.array([-inf]*2876)
         self.observation_space = Box(low, high, dtype=np.float32, shape=None)
         self.curr_episode = 0
         self.seed()
@@ -85,10 +85,10 @@ class RCRSenv(gym.Env):
         print("Step running======================================")
         self.curr_episode += 1
         print(self.curr_episode)
-        state_info = []
-        state_info.append(run_server())
-        
-        fieryeness_counter = np.array(state_info[0][0::2])
+        state_info_interm = []
+        state_info_interm.append(run_server())
+
+        fieryeness_counter = np.array(state_info_interm[0][0::3])
         appending_list = []
         for i in fieryeness_counter:
             if 0 <= i <= 2:
@@ -100,6 +100,8 @@ class RCRSenv(gym.Env):
         
         self.reward = sum(appending_list)
         print(self.reward)
+        state_info = []
+        state_info.append(select_state_info_from_action_list(state_info_interm, action_set_list))
     # uncomment to run greedy algorithm
 
         #state_info_temp = state_info[0][1::2]
@@ -123,7 +125,6 @@ class RCRSenv(gym.Env):
         #action = [action_for_greedy_algo_A1+1, action_for_greedy_algo_A2+1]
 
         state_info.append(run_adf(action))
-
         # print("Action for 210552869" ,   action_set_list[action[0]])
         # print("Action for 1618773504" ,  action_set_list[action[1]])
         # print("Action for 1535509101" ,  action_set_list[action[2]])
@@ -167,11 +168,13 @@ class RCRSenv(gym.Env):
             reset_action = [0]*n_agents
         else:
             reset_action = 0
-        reset = []
-        reset.append(run_adf(reset_action))
-        print("Reset: Agents: Buildings running======================================")
-        reset.append(run_server())
+        reset_interm = []
         
+        print("Reset: Agents: Buildings running======================================")
+        reset_interm.append(run_server())
+        reset = []
+        reset.append(select_state_info_from_action_list(reset_interm, action_set_list))
+        reset.append(run_adf(reset_action))
         flat_list_reset = [item for sublist in reset for item in sublist]
 
         self.state = flat_list_reset
@@ -196,6 +199,17 @@ def greedy_actions(list, N):
     final_list = [round(k) for k in final_list]
     return final_list
 
+def select_state_info_from_action_list(state_info, action_set_list):
+    state_info = list(state_info)
+    action_set_list = list(action_set_list)
+    only_building_info = state_info[0][2::3]
+    new_state_info = []
+    for i in range(len(action_set_list)):
+        if action_set_list[i] in only_building_info:
+            temp = state_info[0].index(action_set_list[i])
+            new_state_info.append(state_info[0][temp-2])
+            new_state_info.append(state_info[0][temp-1])
+    return new_state_info
 
 def run_adf(bid):
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
@@ -249,7 +263,7 @@ def run_server():
     for i in response.buildings:
         building_state_info.append(i.fieryness)
         building_state_info.append(i.temperature)
-        # building_state_info.append(i.building_id)
+        building_state_info.append(i.building_id)
     print("client for buildings running 2======================================")
     return building_state_info
 

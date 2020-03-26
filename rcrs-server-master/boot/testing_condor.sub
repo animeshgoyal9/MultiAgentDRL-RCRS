@@ -36,11 +36,24 @@ error = 	condor/error/err.$(Process)
 output = 	condor/output/out.$(Process)
 
 # Hyperparameters (algorithm, training_timesteps, testing_timesteps, training_iterations, testing_iterations, learning_rate, batch_size)
+
 arguments = PPO2 2500 2500 4 4 0.0025 64
 queue 1
 
-arguments = PPO2 5000 5000 20 20 0.0025 128
-queue 1
+# arguments = PPO2 5000 5000 20 20 0.0025 128
+# queue 1
+
+# arguments = PPO2 7500 7500 20 20 0.0025 256
+# queue 1
+
+# arguments = PPO2 8500 8500 20 20 0.0025 64
+# queue 1
+
+# arguments = PPO2 2500 2500 4 4 0.0025 64
+# queue 1
+
+# arguments = PPO2 5000 5000 20 20 0.0025 128
+# queue 1
 
 # arguments = PPO2 7500 7500 20 20 0.0025 256
 # queue 1
