@@ -9,7 +9,7 @@ This project marks the application of Deep Reinforcement learning to RoboCup Res
 
 * Git
 * Gradle 3.4+
-* OpenJDK Java 8+
+* OpenJDK Java 11+
 * Python 3.5+
 * Openai Gym
 * Stable Baselines
